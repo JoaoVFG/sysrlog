@@ -22,7 +22,7 @@ public class Cep {
 	
 	private Integer cep;
 	
-	private String nome_rua;
+	private String nomeRua;
 	
 	private String bairro;
 	
@@ -30,10 +30,10 @@ public class Cep {
 	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
 
-	public Cep(Integer cep, String nome_rua, String bairro, Cidade cidade) {
+	public Cep(Integer cep, String nomeRua, String bairro, Cidade cidade) {
 		super();
 		this.cep = cep;
-		this.nome_rua = nome_rua;
+		this.nomeRua = nomeRua;
 		this.bairro = bairro;
 		this.cidade = cidade;
 	}
