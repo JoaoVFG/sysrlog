@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import com.nelioalves.cursomc.services.exceptions.DataIntegrityException;
-
 import JoaoVFG.com.github.domain.Estado;
 import JoaoVFG.com.github.repositories.EstadoRepository;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
