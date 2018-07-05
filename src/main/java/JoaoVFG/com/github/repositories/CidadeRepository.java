@@ -1,6 +1,7 @@
 package JoaoVFG.com.github.repositories;
 
 import java.util.LinkedList;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,15 +17,15 @@ public interface CidadeRepository extends JpaRepository<Cidade, Integer> {
 
 	//Busca de cidades por nome
 	@Transactional(readOnly = true)
-	public LinkedList<Cidade> findByNomeContains(String nome);
+	public Optional<LinkedList<Cidade>> findByNomeContains(String nome);
 	
 	//Busca de Cidades por id_estado
 	@Transactional(readOnly = true)
-	public LinkedList<Cidade> findByEstado(Estado estado);
+	public Optional<LinkedList<Cidade>> findByEstado(Estado estado);
 	
 	//Busca de Cidades por nome e Id_estado
 	@Transactional(readOnly = true)
 	@Query("SELECT cidade FROM Cidade cidade WHERE cidade.estado.id = :estadoId AND cidade.nome like :cidadeNome")
-	public LinkedList<Cidade> findCidadesEstadoIdNomeCidades(@Param("estadoId")Integer estadoId, @Param("cidadeNome")String cidadeNome);
+	public Optional<LinkedList<Cidade>> findCidadesEstadoIdNomeCidades(@Param("estadoId")Integer estadoId, @Param("cidadeNome")String cidadeNome);
 	
 }
