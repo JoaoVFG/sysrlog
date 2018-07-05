@@ -1,6 +1,7 @@
 package JoaoVFG.com.github.repositories;
 
 import java.util.LinkedList;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +12,7 @@ public interface CepRepository extends JpaRepository<Cep, Integer>{
 	
 	//busca Cep por Cep
 	@Transactional(readOnly = true)
-	public Cep findBycep(Integer cep);
+	public Optional<Cep> findBycep(Integer cep);
 	
 	//busca Cep por nome Rua
 	@Transactional(readOnly = true)
