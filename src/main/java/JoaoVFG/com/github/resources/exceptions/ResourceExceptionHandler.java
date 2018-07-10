@@ -9,7 +9,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-
+import JoaoVFG.com.github.services.exception.AuthorizationException;
+import JoaoVFG.com.github.services.exception.DataIntegrityException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
@@ -17,8 +18,8 @@ public class ResourceExceptionHandler {
 	
 	@ExceptionHandler(JoaoVFG.com.github.services.exception.ObjectNotFoundException.class)
 	public ResponseEntity<StandartError> objectNotFound(JoaoVFG.com.github.services.exception.ObjectNotFoundException error, 
-														HttpServletRequest request){
-		
+														HttpServletRequest request)
+	{
 		
 		StandartError standartError = new StandartError(System.currentTimeMillis(), 
 														HttpStatus.NOT_FOUND.value(), 
@@ -33,10 +34,9 @@ public class ResourceExceptionHandler {
 	
 	
 	@ExceptionHandler(JoaoVFG.com.github.services.exception.DataIntegrityException.class)
-	public ResponseEntity<StandartError> dataIntegrityException(JoaoVFG.com.github.services.exception.DataIntegrityException error,
-																HttpServletRequest request){
-		
-		
+	public ResponseEntity<StandartError> dataIntegrityException(DataIntegrityException error,
+																HttpServletRequest request)
+	{
 		StandartError standartError = new StandartError(System.currentTimeMillis(), 
 														HttpStatus.BAD_REQUEST.value(), 
 														"Integridade de Dados", 
@@ -71,7 +71,7 @@ public class ResourceExceptionHandler {
 	
 	
 	@ExceptionHandler(JoaoVFG.com.github.services.exception.AuthorizationException.class)
-	public ResponseEntity<StandartError> authorization(JoaoVFG.com.github.services.exception.AuthorizationException error, 
+	public ResponseEntity<StandartError> authorization(AuthorizationException error, 
 														HttpServletRequest request){
 		
 		

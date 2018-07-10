@@ -47,8 +47,7 @@ public class CidadeService {
 	public LinkedList<Cidade> findByEstado(String sigla){
 		Optional<LinkedList<Cidade>> cidades = cidadeRepository.findByEstado(estadoService.findBySigla(sigla));
 		
-		return cidades.orElseThrow(() -> new ObjectNotFoundException("Cidade não encontrada! Estado Pesquisado: " + sigla + 
-				 													  ". Tipo: " + Cidade.class.getName()));
+		return cidades.orElse(null);
 	}
 	
 	
