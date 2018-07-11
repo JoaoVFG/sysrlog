@@ -76,4 +76,12 @@ public class EstadoService {
 			//futuro código para setar excluido = 1
 		}
 	}
+	
+	public Estado findBySiglaAux(String sigla) {
+		try {
+			return estadoRepository.findBySiglaAux(sigla);
+		} catch (NullPointerException erro) {
+			return null;
+		}
+	}
 }

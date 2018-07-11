@@ -25,6 +25,7 @@ public class CidadeService {
 	
 	public Cidade findById(Integer id) {
 		Optional<Cidade> cidade = cidadeRepository.findById(id);
+		System.out.println("teste");
 		
 		return cidade.orElseThrow(() -> new ObjectNotFoundException("Cidade não encontrada! Id: " + id + 
 																	". Tipo: " + Cidade.class.getName()));
@@ -86,6 +87,15 @@ public class CidadeService {
 		}catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("NAO E POSSIVEL EXCLUIR UMA CIDADE QUE POSSUA CEPs VINCULADOS");
 			//futuro código para setar excluido = 1
+		}
+	}
+	
+	
+	public Cidade findByNomeCidadeSiglaEstadoAux( String siglaEstado , String nomeCidade) {
+		try {
+			return cidadeRepository.findCidadesEstadoIdNomeCidadesAux(estadoService.findBySigla(siglaEstado).getId(), nomeCidade);
+		} catch (NullPointerException e) {
+			return null;
 		}
 	}
 	
