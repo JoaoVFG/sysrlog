@@ -14,7 +14,7 @@ import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 @Service
 public class EstadoService {
 
-	@Autowired
+	@Autowired(required = true)
 	private EstadoRepository estadoRepository;
 
 	
@@ -50,8 +50,8 @@ public class EstadoService {
 	
 	public Estado createEstado(Estado estado) {
 		estado.setId(null);
-		estadoRepository.save(estado);
-		return estado;
+		estado = estadoRepository.save(estado);
+		return findById(estado.getId());
 	}
 	
 	

@@ -39,7 +39,6 @@ public class ConsultaViaCep {
 			throw new RuntimeException(e);
 		}
 		
-		
 		return generateEnderecoConsulta(objectResponse);
 	}
 	
@@ -47,6 +46,8 @@ public class ConsultaViaCep {
 	private EnderecoConsulta generateEnderecoConsulta(JsonObject object) {
 		
 		EnderecoConsulta enderecoConsulta = new EnderecoConsulta();
+		
+		enderecoConsulta = null;
 		
 		JsonValue erro = object.get("erro");
 		
@@ -60,8 +61,9 @@ public class ConsultaViaCep {
 			enderecoConsulta.setUnidade(object.getString("unidade"));
 			enderecoConsulta.setIbge(object.getString("ibge"));
 			enderecoConsulta.setGia(object.getString("gia"));
-			
+			return enderecoConsulta;
 		}
+		
 		
 		return enderecoConsulta;
 		

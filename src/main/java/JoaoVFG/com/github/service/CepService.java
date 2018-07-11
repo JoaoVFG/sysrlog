@@ -48,8 +48,8 @@ public class CepService {
 	
 	public Cep createCep(Cep cep) {
 		cep.setId(null);
-		cepRepository.save(cep);
-		return cep;
+		cep = cepRepository.save(cep);
+		return findById(cep.getId());
 	}
 	
 	

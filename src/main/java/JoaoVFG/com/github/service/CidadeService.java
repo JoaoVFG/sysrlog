@@ -15,11 +15,12 @@ import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 
 @Service
 public class CidadeService {
-
-	@Autowired
+	
+	
+	@Autowired(required = true)
 	CidadeRepository cidadeRepository;
 	
-	@Autowired
+	@Autowired(required = true)
 	EstadoService estadoService;
 	
 	
@@ -63,8 +64,8 @@ public class CidadeService {
 	
 	public Cidade createCidade(Cidade cidade){
 		cidade.setId(null);
-		cidadeRepository.save(cidade);
-		return cidade;
+		cidade = cidadeRepository.save(cidade);
+		return findById(cidade.getId());
 	}
 	
 	

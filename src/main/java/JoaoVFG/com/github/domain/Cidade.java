@@ -1,5 +1,7 @@
 package JoaoVFG.com.github.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +17,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-public class Cidade {
-
+public class Cidade implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -27,11 +29,14 @@ public class Cidade {
 	@JoinColumn(name = "estado_id")
 	private Estado estado;
 
-	public Cidade(String nome, Estado estado) {
+	public Cidade(Integer id, String nome, Estado estado) {
 		super();
+		this.id = id;
 		this.nome = nome;
 		this.estado = estado;
 	}
+
+	
 	
 	
 }
