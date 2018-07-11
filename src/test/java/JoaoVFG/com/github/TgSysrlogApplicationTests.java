@@ -40,10 +40,11 @@ public class TgSysrlogApplicationTests {
 	 *       cidadeService.createCidade(cidade); }
 	 */
 
-	// @Commit
+	/** @Commit
 	@Test
 	public void testeFindOrCreateEstado() {
 		createCep.generateCep("12288560");
 	}
+	**/
 
 }
