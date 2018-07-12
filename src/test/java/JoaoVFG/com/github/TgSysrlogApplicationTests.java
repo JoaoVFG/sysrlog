@@ -51,10 +51,10 @@ public class TgSysrlogApplicationTests {
 	}
 	**/
 	
-	/**
+	
 	@Test
 	public void testFindCep() {
-		cepService.findByCep("01007-040");
+		cepService.findByCep("12281-350");
 	}
-	*/
+	
 }
