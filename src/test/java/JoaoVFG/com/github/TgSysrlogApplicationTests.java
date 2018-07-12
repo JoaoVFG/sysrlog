@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.CidadeService;
 import JoaoVFG.com.github.service.EstadoService;
 import JoaoVFG.com.github.service.utils.CreateCep;
@@ -19,6 +20,9 @@ public class TgSysrlogApplicationTests {
 
 	@Autowired
 	CidadeService cidadeService;
+	
+	@Autowired
+	CepService cepService;
 
 	@Autowired
 	CreateCep createCep;
@@ -46,5 +50,11 @@ public class TgSysrlogApplicationTests {
 		createCep.generateCep("12288560");
 	}
 	**/
-
+	
+	/**
+	@Test
+	public void testFindCep() {
+		cepService.findByCep("01007-040");
+	}
+	*/
 }

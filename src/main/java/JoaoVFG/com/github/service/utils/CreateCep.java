@@ -78,7 +78,7 @@ public class CreateCep {
 	public Cep saveCep(EnderecoConsulta EnderecoConsulta, Estado estado, Cidade cidade) {
 
 		Cep cep = new Cep(null, 
-				Integer.parseInt(EnderecoConsulta.getCep().replaceAll("-", "")),
+				EnderecoConsulta.getCep(),
 				EnderecoConsulta.getLogradouro(), 
 				EnderecoConsulta.getBairro(), 
 				cidade);

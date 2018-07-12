@@ -19,7 +19,7 @@ public class ConsultaViaCep {
 	public EnderecoConsulta consultaCep(String cep) {
 		
 		JsonObject objectResponse = null;
-		
+		cep = cep.replace("-", "");
 		try {
 			
 			if(!ValidaCep.validaCep(cep)) {
@@ -47,8 +47,6 @@ public class ConsultaViaCep {
 		
 		EnderecoConsulta enderecoConsulta = new EnderecoConsulta();
 		
-		enderecoConsulta = null;
-		
 		JsonValue erro = object.get("erro");
 		
 		if(erro == null) {
@@ -65,7 +63,7 @@ public class ConsultaViaCep {
 		}
 		
 		
-		return enderecoConsulta;
+		return null;
 		
 		
 	}

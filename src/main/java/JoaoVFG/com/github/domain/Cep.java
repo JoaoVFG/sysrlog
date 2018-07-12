@@ -23,7 +23,7 @@ public class Cep implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private Integer cep;
+	private String cep;
 	
 	private String nomeRua;
 	
@@ -33,7 +33,7 @@ public class Cep implements Serializable{
 	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
 
-	public Cep(Integer id, Integer cep, String nomeRua, String bairro, Cidade cidade) {
+	public Cep(Integer id, String cep, String nomeRua, String bairro, Cidade cidade) {
 		super();
 		this.id = id;
 		this.cep = cep;
