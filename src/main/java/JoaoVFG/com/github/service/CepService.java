@@ -1,6 +1,5 @@
 package JoaoVFG.com.github.service;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +8,9 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.domain.Cep;
+import JoaoVFG.com.github.domain.Cidade;
 import JoaoVFG.com.github.repositories.CepRepository;
+import JoaoVFG.com.github.repositories.CidadeRepository;
 import JoaoVFG.com.github.service.utils.CreateCep;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
@@ -19,6 +20,9 @@ public class CepService {
 
 	@Autowired
 	CepRepository cepRepository;
+	
+	@Autowired
+	CidadeRepository cidadeRepository;
 
 	@Autowired
 	CreateCep createCep;
@@ -35,22 +39,27 @@ public class CepService {
 	}
 
 	public Cep findByCep(String cepBusca) {
+		String cepInfo = cepBusca;
+		cepBusca = formataCep(cepBusca);
+		
 		Optional<Cep> cep = cepRepository.findBycep(cepBusca);
-		System.out.println(cep.toString());
 		
 		if (cep.toString() == "Optional.empty") {
 			Cep cepEncontrado = createCep.generateCep(cepBusca.toString());
 			cep = Optional.of(cepEncontrado);
-		}else {
-			System.out.println("Não funfou");
 		}
 
 		return cep.orElseThrow(() -> new ObjectNotFoundException(
-				"CEP: " + cepBusca + " não foi encontrado. " + "Tipo: " + Cep.class.getName()));
+				"CEP: " + cepInfo + " não foi encontrado. " + "Tipo: " + Cep.class.getName()));
 	}
 
-	public LinkedList<Cep> findByNomeRua(String nomeRua) {
+	public List<Cep> findByNomeRua(String nomeRua) {
 		return cepRepository.findBynomeRua(nomeRua);
+	}
+	
+	public List<Cep> findByCidade(String cidade){
+		Cidade cidadeBusca = cidadeRepository.findBynome(cidade);
+		return cepRepository.findByCidade(cidadeBusca);
 	}
 
 	public Cep createCep(Cep cep) {
@@ -79,5 +88,10 @@ public class CepService {
 			throw new DataIntegrityException("NAO E POSSIVEL EXCLUIR UM CEP QUE POSSUA ENTREGAS VINCULADAS.");
 			// futuro código para setar excluido = 1
 		}
+	}
+	
+	
+	public String formataCep(String cep) {
+		return cep.replace("-", "");
 	}
 }

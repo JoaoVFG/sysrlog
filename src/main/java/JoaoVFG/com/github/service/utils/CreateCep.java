@@ -30,7 +30,7 @@ public class CreateCep {
 	public Cep generateCep(String cepConsulta) {
 		ConsultaViaCep consultaViaCep = new ConsultaViaCep();
 
-		EnderecoConsulta enderecoConsulta = consultaViaCep.consultaCep(cepConsulta);
+		EnderecoConsulta enderecoConsulta = consultaViaCep.consultaCep(cepConsulta.replace("-", ""));
 
 		if (enderecoConsulta == null) {
 			return null;
@@ -86,6 +86,8 @@ public class CreateCep {
 
 	public String nomeEstado(String sigla) {
 		switch (sigla) {
+		case "AC":
+			return "Acre";
 		case "AL":
 			return "Alagoas";
 		case "AP":

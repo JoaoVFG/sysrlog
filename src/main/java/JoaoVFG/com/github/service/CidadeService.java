@@ -46,7 +46,7 @@ public class CidadeService {
 	}
 	
 	
-	public LinkedList<Cidade> findByEstado(String sigla){
+	public List<Cidade> findByEstado(String sigla){
 		Optional<LinkedList<Cidade>> cidades = cidadeRepository.findByEstado(estadoService.findBySigla(sigla));
 		
 		return cidades.orElse(null);

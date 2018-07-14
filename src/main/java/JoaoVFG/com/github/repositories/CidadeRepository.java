@@ -20,6 +20,9 @@ public interface CidadeRepository extends JpaRepository<Cidade, Integer> {
 	@Transactional(readOnly = true)
 	public Optional<LinkedList<Cidade>> findByNomeContains(String nome);
 	
+	@Transactional(readOnly = true)
+	public Cidade findBynome(String nome);
+	
 	//Busca de Cidades por id_estado
 	@Transactional(readOnly = true)
 	public Optional<LinkedList<Cidade>> findByEstado(Estado estado);

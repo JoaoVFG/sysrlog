@@ -50,7 +50,7 @@ public class ConsultaViaCep {
 		JsonValue erro = object.get("erro");
 		
 		if(erro == null) {
-			enderecoConsulta.setCep(object.getString("cep"));
+			enderecoConsulta.setCep(object.getString("cep").replace("-", ""));
 			enderecoConsulta.setLogradouro(object.getString("logradouro"));
 			enderecoConsulta.setComplemento(object.getString("complemento"));
 			enderecoConsulta.setBairro(object.getString("bairro"));

@@ -1,22 +1,30 @@
 package JoaoVFG.com.github.repositories;
 
-import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import JoaoVFG.com.github.domain.Cep;
+import JoaoVFG.com.github.domain.Cidade;
 
 public interface CepRepository extends JpaRepository<Cep, Integer>{
 	
 	//busca Cep por Cep
 	@Transactional(readOnly = true)
-	public Optional<Cep> findBycep(String cep);
+	@Query("SELECT cep FROM Cep cep WHERE cep.cep = :cepBusca")
+	public Optional<Cep> findBycep(@Param("cepBusca") String cepBusca);
 	
 	//busca Cep por nome Rua
 	@Transactional(readOnly = true)
-	public LinkedList<Cep> findBynomeRua(String nomeRua);
+	public List<Cep> findBynomeRua(String nomeRua);
 	
+	
+	@Transactional(readOnly = true)
+	@Query("SELECT cep FROM Cep cep WHERE cep.cidade = :cidadeBusca")
+	public List<Cep> findByCidade(@Param("cidadeBusca") Cidade cidade);
 	
 }
