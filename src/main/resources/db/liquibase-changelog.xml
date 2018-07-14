@@ -8,5 +8,7 @@
          
          <include file="changelog/01-create-estado.xml" relativeToChangelogFile="true"/>
          <include file="changelog/02-insert-estados.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/03-create-cidade.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/04-add-foreignkey-cidade.xml" relativeToChangelogFile="true"/>         
 
 </databaseChangeLog>
