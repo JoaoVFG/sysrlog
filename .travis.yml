@@ -14,3 +14,8 @@ install:
 script:
 - mvn test
 
+cache:
+  directories:
+  - .autoconf
+  - $HOME/.m2
+
