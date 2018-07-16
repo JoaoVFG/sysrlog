@@ -5,5 +5,15 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+         <include file="changelog/01-create-estado.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/02-insert-estados.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/03-create-cidade.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/04-create-cep.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/05-add-autoincrement.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/06-add-foreignkey-cidade.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/07-add-foreignkey-cep.xml" relativeToChangelogFile="true"/>
+       	 
+               
 
 </databaseChangeLog>
