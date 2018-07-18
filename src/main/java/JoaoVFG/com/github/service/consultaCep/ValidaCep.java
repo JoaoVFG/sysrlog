@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.service.utils;
+package JoaoVFG.com.github.service.consultaCep;
 
 /**
  * Entidade baseada nos dados do WS do viacep.com

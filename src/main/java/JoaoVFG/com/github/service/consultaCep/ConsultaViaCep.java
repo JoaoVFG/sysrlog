@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.service.utils;
+package JoaoVFG.com.github.service.consultaCep;
 
 import javax.json.Json;
 import javax.json.JsonObject;

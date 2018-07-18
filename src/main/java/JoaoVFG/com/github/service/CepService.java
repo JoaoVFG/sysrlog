@@ -11,7 +11,7 @@ import JoaoVFG.com.github.domain.Cep;
 import JoaoVFG.com.github.domain.Cidade;
 import JoaoVFG.com.github.repositories.CepRepository;
 import JoaoVFG.com.github.repositories.CidadeRepository;
-import JoaoVFG.com.github.service.utils.CreateCep;
+import JoaoVFG.com.github.service.consultaCep.CreateCep;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 

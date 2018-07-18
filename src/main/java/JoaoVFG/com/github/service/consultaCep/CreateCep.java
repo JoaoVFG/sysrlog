@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.service.utils;
+package JoaoVFG.com.github.service.consultaCep;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

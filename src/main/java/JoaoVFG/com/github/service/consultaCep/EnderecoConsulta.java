@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.service.utils;
+package JoaoVFG.com.github.service.consultaCep;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

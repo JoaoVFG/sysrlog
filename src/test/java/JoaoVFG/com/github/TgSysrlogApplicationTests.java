@@ -9,7 +9,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.CidadeService;
 import JoaoVFG.com.github.service.EstadoService;
-import JoaoVFG.com.github.service.utils.CreateCep;
+import JoaoVFG.com.github.service.consultaCep.CreateCep;
+import JoaoVFG.com.github.service.route.CalculaDistancia;
+import JoaoVFG.com.github.service.route.Distancia;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -26,6 +28,9 @@ public class TgSysrlogApplicationTests {
 
 	@Autowired
 	CreateCep createCep;
+	
+	@Autowired
+	CalculaDistancia calculaDistancia;
 
 	@Test
 	public void contextLoads() {
@@ -44,16 +49,27 @@ public class TgSysrlogApplicationTests {
 	 *       cidadeService.createCidade(cidade); }
 	 */
 
-	/** @Commit
+	
 	@Test
-	public void testeFindOrCreateEstado() {
+	public void testeFindOrCreateCep() {
 		createCep.generateCep("12288560");
 	}
-	**/
+	
 	
 	@Test
 	public void testFindCep() {
 		cepService.findByCep("12295370");
+	}
+	
+	
+	@Test
+	public void testCalcDistance() {
+		Distancia dis = calculaDistancia.calcDistancia("12288560", "12285020");
+		System.out.println(dis.getCepOrigem());
+		System.out.println(dis.getCepDestino());
+		System.out.println(dis.getTimeInSeconds());
+		System.out.println(dis.getDistanciaInMeters());
+		System.out.println(dis.toString());
 	}
 	
 }
