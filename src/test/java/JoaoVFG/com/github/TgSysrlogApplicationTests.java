@@ -1,17 +1,22 @@
 package JoaoVFG.com.github;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import JoaoVFG.com.github.domain.dto.EnderecoClienteDTO;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.CidadeService;
 import JoaoVFG.com.github.service.EstadoService;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
 import JoaoVFG.com.github.service.route.CalculaDistancia;
 import JoaoVFG.com.github.service.route.Distancia;
+import JoaoVFG.com.github.service.route.GeraRota;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -31,6 +36,9 @@ public class TgSysrlogApplicationTests {
 	
 	@Autowired
 	CalculaDistancia calculaDistancia;
+	
+	@Autowired
+	GeraRota geraRota;
 
 	@Test
 	public void contextLoads() {
@@ -49,7 +57,7 @@ public class TgSysrlogApplicationTests {
 	 *       cidadeService.createCidade(cidade); }
 	 */
 
-	
+	/**
 	@Test
 	public void testeFindOrCreateCep() {
 		createCep.generateCep("12288560");
@@ -70,6 +78,21 @@ public class TgSysrlogApplicationTests {
 		System.out.println(dis.getTimeInSeconds());
 		System.out.println(dis.getDistanciaInMeters());
 		System.out.println(dis.toString());
+	}
+	
+	*/
+	@Test
+	public void testAchouMenor() {
+		String filial = "12288560";
+		
+		List<EnderecoClienteDTO> enderecoClienteDTOs = new ArrayList<EnderecoClienteDTO>();
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281350", "0"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12285020", "0"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12295370", "0"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12280050", "0"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12288460", "0"));
+		
+		geraRota.geraRota(filial, 0, enderecoClienteDTOs);
 	}
 	
 }

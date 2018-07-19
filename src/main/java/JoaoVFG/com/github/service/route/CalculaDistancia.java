@@ -1,5 +1,7 @@
 package JoaoVFG.com.github.service.route;
 
+import java.net.URLEncoder;
+
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
@@ -12,7 +14,7 @@ import org.springframework.stereotype.Service;
 /**
  * *
  * @author joao.garcia
- * A parte do Parse de XML só pode ser realizada pelo posto do usuário Jai Dixit 
+ * A parte do Parse de XML só pode ser realizada pelo post do usuário Jai Dixit 
  * No link: https://stackoverflow.com/questions/40561264/how-to-use-google-maps-distance-matrix-java-api-to-obtain-closest-distance-betwe/48487598#48487598?newreg=a944c57ea41c4e3092b502efb401471b
  */
 
@@ -22,10 +24,13 @@ public class CalculaDistancia {
 	public Distancia calcDistancia(String cepOrigem, String cepDestino) {
 		
 		JsonObject objectResponse = null;
+		
 		try {
 			DefaultHttpClient httpClient = new DefaultHttpClient();
-			HttpGet httpGet = new HttpGet("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" + cepOrigem + 
-					"&destinations=" + cepDestino + "&travelmode=driving");
+			String url = "http://maps.googleapis.com/maps/api/distancematrix/json?"
+					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
+					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving";
+			HttpGet httpGet = new HttpGet(url);
 			HttpResponse httpResponse = httpClient.execute(httpGet);
 			
 			HttpEntity entity = httpResponse.getEntity();
@@ -56,7 +61,6 @@ public class CalculaDistancia {
 			
 			JsonObject distanciaJson = (JsonObject) objAuxFinal.get("distance");
 			JsonObject tempoJson = (JsonObject) objAuxFinal.get("duration");
-			
 			distancia.setDistanciaInMeters(Integer.parseInt(distanciaJson.get("value").toString()));
 			distancia.setTimeInSeconds(Integer.parseInt(tempoJson.get("value").toString()));			
 			

@@ -21,8 +21,9 @@ public class Distancia {
 		this.distanciaInMeters = distancia;
 		this.timeInSeconds = timeInSeconds;
 	}
-
-
+	
+	
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
