@@ -90,7 +90,7 @@ public class TgSysrlogApplicationTests {
 		enderecoClienteDTOs.add(new EnderecoClienteDTO("12295370", "132"));
 		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281460", "100"));
 		enderecoClienteDTOs.add(new EnderecoClienteDTO("12288460", "100"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281-420", "s/n"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281420", "s/n"));
 		
 		geraRota.geraRota(filial, 0, enderecoClienteDTOs);
 	}

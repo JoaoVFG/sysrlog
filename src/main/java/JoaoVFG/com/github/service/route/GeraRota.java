@@ -16,13 +16,13 @@ import JoaoVFG.com.github.service.CepService;
 public class GeraRota {
 	
 	@Autowired
-	CalculaDistancia calculaDistancia;
+	private CalculaDistancia calculaDistancia;
 	
 	@Autowired
-	CepService cepService;
+	private CepService cepService;
 	
 	
-	public void geraRota(String filial, int idRegiao, List<EnderecoClienteDTO> enderecoClienteDTOs) {
+	public String geraRota(String filial, int idRegiao, List<EnderecoClienteDTO> enderecoClienteDTOs) {
 		List<String> listaEnderecosString = enderecoClienteDtoToString(enderecoClienteDTOs);
 		String enderecoString = filial;
 		
@@ -37,7 +37,7 @@ public class GeraRota {
 		}
 		
 		System.out.println(listaRota);
-		geraUrlMaps(listaRota, filial);
+		return geraUrlMaps(listaRota, filial);
 	}
 	
 	
