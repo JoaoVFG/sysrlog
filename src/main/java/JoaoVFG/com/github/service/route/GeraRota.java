@@ -27,7 +27,6 @@ public class GeraRota {
 		String enderecoString = filial;
 		
 		List<String> listaRota = new ArrayList<String>();
-		listaRota.add(filial);
 
 
 		while(!listaEnderecosString.isEmpty()) {
@@ -38,11 +37,11 @@ public class GeraRota {
 		}
 		
 		System.out.println(listaRota);
-		geraUrlMaps(listaRota);
+		geraUrlMaps(listaRota, filial);
 	}
 	
 	
-	public String geraUrlMaps(List<String> listaRota) {
+	public String geraUrlMaps(List<String> listaRota, String filial) {
 		
 		StringBuilder builder = new StringBuilder();
 		
@@ -52,9 +51,9 @@ public class GeraRota {
 		try {
 
 			builder.append("&origin=");
-			builder.append(URLEncoder.encode(listaRota.get(0),"UTF-8"));
+			builder.append(URLEncoder.encode(filial,"UTF-8"));
 			builder.append("&destination=");
-			builder.append(URLEncoder.encode(listaRota.get(0),"UTF-8"));
+			builder.append(URLEncoder.encode(filial,"UTF-8"));
 			builder.append("&waypoints=");
 			for (String e: listaRota) {
 				builder.append(URLEncoder.encode(e,"UTF-8"));
@@ -92,7 +91,7 @@ public class GeraRota {
 		List<String> enderecosString = new ArrayList<String>();
 		
 		for (EnderecoClienteDTO e: enderecos) {
-			enderecosString.add(cepService.cepToStringEndereco(e.getCep()));
+			enderecosString.add(cepService.cepToStringEndereco(e.getCep(),e.getNumeroLogradouro()));
 		}
 		
 		return enderecosString;

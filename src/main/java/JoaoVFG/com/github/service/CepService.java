@@ -90,13 +90,15 @@ public class CepService {
 		}
 	}
 	
-	public String cepToStringEndereco(String cepBusca) {
+	public String cepToStringEndereco(String cepBusca, String numLogradouro) {
 		Cep cep = new Cep();
 		StringBuilder builder = new StringBuilder();
 		
 		
 		cep = findByCep(cepBusca);
 		builder.append(cep.getNomeRua());
+		builder.append(" ");
+		builder.append(numLogradouro);
 		builder.append(", ");
 		builder.append(cep.getBairro());
 		builder.append(", ");

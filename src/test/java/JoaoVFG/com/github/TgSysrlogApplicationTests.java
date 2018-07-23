@@ -15,7 +15,6 @@ import JoaoVFG.com.github.service.CidadeService;
 import JoaoVFG.com.github.service.EstadoService;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
 import JoaoVFG.com.github.service.route.CalculaDistancia;
-import JoaoVFG.com.github.service.route.Distancia;
 import JoaoVFG.com.github.service.route.GeraRota;
 
 @RunWith(SpringRunner.class)
@@ -86,11 +85,12 @@ public class TgSysrlogApplicationTests {
 		String filial = "12288560";
 		
 		List<EnderecoClienteDTO> enderecoClienteDTOs = new ArrayList<EnderecoClienteDTO>();
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281350", "0"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12285020", "0"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12295370", "0"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12280050", "0"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12288460", "0"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281350", "435"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12285020", "1225"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12295370", "132"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281460", "100"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12288460", "100"));
+		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281-420", "s/n"));
 		
 		geraRota.geraRota(filial, 0, enderecoClienteDTOs);
 	}
