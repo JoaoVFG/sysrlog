@@ -1,6 +1,9 @@
 package JoaoVFG.com.github.service.route;
 
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 import javax.json.Json;
 import javax.json.JsonArray;
@@ -30,12 +33,13 @@ public class CalculaDistancia {
 			String url = "http://maps.googleapis.com/maps/api/distancematrix/json?"
 					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
 					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving";
+			System.out.println(url.toString());
 			HttpGet httpGet = new HttpGet(url);
 			HttpResponse httpResponse = httpClient.execute(httpGet);
 			
 			HttpEntity entity = httpResponse.getEntity();
-			
 			objectResponse = Json.createReader(entity.getContent()).readObject();
+			httpClient.close();
 		}catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -43,6 +47,22 @@ public class CalculaDistancia {
 		return generateDistancia(objectResponse, cepOrigem, cepDestino);
 	}
 	
+	public String findMenorDistancia(String cepOrigem, List<String> enderecosCliente) {
+		
+		
+		List<Distancia> distanciasDoInicio = new ArrayList<Distancia>();
+		
+		for (String e: enderecosCliente) {
+			Distancia d = calcDistancia(cepOrigem, e);
+			distanciasDoInicio.add(d);
+		}
+		
+		distanciasDoInicio.sort(Comparator.comparing(Distancia::getDistanciaInMeters));
+		
+		return distanciasDoInicio.get(0).getCepDestino();
+		
+		
+	}
 	
 	public Distancia generateDistancia(JsonObject object, String cepOrigem, String cepDestino) {
 		

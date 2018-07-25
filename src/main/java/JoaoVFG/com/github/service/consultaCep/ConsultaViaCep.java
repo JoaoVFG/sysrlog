@@ -32,7 +32,7 @@ public class ConsultaViaCep {
 			HttpResponse response = httpClient.execute(httpGet);
 			
 			HttpEntity entity = response.getEntity();
-			
+			httpClient.close();
 			objectResponse = Json.createReader(entity.getContent()).readObject();
 			
 		} catch (Exception e) {

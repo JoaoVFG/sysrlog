@@ -22,8 +22,7 @@ public class RotaResource {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/criaRotaJson")
 	public ResponseEntity<URL> gerarRota(@RequestBody ListaEnderecoRotaDTO listaEnderecoRotaDTO){
-		
-		
+
 		URL rota = rotaService.gerarUriRota(listaEnderecoRotaDTO);
 		
 		return ResponseEntity.ok().body(rota);

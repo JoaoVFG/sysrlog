@@ -31,7 +31,7 @@ public class GeraRota {
 
 		while(!listaEnderecosString.isEmpty()) {
 			System.out.println(enderecoString);
-			enderecoString = findMenorDistancia(enderecoString, listaEnderecosString);
+			enderecoString = calculaDistancia.findMenorDistancia(enderecoString, listaEnderecosString);
 			listaRota.add(enderecoString);
 			listaEnderecosString.remove(enderecoString);
 		}
@@ -70,22 +70,7 @@ public class GeraRota {
 		
 	}
 	
-	public String findMenorDistancia(String cepOrigem, List<String> enderecosCliente) {
-		
-		
-		List<Distancia> distanciasDoInicio = new ArrayList<Distancia>();
-		
-		for (String e: enderecosCliente) {
-			Distancia d = calculaDistancia.calcDistancia(cepOrigem, e);
-			distanciasDoInicio.add(d);
-		}
-		
-		distanciasDoInicio.sort(Comparator.comparing(Distancia::getDistanciaInMeters));
-		
-		return distanciasDoInicio.get(0).getCepDestino();
-		
-		
-	}
+	
 	
 	public List<String> enderecoClienteDtoToString(List<EnderecoClienteDTO> enderecos){
 		List<String> enderecosString = new ArrayList<String>();
