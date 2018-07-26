@@ -12,7 +12,8 @@ import javax.json.JsonObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.stereotype.Service;
 /**
  * *
@@ -29,7 +30,7 @@ public class CalculaDistancia {
 		JsonObject objectResponse = null;
 		
 		try {
-			DefaultHttpClient httpClient = new DefaultHttpClient();
+			CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 			String url = "http://maps.googleapis.com/maps/api/distancematrix/json?"
 					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
 					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving";
@@ -39,7 +40,6 @@ public class CalculaDistancia {
 			
 			HttpEntity entity = httpResponse.getEntity();
 			objectResponse = Json.createReader(entity.getContent()).readObject();
-			httpClient.close();
 		}catch (Exception e) {
 			throw new RuntimeException(e);
 		}

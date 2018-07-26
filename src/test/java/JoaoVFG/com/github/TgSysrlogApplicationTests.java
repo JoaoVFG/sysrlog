@@ -15,6 +15,7 @@ import JoaoVFG.com.github.service.CidadeService;
 import JoaoVFG.com.github.service.EstadoService;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
 import JoaoVFG.com.github.service.route.CalculaDistancia;
+import JoaoVFG.com.github.service.route.Distancia;
 import JoaoVFG.com.github.service.route.GeraRota;
 
 @RunWith(SpringRunner.class)
@@ -68,7 +69,7 @@ public class TgSysrlogApplicationTests {
 		cepService.findByCep("12295370");
 	}
 	
-	
+	*/
 	@Test
 	public void testCalcDistance() {
 		Distancia dis = calculaDistancia.calcDistancia("12288560", "12285020");
@@ -79,7 +80,8 @@ public class TgSysrlogApplicationTests {
 		System.out.println(dis.toString());
 	}
 	
-	*/
+	
+	
 	@Test
 	public void testAchouMenor() {
 		String filial = "12288560";

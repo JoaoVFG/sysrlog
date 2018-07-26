@@ -7,7 +7,8 @@ import javax.json.JsonValue;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 
 /**
  * Entidade baseada nos dados do WS do viacep.com
@@ -27,12 +28,12 @@ public class ConsultaViaCep {
 			}
 			
 			
-			DefaultHttpClient httpClient = new DefaultHttpClient();
+			
+			CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 			HttpGet	httpGet = new HttpGet("https://viacep.com.br/ws/"+cep+"/json");
 			HttpResponse response = httpClient.execute(httpGet);
 			
 			HttpEntity entity = response.getEntity();
-			httpClient.close();
 			objectResponse = Json.createReader(entity.getContent()).readObject();
 			
 		} catch (Exception e) {
