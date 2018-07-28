@@ -13,22 +13,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-@Getter @Setter @NoArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
-public class Cep implements Serializable{
+public class Cep implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String cep;
-	
+
 	private String nomeRua;
-	
+
 	private String bairro;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
@@ -42,5 +43,4 @@ public class Cep implements Serializable{
 		this.cidade = cidade;
 	}
 
-	
 }
