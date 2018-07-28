@@ -6,7 +6,7 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
 	<changeSet author="liquibase-docs"
-		id="addAutoIncrement-example">
+		id="05">
 		<addAutoIncrement catalogName="tg_sysglog"
 			columnDataType="int" columnName="id" incrementBy="1"
 			schemaName="public" startWith="1" tableName="cidade" />

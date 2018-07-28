@@ -13,6 +13,10 @@
          <include file="changelog/05-add-autoincrement.xml" relativeToChangelogFile="true"/>
          <include file="changelog/06-add-foreignkey-cidade.xml" relativeToChangelogFile="true"/>
          <include file="changelog/07-add-foreignkey-cep.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/08-create-tipopessoa.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/09-create-pessoa.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/10-add-foreignkey-pessoa.xml" relativeToChangelogFile="true"/>
+       	 
        	 
                
 
