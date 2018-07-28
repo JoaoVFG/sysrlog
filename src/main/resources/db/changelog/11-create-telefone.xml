@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+	<changeSet id="11" author="JoaoVFG">
+
+		<createTable tableName="Telefone"
+			remarks="Tabela que contem os celulares das pessoas">
+
+			<column name="id" type="int">
+				<constraints primaryKey="true" unique="true"
+					nullable="false" />
+			</column>
+
+			<column name="tipoNumero" type="varchar(10)">
+				<constraints nullable="false" />
+			</column>
+			
+			<column name="numero" type="varchar(15)">
+				<constraints nullable="false" />
+			</column>
+			
+			<column name="pessoa" type="int">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+	</changeSet>
+	
+</databaseChangeLog>

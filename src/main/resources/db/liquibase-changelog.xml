@@ -16,6 +16,9 @@
          <include file="changelog/08-create-tipopessoa.xml" relativeToChangelogFile="true"/>
          <include file="changelog/09-create-pessoa.xml" relativeToChangelogFile="true"/>
          <include file="changelog/10-add-foreignkey-pessoa.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/11-create-telefone.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/12-add-foreignkey-telefone.xml" relativeToChangelogFile="true"/>
+         
        	 
        	 
                
