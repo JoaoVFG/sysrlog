@@ -37,7 +37,8 @@ public class Pessoa implements Serializable {
 	private String sexo;
 	
 	//Construtor Pessoa Fisica
-	public Pessoa(TipoPessoa tipo, String nome, String cpf, String dataNascimento, String sexo) {
+	public Pessoa(Integer id,TipoPessoa tipo, String nome, String cpf, String dataNascimento, String sexo) {
+		this.id = id;
 		this.tipo = tipo;
 		this.nome = nome;
 		this.cpf = cpf;
@@ -46,7 +47,8 @@ public class Pessoa implements Serializable {
 	}
 	
 	//Construtor Pessoa juridica
-	public Pessoa(TipoPessoa tipo, String razaoSocial, String cnpj) {
+	public Pessoa(Integer id, TipoPessoa tipo, String razaoSocial, String cnpj) {
+		this.id = id;
 		this.tipo = tipo;
 		this.razaoSocial = razaoSocial;
 		this.cpnj = cnpj;
