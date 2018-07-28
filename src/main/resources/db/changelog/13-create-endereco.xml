@@ -4,10 +4,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-         
+
 	<changeSet id="11" author="JoaoVFG">
 
-		<createTable tableName="Telefone"
+		<createTable tableName="endereco"
 			remarks="Tabela que contem os celulares das pessoas">
 
 			<column name="id" type="int">
@@ -15,25 +15,30 @@
 					nullable="false" />
 			</column>
 
-			<column name="tipoNumero" type="varchar(10)">
-				<constraints nullable="false" />
-			</column>
-			
-			<column name="numero" type="varchar(15)">
-				<constraints nullable="false" />
-			</column>
-			
 			<column name="pessoa" type="int">
 				<constraints nullable="false" />
 			</column>
-		</createTable>
 
+			<column name="cep" type="int">
+				<constraints nullable="false" />
+			</column>
+
+			<column name="numeroLogradouro" type="int">
+				<constraints nullable="true" />
+			</column>
+
+			<column name="complemento" type="varchar(50)">
+				<constraints nullable="true" />
+			</column>
+
+		</createTable>
 	</changeSet>
-	
-	<changeSet id="11.1" author="JoaoVFG">
+
+
+	<changeSet id="13.1" author="JoaoVFG">
 		<addAutoIncrement catalogName="tg_sysglog"
 			columnDataType="int" columnName="id" incrementBy="1"
-			schemaName="public" startWith="1" tableName="telefone" />
+			schemaName="public" startWith="1" tableName="endereco" />
 	</changeSet>
-	
+
 </databaseChangeLog>

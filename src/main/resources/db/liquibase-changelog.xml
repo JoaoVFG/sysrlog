@@ -18,6 +18,8 @@
          <include file="changelog/10-add-foreignkey-pessoa.xml" relativeToChangelogFile="true"/>
          <include file="changelog/11-create-telefone.xml" relativeToChangelogFile="true"/>
          <include file="changelog/12-add-foreignkey-telefone.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/13-create-endereco.xml" relativeToChangelogFile="true"/>
+         <include file="changelog/14-add-foreignkey-endereco.xml" relativeToChangelogFile="true"/>
          
        	 
        	 

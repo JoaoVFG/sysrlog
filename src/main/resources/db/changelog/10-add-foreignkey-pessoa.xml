@@ -7,7 +7,7 @@
          
     <changeSet id="10" author="JoaoVFG">
 		<addForeignKeyConstraint baseTableName="pessoa" baseColumnNames="tipo"
-  				constraintName="tipopessoa_fk"
+  				constraintName="pessoa_tipopessoa_fk"
   				referencedTableName="tipopessoa" referencedColumnNames="id"/>
 
 	</changeSet>

@@ -5,10 +5,13 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
          
-    <changeSet id="12" author="JoaoVFG">
-		<addForeignKeyConstraint baseTableName="telefone" baseColumnNames="pessoa"
-  				constraintName="telefone_pessoa_fk"
+    <changeSet id="14" author="JoaoVFG">
+		<addForeignKeyConstraint baseTableName="endereco" baseColumnNames="pessoa"
+  				constraintName="endereco_pessoa_fk"
   				referencedTableName="pessoa" referencedColumnNames="id"/>
-
+  				
+		<addForeignKeyConstraint baseTableName="endereco" baseColumnNames="cep"
+  				constraintName="cep_fk"
+  				referencedTableName="cep" referencedColumnNames="id"/>
 	</changeSet>
 </databaseChangeLog>
