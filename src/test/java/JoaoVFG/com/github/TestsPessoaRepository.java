@@ -23,7 +23,7 @@ import JoaoVFG.com.github.repositories.TipoPessoaRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestsPessoa {
+public class TestsPessoaRepository {
 
 	@Autowired
 	PessoaRepository pessoaRepository;
