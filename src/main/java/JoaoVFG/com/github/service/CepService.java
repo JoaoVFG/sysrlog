@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.domain.Cep;
-import JoaoVFG.com.github.domain.Cidade;
+import JoaoVFG.com.github.entity.Cep;
+import JoaoVFG.com.github.entity.Cidade;
 import JoaoVFG.com.github.repositories.CepRepository;
 import JoaoVFG.com.github.repositories.CidadeRepository;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;

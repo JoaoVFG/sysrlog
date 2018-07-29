@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.domain.dto;
+package JoaoVFG.com.github.entity.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;

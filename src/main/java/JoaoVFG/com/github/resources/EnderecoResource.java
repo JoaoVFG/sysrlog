@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoaoVFG.com.github.domain.Cep;
-import JoaoVFG.com.github.domain.Cidade;
+import JoaoVFG.com.github.entity.Cep;
+import JoaoVFG.com.github.entity.Cidade;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.CidadeService;
 

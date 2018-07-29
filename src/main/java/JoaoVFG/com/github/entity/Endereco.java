@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.domain;
+package JoaoVFG.com.github.entity;
 
 import java.io.Serializable;
 
@@ -15,28 +15,30 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-public class Telefone implements Serializable{
+public class Endereco implements Serializable{
 	private static final long serialVersionUID = 1L;
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String tipoNumero;
-	
-	private String numero;
-	
 	private Pessoa pessoa;
+	
+	private Cep cep;
+	
+	private Integer numeroLogradouro;
+	
+	private String complemento;
+	
 
-	public Telefone(Integer id, String tipoNumero, String numero, Pessoa pessoa) {
+	public Endereco(Integer id, Pessoa pessoa, Cep cep, Integer numeroLogradouro, String complemento) {
 		super();
 		this.id = id;
-		this.tipoNumero = tipoNumero;
-		this.numero = numero;
 		this.pessoa = pessoa;
+		this.cep = cep;
+		this.numeroLogradouro = numeroLogradouro;
+		this.complemento = complemento;
 	}
-	
 	
 	
 	

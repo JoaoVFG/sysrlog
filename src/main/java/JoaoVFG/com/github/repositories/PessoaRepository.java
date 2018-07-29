@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import JoaoVFG.com.github.domain.Pessoa;
-import JoaoVFG.com.github.domain.TipoPessoa;
+import JoaoVFG.com.github.entity.Pessoa;
+import JoaoVFG.com.github.entity.TipoPessoa;
 
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Integer>{

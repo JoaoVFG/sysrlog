@@ -10,8 +10,8 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import JoaoVFG.com.github.domain.Cidade;
-import JoaoVFG.com.github.domain.Estado;
+import JoaoVFG.com.github.entity.Cidade;
+import JoaoVFG.com.github.entity.Estado;
 
 @Repository
 public interface CidadeRepository extends JpaRepository<Cidade, Integer> {

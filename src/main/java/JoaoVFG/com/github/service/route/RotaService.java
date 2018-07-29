@@ -6,7 +6,7 @@ import java.net.URL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.domain.dto.ListaEnderecoRotaDTO;
+import JoaoVFG.com.github.entity.dto.ListaEnderecoRotaDTO;
 
 @Service
 public class RotaService {

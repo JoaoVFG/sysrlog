@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.domain.dto.EnderecoClienteDTO;
+import JoaoVFG.com.github.entity.dto.EnderecoClienteDTO;
 import JoaoVFG.com.github.service.CepService;
 
 @Service

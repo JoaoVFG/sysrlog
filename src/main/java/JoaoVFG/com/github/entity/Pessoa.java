@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.domain;
+package JoaoVFG.com.github.entity;
 
 import java.io.Serializable;
 
@@ -25,7 +25,7 @@ public class Pessoa implements Serializable {
 	private Integer id;
 	
 	@ManyToOne
-	@JoinColumn(name = "tipo_id")
+	@JoinColumn(name = "TIPO_ID")
 	private TipoPessoa tipo;
 	
 	private String nome;

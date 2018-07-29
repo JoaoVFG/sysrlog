@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.domain;
+package JoaoVFG.com.github.entity;
 
 import java.io.Serializable;
 

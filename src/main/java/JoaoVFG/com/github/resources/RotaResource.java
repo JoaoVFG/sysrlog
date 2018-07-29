@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoaoVFG.com.github.domain.dto.ListaEnderecoRotaDTO;
+import JoaoVFG.com.github.entity.dto.ListaEnderecoRotaDTO;
 import JoaoVFG.com.github.service.route.RotaService;
 
 @RestController

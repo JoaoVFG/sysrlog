@@ -5,8 +5,10 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.domain.Pessoa;
+import JoaoVFG.com.github.entity.Pessoa;
+import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.repositories.PessoaRepository;
+import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
@@ -25,6 +27,9 @@ public class DBServiceTest {
 	
 	@Autowired
 	TipoPessoaRepository tipo;
+	
+	@Autowired
+	TelefoneRepository telefoneRepository;
 	
 	public void instantiateTesteDataBase() {
 		
@@ -46,6 +51,20 @@ public class DBServiceTest {
 		Pessoa pessoaj4 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "mandou X", "898725950008");
 		pessoaRepository.saveAll(Arrays.asList(pessoaf1,pessoaf2,pessoaf3,pessoaf4,pessoaj1,pessoaj2,pessoaj3,pessoaj4));
 		
+		Telefone tel1 = new Telefone(null, "Celular", "12991157861", pessoaf1);
+		Telefone tel2 = new Telefone(null, "Celular", "12996260032", pessoaf1);
+		Telefone tel3 = new Telefone(null, "Celular", "12991450102", pessoaf2);
+		Telefone tel4 = new Telefone(null, "Celular", "12981345477", pessoaf3);
+		Telefone tel5 = new Telefone(null, "Celular", "12991292612", pessoaf4);
+		Telefone tel6 = new Telefone(null, "Fixo", "1236525626", pessoaf4);
+		Telefone tel7 = new Telefone(null, "Fixo", "1236524048", pessoaf4);
+		Telefone tel8 = new Telefone(null, "Fixo", "1185988587", pessoaj2);
+		Telefone tel9 = new Telefone(null, "Fixo", "1188996633", pessoaj2);
+		Telefone tel10 = new Telefone(null, "Celular", "11955889966", pessoaj3);
+		Telefone tel11 = new Telefone(null, "Fixo", "1256566336", pessoaj4);
+		Telefone tel12 = new Telefone(null, "celular", "12988774455", pessoaj4);
+		
+		telefoneRepository.saveAll(Arrays.asList(tel1,tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11,tel12));
 		
 		
 	}

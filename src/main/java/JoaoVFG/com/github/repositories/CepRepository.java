@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import JoaoVFG.com.github.domain.Cep;
-import JoaoVFG.com.github.domain.Cidade;
+import JoaoVFG.com.github.entity.Cep;
+import JoaoVFG.com.github.entity.Cidade;
 
 public interface CepRepository extends JpaRepository<Cep, Integer>{
 	

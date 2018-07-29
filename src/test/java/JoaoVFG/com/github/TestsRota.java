@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import JoaoVFG.com.github.domain.dto.EnderecoClienteDTO;
+import JoaoVFG.com.github.entity.dto.EnderecoClienteDTO;
 import JoaoVFG.com.github.service.route.CalculaDistancia;
 import JoaoVFG.com.github.service.route.Distancia;
 import JoaoVFG.com.github.service.route.GeraRota;
