@@ -14,11 +14,11 @@
 				<constraints primaryKey="true" unique="true"/>
 			</column>
 
-			<column name="PESSOA" type="int">
+			<column name="PESSOA_ID" type="int">
 				<constraints nullable="false" />
 			</column>
 
-			<column name="CEP" type="int">
+			<column name="CEP_ID" type="int">
 				<constraints nullable="false" />
 			</column>
 

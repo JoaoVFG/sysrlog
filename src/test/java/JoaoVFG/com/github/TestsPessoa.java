@@ -13,8 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Telefone;
+import JoaoVFG.com.github.repositories.CepRepository;
+import JoaoVFG.com.github.repositories.EnderecoRepository;
 import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
@@ -31,6 +34,12 @@ public class TestsPessoa {
 
 	@Autowired
 	TelefoneRepository telefoneRepository;
+	
+	@Autowired
+	EnderecoRepository endereceoRepository;
+	
+	@Autowired
+	CepRepository cepRepository;
 
 	@Test
 	public void createPessoa() {
@@ -85,5 +94,16 @@ public class TestsPessoa {
 				.findBypessoaAndtipoNumero(pessoaRepository.findBycpf("58963221474").get().getId(), "Celular");
 		assertNotNull(telefones);
 	}
-
+	
+	@Test
+	public void testFindEnderecoByPessoa() {
+		Optional<Endereco> endereco = endereceoRepository.findBypessoa(pessoaRepository.findBycpf("89988998899"));
+		assertNotNull(endereco);
+	}
+	
+	@Test
+	public void testFindEnderecosCep() {
+		Optional<List<Endereco>> enderecos = endereceoRepository.findBycep(cepRepository.findBycep("12288560"));
+		assertNotNull(enderecos);
+	}
 }
