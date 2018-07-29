@@ -47,7 +47,7 @@ public class DBServiceTest {
 		createCep.generateCep("12281420");
 
 		Pessoa pessoaf1 = new Pessoa(null, tipo.findByid(1), "JV", "45567860889", "21/07/1996", "M");
-		Pessoa pessoaf2 = new Pessoa(null, tipo.findByid(1), "JJ", "15593054807", "01/11/1967", "M");
+		Pessoa pessoaf2 = new Pessoa(null, tipo.findByid(1), "JJ", "11593054807", "01/11/1967", "M");
 		Pessoa pessoaf3 = new Pessoa(null, tipo.findByid(1), "Ingrid", "89988998899", "11/08/1993", "F");
 		Pessoa pessoaf4 = new Pessoa(null, tipo.findByid(1), "carla", "58963221474", "13/04/1970", "F");
 		Pessoa pessoaj1 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "trans A", "4478969850008");
