@@ -7,26 +7,26 @@
 
 	<changeSet id="11" author="JoaoVFG">
 
-		<createTable tableName="endereco"
+		<createTable tableName="ENDERECO"
 			remarks="Tabela que contem os celulares das pessoas">
 
-			<column name="id" type="int">
+			<column name="ID" type="int">
 				<constraints primaryKey="true" unique="true"/>
 			</column>
 
-			<column name="pessoa" type="int">
+			<column name="PESSOA" type="int">
 				<constraints nullable="false" />
 			</column>
 
-			<column name="cep" type="int">
+			<column name="CEP" type="int">
 				<constraints nullable="false" />
 			</column>
 
-			<column name="numero_Logradouro" type="int">
+			<column name="NUMERO_LOGRADOURO" type="int">
 				<constraints nullable="true" />
 			</column>
 
-			<column name="complemento" type="varchar(50)">
+			<column name="COMPLEMENTO" type="varchar(50)">
 				<constraints nullable="true" />
 			</column>
 
@@ -36,8 +36,8 @@
 
 	<changeSet id="13.1" author="JoaoVFG">
 		<addAutoIncrement catalogName="tg_sysglog"
-			columnDataType="int" columnName="id" incrementBy="1"
-			schemaName="public" startWith="1" tableName="endereco" />
+			columnDataType="int" columnName="ID" incrementBy="1"
+			schemaName="public" startWith="1" tableName="ENDERECO" />
 	</changeSet>
 
 </databaseChangeLog>

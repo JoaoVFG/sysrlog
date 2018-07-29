@@ -7,26 +7,26 @@
          
     <changeSet id="04" author="JoaoVFG">
 
-		<createTable tableName="cep"
+		<createTable tableName="CEP"
 			remarks="Tabela que contem os ceps e a cidae respectiva">
 
-			<column name="id" type="int">
+			<column name="ID" type="int">
 				<constraints primaryKey="true" unique="true" />
 			</column>
 			
-			<column name="cep" type="varchar(100)">
+			<column name="CEP" type="varchar(100)">
 				<constraints nullable="false" />
 			</column>
 			
-			<column name="nome_rua" type="varchar(100)">
+			<column name="NOME_RUA" type="varchar(100)">
 				<constraints nullable="false" />
 			</column>
 			
-			<column name="bairro" type="varchar(100)">
+			<column name="BAIRRO" type="varchar(100)">
 				<constraints nullable="false" />
 			</column>
 
-			<column name="cidade_id" type="int">
+			<column name="CIDADE_ID" type="int">
 				<constraints  nullable="false" />
 			</column>
 

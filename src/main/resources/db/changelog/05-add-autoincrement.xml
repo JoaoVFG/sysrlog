@@ -7,10 +7,10 @@
 
 	<changeSet id="05" author="JoaoVFG">
 		<addAutoIncrement catalogName="tg_sysglog"
-			columnDataType="int" columnName="id" incrementBy="1"
-			schemaName="public" startWith="1" tableName="cidade" />
+			columnDataType="int" columnName="ID" incrementBy="1"
+			schemaName="public" startWith="1" tableName="CIDADE" />
 		<addAutoIncrement catalogName="tg_sysglog"
-			columnDataType="int" columnName="id" incrementBy="1"
-			schemaName="public" startWith="1" tableName="cep" />
+			columnDataType="int" columnName="ID" incrementBy="1"
+			schemaName="public" startWith="1" tableName="CEP" />
 	</changeSet>
 </databaseChangeLog>

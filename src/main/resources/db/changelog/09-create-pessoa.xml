@@ -7,28 +7,28 @@
 
 	<changeSet id="09" author="JoaoVFG">
 
-		<createTable tableName="Pessoa"
+		<createTable tableName="PESSOA"
 			remarks="Tabela que cadastro das pessoas que usam o sistema">
 
-			<column name="id" type="int">
+			<column name="ID" type="int">
 				<constraints primaryKey="true" unique="true"/>
 			</column>
 			
-			<column name="tipo_id" type="int">
+			<column name="TIPO_ID" type="int">
 				<constraints nullable="false" />
 			</column>
 			
-			<column name="nome" type="varchar(120)"></column>
+			<column name="NOME" type="varchar(120)"></column>
 			
-			<column name="razao_Social" type="varchar(120)"></column>
+			<column name="RAZAO_SOCIAL" type="varchar(120)"></column>
 			
 			<column name="CPF" type="varchar(11)"></column>
 			
 			<column name="CNPJ" type="varchar(14)"></column>
 			
-			<column name="data_Nascimento" type="varchar(10)"></column>
+			<column name="DATA_NASCIMENTO" type="varchar(10)"></column>
 			
-			<column name="sexo" type="varchar(1)"></column>
+			<column name="SEXO" type="varchar(1)"></column>
 
 		</createTable>
 
@@ -36,8 +36,8 @@
 	
 	<changeSet id="09.1" author="JoaoVFG">
 		<addAutoIncrement catalogName="tg_sysglog"
-			columnDataType="int" columnName="id" incrementBy="1"
-			schemaName="public" startWith="1" tableName="pessoa" />
+			columnDataType="int" columnName="ID" incrementBy="1"
+			schemaName="public" startWith="1" tableName="PESSOA" />
 	</changeSet>
 
 </databaseChangeLog>

@@ -6,9 +6,9 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
          
     <changeSet id="12" author="JoaoVFG">
-		<addForeignKeyConstraint baseTableName="telefone" baseColumnNames="pessoa"
-  				constraintName="telefone_pessoa_fk"
-  				referencedTableName="pessoa" referencedColumnNames="id"/>
+		<addForeignKeyConstraint baseTableName="TELEFONE" baseColumnNames="PESSOA_ID"
+  				constraintName="TELEFONE_PESSOA_FK"
+  				referencedTableName="PESSOA" referencedColumnNames="ID"/>
 
 	</changeSet>
 </databaseChangeLog>

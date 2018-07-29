@@ -6,12 +6,12 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
          
     <changeSet id="14" author="JoaoVFG">
-		<addForeignKeyConstraint baseTableName="endereco" baseColumnNames="pessoa"
-  				constraintName="endereco_pessoa_fk"
-  				referencedTableName="pessoa" referencedColumnNames="id"/>
+		<addForeignKeyConstraint baseTableName="ENDERECO" baseColumnNames="PESSOA"
+  				constraintName="ENDERECO_PESSOA_FK"
+  				referencedTableName="PESSOA" referencedColumnNames="ID"/>
   				
-		<addForeignKeyConstraint baseTableName="endereco" baseColumnNames="cep"
-  				constraintName="cep_fk"
-  				referencedTableName="cep" referencedColumnNames="id"/>
+		<addForeignKeyConstraint baseTableName="ENDERECO" baseColumnNames="CEP"
+  				constraintName="ENDERECO_CEP_FK"
+  				referencedTableName="CEP" referencedColumnNames="ID"/>
 	</changeSet>
 </databaseChangeLog>

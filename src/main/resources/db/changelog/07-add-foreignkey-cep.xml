@@ -6,9 +6,9 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
          
     <changeSet id="07" author="JoaoVFG">
-		<addForeignKeyConstraint baseTableName="cep" baseColumnNames="cidade_id"
-  				constraintName="cep_cidade_fk"
-  				referencedTableName="cidade" referencedColumnNames="id"/>
+		<addForeignKeyConstraint baseTableName="CEP" baseColumnNames="CIDADE_ID"
+  				constraintName="CEP_CIDADE_FK"
+  				referencedTableName="CIDADE" referencedColumnNames="ID"/>
 
 	</changeSet>
 </databaseChangeLog>

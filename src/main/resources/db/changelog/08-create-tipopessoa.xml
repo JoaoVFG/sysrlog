@@ -7,15 +7,15 @@
          
 	<changeSet id="08" author="JoaoVFG">
 
-		<createTable tableName="Tipo_Pessoa"
+		<createTable tableName="TIPO_PESSOA"
 			remarks="Tabela que contem os tipos das pessoas">
 
-			<column name="id" type="int">
+			<column name="ID" type="int">
 				<constraints primaryKey="true" unique="true"
 					nullable="false" />
 			</column>
 
-			<column name="descricao" type="varchar(40)">
+			<column name="DESCRICAO" type="varchar(40)">
 				<constraints unique="true" nullable="false" />
 			</column>
 		</createTable>

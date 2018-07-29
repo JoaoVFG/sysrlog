@@ -8,139 +8,139 @@
 	<changeSet id="02" author="JoaoVFG">
 		<comment>Inserting Estados</comment>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="01" />
-			<column name="nome" value="Acre" />
-			<column name="sigla" value="AC" />
+			<column name="ID" valueNumeric="01" />
+			<column name="NOME" value="Acre" />
+			<column name="SIGLA" value="AC" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="02" />
-			<column name="nome" value="Alagoas" />
-			<column name="sigla" value="AL" />
+			<column name="ID" valueNumeric="02" />
+			<column name="NOME" value="Alagoas" />
+			<column name="SIGLA" value="AL" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="03" />
-			<column name="nome" value="Amapá" />
-			<column name="sigla" value="AP" />
+			<column name="ID" valueNumeric="03" />
+			<column name="NOME" value="Amapá" />
+			<column name="SIGLA" value="AP" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="04" />
-			<column name="nome" value="Amazonas" />
-			<column name="sigla" value="AM" />
+			<column name="ID" valueNumeric="04" />
+			<column name="NOME" value="Amazonas" />
+			<column name="SIGLA" value="AM" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="05" />
-			<column name="nome" value="Bahia" />
-			<column name="sigla" value="BA" />
+			<column name="ID" valueNumeric="05" />
+			<column name="NOME" value="Bahia" />
+			<column name="SIGLA" value="BA" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="06" />
-			<column name="nome" value="Ceará" />
-			<column name="sigla" value="CE" />
+			<column name="ID" valueNumeric="06" />
+			<column name="NOME" value="Ceará" />
+			<column name="SIGLA" value="CE" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="07" />
-			<column name="nome" value="Distrito Federal" />
-			<column name="sigla" value="DF" />
+			<column name="ID" valueNumeric="07" />
+			<column name="NOME" value="Distrito Federal" />
+			<column name="SIGLA" value="DF" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="08" />
-			<column name="nome" value="Espírito Santo" />
-			<column name="sigla" value="ES" />
+			<column name="ID" valueNumeric="08" />
+			<column name="NOME" value="Espírito Santo" />
+			<column name="SIGLA" value="ES" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="09" />
-			<column name="nome" value="Goiás" />
-			<column name="sigla" value="GO" />
+			<column name="ID" valueNumeric="09" />
+			<column name="NOME" value="Goiás" />
+			<column name="SIGLA" value="GO" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="10" />
-			<column name="nome" value="Maranhão" />
-			<column name="sigla" value="MA" />
+			<column name="ID" valueNumeric="10" />
+			<column name="NOME" value="Maranhão" />
+			<column name="SIGLA" value="MA" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="11" />
-			<column name="nome" value="Mato Grosso" />
-			<column name="sigla" value="MT" />
+			<column name="ID" valueNumeric="11" />
+			<column name="NOME" value="Mato Grosso" />
+			<column name="SIGLA" value="MT" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="12" />
-			<column name="nome" value="Mato Grosso do Sul" />
-			<column name="sigla" value="MS" />
+			<column name="ID" valueNumeric="12" />
+			<column name="NOME" value="Mato Grosso do Sul" />
+			<column name="SIGLA" value="MS" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="13" />
-			<column name="nome" value="Minas Gerais" />
-			<column name="sigla" value="MG" />
+			<column name="ID" valueNumeric="13" />
+			<column name="NOME" value="Minas Gerais" />
+			<column name="SIGLA" value="MG" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="14" />
-			<column name="nome" value="Pará" />
-			<column name="sigla" value="PA" />
+			<column name="ID" valueNumeric="14" />
+			<column name="NOME" value="Pará" />
+			<column name="SIGLA" value="PA" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="15" />
-			<column name="nome" value="Paraíba" />
-			<column name="sigla" value="PB" />
+			<column name="ID" valueNumeric="15" />
+			<column name="NOME" value="Paraíba" />
+			<column name="SIGLA" value="PB" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="16" />
-			<column name="nome" value="Paraná" />
-			<column name="sigla" value="PR" />
+			<column name="ID" valueNumeric="16" />
+			<column name="NOME" value="Paraná" />
+			<column name="SIGLA" value="PR" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="17" />
-			<column name="nome" value="Pernambuco" />
-			<column name="sigla" value="PE" />
+			<column name="ID" valueNumeric="17" />
+			<column name="NOME" value="Pernambuco" />
+			<column name="SIGLA" value="PE" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="18" />
-			<column name="nome" value="Piauí" />
-			<column name="sigla" value="PI" />
+			<column name="ID" valueNumeric="18" />
+			<column name="NOME" value="Piauí" />
+			<column name="SIGLA" value="PI" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="19" />
-			<column name="nome" value="Rio de Janeiro" />
-			<column name="sigla" value="RJ" />
+			<column name="ID" valueNumeric="19" />
+			<column name="NOME" value="Rio de Janeiro" />
+			<column name="SIGLA" value="RJ" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="20" />
-			<column name="nome" value="Rio Grande do Norte" />
-			<column name="sigla" value="RN" />
+			<column name="ID" valueNumeric="20" />
+			<column name="NOME" value="Rio Grande do Norte" />
+			<column name="SIGLA" value="RN" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="21" />
-			<column name="nome" value="Rio Grande do Sul" />
-			<column name="sigla" value="RS" />
+			<column name="ID" valueNumeric="21" />
+			<column name="NOME" value="Rio Grande do Sul" />
+			<column name="SIGLA" value="RS" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="22" />
-			<column name="nome" value="Rondônia" />
-			<column name="sigla" value="RO" />
+			<column name="ID" valueNumeric="22" />
+			<column name="NOME" value="Rondônia" />
+			<column name="SIGLA" value="RO" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="23" />
-			<column name="nome" value="Roraima" />
-			<column name="sigla" value="RR" />
+			<column name="ID" valueNumeric="23" />
+			<column name="NOME" value="Roraima" />
+			<column name="SIGLA" value="RR" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="24" />
-			<column name="nome" value="Santa Catarina" />
-			<column name="sigla" value="SC" />
+			<column name="ID" valueNumeric="24" />
+			<column name="NOME" value="Santa Catarina" />
+			<column name="SIGLA" value="SC" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="25" />
-			<column name="nome" value="São Paulo" />
-			<column name="sigla" value="SP" />
+			<column name="ID" valueNumeric="25" />
+			<column name="NOME" value="São Paulo" />
+			<column name="SIGLA" value="SP" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="26" />
-			<column name="nome" value="Sergipe" />
-			<column name="sigla" value="SE" />
+			<column name="ID" valueNumeric="26" />
+			<column name="NOME" value="Sergipe" />
+			<column name="SIGLA" value="SE" />
 		</insert>
 		<insert tableName="Estado">
-			<column name="id" valueNumeric="27" />
-			<column name="nome" value="Tocantins" />
-			<column name="sigla" value="TO" />
+			<column name="ID" valueNumeric="27" />
+			<column name="NOME" value="Tocantins" />
+			<column name="SIGLA" value="TO" />
 		</insert>
 
 	</changeSet>

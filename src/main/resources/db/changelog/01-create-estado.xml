@@ -7,18 +7,18 @@
 
 	<changeSet id="01" author="JoaoVFG">
 
-		<createTable tableName="Estado"
+		<createTable tableName="ESTADO"
 			remarks="Tabela que contem estados e Siglas">
 
-			<column name="id" type="int">
+			<column name="ID" type="int">
 				<constraints primaryKey="true" unique="true"/>
 			</column>
 
-			<column name="nome" type="varchar(40)">
+			<column name="NOME" type="varchar(40)">
 				<constraints unique="true" nullable="false" />
 			</column>
 
-			<column name="sigla" type="varchar(2)">
+			<column name="SIGLA" type="varchar(2)">
 				<constraints unique="true" nullable="false" />
 			</column>
 

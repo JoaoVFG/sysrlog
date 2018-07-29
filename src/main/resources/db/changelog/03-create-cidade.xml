@@ -7,18 +7,18 @@
          
     <changeSet id="03" author="JoaoVFG">
 
-		<createTable tableName="Cidade"
+		<createTable tableName="CIDADE"
 			remarks="Tabela que contem as cidades e o estado respectivo">
 
-			<column name="id" type="int">
+			<column name="ID" type="int">
 				<constraints primaryKey="true" unique="true" />
 			</column>
 
-			<column name="nome" type="varchar(100)">
+			<column name="NOME" type="varchar(100)">
 				<constraints nullable="false" />
 			</column>
 
-			<column name="estado_id" type="int">
+			<column name="ESTADO_ID" type="int">
 				<constraints  nullable="false" />
 			</column>
 

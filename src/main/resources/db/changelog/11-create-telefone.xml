@@ -7,22 +7,22 @@
          
 	<changeSet id="11" author="JoaoVFG">
 
-		<createTable tableName="Telefone"
+		<createTable tableName="TELEFONE"
 			remarks="Tabela que contem os celulares das pessoas">
 
-			<column name="id" type="int">
+			<column name="ID" type="int">
 				<constraints primaryKey="true" unique="true" />
 			</column>
 
-			<column name="tipo_Numero" type="varchar(10)">
+			<column name="TIPO_NUMERO" type="varchar(10)">
 				<constraints nullable="false" />
 			</column>
 			
-			<column name="numero" type="varchar(15)">
+			<column name="NUMERO" type="varchar(15)">
 				<constraints nullable="false" />
 			</column>
 			
-			<column name="pessoa" type="int">
+			<column name="PESSOA_ID" type="int">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
@@ -31,8 +31,8 @@
 	
 	<changeSet id="11.1" author="JoaoVFG">
 		<addAutoIncrement catalogName="tg_sysglog"
-			columnDataType="int" columnName="id" incrementBy="1"
-			schemaName="public" startWith="1" tableName="telefone" />
+			columnDataType="int" columnName="ID" incrementBy="1"
+			schemaName="public" startWith="1" tableName="TELEFONE" />
 	</changeSet>
 	
 </databaseChangeLog>
