@@ -1,5 +1,8 @@
 package JoaoVFG.com.github;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -26,16 +29,8 @@ public class TestsPessoa {
 	
 	@Test
 	public void createPessoa() {
-		Pessoa pessoaf1 = new Pessoa(null, tipo.findByid(1), "JV", "45567860889", "21/07/1996", "M");
-		Pessoa pessoaf2 = new Pessoa(null, tipo.findByid(1), "JJ", "15593054807", "01/11/1967", "M");
-		Pessoa pessoaf3 = new Pessoa(null, tipo.findByid(1), "Ingrid", "89988998899", "11/08/1993", "F");
-		Pessoa pessoaf4 = new Pessoa(null, tipo.findByid(1), "carla", "58963221474", "13/04/1970", "F");
-		Pessoa pessoaj1 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "trans A", "4478969850008");
-		Pessoa pessoaj2 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "trans B", "4485478220008");
-		Pessoa pessoaj3 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "ENviadora A", "485874810008");
-		Pessoa pessoaj4 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "mandou X", "898725950008");
-		pessoaRepository.saveAll(Arrays.asList(pessoaf1,pessoaf2,pessoaf3,pessoaf4,pessoaj1,pessoaj2,pessoaj3,pessoaj4));
-		
+		Pessoa pessoaf = new Pessoa(null, tipo.findByid(1), "PAS", "11122233344", "18/06/1989", "M");
+		pessoaRepository.save(pessoaf);
 	}
 	
 	@Test
@@ -45,7 +40,7 @@ public class TestsPessoa {
 			System.out.println(p.toString());
 		}
 	}
-	/**
+	
 	@Test
 	public void findByCpf() {
 		Optional<Pessoa> pessoa = pessoaRepository.findBycpf("45567860889");
@@ -53,21 +48,21 @@ public class TestsPessoa {
 		assertEquals("JV", pessoa.get().getNome());
 		
 	}
-	**/
 	
-	/**
+	
+	
 	@Test
 	public void findByCnpj() {
 		Optional<Pessoa> pessoa = pessoaRepository.findBycnpj("898725950008");
 		assertEquals("mandou X", pessoa.get().getRazaoSocial());
 	}
-	**/
 	
-	/**
+	
+	
 	@Test
 	public void testFindRazaoSocialContains() {
 		Optional<List<Pessoa>> pessoas = pessoaRepository.findByrazaoSocialContains("trans");
 		assertNotNull(pessoas);
 	}
-	**/
+	
 }

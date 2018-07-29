@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
 
@@ -20,10 +19,6 @@ public class TestsCeps {
 	@Autowired
 	CreateCep createCep;
 
-
-	@Autowired
-	PessoaRepository pessoaRepository;
-	
 	@Test
 	public void contextLoads() {
 	}
