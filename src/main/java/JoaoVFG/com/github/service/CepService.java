@@ -1,7 +1,6 @@
 package JoaoVFG.com.github.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -13,7 +12,6 @@ import JoaoVFG.com.github.repositories.CepRepository;
 import JoaoVFG.com.github.repositories.CidadeRepository;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
-import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 
 @Service
 public class CepService {
@@ -28,10 +26,9 @@ public class CepService {
 	CreateCep createCep;
 
 	public Cep findById(Integer id) {
-		Optional<Cep> cep = cepRepository.findById(id);
+		Cep cep = cepRepository.buscaPorId(id);
 
-		return cep.orElseThrow(() -> new ObjectNotFoundException(
-				"Cep de " + id + " não encontrado. " + "Tipo: " + Cep.class.getName()));
+		return cep;
 	}
 
 	public List<Cep> findAll() {
@@ -39,18 +36,15 @@ public class CepService {
 	}
 
 	public Cep findByCep(String cepBusca) {
-		String cepInfo = cepBusca;
 		cepBusca = formataCep(cepBusca);
 		
-		Optional<Cep> cep = cepRepository.findBycep(cepBusca);
+		Cep cep = cepRepository.findBycep(cepBusca);
 		
-		if (cep.toString() == "Optional.empty") {
-			Cep cepEncontrado = createCep.generateCep(cepBusca.toString());
-			cep = Optional.of(cepEncontrado);
+		if (cep == null) {
+			cep = createCep.generateCep(cepBusca.toString());
 		}
 
-		return cep.orElseThrow(() -> new ObjectNotFoundException(
-				"CEP: " + cepInfo + " não foi encontrado. " + "Tipo: " + Cep.class.getName()));
+		return cep;
 	}
 
 	public List<Cep> findByNomeRua(String nomeRua) {

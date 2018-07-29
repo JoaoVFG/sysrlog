@@ -1,7 +1,6 @@
 package JoaoVFG.com.github.repositories;
 
 import java.util.LinkedList;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,22 +14,26 @@ import JoaoVFG.com.github.entity.Estado;
 
 @Repository
 public interface CidadeRepository extends JpaRepository<Cidade, Integer> {
-
+	
+	@Transactional(readOnly = true)
+	@Query("SELECT cidade FROM Cidade cidade WHERE cidade.id = :idBusca")
+	public Cidade buscaPorId(@Param("idBusca")Integer id);
+	
 	//Busca de cidades por nome
 	@Transactional(readOnly = true)
-	public Optional<LinkedList<Cidade>> findByNomeContains(String nome);
+	public LinkedList<Cidade> findByNomeContains(String nome);
 	
 	@Transactional(readOnly = true)
 	public Cidade findBynome(String nome);
 	
 	//Busca de Cidades por id_estado
 	@Transactional(readOnly = true)
-	public Optional<LinkedList<Cidade>> findByEstado(Estado estado);
+	public LinkedList<Cidade> findByEstado(Estado estado);
 	
 	//Busca de Cidades por nome e Id_estado
 	@Transactional(readOnly = true)
 	@Query("SELECT cidade FROM Cidade cidade WHERE cidade.estado.id = :estadoId AND cidade.nome like :cidadeNome")
-	public Optional<LinkedList<Cidade>> findCidadesEstadoIdNomeCidades(@Param("estadoId")Integer estadoId, @Param("cidadeNome")String cidadeNome);
+	public LinkedList<Cidade> findCidadesEstadoIdNomeCidades(@Param("estadoId")Integer estadoId, @Param("cidadeNome")String cidadeNome);
 	
 	
 	//Busca Auxiliar cidades por nome e sigla do estado

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,10 +33,10 @@ public class TestsPessoa {
 
 	@Autowired
 	TelefoneRepository telefoneRepository;
-	
+
 	@Autowired
 	EnderecoRepository endereceoRepository;
-	
+
 	@Autowired
 	CepRepository cepRepository;
 
@@ -49,61 +48,60 @@ public class TestsPessoa {
 
 	@Test
 	public void findByTipo() {
-		Optional<List<Pessoa>> pessoas = pessoaRepository.findBytipo(tipo.findByid(1));
-		for (Optional<List<Pessoa>> p : Arrays.asList(pessoas)) {
+		List<Pessoa> pessoas = pessoaRepository.findBytipo(tipo.findByid(1));
+		for (List<Pessoa> p : Arrays.asList(pessoas)) {
 			System.out.println(p.toString());
 		}
 	}
 
 	@Test
 	public void findByCpf() {
-		Optional<Pessoa> pessoa = pessoaRepository.findBycpf("45567860889");
-		System.out.println(pessoa.get().getNome());
-		assertEquals("JV", pessoa.get().getNome());
+		Pessoa pessoa = pessoaRepository.findBycpf("45567860889");
+		System.out.println(pessoa.getNome());
+		assertEquals("JV", pessoa.getNome());
 
 	}
 
 	@Test
 	public void findByCnpj() {
-		Optional<Pessoa> pessoa = pessoaRepository.findBycnpj("898725950008");
-		assertEquals("mandou X", pessoa.get().getRazaoSocial());
+		Pessoa pessoa = pessoaRepository.findBycnpj("898725950008");
+		assertEquals("mandou X", pessoa.getRazaoSocial());
 	}
 
 	@Test
 	public void testFindRazaoSocialContains() {
-		Optional<List<Pessoa>> pessoas = pessoaRepository.findByrazaoSocialContains("trans");
+		List<Pessoa> pessoas = pessoaRepository.findByrazaoSocialContains("trans");
 		assertNotNull(pessoas);
 	}
 
 	@Test
 	public void testFindTelefonesDePessoa() {
-		Optional<List<Telefone>> telefones = telefoneRepository.findBypessoa(pessoaRepository.findBycpf("45567860889"));
+		List<Telefone> telefones = telefoneRepository.findBypessoa(pessoaRepository.findBycpf("45567860889"));
 		assertNotNull(telefones);
 	}
 
 	@Test
 	public void testFindTelefonesDePessoa2() {
-		Optional<List<Telefone>> telefones = telefoneRepository
-				.findBypessoa(pessoaRepository.findBycnpj("485874810008"));
+		List<Telefone> telefones = telefoneRepository.findBypessoa(pessoaRepository.findBycnpj("485874810008"));
 		assertNotNull(telefones);
 	}
 
 	@Test
 	public void testeFindTelefonesByTipoTelefoneEPessoa() {
-		Optional<List<Telefone>> telefones = telefoneRepository
-				.findBypessoaAndtipoNumero(pessoaRepository.findBycpf("58963221474").get().getId(), "Celular");
+		List<Telefone> telefones = telefoneRepository
+				.findBypessoaAndtipoNumero(pessoaRepository.findBycpf("58963221474").getId(), "Celular");
 		assertNotNull(telefones);
 	}
-	
+
 	@Test
 	public void testFindEnderecoByPessoa() {
-		Optional<Endereco> endereco = endereceoRepository.findBypessoa(pessoaRepository.findBycpf("89988998899"));
+		Endereco endereco = endereceoRepository.findBypessoa(pessoaRepository.findBycpf("45567860889"));
 		assertNotNull(endereco);
 	}
-	
+
 	@Test
 	public void testFindEnderecosCep() {
-		Optional<List<Endereco>> enderecos = endereceoRepository.findBycep(cepRepository.findBycep("12288560"));
+		List<Endereco> enderecos = endereceoRepository.findBycep(cepRepository.findBycep("12288560"));
 		assertNotNull(enderecos);
 	}
 }

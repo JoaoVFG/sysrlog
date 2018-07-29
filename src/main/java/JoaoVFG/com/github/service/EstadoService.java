@@ -1,7 +1,6 @@
 package JoaoVFG.com.github.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.entity.Estado;
 import JoaoVFG.com.github.repositories.EstadoRepository;
-import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 
 @Service
 public class EstadoService {
@@ -19,10 +17,9 @@ public class EstadoService {
 
 	
 	public Estado findById(Integer id) {
-		Optional<Estado> estado = estadoRepository.findById(id);
+		Estado estado = estadoRepository.buscaPorId(id);
 
-		return estado.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: " + id + 
-																	". Tipo: " + Estado.class.getName()));
+		return estado;
 	}
 
 	
@@ -32,18 +29,16 @@ public class EstadoService {
 	
 	
 	public Estado findBySigla(String sigla) {
-		Optional<Estado> estado = estadoRepository.findBysigla(sigla);
+		Estado estado = estadoRepository.findBysigla(sigla);
 		
-		return estado.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Sigla: " + sigla + 
-																	". Tipo: " + Estado.class.getName()));
+		return estado;
 		
 	}
 	
 	public Estado findByNome(String nome) {
-		Optional<Estado> estado = estadoRepository.findBynomeContains(nome);
+		Estado estado = estadoRepository.findBynomeContains(nome);
 		
-		return estado.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Nome: " + nome + 
-																	". Tipo: " + Estado.class.getName()));
+		return estado;
 	}
 	
 	

@@ -1,7 +1,6 @@
 package JoaoVFG.com.github.repositories;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,13 +12,18 @@ import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Telefone;
 
 @Repository
-public interface TelefoneRepository extends JpaRepository<Telefone, Integer>{
-	
+public interface TelefoneRepository extends JpaRepository<Telefone, Integer> {
+
 	@Transactional(readOnly = true)
-	public Optional<List<Telefone>> findBypessoa(Optional<Pessoa> pessoa);
-	
+	@Query("SELECT telefone FROM Telefone telefone WHERE telefone.id = :id")
+	public Telefone buscaPorId(@Param("id") Integer id);
+
+	@Transactional(readOnly = true)
+	public List<Telefone> findBypessoa(Pessoa pessoa);
+
 	@Transactional(readOnly = true)
 	@Query("SELECT telefone FROM Telefone telefone WHERE telefone.tipoNumero = :tipo AND telefone.pessoa.id = :pessoaId")
-	public Optional<List<Telefone>> findBypessoaAndtipoNumero(@Param("pessoaId")Integer pessoaId, @Param("tipo")String tipoNumero);
+	public List<Telefone> findBypessoaAndtipoNumero(@Param("pessoaId") Integer pessoaId,
+			@Param("tipo") String tipoNumero);
 
 }

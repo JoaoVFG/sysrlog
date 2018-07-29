@@ -1,7 +1,6 @@
 package JoaoVFG.com.github.repositories;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,10 +12,15 @@ import JoaoVFG.com.github.entity.Cidade;
 
 public interface CepRepository extends JpaRepository<Cep, Integer>{
 	
+	@Transactional(readOnly = true)
+	@Query("SELECT cep FROM Cep cep WHERE cep.id = :idBusca")
+	public Cep buscaPorId(@Param("idBusca")Integer id);
+	
+	
 	//busca Cep por Cep
 	@Transactional(readOnly = true)
 	@Query("SELECT cep FROM Cep cep WHERE cep.cep = :cepBusca")
-	public Optional<Cep> findBycep(@Param("cepBusca") String cepBusca);
+	public Cep findBycep(@Param("cepBusca") String cepBusca);
 	
 	//busca Cep por nome Rua
 	@Transactional(readOnly = true)
