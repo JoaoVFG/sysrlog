@@ -11,8 +11,7 @@
 			remarks="Tabela que contem os celulares das pessoas">
 
 			<column name="id" type="int">
-				<constraints primaryKey="true" unique="true"
-					nullable="false" />
+				<constraints primaryKey="true" unique="true"/>
 			</column>
 
 			<column name="pessoa" type="int">
@@ -23,7 +22,7 @@
 				<constraints nullable="false" />
 			</column>
 
-			<column name="numeroLogradouro" type="int">
+			<column name="numero_Logradouro" type="int">
 				<constraints nullable="true" />
 			</column>
 

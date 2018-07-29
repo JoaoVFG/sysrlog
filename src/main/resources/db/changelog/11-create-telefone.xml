@@ -11,11 +11,10 @@
 			remarks="Tabela que contem os celulares das pessoas">
 
 			<column name="id" type="int">
-				<constraints primaryKey="true" unique="true"
-					nullable="false" />
+				<constraints primaryKey="true" unique="true" />
 			</column>
 
-			<column name="tipoNumero" type="varchar(10)">
+			<column name="tipo_Numero" type="varchar(10)">
 				<constraints nullable="false" />
 			</column>
 			

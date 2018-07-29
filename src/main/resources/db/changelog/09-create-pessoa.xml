@@ -11,36 +11,24 @@
 			remarks="Tabela que cadastro das pessoas que usam o sistema">
 
 			<column name="id" type="int">
-				<constraints primaryKey="true" unique="true"
-					nullable="false" />
+				<constraints primaryKey="true" unique="true"/>
 			</column>
 			
-			<column name="tipo" type="int">
+			<column name="tipo_id" type="int">
 				<constraints nullable="false" />
 			</column>
 			
-			<column name="nome" type="varchar(120)">
-				<constraints nullable="false" />
-			</column>
+			<column name="nome" type="varchar(120)"></column>
 			
-			<column name="razaoSoial" type="varchar(120)">
-				<constraints nullable="false" />
-			</column>
+			<column name="razao_Social" type="varchar(120)"></column>
 			
-			<column name="CPF" type="varchar(11)">
-				<constraints unique="true" nullable="false" />
-			</column>
+			<column name="CPF" type="varchar(11)"></column>
 			
-			<column name="CNPJ" type="varchar(11)">
-				<constraints unique="true" nullable="false" />
-			</column>
+			<column name="CNPJ" type="varchar(14)"></column>
 			
-			<column name="dataNascimento" type="varchar(10)">
-				<constraints nullable="false" />
-			</column>
+			<column name="data_Nascimento" type="varchar(10)"></column>
 			
-			<column name="sexo" type="varchar(1)">
-			</column>
+			<column name="sexo" type="varchar(1)"></column>
 
 		</createTable>
 

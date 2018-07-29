@@ -7,7 +7,7 @@
          
 	<changeSet id="08" author="JoaoVFG">
 
-		<createTable tableName="TipoPessoa"
+		<createTable tableName="Tipo_Pessoa"
 			remarks="Tabela que contem os tipos das pessoas">
 
 			<column name="id" type="int">
@@ -24,11 +24,11 @@
 	
 	<changeSet id="08.1" author="JoaoVFG">
 		<comment>Inserting Tipo Pessoa</comment>
-		<insert tableName="TipoPessoa">
+		<insert tableName="Tipo_Pessoa">
 			<column name="id" valueNumeric="01" />
 			<column name="descricao" value="FISICA" />
 		</insert>
-		<insert tableName="TipoPessoa">
+		<insert tableName="Tipo_Pessoa">
 			<column name="id" valueNumeric="02" />
 			<column name="descricao" value="JURIDICA" />
 		</insert>

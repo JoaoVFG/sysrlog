@@ -96,6 +96,7 @@ public class CepService {
 		
 		
 		cep = findByCep(cepBusca);
+		
 		builder.append(cep.getNomeRua());
 		builder.append(" ");
 		builder.append(numLogradouro);
