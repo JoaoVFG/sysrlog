@@ -68,7 +68,7 @@ public class DBServiceTest {
 		Telefone tel9 = new Telefone(null, "Fixo", "1188996633", pessoaj2);
 		Telefone tel10 = new Telefone(null, "Celular", "11955889966", pessoaj3);
 		Telefone tel11 = new Telefone(null, "Fixo", "1256566336", pessoaj4);
-		Telefone tel12 = new Telefone(null, "celular", "12988774455", pessoaj4);
+		Telefone tel12 = new Telefone(null, "Celular", "12988774455", pessoaj4);
 
 		telefoneRepository
 				.saveAll(Arrays.asList(tel1, tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11, tel12));

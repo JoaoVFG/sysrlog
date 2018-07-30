@@ -12,8 +12,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import JoaoVFG.com.github.entity.Pessoa;
+import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.entity.TipoPessoa;
 import JoaoVFG.com.github.service.PessoaService;
+import JoaoVFG.com.github.service.TelefoneService;
 import JoaoVFG.com.github.service.TipoPessoaService;
 
 @RunWith(SpringRunner.class)
@@ -26,6 +28,8 @@ public class TestsPessoaService {
 	@Autowired
 	PessoaService pessoaService;
 	
+	@Autowired
+	TelefoneService telefoneService;
 	
 	@Test
 	public void testeTipoPessoaBuscaTodos() {
@@ -86,4 +90,36 @@ public class TestsPessoaService {
 		List<Pessoa> pessoas = pessoaService.findByrazaoSocial("trans");
 		assertNotNull(pessoas);
 	}
+	
+	@Test
+	public void testeCreateTel() {
+		Telefone telefone = new Telefone(null, "Celular", "12991918066", pessoaService.findById(5));
+		telefoneService.create(telefone);
+	}
+	
+	@Test
+	public void testebuscaTelefonePorId() {
+		Telefone telefone = telefoneService.findById(1);
+		assertEquals("12991157861", telefone.getNumero());
+	}
+	
+	@Test
+	public void testeBuscaTelefonePorIdPessoa() {
+		List<Telefone> telefones = telefoneService.findByPessoa(1);
+		assertNotNull(telefones);
+	}
+	
+	@Test
+	public void testeBuscaTelefoneTodos() {
+		List<Telefone> telefones = telefoneService.findAll();
+		assertNotNull(telefones);
+	}
+	
+	@Test
+	public void testeBuscaTelPessoaETipoNum() {
+		List<Telefone> telefones = telefoneService.findByPessoaTipoNum(pessoaService.findByCnpj("898725950008").getId(), "Celular");
+		assertEquals(1, telefones.size());
+	}
+	
+	
 }
