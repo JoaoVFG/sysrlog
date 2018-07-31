@@ -95,7 +95,7 @@ public class TestsPessoaRepository {
 
 	@Test
 	public void testFindEnderecoByPessoa() {
-		Endereco endereco = endereceoRepository.findBypessoa(pessoaRepository.findBycpf("45567860889"));
+		List<Endereco> endereco = endereceoRepository.findBypessoa(pessoaRepository.findBycpf("45567860889"));
 		assertNotNull(endereco);
 	}
 
