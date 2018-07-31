@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;

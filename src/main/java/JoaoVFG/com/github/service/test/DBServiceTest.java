@@ -78,9 +78,9 @@ public class DBServiceTest {
 		Endereco end3 = new Endereco(null, pessoaf4, cepService.findByCep("12288560"), 718, "");
 		Endereco end4 = new Endereco(null, pessoaf3, cepService.findByCep("12290379"), 50, "");
 		Endereco end5 = new Endereco(null, pessoaj1, cepService.findByCep("12289368"), 30, "");
-		Endereco end6 = new Endereco(null, pessoaj1, cepService.findByCep("12289085"), 127, "");
-		Endereco end7 = new Endereco(null, pessoaj1, cepService.findByCep("12287360"), 88, "");
-		Endereco end8 = new Endereco(null, pessoaj1, cepService.findByCep("12216300"), 50, "");
+		Endereco end6 = new Endereco(null, pessoaj4, cepService.findByCep("12289085"), 127, "");
+		Endereco end7 = new Endereco(null, pessoaj2, cepService.findByCep("12287360"), 88, "");
+		Endereco end8 = new Endereco(null, pessoaj3, cepService.findByCep("12216300"), 50, "");
 
 		enderecoRepository.saveAll(Arrays.asList(end1, end2, end3, end4, end5, end6, end7, end8));
 

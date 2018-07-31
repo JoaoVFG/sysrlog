@@ -11,9 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.entity.TipoPessoa;
+import JoaoVFG.com.github.service.CepService;
+import JoaoVFG.com.github.service.EnderecoService;
 import JoaoVFG.com.github.service.PessoaService;
 import JoaoVFG.com.github.service.TelefoneService;
 import JoaoVFG.com.github.service.TipoPessoaService;
@@ -30,6 +33,12 @@ public class TestsPessoaService {
 	
 	@Autowired
 	TelefoneService telefoneService;
+	
+	@Autowired
+	EnderecoService enderecoService;
+	
+	@Autowired
+	CepService cepService;
 	
 	@Test
 	public void testeTipoPessoaBuscaTodos() {
@@ -121,5 +130,27 @@ public class TestsPessoaService {
 		assertEquals(1, telefones.size());
 	}
 	
+	@Test
+	public void testeBuscaEnderecoPorId() {
+		Endereco endereco = enderecoService.findById(3);
+		assertEquals(718,Integer.parseInt(endereco.getNumeroLogradouro().toString()));
+	}
 	
+	@Test
+	public void testeBuscaEnderecoTodos() {
+		List<Endereco> enderecos = enderecoService.findAll();
+		assertNotNull(enderecos);
+	}
+	
+	@Test
+	public void testeBucscaEnderecoPorPessoa() {
+		List<Endereco> enderecos = enderecoService.findByPessoa(pessoaService.findByCnpj("4478969850008").getId());
+		assertEquals(cepService.findByCep("12289368").getId(), enderecos.get(0).getCep().getId());
+	}
+	
+	@Test
+	public void testeBuscaEnderecoPorCep() {
+		List<Endereco> enderecos = enderecoService.findByCep("12288560");
+		assertNotNull(enderecos);
+	}
 }
