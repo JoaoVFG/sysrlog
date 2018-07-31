@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.entity.Pessoa;
+import JoaoVFG.com.github.entity.dto.PessoaFisicaDTO;
+import JoaoVFG.com.github.entity.dto.PessoaJuridicaDTO;
 import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
@@ -62,6 +64,28 @@ public class PessoaService {
 		pessoa = pessoaRepository.save(pessoa);
 		return findById(pessoa.getId());
 	}
+	
+	public Pessoa createPF(PessoaFisicaDTO dto) {
+		Pessoa pessoa = PFFromDto(dto);
+		if(findByCpf(pessoa.getCpf())==null) {
+			pessoa.setId(null);
+			pessoa = pessoaRepository.save(pessoa);
+			return findById(pessoa.getId());
+		}else {
+			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE CLIENTE");
+		}
+	}
+	
+	public Pessoa createPJ(PessoaJuridicaDTO dto) {
+		Pessoa pessoa = PJFromDTO(dto);
+		if(findByCpf(pessoa.getCnpj())==null) {
+			pessoa.setId(null);
+			pessoa = pessoaRepository.save(pessoa);
+			return findById(pessoa.getId());
+		}else {
+			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE CLIENTE");
+		}
+	}
 
 	public Pessoa updatePessoa(Pessoa updatePessoa) {
 		Pessoa pessoa = findById(updatePessoa.getId());
@@ -84,6 +108,25 @@ public class PessoaService {
 		} catch (DataIntegrityException e) {
 			throw new DataIntegrityException("NAO E POSSIVEL EXCLUIR ESSA PESSOA.");
 		}
+	}
+	
+	
+	public Pessoa PJFromDTO(PessoaJuridicaDTO dto) {
+		Pessoa pessoa = new Pessoa();
+		pessoa.setCnpj(dto.getCnpj());
+		pessoa.setRazaoSocial(dto.getRazaoSocial());
+		pessoa.setTipo(tipoPessoaRepository.findByid(dto.getTipo()));
+		return pessoa;
+	}
+	
+	public Pessoa PFFromDto(PessoaFisicaDTO dto) {
+		Pessoa pessoa = new Pessoa();
+		pessoa.setCpf(dto.getCpf());
+		pessoa.setNome(dto.getNome());
+		pessoa.setDataNascimento(dto.getDataNascimento());
+		pessoa.setSexo(dto.getSexo());
+		pessoa.setTipo(tipoPessoaRepository.findByid(dto.getTipo()));
+		return pessoa;
 	}
 
 }
