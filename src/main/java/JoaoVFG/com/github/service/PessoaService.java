@@ -67,7 +67,7 @@ public class PessoaService {
 	
 	public Pessoa createPF(PessoaFisicaDTO dto) {
 		Pessoa pessoa = PFFromDto(dto);
-		if(findByCpf(pessoa.getCpf())==null) {
+		if(pessoaRepository.findBycpf(pessoa.getCpf())==null) {
 			pessoa.setId(null);
 			pessoa = pessoaRepository.save(pessoa);
 			return findById(pessoa.getId());
@@ -78,7 +78,7 @@ public class PessoaService {
 	
 	public Pessoa createPJ(PessoaJuridicaDTO dto) {
 		Pessoa pessoa = PJFromDTO(dto);
-		if(findByCpf(pessoa.getCnpj())==null) {
+		if(pessoaRepository.findBycnpj(pessoa.getCnpj())==null) {
 			pessoa.setId(null);
 			pessoa = pessoaRepository.save(pessoa);
 			return findById(pessoa.getId());
