@@ -25,13 +25,15 @@ public class Empresa implements Serializable {
 	private Integer id;
 	
 	@ManyToOne
+	@JoinColumn(name = "PESSOA_ID")
+	private Pessoa pessoa;
+	
+	@ManyToOne
 	@JoinColumn(name = "TIPO_ID")
 	private TipoEmpresa tipoEmpresa;
 	
 	private Integer transportadora;
-	
-	@ManyToOne
-	@JoinColumn(name = "PESSOA_ID")
+
 	private Pessoa empresaMatrizId;
 	
 }

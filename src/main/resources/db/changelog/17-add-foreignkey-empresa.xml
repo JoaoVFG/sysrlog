@@ -5,9 +5,15 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
          
-    <changeSet id="10" author="JoaoVFG">
-		<addForeignKeyConstraint baseTableName="EMPRESA" baseColumnNames="EMPRESA_MATRIZ_ID"
-  				constraintName="EMPRESA_TIPOPEMPRESA_FK"
+    <changeSet id="17" author="JoaoVFG">
+		<addForeignKeyConstraint baseTableName="EMPRESA" baseColumnNames="PESSOA_ID"
+  				constraintName="EMPRESA_PESSOA_FK"
+  				referencedTableName="PESSOA" referencedColumnNames="ID"/>
+  		<addForeignKeyConstraint baseTableName="EMPRESA" baseColumnNames="TIPO_EMPRESA"
+  				constraintName="EMPRESA_TIPOEMPRESA_FK"
+  				referencedTableName="TIPO_EMPRESA" referencedColumnNames="ID"/>
+  		<addForeignKeyConstraint baseTableName="EMPRESA" baseColumnNames="EMPRESA_MATRIZ_ID"
+  				constraintName="EMPRESA_PJMATRIZ_FK"
   				referencedTableName="PESSOA" referencedColumnNames="ID"/>
 
 	</changeSet>
