@@ -24,7 +24,7 @@ public class PessoaService {
 	TipoPessoaRepository tipoPessoaRepository;
 
 	public Pessoa findById(Integer id) {
-		Optional<Pessoa> pessoa = Optional.of(pessoaRepository.buscaPorId(id));
+		Optional<Pessoa> pessoa = Optional.ofNullable(pessoaRepository.buscaPorId(id));
 
 		return pessoa.orElseThrow(() -> new ObjectNotFoundException(
 				"Pessoa não encontrado! Id: " + id + ". Tipo: " + Pessoa.class.getName()));
@@ -35,25 +35,25 @@ public class PessoaService {
 	}
 
 	public List<Pessoa> findByTipo(Integer tipo) {
-		Optional<List<Pessoa>> pessoas = Optional.of(pessoaRepository.findBytipo(tipoPessoaRepository.findByid(tipo)));
+		Optional<List<Pessoa>> pessoas = Optional.ofNullable(pessoaRepository.findBytipo(tipoPessoaRepository.findByid(tipo)));
 		return pessoas.orElseThrow(() -> new ObjectNotFoundException(
 				"Não existem pessoas para o tipo procurado! Id: " + tipo + ". Tipo: " + Pessoa.class.getName()));
 	}
 
 	public Pessoa findByCpf(String cpf) {
-		Optional<Pessoa> pessoa = Optional.of(pessoaRepository.findBycpf(cpf));
+		Optional<Pessoa> pessoa = Optional.ofNullable(pessoaRepository.findBycpf(cpf));
 		return pessoa.orElseThrow(() -> new ObjectNotFoundException(
 				"Não existem pessoas para o tipo procurado! CPF: " + cpf + ". Tipo: " + Pessoa.class.getName()));
 	}
 
 	public Pessoa findByCnpj(String cnpj) {
-		Optional<Pessoa> pessoa = Optional.of(pessoaRepository.findBycnpj(cnpj));
+		Optional<Pessoa> pessoa = Optional.ofNullable(pessoaRepository.findBycnpj(cnpj));
 		return pessoa.orElseThrow(() -> new ObjectNotFoundException(
 				"Não existem pessoas para o tipo procurado! CNPJ: " + cnpj + ". Tipo: " + Pessoa.class.getName()));
 	}
 
 	public List<Pessoa> findByrazaoSocial(String razaoSocial) {
-		Optional<List<Pessoa>> pessoas = Optional.of(pessoaRepository.findByrazaoSocialContains(razaoSocial));
+		Optional<List<Pessoa>> pessoas = Optional.ofNullable(pessoaRepository.findByrazaoSocialContains(razaoSocial));
 		return pessoas
 				.orElseThrow(() -> new ObjectNotFoundException("Não existem pessoas para o tipo procurado! Razão: "
 						+ razaoSocial + ". Tipo: " + Pessoa.class.getName()));

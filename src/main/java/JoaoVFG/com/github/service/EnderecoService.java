@@ -26,7 +26,7 @@ public class EnderecoService {
 	CepService cepService;
 
 	public Endereco findById(Integer id) {
-		Optional<Endereco> endereco = Optional.of(enderecoRepository.buscaPorId(id));
+		Optional<Endereco> endereco = Optional.ofNullable(enderecoRepository.buscaPorId(id));
 		return endereco.orElseThrow(() -> new ObjectNotFoundException(
 				"Endereço não encontrado! Id: " + id + ". Tipo: " + Pessoa.class.getName()));
 	}
@@ -36,13 +36,13 @@ public class EnderecoService {
 	}
 
 	public List<Endereco> findByPessoa(Integer id) {
-		Optional<List<Endereco>> enderecos = Optional.of(enderecoRepository.findBypessoa(pessoaService.findById(id)));
+		Optional<List<Endereco>> enderecos = Optional.ofNullable(enderecoRepository.findBypessoa(pessoaService.findById(id)));
 		return enderecos.orElseThrow(() -> new ObjectNotFoundException(
 				"Essa pessoa não possui endereco Cadastrado. Id Pessoa: " + id + ". Tipo: " + Pessoa.class.getName()));
 	}
 
 	public List<Endereco> findByCep(String cep) {
-		Optional<List<Endereco>> enderecos = Optional.of(enderecoRepository.findBycep(cepService.findByCep(cep)));
+		Optional<List<Endereco>> enderecos = Optional.ofNullable(enderecoRepository.findBycep(cepService.findByCep(cep)));
 		return enderecos.orElseThrow(() -> new ObjectNotFoundException(
 				"Não existem Enderecos cadastrados para este cep" + cep + ". Tipo: " + Pessoa.class.getName()));
 	}

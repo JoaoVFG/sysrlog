@@ -22,7 +22,7 @@ public class TelefoneService {
 	TelefoneRepository telefoneRepository;
 
 	public Telefone findById(Integer id) {
-		Optional<Telefone> telefone = Optional.of(telefoneRepository.buscaPorId(id));
+		Optional<Telefone> telefone = Optional.ofNullable(telefoneRepository.buscaPorId(id));
 		return telefone.orElseThrow(() -> new ObjectNotFoundException(
 				"Telefone não encontrado! Id: " + id + ". Tipo: " + Telefone.class.getName()));
 	}
@@ -33,14 +33,14 @@ public class TelefoneService {
 
 	public List<Telefone> findByPessoa(Integer pessoaId) {
 		Optional<List<Telefone>> telefones = Optional
-				.of(telefoneRepository.findBypessoa(pessoaService.findById(pessoaId)));
+				.ofNullable(telefoneRepository.findBypessoa(pessoaService.findById(pessoaId)));
 		return telefones.orElseThrow(() -> new ObjectNotFoundException(
 				"Telefone não encontrado! Id pessoa: " + pessoaId + ". Tipo: " + Telefone.class.getName()));
 	}
 
 	public List<Telefone> findByPessoaTipoNum(Integer pessoaId, String tipoNum) {
 		Optional<List<Telefone>> telefones = Optional
-				.of(telefoneRepository.findBypessoaAndtipoNumero(pessoaId, tipoNum));
+				.ofNullable(telefoneRepository.findBypessoaAndtipoNumero(pessoaId, tipoNum));
 		return telefones.orElseThrow(() -> new ObjectNotFoundException(
 				"Telefones não encontrados! Id pessoa: " + pessoaId + ". Tipo: " + Telefone.class.getName()));
 	}
