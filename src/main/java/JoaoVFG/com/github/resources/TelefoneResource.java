@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.entity.dto.TelefoneDTO;
-import JoaoVFG.com.github.resources.utils.Uri;
 import JoaoVFG.com.github.service.TelefoneService;
 
 @RestController

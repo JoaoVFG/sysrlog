@@ -12,11 +12,11 @@ import lombok.Setter;
 public class TelefoneDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	String tipoNumero;
+	private String tipoNumero;
 	
-	String numero;
+	private String numero;
 	
-	Integer idPessoa;
+	private Integer idPessoa;
 
 	public TelefoneDTO(String tipoNumero, String numero, Integer idPessoa) {
 		super();
