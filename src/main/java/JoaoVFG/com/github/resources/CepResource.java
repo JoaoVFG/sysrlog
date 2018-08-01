@@ -16,7 +16,7 @@ import JoaoVFG.com.github.service.CidadeService;
 
 @RestController
 @RequestMapping(value = "/ceps")
-public class EnderecoResource {
+public class CepResource {
 	
 	@Autowired
 	CepService cepService;

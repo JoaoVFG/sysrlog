@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.dto.PessoaFisicaDTO;
@@ -24,38 +23,38 @@ public class PessoaResource {
 	@Autowired
 	PessoaService pessoaService;
 	
-	@RequestMapping(value="/buscaPessoa", method = RequestMethod.GET)	
+	@RequestMapping(value="/buscapessoa", method = RequestMethod.GET)	
 	public ResponseEntity<List<Pessoa>> findAll(){
 		List<Pessoa> pessoas = pessoaService.findAll();
 		return ResponseEntity.ok().body(pessoas);
 	}
 	
 
-	@RequestMapping(value="/buscaPessoa/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/buscapessoa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Pessoa> findById(@PathVariable String id){
 		Pessoa pessoa = pessoaService.findById(Integer.parseInt(id));
 		return ResponseEntity.ok().body(pessoa);
 	}
 	
-	@RequestMapping(value="/buscaPessoa/tipo/{tipo}", method = RequestMethod.GET)
+	@RequestMapping(value="/buscapessoa/tipo/{tipo}", method = RequestMethod.GET)
 	public ResponseEntity<List<Pessoa>> findByTipo(@PathVariable String tipo){
 		List<Pessoa> pessoas = pessoaService.findByTipo(Integer.parseInt(tipo));
 		return ResponseEntity.ok().body(pessoas);
 	}
 	
-	@RequestMapping(value="/buscaPessoa/cpf/{cpf}", method = RequestMethod.GET)
+	@RequestMapping(value="/buscapessoa/cpf/{cpf}", method = RequestMethod.GET)
 	public ResponseEntity<Pessoa> findByCpf(@PathVariable String cpf){
 		Pessoa pessoa = pessoaService.findByCpf(cpf);
 		return ResponseEntity.ok().body(pessoa);
 	}
 	
-	@RequestMapping(value="/buscaPessoa/cnpj/{cnpj}", method = RequestMethod.GET)
+	@RequestMapping(value="/buscapessoa/cnpj/{cnpj}", method = RequestMethod.GET)
 	public ResponseEntity<Pessoa> findByCnpj(@PathVariable String cnpj){
 		Pessoa pessoa = pessoaService.findByCnpj(cnpj);
 		return ResponseEntity.ok().body(pessoa);
 	}
 	
-	@RequestMapping(value="/buscaPessoa/razaoSocial/{razaoSocial}", method = RequestMethod.GET)
+	@RequestMapping(value="/buscapessoa/razaoSocial/{razaoSocial}", method = RequestMethod.GET)
 	public ResponseEntity<List<Pessoa>> findByRazaoSocial(@PathVariable String razaoSocial){
 		List<Pessoa> pessoas = pessoaService.findByrazaoSocial(razaoSocial);
 		return ResponseEntity.ok().body(pessoas);
