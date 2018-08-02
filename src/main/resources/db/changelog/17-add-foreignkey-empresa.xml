@@ -12,9 +12,6 @@
   		<addForeignKeyConstraint baseTableName="EMPRESA" baseColumnNames="TIPO_EMPRESA"
   				constraintName="EMPRESA_TIPOEMPRESA_FK"
   				referencedTableName="TIPO_EMPRESA" referencedColumnNames="ID"/>
-  		<addForeignKeyConstraint baseTableName="EMPRESA" baseColumnNames="EMPRESA_MATRIZ_ID"
-  				constraintName="EMPRESA_PJMATRIZ_FK"
-  				referencedTableName="PESSOA" referencedColumnNames="ID"/>
 
 	</changeSet>
 </databaseChangeLog>

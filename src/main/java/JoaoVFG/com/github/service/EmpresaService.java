@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Pessoa;
+import JoaoVFG.com.github.entity.dto.EmpresaDTO;
 import JoaoVFG.com.github.repositories.EmpresaRepository;
 import JoaoVFG.com.github.repositories.TipoEmpresaRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
@@ -39,14 +40,16 @@ public class EmpresaService {
 		Pessoa pessoa = pessoaService.findById(id);
 		Optional<Empresa> empresa = Optional.ofNullable(empresaRepository.findBypessoa(pessoa));
 		return empresa
-				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa"));
+				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa."
+						+ "Metodo: Busca Por Id. Id:" + id));
 	}
 
 	public List<Empresa> findByTipoEmpresa(Integer id) {
 		Optional<List<Empresa>> empresas = Optional
 				.ofNullable(empresaRepository.findBytipoEmpresa(tipoEmpresaRepository.buscaPorId(id)));
 		return empresas
-				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa"));
+				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa"
+						+ "Metodo: Busca por tipo empresa. Tipo Empresa" + id));
 	}
 	
 	public List<Empresa> findTransportadoras(){
@@ -58,19 +61,23 @@ public class EmpresaService {
 	
 	public List<Empresa> findByMatriz(Integer id){
 		Optional<List<Empresa>> empresas = Optional
-				.ofNullable(empresaRepository.findByTransportadora(id));
+				.ofNullable(empresaRepository.findByempresaMatrizId(id));
 		return empresas
-				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa"));
+				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa"
+						+ "Metodo: Busca Por Id Matriz: Id Matriz: " + id));
 	}
 	
-	public Empresa createEmpresa(Empresa empresa) {
-		if(findByIdPessoa(empresa.getPessoa().getId()) == null) {
+	public Empresa createEmpresa(EmpresaDTO dto) {
+		Empresa empresa = empresaFromEmpresaDTO(dto);
+		if(empresaRepository.findBypessoa(pessoaService.findById(empresa.getPessoa().getId())) == null) {
 			empresa.setId(null);
 			empresa = empresaRepository.save(empresa);
-			return findById(empresa.getId());
 		}else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE EMPRESA, POIS ELA JA ESTA CADASTRADA");
 		}
+		
+		
+		return findById(empresa.getId());
 	}
 	
 	public Empresa updateEmpresa(Empresa empresaUpdate) {
@@ -95,5 +102,17 @@ public class EmpresaService {
 		} catch (DataIntegrityException e) {
 			throw new DataIntegrityException("NAO E POSSIVEL EXCLUIR ESSA PESSOA.");
 		}
+	}
+	
+	public Empresa empresaFromEmpresaDTO(EmpresaDTO dto) {
+		Empresa empresa = new Empresa();
+		empresa.setId(null);
+		empresa.setPessoa(pessoaService.findById(dto.getPessoa()));
+		empresa.setTipoEmpresa(tipoEmpresaRepository.buscaPorId(dto.getTipoEmpresa()));
+		empresa.setTransportadora(dto.getTransportadora());
+		empresa.setEmpresaMatrizId(dto.getEmpresaMatriz());
+		
+		return empresa;
+		
 	}
 }
