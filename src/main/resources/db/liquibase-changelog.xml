@@ -23,8 +23,9 @@
          <include file="changelog/15-create-tipoempresa.xml" relativeToChangelogFile="true"/>
          <include file="changelog/16-create-empresa.xml" relativeToChangelogFile="true"/>
          <include file="changelog/17-add-foreignkey-empresa.xml" relativeToChangelogFile="true"/>
-       	 
-       	 
+       	 <include file="changelog/18-create-cargo.xml" relativeToChangelogFile="true"/>
+       	 <include file="changelog/19-create-funcionario.xml" relativeToChangelogFile="true"/>
+       	 <include file="changelog/20-add-foreignkey-funcionario.xml" relativeToChangelogFile="true"/>
                
 
 </databaseChangeLog>

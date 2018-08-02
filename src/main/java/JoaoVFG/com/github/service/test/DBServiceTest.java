@@ -91,20 +91,36 @@ public class DBServiceTest {
 				.saveAll(Arrays.asList(tel1, tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11, tel12));
 
 		Endereco end1 = new Endereco(null, pessoaf1, cepService.findByCep("12288560"), 718, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________1");
 		Endereco end2 = new Endereco(null, pessoaf2, cepService.findByCep("12288560"), 718, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________2");
 		Endereco end3 = new Endereco(null, pessoaf4, cepService.findByCep("12288560"), 718, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________3");
 		Endereco end4 = new Endereco(null, pessoaf3, cepService.findByCep("12290379"), 50, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________4");
 		Endereco end5 = new Endereco(null, pessoaj1_0, cepService.findByCep("12289368"), 30, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________5");
 		Endereco end6 = new Endereco(null, pessoaj4_0, cepService.findByCep("12289085"), 127, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________6");
 		Endereco end7 = new Endereco(null, pessoaj2_0, cepService.findByCep("12287360"), 88, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________7");
 		Endereco end8 = new Endereco(null, pessoaj3_1, cepService.findByCep("12216300"), 666, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________8");
 		Endereco end9 = new Endereco(null, pessoaj1_1, cepService.findByCep("04021001"), 1, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________9");
 		Endereco end10 = new Endereco(null, pessoaj2_1, cepService.findByCep("12209060"), 15, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________10");
 		Endereco end11 = new Endereco(null, pessoaj3_2, cepService.findByCep("12010070"), 1654, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________11");
 		Endereco end12 = new Endereco(null, pessoaj3_3, cepService.findByCep("12500140"), 898, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________12");
 		Endereco end13 = new Endereco(null, pessoaj3_4, cepService.findByCep("12301040"), 15, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________13");
 		Endereco end14 = new Endereco(null, pessoaj4_1, cepService.findByCep("11660070"), 507, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________14");
 		Endereco end15 = new Endereco(null, pessoaj1_2, cepService.findByCep("12209310"), 502, "");
+		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________15");
+	
 
 		enderecoRepository.saveAll(Arrays.asList(end1, end2, end3, end4, end5, end6, end7, end8, end9, end10, end11,
 				end12, end13, end14, end15));
