@@ -29,11 +29,21 @@ public class Empresa implements Serializable {
 	private Pessoa pessoa;
 	
 	@ManyToOne
-	@JoinColumn(name = "TIPO_ID")
+	@JoinColumn(name = "TIPO_EMPRESA")
 	private TipoEmpresa tipoEmpresa;
 	
 	private Integer transportadora;
 
-	private Pessoa empresaMatrizId;
+	private Integer empresaMatrizId;
+
+	public Empresa(Integer id, Pessoa pessoa, TipoEmpresa tipoEmpresa, Integer transportadora, Integer empresaMatrizId) {
+		super();
+		this.id = id;
+		this.pessoa = pessoa;
+		this.tipoEmpresa = tipoEmpresa;
+		this.transportadora = transportadora;
+		this.empresaMatrizId = empresaMatrizId;
+	}
+	
 	
 }

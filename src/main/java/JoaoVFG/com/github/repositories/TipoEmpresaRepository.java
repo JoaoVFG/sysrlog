@@ -15,6 +15,8 @@ public interface TipoEmpresaRepository extends JpaRepository<Empresa, Integer>{
 	@Transactional(readOnly = true)
 	@Query("SELECT tipoEmpresa FROM TipoEmpresa tipoEmpresa WHERE tipoEmpresa.id = :id")
 	public TipoEmpresa buscaPorId(@Param("id") Integer id);
-
-	TipoEmpresa findBydescricao(String descricao);
+	
+	@Transactional(readOnly = true)
+	@Query("SELECT tipoEmpresa FROM TipoEmpresa tipoEmpresa WHERE tipoEmpresa.descricao = :descricao")
+	public TipoEmpresa buscaPorDescricao(String descricao);
 }

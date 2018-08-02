@@ -22,12 +22,12 @@ public interface EmpresaRepository extends JpaRepository<Empresa, Integer>{
 	public Empresa buscaPorId(@Param("idBusca")Integer id);
 	
 	@Transactional(readOnly = true)
-	public List<Empresa> findBypessoa(Pessoa pessoa);
+	public Empresa findBypessoa(Pessoa pessoa);
 	
 	@Transactional(readOnly = true)
 	public List<Empresa> findBytipoEmpresa(TipoEmpresa tipoEmpresa);
 	
-	@Transactional(readonly = true)
+	@Transactional(readOnly = true)
 	public List<Empresa> findByTransportadora(Integer transportadora);
 	
 	@Transactional(readOnly = true)
