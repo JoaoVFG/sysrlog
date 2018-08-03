@@ -63,7 +63,9 @@ public class FuncionarioService {
 
 	public Funcionario insertFuncionario(FuncionarioDTO dto) {
 		Funcionario funcionario = funcionarioFromDto(dto);
-		if (funcionarioRepository.buscaPorEmpresaECargo(funcionario.getEmpresa(), funcionario.getCargo()) == null) {
+		List<Funcionario> funcionarios = funcionarioRepository.findByempresa(empresaService.findById(funcionario.getEmpresa().getId()));
+		//funcionarios.stream().map(Funcionario::getPessoa).filter(funcionario.getPessoa()::equals).findFirst().isPresent();
+		if (!funcionarios.stream().map(Funcionario::getPessoa).filter(funcionario.getPessoa()::equals).findFirst().isPresent()){
 			funcionario.setId(null);
 			funcionario = funcionarioRepository.save(funcionario);
 			return findById(funcionario.getId());
