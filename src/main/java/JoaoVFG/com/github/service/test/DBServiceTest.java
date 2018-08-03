@@ -5,12 +5,16 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import JoaoVFG.com.github.entity.Cargo;
 import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Endereco;
+import JoaoVFG.com.github.entity.Funcionario;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Telefone;
+import JoaoVFG.com.github.repositories.CargoRepository;
 import JoaoVFG.com.github.repositories.EmpresaRepository;
 import JoaoVFG.com.github.repositories.EnderecoRepository;
+import JoaoVFG.com.github.repositories.FuncionarioRepository;
 import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.repositories.TipoEmpresaRepository;
@@ -44,6 +48,12 @@ public class DBServiceTest {
 
 	@Autowired
 	TipoEmpresaRepository tipoEmpresaRepository;
+
+	@Autowired
+	CargoRepository cargoRepository;
+
+	@Autowired
+	FuncionarioRepository funcionarioRepository;
 
 	public void instantiateTesteDataBase() {
 
@@ -120,7 +130,6 @@ public class DBServiceTest {
 		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________14");
 		Endereco end15 = new Endereco(null, pessoaj1_2, cepService.findByCep("12209310"), 502, "");
 		System.out.println("EUHEUHEUHEUHEUHEUHEUEUEHUE_________________________________15");
-	
 
 		enderecoRepository.saveAll(Arrays.asList(end1, end2, end3, end4, end5, end6, end7, end8, end9, end10, end11,
 				end12, end13, end14, end15));
@@ -139,8 +148,79 @@ public class DBServiceTest {
 
 		empresaRepository.saveAll(Arrays.asList(empresa1, empresa2, empresa3, empresa4, empresa5, empresa6, empresa7,
 				empresa8, empresa9, empresa10, empresa11));
-		
-		
+
+		Cargo cargo1 = new Cargo(null, "CARGO 1");
+		Cargo cargo2 = new Cargo(null, "CARGO 2");
+		Cargo cargo3 = new Cargo(null, "CARGO 3");
+		Cargo cargo4 = new Cargo(null, "CARGO 4");
+		Cargo cargo5 = new Cargo(null, "CARGO 5");
+		Cargo cargo6 = new Cargo(null, "CARGO 6");
+		Cargo cargo7 = new Cargo(null, "CARGO A");
+		Cargo cargo8 = new Cargo(null, "CARGO ABC");
+		Cargo cargo9 = new Cargo(null, "CARGO A5");
+
+		cargoRepository.saveAll(Arrays.asList(cargo1, cargo2, cargo3, cargo4, cargo5, cargo6, cargo7, cargo8, cargo9));
+
+		Pessoa pessoafun01 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 01", "00000000001", "01/01/90", "M");
+		Pessoa pessoafun02 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 02", "00000000002", "01/01/90", "F");
+		Pessoa pessoafun03 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 03", "00000000003", "01/01/90", "M");
+		Pessoa pessoafun04 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 04", "00000000004", "01/01/90", "F");
+		Pessoa pessoafun05 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 05", "00000000005", "01/01/90", "M");
+		Pessoa pessoafun06 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 06", "00000000006", "01/01/90", "F");
+		Pessoa pessoafun07 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 07", "00000000007", "01/01/90", "M");
+		Pessoa pessoafun08 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 08", "00000000008", "01/01/90", "F");
+		Pessoa pessoafun09 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 09", "00000000009", "01/01/90", "M");
+		Pessoa pessoafun10 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 10", "00000000010", "01/01/90", "F");
+		Pessoa pessoafun11 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 11", "00000000011", "01/01/90", "M");
+		Pessoa pessoafun12 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 12", "00000000012", "01/01/90", "F");
+		Pessoa pessoafun13 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 13", "00000000013", "01/01/90", "M");
+		Pessoa pessoafun14 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 14", "00000000014", "01/01/90", "F");
+		Pessoa pessoafun15 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 15", "00000000015", "01/01/90", "M");
+		Pessoa pessoafun16 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 16", "00000000016", "01/01/90", "F");
+		Pessoa pessoafun17 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 17", "00000000017", "01/01/90", "M");
+		Pessoa pessoafun18 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 18", "00000000018", "01/01/90", "F");
+		Pessoa pessoafun19 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 19", "00000000019", "01/01/90", "M");
+		Pessoa pessoafun20 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 20", "00000000020", "01/01/90", "F");
+		Pessoa pessoafun21 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 21", "00000000021", "01/01/90", "M");
+		Pessoa pessoafun22 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 22", "00000000022", "01/01/90", "F");
+		Pessoa pessoafun23 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 23", "00000000023", "01/01/90", "M");
+		Pessoa pessoafun24 = new Pessoa(null, tipo.findByid(1), "FUNCIONARIO 24", "00000000024", "01/01/90", "F");
+
+		pessoaRepository.saveAll(Arrays.asList(pessoafun01, pessoafun02, pessoafun03, pessoafun04, pessoafun05,
+				pessoafun06, pessoafun07, pessoafun08, pessoafun09, pessoafun10, pessoafun11, pessoafun12, pessoafun13,
+				pessoafun14, pessoafun15, pessoafun16, pessoafun17, pessoafun18, pessoafun19, pessoafun20, pessoafun21,
+				pessoafun22, pessoafun23, pessoafun24));
+
+		Funcionario funcionario01 = new Funcionario(null, pessoafun01, empresa1, cargo1);
+		Funcionario funcionario02 = new Funcionario(null, pessoafun02, empresa2, cargo9);
+		Funcionario funcionario03 = new Funcionario(null, pessoafun03, empresa2, cargo2);
+		Funcionario funcionario04 = new Funcionario(null, pessoafun04, empresa2, cargo8);
+		Funcionario funcionario05 = new Funcionario(null, pessoafun05, empresa3, cargo3);
+		Funcionario funcionario06 = new Funcionario(null, pessoafun06, empresa4, cargo7);
+		Funcionario funcionario07 = new Funcionario(null, pessoafun07, empresa4, cargo4);
+		Funcionario funcionario08 = new Funcionario(null, pessoafun08, empresa5, cargo6);
+		Funcionario funcionario09 = new Funcionario(null, pessoafun09, empresa5, cargo5);
+		Funcionario funcionario10 = new Funcionario(null, pessoafun10, empresa6, cargo3);
+		Funcionario funcionario11 = new Funcionario(null, pessoafun11, empresa6, cargo5);
+		Funcionario funcionario12 = new Funcionario(null, pessoafun12, empresa7, cargo7);
+		Funcionario funcionario13 = new Funcionario(null, pessoafun13, empresa7, cargo8);
+		Funcionario funcionario14 = new Funcionario(null, pessoafun14, empresa8, cargo1);
+		Funcionario funcionario15 = new Funcionario(null, pessoafun15, empresa8, cargo9);
+		Funcionario funcionario16 = new Funcionario(null, pessoafun16, empresa9, cargo2);
+		Funcionario funcionario17 = new Funcionario(null, pessoafun17, empresa9, cargo4);
+		Funcionario funcionario18 = new Funcionario(null, pessoafun18, empresa10, cargo3);
+		Funcionario funcionario19 = new Funcionario(null, pessoafun19, empresa10, cargo6);
+		Funcionario funcionario20 = new Funcionario(null, pessoafun20, empresa11, cargo7);
+		Funcionario funcionario21 = new Funcionario(null, pessoafun21, empresa11, cargo1);
+		Funcionario funcionario22 = new Funcionario(null, pessoafun22, empresa1, cargo6);
+		Funcionario funcionario23 = new Funcionario(null, pessoafun23, empresa3, cargo8);
+		Funcionario funcionario24 = new Funcionario(null, pessoafun24, empresa3, cargo9);
+
+		funcionarioRepository.saveAll(Arrays.asList(funcionario01, funcionario02, funcionario03, funcionario04,
+				funcionario05, funcionario06, funcionario07, funcionario08, funcionario09, funcionario10, funcionario11,
+				funcionario12, funcionario13, funcionario14, funcionario15, funcionario16, funcionario17, funcionario18,
+				funcionario19, funcionario20, funcionario21, funcionario22, funcionario23, funcionario24));
+
 	}
 
 }

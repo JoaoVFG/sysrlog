@@ -19,4 +19,8 @@ public interface CargoRepository extends JpaRepository<Cargo, Integer>{
 	
 	@Transactional(readOnly = true)
 	public List<Cargo> findBydescricaoContains(String descricao);
+	
+	@Transactional(readOnly = true)
+	public List<Cargo> findBydescricao(String descricao);
+	
 }
