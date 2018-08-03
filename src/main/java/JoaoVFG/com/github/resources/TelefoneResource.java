@@ -46,14 +46,14 @@ public class TelefoneResource {
 		return ResponseEntity.ok().body(telefones);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/insere", method = RequestMethod.POST)
 	public ResponseEntity<Void> createTelefone(@RequestBody TelefoneDTO dto){
 		Telefone telefone = telefoneService.createFromDto(dto);
 		URI uri = URI.create(telefone.getPessoa().getId().toString());
 		return ResponseEntity.created(uri).build();
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "deleta/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletaTelefone(@PathVariable Integer id){
 		telefoneService.deletaTelefone(id);
 		return ResponseEntity.noContent().build();

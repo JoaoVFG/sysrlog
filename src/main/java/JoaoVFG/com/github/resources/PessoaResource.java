@@ -54,20 +54,20 @@ public class PessoaResource {
 		return ResponseEntity.ok().body(pessoa);
 	}
 	
-	@RequestMapping(value="/buscapessoa/razaoSocial/{razaoSocial}", method = RequestMethod.GET)
+	@RequestMapping(value="/buscapessoa/razaosocial/{razaoSocial}", method = RequestMethod.GET)
 	public ResponseEntity<List<Pessoa>> findByRazaoSocial(@PathVariable String razaoSocial){
 		List<Pessoa> pessoas = pessoaService.findByrazaoSocial(razaoSocial);
 		return ResponseEntity.ok().body(pessoas);
 	}
 	
-	@RequestMapping(value = "/insertpf",method = RequestMethod.POST)
+	@RequestMapping(value = "/inserepf",method = RequestMethod.POST)
 	public ResponseEntity<Void> createPessoaFisica(@RequestBody PessoaFisicaDTO pessoaDto){
 		Pessoa pessoa = pessoaService.createPF(pessoaDto);
 		URI uri = URI.create("/pessoa" + "/buscaPessoa/" + pessoa.getId());
 		return ResponseEntity.created(uri).build();
 	}
 	
-	@RequestMapping(value = "/insertpj",method = RequestMethod.POST)
+	@RequestMapping(value = "/inserepj",method = RequestMethod.POST)
 	public ResponseEntity<Void> createPessoaJuridica(@RequestBody PessoaJuridicaDTO pessoaDto){
 		Pessoa pessoa = pessoaService.createPJ(pessoaDto);
 		URI uri = URI.create("/pessoa" + "/buscaPessoa/" + pessoa.getId());

@@ -52,7 +52,7 @@ public class FuncionarioResource {
 		return ResponseEntity.ok(funcionarios);
 	}
 	
-	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insere", method = RequestMethod.POST)
 	public ResponseEntity<Void> insertFuncionario(@RequestBody FuncionarioDTO dto){
 		Funcionario funcionario = funcionarioService.insertFuncionario(dto);
 		URI uri = URI.create("/funcionario" + "/buscafuncionario/" + funcionario.getId());

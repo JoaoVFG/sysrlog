@@ -39,8 +39,7 @@ public class EmpresaResource {
 		Empresa empresa = empresaService.findByIdPessoa(id);
 		return ResponseEntity.ok(empresa);
 	}
-	
-	//erro
+
 	@RequestMapping(value = "/buscaempresa/tipoempresa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Empresa>> findByTipoEmpresa(@PathVariable Integer id) {
 		List<Empresa> empresas = empresaService.findByTipoEmpresa(id);
@@ -53,13 +52,13 @@ public class EmpresaResource {
 		return ResponseEntity.ok(empresas);
 	}
 
-	@RequestMapping(value = "/buscaempresa/idMatriz/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/buscaempresa/idmatriz/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Empresa>> findByMatriz(@PathVariable Integer id) {
 		List<Empresa> empresas = empresaService.findByMatriz(id);
 		return ResponseEntity.ok(empresas);
 	}
 
-	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insere", method = RequestMethod.POST)
 	public ResponseEntity<Void> createEmpresa(@RequestBody EmpresaDTO empresaDTO) {
 		Empresa empresa = empresaService.createEmpresa(empresaDTO);
 		URI uri = URI.create("/empresa" + "/buscaempresa/" + empresa.getId());

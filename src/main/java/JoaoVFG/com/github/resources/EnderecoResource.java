@@ -46,7 +46,7 @@ public class EnderecoResource {
 		return ResponseEntity.ok(enderecos);
 	}
 
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	@RequestMapping(value = "/insere", method = RequestMethod.POST)
 	public ResponseEntity<Void> createEndereco(@RequestBody EnderecoDTO enderecoDTO){
 		Endereco endereco = enderecoService.createFromDTO(enderecoDTO);
 		URI uri = URI.create("/endereco" + "buscaendereco/" + endereco.getId());
