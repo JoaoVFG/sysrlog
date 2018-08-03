@@ -34,13 +34,14 @@ public class CargoService {
 	}
 	
 	public Cargo create(String descricao) {
-		if(cargoRepository.findBydescricao(descricao) == null) {
-			Cargo cargo = new Cargo(null, descricao);
+		Cargo cargo = new Cargo(null, descricao);
+		
+		if(cargoRepository.findBydescricao(descricao).isEmpty()) {
 			cargo = cargoRepository.save(cargo); 
-			return findById(cargo.getId());
 		}else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE FUNCIONARIO");
 		}
+		return findById(cargo.getId());
 	}
 	
 	public void delete(Integer id) {
