@@ -65,4 +65,10 @@ public class FuncionarioResource {
 		funcionarioService.deletaFuncionario(id);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@RequestMapping(value= "/update/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Funcionario> updateFuncionario(@PathVariable Integer id, @RequestBody FuncionarioDTO funcionarioDTO){
+		Funcionario funcionario = funcionarioService.updateFuncionario(id,funcionarioDTO);
+		return ResponseEntity.ok(funcionario);
+	}
 }

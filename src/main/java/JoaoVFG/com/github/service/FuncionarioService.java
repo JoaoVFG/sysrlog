@@ -74,12 +74,12 @@ public class FuncionarioService {
 		}
 	}
 	
-	public Funcionario updateFuncionario(Funcionario updateFuncionario) {
-		Funcionario funcionario = findById(updateFuncionario.getId());
+	public Funcionario updateFuncionario(Integer id, FuncionarioDTO updateFuncionario) {
+		Funcionario funcionario = findById(id);
 		
-		funcionario.setPessoa(pessoaService.findById(updateFuncionario.getId()));
-		funcionario.setEmpresa(empresaService.findById(updateFuncionario.getEmpresa().getId()));
-		funcionario.setCargo(cargoRepository.buscaPorId(updateFuncionario.getCargo().getId()));
+		funcionario.setPessoa(pessoaService.findById(updateFuncionario.getIdPessoa()));
+		funcionario.setEmpresa(empresaService.findById(updateFuncionario.getIdEmpresa()));
+		funcionario.setCargo(cargoRepository.buscaPorId(updateFuncionario.getIdCargo()));
 		
 		return funcionarioRepository.save(funcionario);
 	}
@@ -96,9 +96,6 @@ public class FuncionarioService {
 	public Funcionario funcionarioFromDto(FuncionarioDTO dto) {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setCargo(cargoRepository.buscaPorId(dto.getIdCargo()));
-		funcionario.setEmpresa(empresaService.findById(dto.getIdEmpresa()));
-		funcionario.setPessoa(pessoaService.findById(dto.getIdPessoa()));
-
 		return funcionario;
 	}
 }

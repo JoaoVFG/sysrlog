@@ -58,4 +58,10 @@ public class EnderecoResource {
 		enderecoService.deletarEndereco(enderecoService.findById(id));
 		return ResponseEntity.noContent().build();
 	}
+	
+	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Endereco> updateEndereco(@PathVariable Integer id,@RequestBody EnderecoDTO enderecoUpdate){
+		Endereco endereco = enderecoService.updateEndereco(id,enderecoUpdate);
+		return ResponseEntity.ok().body(endereco);
+	}
 }

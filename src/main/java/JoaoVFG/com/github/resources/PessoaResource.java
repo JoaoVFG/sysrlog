@@ -81,6 +81,12 @@ public class PessoaResource {
 		return ResponseEntity.noContent().build();
 	}
 	
+	@RequestMapping(value="/update", method = RequestMethod.PUT)
+	public ResponseEntity<Pessoa> updatePessoa(@RequestBody Pessoa updatePessoa){
+		Pessoa pessoa = pessoaService.updatePessoa(updatePessoa);
+		return ResponseEntity.ok(pessoa);
+	}
+	
 	
 
 }

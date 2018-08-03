@@ -70,5 +70,11 @@ public class EmpresaResource {
 		empresaService.deletarEmpresa(empresaService.findById(id));
 		return ResponseEntity.noContent().build();
 	}
+	
+	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Empresa> updateEmpresa(@PathVariable Integer id,@RequestBody EmpresaDTO empresaUpdate){
+		Empresa empresa = empresaService.updateEmpresa(id ,empresaUpdate);
+		return ResponseEntity.ok(empresa);
+	}
 
 }

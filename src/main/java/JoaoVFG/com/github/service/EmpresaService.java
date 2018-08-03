@@ -80,13 +80,13 @@ public class EmpresaService {
 		return findById(empresa.getId());
 	}
 	
-	public Empresa updateEmpresa(Empresa empresaUpdate) {
-		Empresa empresa = findById(empresaUpdate.getId());
+	public Empresa updateEmpresa(Integer id, EmpresaDTO empresaUpdate) {
+		Empresa empresa = findById(id);
 		if(!(empresa == null)) {
-			empresa.setPessoa(empresaUpdate.getPessoa());
-			empresa.setTipoEmpresa(empresaUpdate.getTipoEmpresa());
+			empresa.setPessoa(pessoaService.findById(empresaUpdate.getPessoa()));
+			empresa.setTipoEmpresa(tipoEmpresaRepository.buscaPorId(empresaUpdate.getTipoEmpresa()));
 			empresa.setTransportadora(empresaUpdate.getTransportadora());
-			empresa.setEmpresaMatrizId(empresaUpdate.getEmpresaMatrizId());
+			empresa.setEmpresaMatrizId(empresaUpdate.getEmpresaMatriz());
 			
 			return empresaRepository.save(empresa);
 		}else {

@@ -53,10 +53,16 @@ public class TelefoneResource {
 		return ResponseEntity.created(uri).build();
 	}
 	
-	@RequestMapping(value = "deleta/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/deleta/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletaTelefone(@PathVariable Integer id){
 		telefoneService.deletaTelefone(id);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+	public ResponseEntity<Telefone> updateTelefone(@RequestBody Telefone updateTelefone){
+		Telefone telefone = telefoneService.updateTelefone(updateTelefone);
+		return ResponseEntity.ok(telefone);
 	}
 	
 	

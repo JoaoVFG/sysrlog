@@ -53,14 +53,13 @@ public class EnderecoService {
 		return findById(endereco.getId());
 	}
 
-	public Endereco updateEndereco(Endereco enderecoUpdate) {
+	public Endereco updateEndereco(Integer id, EnderecoDTO enderecoUpdate) {
+		
+		Endereco endereco = findById(id);
 
-		Endereco endereco = findById(enderecoUpdate.getId());
-
-		endereco.setCep(enderecoUpdate.getCep());
+		endereco.setCep(cepService.findByCep(enderecoUpdate.getCep()));
 		endereco.setComplemento(enderecoUpdate.getComplemento());
 		endereco.setNumeroLogradouro(enderecoUpdate.getNumeroLogradouro());
-		endereco.setPessoa(enderecoUpdate.getPessoa());
 
 		return enderecoRepository.save(endereco);
 
