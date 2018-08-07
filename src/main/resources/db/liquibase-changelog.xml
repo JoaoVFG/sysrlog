@@ -26,6 +26,10 @@
        	 <include file="changelog/18-create-cargo.xml" relativeToChangelogFile="true"/>
        	 <include file="changelog/19-create-funcionario.xml" relativeToChangelogFile="true"/>
        	 <include file="changelog/20-add-foreignkey-funcionario.xml" relativeToChangelogFile="true"/>
+       	 <include file="changelog/21-create-user.xml" relativeToChangelogFile="true"/>
+       	 <include file="changelog/22-create-roles.xml" relativeToChangelogFile="true"/>
+       	 <include file="changelog/23-create-user-roles.xml" relativeToChangelogFile="true"/>
+       	 <include file="changelog/24-add-foreignkey-user-roles.xml" relativeToChangelogFile="true"/>
                
 
 </databaseChangeLog>
