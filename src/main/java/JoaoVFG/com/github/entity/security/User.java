@@ -23,25 +23,50 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-public class User implements Serializable{
+public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String email;
-	
+
 	private String senha;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "PESSOA_ID")
 	private Pessoa pessoa;
-	
+
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "USER_ROLE", joinColumns = {
-            @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
-            @JoinColumn(name = "ROLE_ID") })
-    private Set<Role> roles;
-	
+	@JoinTable(name = "USER_ROLE", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
+			@JoinColumn(name = "ROLE_ID") })
+	private Set<Role> roles;
+
+	public User(Integer id, String email, String senha, Pessoa pessoa, Set<Role> roles) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.senha = senha;
+		this.pessoa = pessoa;
+		this.roles = roles;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("User [id=");
+		builder.append(id);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", senha=");
+		builder.append(senha);
+		builder.append(", pessoa=");
+		builder.append(pessoa);
+		builder.append(", roles=");
+		builder.append(roles);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

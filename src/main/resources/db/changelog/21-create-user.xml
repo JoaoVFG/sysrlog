@@ -14,7 +14,7 @@
 			<column name="EMAIL" type="varchar(50)">
 				<constraints nullable="false" />
 			</column>
-			<column name="SENHA" type="INT">
+			<column name="SENHA" type="varchar(16)">
 				<constraints nullable="false" />
 			</column>
 			<column name="PESSOA_ID" type="INT">
