@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.entity.Cargo;
@@ -65,6 +66,9 @@ public class DBServiceTest {
 
 	@Autowired
 	RoleRepository roleRepository;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	public void instantiateTesteDataBase() {
 
@@ -225,8 +229,8 @@ public class DBServiceTest {
 		HashSet<Role> roles = new HashSet<>(Arrays.asList(role));
 		HashSet<Role> roles2 = new HashSet<>(Arrays.asList(role1,role2));
 		
-		User user = new User(null, "adm@adm.com.br", "adm", pessoaf1, roles);
-		User user2 = new User(null, "subadm@adm.com.br", "Subadm", pessoaf2, roles2);
+		User user = new User(null, "adm@adm.com.br", passwordEncoder.encode("adm"), pessoaf1, roles);
+		User user2 = new User(null, "subadm@adm.com.br", passwordEncoder.encode("123456"), pessoaf2, roles2);
 
 		userRepository.saveAll(Arrays.asList(user,user2));
 	}

@@ -14,4 +14,6 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	@Transactional(readOnly = true)
 	@Query("SELECT user FROM User user WHERE user.id = :idBusca")
 	public User buscaPorId(@Param("idBusca")Integer id);
+	
+	public User findByemail(String email);
 }

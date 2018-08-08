@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import JoaoVFG.com.github.entity.Cargo;
-import JoaoVFG.com.github.entity.dto.CargoService;
+import JoaoVFG.com.github.service.CargoService;
 
 @RestController
 @RequestMapping(value="/cargo")

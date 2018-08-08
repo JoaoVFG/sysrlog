@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +28,8 @@ public class EnderecoResource {
 		Endereco endereco = enderecoService.findById(id);
 		return ResponseEntity.ok(endereco);
 	}
-
+	
+	@PreAuthorize("hasRole('ROLE_ADM')")
 	@RequestMapping(value = "/buscaendereco", method = RequestMethod.GET)
 	public ResponseEntity<List<Endereco>> findAll() {
 		List<Endereco> enderecos = enderecoService.findAll();

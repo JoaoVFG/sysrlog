@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.entity.dto;
+package JoaoVFG.com.github.service;
 
 import java.util.List;
 import java.util.Optional;
