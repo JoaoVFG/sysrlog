@@ -11,8 +11,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @Entity
 public class MapConfig implements Serializable{
@@ -24,13 +24,13 @@ public class MapConfig implements Serializable{
 	
 	private String nameKey;
 	
-	private String valor;
+	private String value;
 
-	public MapConfig(Integer id, String nameKey, String valor) {
+	public MapConfig(Integer id, String nameKey, String value) {
 		super();
 		this.id = id;
 		this.nameKey = nameKey;
-		this.valor = valor;
+		this.value = value;
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class MapConfig implements Serializable{
 		builder.append(", nameKey=");
 		builder.append(nameKey);
 		builder.append(", valor=");
-		builder.append(valor);
+		builder.append(value);
 		builder.append("]");
 		return builder.toString();
 	}

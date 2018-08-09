@@ -13,6 +13,7 @@ import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Funcionario;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Telefone;
+import JoaoVFG.com.github.entity.config.MapConfig;
 import JoaoVFG.com.github.entity.security.Role;
 import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.repositories.CargoRepository;
@@ -23,10 +24,12 @@ import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.repositories.TipoEmpresaRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
+import JoaoVFG.com.github.repositories.config.MapConfigRepository;
 import JoaoVFG.com.github.repositories.security.RoleRepository;
 import JoaoVFG.com.github.repositories.security.UserRepository;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
+import JoaoVFG.com.github.service.utils.GenerateRandom;
 
 @Service
 public class DBServiceTest {
@@ -69,6 +72,9 @@ public class DBServiceTest {
 	
 	@Autowired
 	PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	MapConfigRepository mapConfigRepository;
 
 	public void instantiateTesteDataBase() {
 
@@ -227,19 +233,15 @@ public class DBServiceTest {
 		User user = new User(null, "adm@adm.com.br", passwordEncoder.encode("adm"), pessoaf1, roles);
 		userRepository.save(user);
 		
-		/**
-		Role role = new Role(null, "ROLE_ADM", "ROLE PARA ADMINISTRAÇÕA DO SISTEMA");
-		Role role1 = new Role(null, "ROLE_ADD_FUNCIONARIO", "ROLE PARA ADICIONAR FUNCIONARIO");
-		Role role2 = new Role(null, "ROLE_ADM_PESSOA", "ROLE PARA ADICIONAR PESSOA");
-
-
-		HashSet<Role> roles = new HashSet<>(Arrays.asList(role));
-		HashSet<Role> roles2 = new HashSet<>(Arrays.asList(role1,role2));
+		GenerateRandom gr = new GenerateRandom();
 		
-		User user = new User(null, "adm@adm.com.br", passwordEncoder.encode("adm"), pessoaf1, roles);
-		User user2 = new User(null, "subadm@adm.com.br", passwordEncoder.encode("123456"), pessoaf2, roles2);
+		System.out.println(gr.newRandom(10));
+		System.out.println(gr.newRandom(100));
 		
-		userRepository.saveAll(Arrays.asList(user,user2));**/
+		MapConfig mapConfig = mapConfigRepository.buscaPorId(1);
+		mapConfig.setValue(gr.newRandom(20));
+		
+		mapConfigRepository.save(mapConfig);
 	}
 
 }
