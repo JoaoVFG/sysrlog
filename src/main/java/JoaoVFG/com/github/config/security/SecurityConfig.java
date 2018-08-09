@@ -1,5 +1,4 @@
 package JoaoVFG.com.github.config.security;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -65,6 +64,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	                .sessionManagement()
 	                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 	                    .and()
+	                .headers().frameOptions().sameOrigin()//addHeaderWriter(new XFrameOptionsHeaderWriter(new WhiteListedAllowFromStrategy(Arrays.asList("localhost"))))
+	                	.and()
 	                .authorizeRequests()
 	                    .antMatchers("/",
 	                        "/favicon.ico",
