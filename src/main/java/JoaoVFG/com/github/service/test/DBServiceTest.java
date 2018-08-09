@@ -220,7 +220,14 @@ public class DBServiceTest {
 				funcionario05, funcionario06, funcionario07, funcionario08, funcionario09, funcionario10, funcionario11,
 				funcionario12, funcionario13, funcionario14, funcionario15, funcionario16, funcionario17, funcionario18,
 				funcionario19, funcionario20, funcionario21, funcionario22, funcionario23, funcionario24));
-
+		
+		
+		Role role = roleRepository.buscaPorId(1);
+		HashSet<Role> roles = new HashSet<>(Arrays.asList(role));
+		User user = new User(null, "adm@adm.com.br", passwordEncoder.encode("adm"), pessoaf1, roles);
+		userRepository.save(user);
+		
+		/**
 		Role role = new Role(null, "ROLE_ADM", "ROLE PARA ADMINISTRAÇÕA DO SISTEMA");
 		Role role1 = new Role(null, "ROLE_ADD_FUNCIONARIO", "ROLE PARA ADICIONAR FUNCIONARIO");
 		Role role2 = new Role(null, "ROLE_ADM_PESSOA", "ROLE PARA ADICIONAR PESSOA");
@@ -231,8 +238,8 @@ public class DBServiceTest {
 		
 		User user = new User(null, "adm@adm.com.br", passwordEncoder.encode("adm"), pessoaf1, roles);
 		User user2 = new User(null, "subadm@adm.com.br", passwordEncoder.encode("123456"), pessoaf2, roles2);
-
-		userRepository.saveAll(Arrays.asList(user,user2));
+		
+		userRepository.saveAll(Arrays.asList(user,user2));**/
 	}
 
 }

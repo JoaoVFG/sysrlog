@@ -31,9 +31,10 @@ public class CalculaDistancia {
 		
 		try {
 			CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-			String url = "http://maps.googleapis.com/maps/api/distancematrix/json?"
+			String url = "https://maps.googleapis.com/maps/api/distancematrix/json?"
 					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
-					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving";
+					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving"
+					+ "&key=AIzaSyBZZn2s8vqxIgpwoOBJiabAZTKWZuzp0LI";
 			System.out.println(url.toString());
 			HttpGet httpGet = new HttpGet(url);
 			HttpResponse httpResponse = httpClient.execute(httpGet);
@@ -56,7 +57,7 @@ public class CalculaDistancia {
 			Distancia d = calcDistancia(cepOrigem, e);
 			distanciasDoInicio.add(d);
 		}
-		
+		System.out.println(distanciasDoInicio);
 		distanciasDoInicio.sort(Comparator.comparing(Distancia::getDistanciaInMeters));
 		
 		return distanciasDoInicio.get(0).getCepDestino();

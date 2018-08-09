@@ -30,6 +30,6 @@
        	 <include file="changelog/22-create-roles.xml" relativeToChangelogFile="true"/>
        	 <include file="changelog/23-create-user-roles.xml" relativeToChangelogFile="true"/>
        	 <include file="changelog/24-add-foreignkey-user-roles.xml" relativeToChangelogFile="true"/>
-               
+         <include file="changelog/25-insert-roles.xml" relativeToChangelogFile="true"/>       
 
 </databaseChangeLog>
