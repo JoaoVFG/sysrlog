@@ -36,6 +36,12 @@
 			<column name="NAME_KEY">JWTSECRET</column>
 			<column name="VALUE">"000000"</column>
 		</insert>
+		
+		<insert tableName="MAP_CONFIG">
+			<column name="ID">2</column>
+			<column name="NAME_KEY">GOOGLEAPIKEY</column>
+			<column name="VALUE">000000</column>
+		</insert>
 	</changeSet>
 </databaseChangeLog>
 

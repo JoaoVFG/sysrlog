@@ -239,7 +239,7 @@ public class DBServiceTest {
 		System.out.println(gr.newRandom(100));
 		
 		MapConfig mapConfig = mapConfigRepository.findBynameKey("JWTSECRET");
-		mapConfig.setValue(gr.newRandom(20));
+		mapConfig.setValue(passwordEncoder.encode(gr.newRandom(20)));
 		
 		mapConfigRepository.save(mapConfig);
 	}
