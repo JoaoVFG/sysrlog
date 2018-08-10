@@ -16,7 +16,7 @@
 			<column name="NAME_KEY" type="varchar(50)">
 				<constraints nullable="false"/>
 			</column>
-			<column name="VALUE" type="varchar(100)">
+			<column name="VALUE" type="varchar(1000)">
 			</column>
 			
 		</createTable>
