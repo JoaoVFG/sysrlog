@@ -33,7 +33,7 @@
 	<changeSet id="26.2" author="JoaoVFG">
 		<insert tableName="MAP_CONFIG">
 			<column name="ID">1</column>
-			<column name="NAME_KEY">"JWTSECRET"</column>
+			<column name="NAME_KEY">JWTSECRET</column>
 			<column name="VALUE">"000000"</column>
 		</insert>
 	</changeSet>
