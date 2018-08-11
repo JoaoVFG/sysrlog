@@ -28,5 +28,10 @@ public class MapConfigService {
 		return configRepository.save(mapConfig);
 	}
 	
+	public MapConfig findGoogleApiKey() {
+		MapConfig mapConfig = configRepository.findBynameKey("GOOGLEAPIKEY");
+		return mapConfig;
+	}
+	
 	
 }

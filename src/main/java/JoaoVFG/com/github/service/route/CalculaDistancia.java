@@ -14,7 +14,10 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import JoaoVFG.com.github.service.MapConfigService;
 /**
  * *
  * @author joao.garcia
@@ -25,6 +28,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculaDistancia {
 	
+	@Autowired
+	MapConfigService mapConfigService;
+	
 	public Distancia calcDistancia(String cepOrigem, String cepDestino) {
 		
 		JsonObject objectResponse = null;
@@ -34,7 +40,7 @@ public class CalculaDistancia {
 			String url = "https://maps.googleapis.com/maps/api/distancematrix/json?"
 					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
 					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving"
-					+ "&key=AIzaSyBZZn2s8vqxIgpwoOBJiabAZTKWZuzp0LI";
+					+ mapConfigService.findGoogleApiKey().getValue();//"&key=AIzaSyBxdBRcPlju7HOIIDR8HUhWdHtjkXaUdD4";
 			System.out.println(url.toString());
 			HttpGet httpGet = new HttpGet(url);
 			HttpResponse httpResponse = httpClient.execute(httpGet);
