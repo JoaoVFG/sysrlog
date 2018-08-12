@@ -31,7 +31,10 @@
        	<include file="changelog/23-create-user-roles.xml" relativeToChangelogFile="true"/>
        	<include file="changelog/24-add-foreignkey-user-roles.xml" relativeToChangelogFile="true"/>
         <include file="changelog/25-insert-roles.xml" relativeToChangelogFile="true"/>       
-		<include file="changelog/26-create-mapconfig.xml" relativeToChangelogFile="true"/>       
+		<include file="changelog/26-create-mapconfig.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/27-create-regiao.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/28-create-regiao-cep.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/29-add-foreignkey-regiao-empresa-cep.xml" relativeToChangelogFile="true"/>       
 		
 		
 </databaseChangeLog>
