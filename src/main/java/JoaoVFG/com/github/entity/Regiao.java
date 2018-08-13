@@ -27,7 +27,9 @@ public class Regiao implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
+	
+	private String descricao;
+	
 	@ManyToOne
 	@JoinColumn(name = "EMPRESA_ID")
 	private Empresa empresa;

@@ -13,6 +13,7 @@
 			<column name="ID" type="int">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
+			<column name="DESCRICAO" type="Varchar(50)"></column>
 			<column name="REGIAO_ID" type="int">
 				<constraints nullable="false" />
 			</column>
