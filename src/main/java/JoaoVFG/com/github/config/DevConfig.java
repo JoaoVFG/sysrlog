@@ -38,7 +38,7 @@ public class DevConfig {
 		}
 		
 		dbServiceTeste.instantiateTesteDataBase();
-		//populateCeps.populateDBCeps();
+		populateCeps.populateDBCeps();
 		users.instantiabeDBUsers();
 		return true;
 	}

@@ -31,4 +31,8 @@ public interface CepRepository extends JpaRepository<Cep, Integer>{
 	@Query("SELECT cep FROM Cep cep WHERE cep.cidade = :cidadeBusca")
 	public List<Cep> findByCidade(@Param("cidadeBusca") Cidade cidade);
 	
+	@Transactional(readOnly = true)
+	@Query("SELECT cep FROM Cep cep WHERE cep.cidade = :cidadeBusca and cep.bairro = :nomeBairro")
+	public List<Cep> findByBairroAndCidade(@Param("cidadeBusca") Cidade cidade, @Param("nomeBairro") String nomeBairro);
+
 }

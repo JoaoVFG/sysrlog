@@ -46,8 +46,14 @@ public class CepResource {
 	
 	@RequestMapping(value = "/buscacep/rua/{nomeRua}", method = RequestMethod.GET)
 	public ResponseEntity<List<Cep>> findByNomeRua(@PathVariable String nomeRua){
-		List<Cep>ceps = cepService.findByNomeRua(nomeRua);
+		List<Cep> ceps = cepService.findByNomeRua(nomeRua);
 		return ResponseEntity.ok().body(ceps);
+	}
+	
+	@RequestMapping(value = "/buscacep/Cidade/{cidade}/bairro/{bairro}", method = RequestMethod.GET)
+	public ResponseEntity<List<Cep>> findByCidadeAndBairro(@PathVariable String cidade, @PathVariable String bairro){
+		List<Cep> ceps = cepService.findByBairroAndCidade(bairro, cidade);
+		return ResponseEntity.ok(ceps);
 	}
 	
 	@RequestMapping(value = "/buscacep/cidadeEstado/{estadoSigla}", method = RequestMethod.GET)
@@ -55,5 +61,7 @@ public class CepResource {
 		List<Cidade> cidades = cidadeService.findByEstado(estadoSigla);
 		return ResponseEntity.ok().body(cidades);
 	}
-
+	
+	
+	
 }

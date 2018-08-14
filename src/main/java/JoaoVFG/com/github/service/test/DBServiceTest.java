@@ -1,7 +1,6 @@
 package JoaoVFG.com.github.service.test;
 
 import java.util.Arrays;
-import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,11 +11,8 @@ import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Funcionario;
 import JoaoVFG.com.github.entity.Pessoa;
-import JoaoVFG.com.github.entity.Regiao;
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.entity.config.MapConfig;
-import JoaoVFG.com.github.entity.security.Role;
-import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.repositories.CargoRepository;
 import JoaoVFG.com.github.repositories.EmpresaRepository;
 import JoaoVFG.com.github.repositories.EnderecoRepository;

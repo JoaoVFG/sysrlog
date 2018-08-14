@@ -55,7 +55,12 @@ public class CepService {
 		Cidade cidadeBusca = cidadeRepository.findBynome(cidade);
 		return cepRepository.findByCidade(cidadeBusca);
 	}
-
+	
+	public List<Cep> findByBairroAndCidade(String nomeBairro, String nomeCidade){
+		List<Cep> ceps = cepRepository.findByBairroAndCidade(cidadeRepository.findBynome(nomeCidade), nomeBairro);
+		return ceps;
+	}
+	
 	public Cep createCep(Cep cep) {
 		cep.setId(null);
 		cep = cepRepository.save(cep);
