@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import JoaoVFG.com.github.service.test.DBServiceTest;
+import JoaoVFG.com.github.service.test.DBServiceTestPopulateCEPS;
+import JoaoVFG.com.github.service.test.DBServiceTestUsers;
 
 
 @Configuration
@@ -17,6 +19,12 @@ public class DevConfig {
 	
 	@Autowired
 	private DBServiceTest dbServiceTeste;
+	
+	@Autowired
+	private DBServiceTestPopulateCEPS populateCeps;
+	
+	@Autowired
+	private DBServiceTestUsers users;
 	
 	@Value("${joaovfg.github.generateDataToDatabse}")
 	private String strategy;
@@ -30,7 +38,8 @@ public class DevConfig {
 		}
 		
 		dbServiceTeste.instantiateTesteDataBase();
-		
+		//populateCeps.populateDBCeps();
+		users.instantiabeDBUsers();
 		return true;
 	}
 

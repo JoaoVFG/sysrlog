@@ -12,6 +12,7 @@ import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Funcionario;
 import JoaoVFG.com.github.entity.Pessoa;
+import JoaoVFG.com.github.entity.Regiao;
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.entity.config.MapConfig;
 import JoaoVFG.com.github.entity.security.Role;
@@ -21,6 +22,7 @@ import JoaoVFG.com.github.repositories.EmpresaRepository;
 import JoaoVFG.com.github.repositories.EnderecoRepository;
 import JoaoVFG.com.github.repositories.FuncionarioRepository;
 import JoaoVFG.com.github.repositories.PessoaRepository;
+import JoaoVFG.com.github.repositories.RegiaoRepository;
 import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.repositories.TipoEmpresaRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
@@ -69,22 +71,26 @@ public class DBServiceTest {
 
 	@Autowired
 	RoleRepository roleRepository;
-	
+
 	@Autowired
 	PasswordEncoder passwordEncoder;
-	
+
 	@Autowired
 	MapConfigRepository mapConfigRepository;
 
+	@Autowired
+	RegiaoRepository regiaoRepository;
+	
+
 	public void instantiateTesteDataBase() {
 
-		createCep.generateCep("12288560");
-		createCep.generateCep("12281350");
-		createCep.generateCep("12285020");
-		createCep.generateCep("12295370");
-		createCep.generateCep("12281460");
-		createCep.generateCep("12288460");
-		createCep.generateCep("12281420");
+		cepService.findByCep("12288560");
+		cepService.findByCep("12281350");
+		cepService.findByCep("12285020");
+		cepService.findByCep("12295370");
+		cepService.findByCep("12281460");
+		cepService.findByCep("12288460");
+		cepService.findByCep("12281420");
 
 		Pessoa pessoaf1 = new Pessoa(null, tipo.findByid(1), "JV", "45567860889", "21/07/1996", "M");
 		Pessoa pessoaf2 = new Pessoa(null, tipo.findByid(1), "JJ", "11593054807", "01/11/1967", "M");
@@ -154,7 +160,25 @@ public class DBServiceTest {
 
 		empresaRepository.saveAll(Arrays.asList(empresa1, empresa2, empresa3, empresa4, empresa5, empresa6, empresa7,
 				empresa8, empresa9, empresa10, empresa11));
+		/**
+		Regiao regiao1 = new Regiao(null, empresa1,
+				new HashSet<>(Arrays.asList(createCep.generateCep("12280-011"), createCep.generateCep("12280-021"),
+						createCep.generateCep("12280-022"), createCep.generateCep("12280-019"),
+						createCep.generateCep("12280-024"), createCep.generateCep("12280-016"),
+						createCep.generateCep("12280-023"), createCep.generateCep("12280-017"),
+						createCep.generateCep("12280-025"))));
 
+		Regiao regiao2 = new Regiao(null, empresa2,
+				new HashSet<>(Arrays.asList(createCep.generateCep("12280-230"), createCep.generateCep("12280-238"),
+						createCep.generateCep("12280-232"), createCep.generateCep("12280-236"),
+						createCep.generateCep("12280-240"), createCep.generateCep("12280-234"),
+						createCep.generateCep("12280-231"), createCep.generateCep("12280-237"),
+						createCep.generateCep("12280-239"), createCep.generateCep("12280-242"),
+						createCep.generateCep("12280-233"), createCep.generateCep("12280-235"),
+						createCep.generateCep("12280-241"))));
+		**/
+		
+		
 		Cargo cargo1 = new Cargo(null, "CARGO 1");
 		Cargo cargo2 = new Cargo(null, "CARGO 2");
 		Cargo cargo3 = new Cargo(null, "CARGO 3");
@@ -226,21 +250,12 @@ public class DBServiceTest {
 				funcionario05, funcionario06, funcionario07, funcionario08, funcionario09, funcionario10, funcionario11,
 				funcionario12, funcionario13, funcionario14, funcionario15, funcionario16, funcionario17, funcionario18,
 				funcionario19, funcionario20, funcionario21, funcionario22, funcionario23, funcionario24));
-		
-		
-		Role role = roleRepository.buscaPorId(1);
-		HashSet<Role> roles = new HashSet<>(Arrays.asList(role));
-		User user = new User(null, "adm@adm.com.br", passwordEncoder.encode("adm"), pessoaf1, roles);
-		userRepository.save(user);
-		
+
 		GenerateRandom gr = new GenerateRandom();
-		
-		System.out.println(gr.newRandom(10));
-		System.out.println(gr.newRandom(100));
-		
+
 		MapConfig mapConfig = mapConfigRepository.findBynameKey("JWTSECRET");
 		mapConfig.setValue(passwordEncoder.encode(gr.newRandom(20)));
-		
+
 		mapConfigRepository.save(mapConfig);
 	}
 

@@ -16,7 +16,7 @@ public interface RegiaoRepository extends JpaRepository<Regiao, Integer>{
 	
 	@Transactional(readOnly = true)
 	@Query("SELECT regiao FROM Regiao regiao WHERE regiao.id = :id")
-	public Regiao buscaPorId(@PathVariable("id") String id);
+	public Regiao buscaPorId(@PathVariable("id") Integer id);
 	
 	@Transactional(readOnly = true)
 	public List<Regiao> findByempresa(Empresa empresa);
