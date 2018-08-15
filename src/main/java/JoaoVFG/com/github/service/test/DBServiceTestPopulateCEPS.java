@@ -747,7 +747,7 @@ public class DBServiceTestPopulateCEPS {
 		cepService.findByCep("12294030");
 		cepService.findByCep("12294051");
 		cepService.findByCep("12294050");
-		cepService.findByCep("12294015");**/
+		cepService.findByCep("12294015");//
 		cepService.findByCep("12294060");
 		cepService.findByCep("12294135");
 		cepService.findByCep("12294070");
@@ -797,7 +797,7 @@ public class DBServiceTestPopulateCEPS {
 		cepService.findByCep("12290561");
 		cepService.findByCep("12294490");
 		cepService.findByCep("12294496");
-		cepService.findByCep("12294495");/**
+		cepService.findByCep("12294495");//
 		cepService.findByCep("12294500");
 		cepService.findByCep("12294410");
 		cepService.findByCep("12294470");

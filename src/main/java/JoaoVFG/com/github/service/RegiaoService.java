@@ -21,7 +21,7 @@ public class RegiaoService {
 	EmpresaService empresaService;
 
 	public Regiao findById(Integer id) {
-		Optional<Regiao> regiao = Optional.ofNullable(regiaoRepository.buscaPorId(1));
+		Optional<Regiao> regiao = Optional.ofNullable(regiaoRepository.buscaPorId(id));
 		return regiao.orElseThrow(() -> new ObjectNotFoundException(
 				"Regiao não encontrado! Id: " + id + ". Tipo: " + Regiao.class.getName()));
 	}

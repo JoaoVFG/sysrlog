@@ -1,6 +1,7 @@
 package JoaoVFG.com.github.service.test;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,6 +12,7 @@ import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Funcionario;
 import JoaoVFG.com.github.entity.Pessoa;
+import JoaoVFG.com.github.entity.Regiao;
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.entity.config.MapConfig;
 import JoaoVFG.com.github.repositories.CargoRepository;
@@ -76,10 +78,9 @@ public class DBServiceTest {
 
 	@Autowired
 	RegiaoRepository regiaoRepository;
-	
 
 	public void instantiateTesteDataBase() {
-
+		/**
 		cepService.findByCep("12288560");
 		cepService.findByCep("12281350");
 		cepService.findByCep("12285020");
@@ -87,7 +88,7 @@ public class DBServiceTest {
 		cepService.findByCep("12281460");
 		cepService.findByCep("12288460");
 		cepService.findByCep("12281420");
-
+		**/
 		Pessoa pessoaf1 = new Pessoa(null, tipo.findByid(1), "JV", "45567860889", "21/07/1996", "M");
 		Pessoa pessoaf2 = new Pessoa(null, tipo.findByid(1), "JJ", "11593054807", "01/11/1967", "M");
 		Pessoa pessoaf3 = new Pessoa(null, tipo.findByid(1), "Ingrid", "89988998899", "11/08/1993", "F");
@@ -102,7 +103,7 @@ public class DBServiceTest {
 		Pessoa pessoaj3_3 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "ENviadora A unidade 3", "485874810018");
 		Pessoa pessoaj3_4 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "ENviadora A unidade 4", "485874810088");
 		Pessoa pessoaj4_0 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "mandou X", "898725950008");
-		Pessoa pessoaj4_1 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "mandou X 2 ", "4478969850008");
+		Pessoa pessoaj4_1 = new Pessoa(null, tipo.findBydescricao("JURIDICA"), "mandou X 2", "4478969850008");
 		pessoaRepository.saveAll(
 				Arrays.asList(pessoaf1, pessoaf2, pessoaf3, pessoaf4, pessoaj1_0, pessoaj1_2, pessoaj1_1, pessoaj2_0,
 						pessoaj2_1, pessoaj3_4, pessoaj3_1, pessoaj3_2, pessoaj3_3, pessoaj4_0, pessoaj4_1));
@@ -157,31 +158,35 @@ public class DBServiceTest {
 		empresaRepository.saveAll(Arrays.asList(empresa1, empresa2, empresa3, empresa4, empresa5, empresa6, empresa7,
 				empresa8, empresa9, empresa10, empresa11));
 		/**
-		Regiao regiao1 = new Regiao(null, empresa1,
-				new HashSet<>(Arrays.asList(createCep.generateCep("12280-011"), createCep.generateCep("12280-021"),
-						createCep.generateCep("12280-022"), createCep.generateCep("12280-019"),
-						createCep.generateCep("12280-024"), createCep.generateCep("12280-016"),
-						createCep.generateCep("12280-023"), createCep.generateCep("12280-017"),
-						createCep.generateCep("12280-025"))));
+		 Regiao regiao1 = new Regiao(null, empresa1, new
+		 HashSet<>(Arrays.asList(createCep.generateCep("12280-011"),
+		 createCep.generateCep("12280-021"), createCep.generateCep("12280-022"),
+		 createCep.generateCep("12280-019"), createCep.generateCep("12280-024"),
+		 createCep.generateCep("12280-016"), createCep.generateCep("12280-023"),
+		 createCep.generateCep("12280-017"), createCep.generateCep("12280-025"))));
+		 
+		 Regiao regiao2 = new Regiao(null, empresa2, new
+		 HashSet<>(Arrays.asList(createCep.generateCep("12280-230"),
+		 createCep.generateCep("12280-238"), createCep.generateCep("12280-232"),
+		 createCep.generateCep("12280-236"), createCep.generateCep("12280-240"),
+		 createCep.generateCep("12280-234"), createCep.generateCep("12280-231"),
+		 createCep.generateCep("12280-237"), createCep.generateCep("12280-239"),
+		 createCep.generateCep("12280-242"), createCep.generateCep("12280-233"),
+		 createCep.generateCep("12280-235"), createCep.generateCep("12280-241"))));
+		 **/
 
-		Regiao regiao2 = new Regiao(null, empresa2,
-				new HashSet<>(Arrays.asList(createCep.generateCep("12280-230"), createCep.generateCep("12280-238"),
-						createCep.generateCep("12280-232"), createCep.generateCep("12280-236"),
-						createCep.generateCep("12280-240"), createCep.generateCep("12280-234"),
-						createCep.generateCep("12280-231"), createCep.generateCep("12280-237"),
-						createCep.generateCep("12280-239"), createCep.generateCep("12280-242"),
-						createCep.generateCep("12280-233"), createCep.generateCep("12280-235"),
-						createCep.generateCep("12280-241"))));
-		**/
-		
-		
+		Regiao regiao1 = new Regiao(null, empresaRepository.findById(1).get(),
+				new HashSet<>(cepService.findByBairroAndCidade("Jardim Rafael", "Caçapava")));
+
+		regiaoRepository.save(regiao1);
+
 		Cargo cargo1 = new Cargo(null, "CARGO 1");
 		Cargo cargo2 = new Cargo(null, "CARGO 2");
 		Cargo cargo3 = new Cargo(null, "CARGO 3");
 		Cargo cargo4 = new Cargo(null, "CARGO 4");
 		Cargo cargo5 = new Cargo(null, "CARGO 5");
 		Cargo cargo6 = new Cargo(null, "CARGO 6");
-		Cargo cargo7 = new Cargo(null, "CARGO A");
+		Cargo cargo7 = new Cargo(null, "CARGO	A");
 		Cargo cargo8 = new Cargo(null, "CARGO ABC");
 		Cargo cargo9 = new Cargo(null, "CARGO A5");
 
@@ -253,6 +258,7 @@ public class DBServiceTest {
 		mapConfig.setValue(passwordEncoder.encode(gr.newRandom(20)));
 
 		mapConfigRepository.save(mapConfig);
+
 	}
 
 }

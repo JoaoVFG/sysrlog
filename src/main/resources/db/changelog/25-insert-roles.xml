@@ -164,5 +164,29 @@
     		<column name="DESCRICAO" value="FUNÇÃO BUSCAR TELEFONE"></column>
     	</insert>
     	
+    	<insert tableName="ROLE">
+    		<column name="ID" valueNumeric="27"></column>
+    		<column name="NOME" value="ROLE_BUSCA_REGIAO"></column>
+    		<column name="DESCRICAO" value="FUNÇÃO BUSCAR REGIAO"></column>
+    	</insert>
+    	
+    	<insert tableName="ROLE">
+    		<column name="ID" valueNumeric="28"></column>
+    		<column name="NOME" value="ROLE_INSERE_REGIAO"></column>
+    		<column name="DESCRICAO" value="FUNÇÃO PARA INSERIR REGIAO"></column>
+    	</insert>
+    	
+    	<insert tableName="ROLE">
+    		<column name="ID" valueNumeric="29"></column>
+    		<column name="NOME" value="ROLE_DELETA_REGIAO"></column>
+    		<column name="DESCRICAO" value="FUNÇÃO PARA DELETAR REGIAO"></column>
+    	</insert>
+    	
+    	<insert tableName="ROLE">
+    		<column name="ID" valueNumeric="30"></column>
+    		<column name="NOME" value="ROLE_ALTERA_REGIAO"></column>
+    		<column name="DESCRICAO" value="FUNÇÃO PARA ALTERAR REGIAO"></column>
+    	</insert>
+    	
     </changeSet>
 </databaseChangeLog>

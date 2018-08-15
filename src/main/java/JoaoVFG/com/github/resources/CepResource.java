@@ -50,7 +50,7 @@ public class CepResource {
 		return ResponseEntity.ok().body(ceps);
 	}
 	
-	@RequestMapping(value = "/buscacep/Cidade/{cidade}/bairro/{bairro}", method = RequestMethod.GET)
+	@RequestMapping(value = "/buscacep/cidade/{cidade}/bairro/{bairro}", method = RequestMethod.GET)
 	public ResponseEntity<List<Cep>> findByCidadeAndBairro(@PathVariable String cidade, @PathVariable String bairro){
 		List<Cep> ceps = cepService.findByBairroAndCidade(bairro, cidade);
 		return ResponseEntity.ok(ceps);
