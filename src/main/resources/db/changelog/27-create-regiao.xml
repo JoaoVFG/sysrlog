@@ -11,7 +11,7 @@
     		<column name="ID" type="int">
     			<constraints primaryKey="true" nullable="false"/>
     		</column>
-    		<column name="DESCRICAO" type="int"></column>
+    		<column name="DESCRICAO" type="varchar(100)"></column>
     		<column name="EMPRESA_ID" type="int"></column>
     	</createTable>
     	

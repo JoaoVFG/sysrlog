@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Cidade;
+import JoaoVFG.com.github.entity.Estado;
 
 public interface CepRepository extends JpaRepository<Cep, Integer>{
 	
@@ -28,8 +29,8 @@ public interface CepRepository extends JpaRepository<Cep, Integer>{
 	
 	
 	@Transactional(readOnly = true)
-	@Query("SELECT cep FROM Cep cep WHERE cep.cidade = :cidadeBusca")
-	public List<Cep> findByCidade(@Param("cidadeBusca") Cidade cidade);
+	@Query("SELECT cep FROM Cep cep WHERE cep.cidade = :cidadeBusca and cep.cidade.estado = :estadoBusca")
+	public List<Cep> findByCidade(@Param("cidadeBusca") Cidade cidade, @Param("estadoBusca") Estado estado);
 	
 	@Transactional(readOnly = true)
 	@Query("SELECT cep FROM Cep cep WHERE cep.cidade = :cidadeBusca and cep.bairro = :nomeBairro")

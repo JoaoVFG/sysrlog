@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Cidade;
+import JoaoVFG.com.github.entity.Estado;
 import JoaoVFG.com.github.repositories.CepRepository;
 import JoaoVFG.com.github.repositories.CidadeRepository;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
@@ -18,9 +19,12 @@ public class CepService {
 
 	@Autowired
 	CepRepository cepRepository;
-	
+
 	@Autowired
 	CidadeRepository cidadeRepository;
+
+	@Autowired
+	EstadoService estadoService;
 
 	@Autowired
 	CreateCep createCep;
@@ -37,9 +41,9 @@ public class CepService {
 
 	public Cep findByCep(String cepBusca) {
 		cepBusca = formataCep(cepBusca);
-		
+
 		Cep cep = cepRepository.findBycep(cepBusca);
-		
+
 		if (cep == null) {
 			cep = createCep.generateCep(cepBusca.toString());
 		}
@@ -50,17 +54,18 @@ public class CepService {
 	public List<Cep> findByNomeRua(String nomeRua) {
 		return cepRepository.findBynomeRua(nomeRua);
 	}
-	
-	public List<Cep> findByCidade(String cidade){
+
+	public List<Cep> findByCidade(String cidade, String estado) {
 		Cidade cidadeBusca = cidadeRepository.findBynome(cidade);
-		return cepRepository.findByCidade(cidadeBusca);
+		Estado estadoBusca = estadoService.findByNome(estado);
+		return cepRepository.findByCidade(cidadeBusca, estadoBusca);
 	}
-	
-	public List<Cep> findByBairroAndCidade(String nomeBairro, String nomeCidade){
+
+	public List<Cep> findByBairroAndCidade(String nomeBairro, String nomeCidade) {
 		List<Cep> ceps = cepRepository.findByBairroAndCidade(cidadeRepository.findBynome(nomeCidade), nomeBairro);
 		return ceps;
 	}
-	
+
 	public Cep createCep(Cep cep) {
 		cep.setId(null);
 		cep = cepRepository.save(cep);
@@ -88,14 +93,13 @@ public class CepService {
 			// futuro código para setar excluido = 1
 		}
 	}
-	
+
 	public String cepToStringEndereco(String cepBusca, String numLogradouro) {
 		Cep cep = new Cep();
 		StringBuilder builder = new StringBuilder();
-		
-		
+
 		cep = findByCep(cepBusca);
-		
+
 		builder.append(cep.getNomeRua());
 		builder.append(" ");
 		builder.append(numLogradouro);
@@ -107,11 +111,11 @@ public class CepService {
 		builder.append(cep.getCidade().getEstado().getNome());
 		builder.append(", ");
 		builder.append(cep.getCep());
-		
+
 		return builder.toString();
-		
+
 	}
-	
+
 	public String formataCep(String cep) {
 		return cep.replace("-", "");
 	}
