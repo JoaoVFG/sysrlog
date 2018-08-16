@@ -23,35 +23,35 @@ public class TelefoneResource {
 	@Autowired
 	TelefoneService telefoneService;
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN' or 'ROLE_BUSCAS_TELEFONES_AVANCADA')")
+	@PreAuthorize("hasRole('ROLE_BUSCAS_TELEFONES_AVANCADA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscatelefone", method = RequestMethod.GET)
 	public ResponseEntity<List<Telefone>> FindAll(){
 		List<Telefone> telefones = telefoneService.findAll();
 		return ResponseEntity.ok().body(telefones);
 	}
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN' or 'ROLE_BUSCA_TELEFONE')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_TELEFONE') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscatelefone/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Telefone> findById(@PathVariable Integer id){
 		Telefone telefone = telefoneService.findById(id);
 		return ResponseEntity.ok().body(telefone);
 	}
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN' or 'ROLE_BUSCAS_TELEFONES_AVANCADA')")
+	@PreAuthorize("hasRole('ROLE_BUSCAS_TELEFONES_AVANCADA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscatelefone/pessoa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Telefone>> findByPessoa(@PathVariable Integer id){
 		List<Telefone> telefones = telefoneService.findByPessoa(id);
 		return ResponseEntity.ok().body(telefones);
 	}
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN' or 'ROLE_BUSCA_TELEFONE')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_TELEFONE') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscatelefone/pessoatiponum/{id}/{tipo}", method = RequestMethod.GET)
 	public ResponseEntity<List<Telefone>> findByPessoaETipo(@PathVariable Integer id, @PathVariable String tipo){
 		List<Telefone> telefones = telefoneService.findByPessoaTipoNum(id, tipo);
 		return ResponseEntity.ok().body(telefones);
 	}
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN' or 'ROLE_CREATE_TELEFONE')")
+	@PreAuthorize("hasRole('ROLE_CREATE_TELEFONE') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/insere", method = RequestMethod.POST)
 	public ResponseEntity<Void> createTelefone(@RequestBody TelefoneDTO dto){
 		Telefone telefone = telefoneService.createFromDto(dto);
@@ -59,14 +59,14 @@ public class TelefoneResource {
 		return ResponseEntity.created(uri).build();
 	}
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN' or 'ROLE_DELETE_TELEFONE')")
+	@PreAuthorize("hasRole('ROLE_DELETE_TELEFONE') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/deleta/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletaTelefone(@PathVariable Integer id){
 		telefoneService.deletaTelefone(id);
 		return ResponseEntity.noContent().build();
 	}
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN' or 'ROLE_UPDATE_TELEFONE') ")
+	@PreAuthorize("hasRole('ROLE_UPDATE_TELEFONE')  or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	public ResponseEntity<Telefone> updateTelefone(@RequestBody Telefone updateTelefone){
 		Telefone telefone = telefoneService.updateTelefone(updateTelefone);

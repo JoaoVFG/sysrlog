@@ -37,14 +37,14 @@ public class EnderecoResource {
 		return ResponseEntity.ok(enderecos);
 	}
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_ENDERECO_PESSOA')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_ENDERECO_PESSOA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaendereco/pessoa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Endereco>> findByPessoa(@PathVariable Integer id) {
 		List<Endereco> enderecos = enderecoService.findByPessoa(id);
 		return ResponseEntity.ok(enderecos);
 	}
 
-	@PreAuthorize("hasRole('ROLE_BUSCAR_ENDERECOS_POR_CEP')")
+	@PreAuthorize("hasRole('ROLE_BUSCAR_ENDERECOS_POR_CEP') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaendereco/cep/{cep}", method = RequestMethod.GET)
 	public ResponseEntity<List<Endereco>> findByCep(@PathVariable String cep) {
 		List<Endereco> enderecos = enderecoService.findByCep(cep);
@@ -59,14 +59,14 @@ public class EnderecoResource {
 		return ResponseEntity.created(uri).build();
 	}
 
-	@PreAuthorize("hasRole('ROLE_DELETE_ENDERECO')")
+	@PreAuthorize("hasRole('ROLE_DELETE_ENDERECO')or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/deleta/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletaEndereco(@PathVariable Integer id) {
 		enderecoService.deletarEndereco(enderecoService.findById(id));
 		return ResponseEntity.noContent().build();
 	}
 
-	@PreAuthorize("hasRole('ROLE_UPDATE_ENDERECO')")
+	@PreAuthorize("hasRole('ROLE_UPDATE_ENDERECO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Endereco> updateEndereco(@PathVariable Integer id, @RequestBody EnderecoDTO enderecoUpdate) {
 		Endereco endereco = enderecoService.updateEndereco(id, enderecoUpdate);

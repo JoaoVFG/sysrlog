@@ -37,7 +37,7 @@ public class EmpresaResource {
 		return ResponseEntity.ok(empresas);
 	}
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_EMPRESA' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_EMPRESA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaempresa/idpessoa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Empresa> findByIdPessoa(@PathVariable Integer id) {
 		Empresa empresa = empresaService.findByIdPessoa(id);
@@ -51,14 +51,14 @@ public class EmpresaResource {
 		return ResponseEntity.ok(empresas);
 	}
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_EMPRESA' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_EMPRESA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaempresa/transportadoras", method = RequestMethod.GET)
 	public ResponseEntity<List<Empresa>> findTransportadoras() {
 		List<Empresa> empresas = empresaService.findTransportadoras();
 		return ResponseEntity.ok(empresas);
 	}
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_EMPRESA' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_EMPRESA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaempresa/idmatriz/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Empresa>> findByMatriz(@PathVariable Integer id) {
 		List<Empresa> empresas = empresaService.findByMatriz(id);

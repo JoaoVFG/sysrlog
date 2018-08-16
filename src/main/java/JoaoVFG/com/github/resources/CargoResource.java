@@ -21,28 +21,28 @@ public class CargoResource {
 	@Autowired
 	private CargoService cargoService;
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_CARGO' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_CARGO' ) or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscacargo/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Cargo> findById(@PathVariable Integer id) {
 		Cargo cargo = cargoService.findById(id);
 		return ResponseEntity.ok(cargo);
 	}
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_CARGO' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_CARGO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscacargo", method = RequestMethod.GET)
 	public ResponseEntity<List<Cargo>> findAll() {
 		List<Cargo> cargos = cargoService.findAll();
 		return ResponseEntity.ok(cargos);
 	}
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_CARGO' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_CARGO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscacargo/descricao/{descricao}", method = RequestMethod.GET)
 	public ResponseEntity<List<Cargo>> findByDescricaoContains(@PathVariable String descricao) {
 		List<Cargo> cargos = cargoService.findByDescricao(descricao);
 		return ResponseEntity.ok(cargos);
 	}
 
-	@PreAuthorize("hasRole('ROLE_CREATE_CARGO' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_CREATE_CARGO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/insert/{descricao}", method = RequestMethod.POST)
 	public ResponseEntity<Void> createCargo(@PathVariable String descricao) {
 		Cargo cargo = cargoService.create(descricao);
@@ -50,7 +50,7 @@ public class CargoResource {
 		return ResponseEntity.created(uri).build();
 	}
 
-	@PreAuthorize("hasRole('ROLE_DELETE_CARGO' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_DELETE_CARGO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deleteCargo(@PathVariable Integer id) {
 		cargoService.delete(id);
