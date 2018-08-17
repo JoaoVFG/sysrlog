@@ -15,14 +15,14 @@ public class RegiaoInsertByCidadeDTO implements Serializable {
 	private String descricao;
 	private Integer empresaId;
 	private String estado;
-	private String Cidade;
+	private String cidade;
 
 	public RegiaoInsertByCidadeDTO(String descricao, Integer empresaId, String estado, String cidade) {
 		super();
 		this.descricao = descricao;
 		this.empresaId = empresaId;
 		this.estado = estado;
-		Cidade = cidade;
+		this.cidade = cidade;
 	}
 
 }

@@ -1,8 +1,6 @@
 package JoaoVFG.com.github.service;
 
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -27,7 +25,7 @@ public class RegiaoService {
 
 	@Autowired
 	EmpresaService empresaService;
-	
+
 	@Autowired
 	CepService cepService;
 
@@ -62,44 +60,43 @@ public class RegiaoService {
 		regiao = regiaoRepository.save(regiao);
 		return findById(regiao.getId());
 	}
-	
+
 	public Regiao createRegiaoByCidade(RegiaoInsertByCidadeDTO dto) {
 		Regiao regiao = new Regiao();
-		
+
 		regiao.setDescricao(dto.getDescricao());
 		regiao.setEmpresa(empresaService.findById(dto.getEmpresaId()));
 		Set<Cep> ceps = new HashSet<Cep>(cepService.findByCidade(dto.getCidade(), dto.getEstado()));
 		regiao.setCeps(ceps);
-		
+
 		return createRegiao(regiao);
 	}
-	
-	public Regiao createRegiaoByBairro(RegiaoInsertByBairroDTO dto){
+
+	public Regiao createRegiaoByBairro(RegiaoInsertByBairroDTO dto) {
 		Regiao regiao = new Regiao();
-		
 		regiao.setDescricao(dto.getDescricao());
 		regiao.setEmpresa(empresaService.findById(dto.getEmpresaId()));
 		Set<Cep> ceps = new HashSet<Cep>(cepService.findByBairroAndCidade(dto.getBairro(), dto.getCidade()));
 		regiao.setCeps(ceps);
-		
-		return createRegiao(regiao);		
+
+		return createRegiao(regiao);
 	}
-	
+
 	public Regiao createRegiaoByListaCeps(RegiaoInsertByCepsDTO dto) {
 		Regiao regiao = new Regiao();
-		
+
 		regiao.setDescricao(dto.getDescricao());
 		regiao.setEmpresa(empresaService.findById(dto.getEmpresaId()));
 		Set<Cep> ceps = new HashSet<Cep>();
-		
+
 		for (String cep : dto.getCeps()) {
 			ceps.add(cepService.findByCep(cep));
 		}
-		
+
 		regiao.setCeps(ceps);
-		
+
 		return createRegiao(regiao);
-		
+
 	}
 
 	public void deletaRegiao(Integer id) {
@@ -111,8 +108,8 @@ public class RegiaoService {
 			throw new DataIntegrityException("NAO E POSSIVEL EXCLUIR ESSA REGIAO.");
 		}
 	}
-	
-	public Regiao updateRegiao(Regiao updateRegiao){
+
+	public Regiao updateRegiao(Regiao updateRegiao) {
 		Regiao regiao = findById(updateRegiao.getId());
 		regiao.setDescricao(updateRegiao.getDescricao());
 		regiao.setCeps(updateRegiao.getCeps());

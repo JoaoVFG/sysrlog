@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import JoaoVFG.com.github.entity.Regiao;
+import JoaoVFG.com.github.entity.dto.RegiaoInsertByBairroDTO;
+import JoaoVFG.com.github.entity.dto.RegiaoInsertByCepsDTO;
+import JoaoVFG.com.github.entity.dto.RegiaoInsertByCidadeDTO;
 import JoaoVFG.com.github.service.RegiaoService;
 
 @RestController
@@ -20,7 +23,7 @@ public class RegiaoResource {
 
 	@Autowired
 	RegiaoService regiaoService;
-	
+
 	@PreAuthorize("hasRole('ROLE_BUSCA_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaregiao/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Regiao> findById(@PathVariable("id") Integer id) {
@@ -34,37 +37,63 @@ public class RegiaoResource {
 		List<Regiao> regiao = regiaoService.findAll();
 		return ResponseEntity.ok(regiao);
 	}
-	
+
 	@PreAuthorize("hasRole('ROLE_BUSCA_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaregiao/empresa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Regiao>> findByEmpresa(@PathVariable("id") Integer idEmpresa) {
 		List<Regiao> regioes = regiaoService.findByEmpresa(idEmpresa);
 		return ResponseEntity.ok(regioes);
 	}
+
 	@PreAuthorize("hasRole('ROLE_BUSCA_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaregiao/empresa/{id}/descricao/{descricao}", method = RequestMethod.GET)
 	public ResponseEntity<List<Regiao>> findByEmpresaAndDescricao(@PathVariable("id") Integer idEmpresa,
-			@PathVariable("descricao") String descricaoRota){
+			@PathVariable("descricao") String descricaoRota) {
 		List<Regiao> regioes = regiaoService.findByEmpresaAndDescricao(idEmpresa, descricaoRota);
 		return ResponseEntity.ok(regioes);
 	}
+
 	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/createmanual", method = RequestMethod.POST)
-	public ResponseEntity<Regiao> createRegiaoManual(@RequestBody Regiao regiaoInsert){
+	public ResponseEntity<Regiao> createRegiaoManual(@RequestBody Regiao regiaoInsert) {
 		Regiao regiao = regiaoService.createRegiao(regiaoInsert);
 		return ResponseEntity.created(null).body(regiao);
 	}
+	
+	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
+	@RequestMapping(value = "/create/byceps", method = RequestMethod.POST)
+	public ResponseEntity<Regiao> createRegiaoFromCeps(@RequestBody RegiaoInsertByCepsDTO regiaoInsertByCepsDTO) {
+		Regiao regiao = regiaoService.createRegiaoByListaCeps(regiaoInsertByCepsDTO);
+		return ResponseEntity.created(null).body(regiao);
+	}
+	
+	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
+	@RequestMapping(value = "/create/bycidade", method = RequestMethod.POST)
+	public ResponseEntity<Regiao> createRegiaoFromCidade(@RequestBody RegiaoInsertByCidadeDTO regiaoInsertByCidadeDTO) {
+		Regiao regiao = regiaoService.createRegiaoByCidade(regiaoInsertByCidadeDTO);
+		return ResponseEntity.created(null).body(regiao);
+	}
+	
+	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
+	@RequestMapping(value = "/create/bybairro", method = RequestMethod.POST)
+	public ResponseEntity<Regiao> createRegiaoFromBairo(@RequestBody RegiaoInsertByBairroDTO regiaoInsertByBairroDTO) {
+		Regiao regiao = regiaoService.createRegiaoByBairro(regiaoInsertByBairroDTO);
+		return ResponseEntity.created(null).body(regiao);
+	}
+	
 	@PreAuthorize("hasRole('ROLE_ALTERA_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/updateregiao", method = RequestMethod.PUT)
-	public ResponseEntity<Regiao> updateRegiao(@RequestBody Regiao updateRegiao){
+	public ResponseEntity<Regiao> updateRegiao(@RequestBody Regiao updateRegiao) {
 		Regiao regiao = regiaoService.updateRegiao(updateRegiao);
 		return ResponseEntity.ok(regiao);
 	}
+
 	@PreAuthorize("hasRole('ROLE_DELETA_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/deleta/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Void> deletaRegiao(@PathVariable("id") Integer id){
+	public ResponseEntity<Void> deletaRegiao(@PathVariable("id") Integer id) {
 		regiaoService.deletaRegiao(id);
 		return ResponseEntity.noContent().build();
 	}
+	
 
 }
