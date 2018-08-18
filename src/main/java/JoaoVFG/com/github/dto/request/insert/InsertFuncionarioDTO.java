@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.dto.request;
+package JoaoVFG.com.github.dto.request.insert;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class FuncionarioInsertDTO implements Serializable{
+public class InsertFuncionarioDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer idPessoa;
@@ -18,7 +18,7 @@ public class FuncionarioInsertDTO implements Serializable{
 	
 	private Integer idCargo;
 
-	public FuncionarioInsertDTO(Integer idPessoa, Integer idEmpresa, Integer idCargo) {
+	public InsertFuncionarioDTO(Integer idPessoa, Integer idEmpresa, Integer idCargo) {
 		super();
 		this.idPessoa = idPessoa;
 		this.idEmpresa = idEmpresa;
@@ -28,7 +28,7 @@ public class FuncionarioInsertDTO implements Serializable{
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("FuncionarioInsertDTO [idPessoa=");
+		builder.append("InsertFuncionarioDTO [idPessoa=");
 		builder.append(idPessoa);
 		builder.append(", idEmpresa=");
 		builder.append(idEmpresa);

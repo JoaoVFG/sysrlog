@@ -43,4 +43,22 @@ public class Cep implements Serializable {
 		this.cidade = cidade;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cep [id=");
+		builder.append(id);
+		builder.append(", cep=");
+		builder.append(cep);
+		builder.append(", nomeRua=");
+		builder.append(nomeRua);
+		builder.append(", bairro=");
+		builder.append(bairro);
+		builder.append(", cidade=");
+		builder.append(cidade);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	
 }

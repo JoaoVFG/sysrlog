@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoaoVFG.com.github.dto.request.EmpresaInsertDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertEmpresaDTO;
 import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.service.EmpresaService;
 
@@ -67,8 +67,8 @@ public class EmpresaResource {
 
 	@PreAuthorize("hasRole('ROLE_CREATE_EMPRESA' or 'ROLE_ADMIN')")
 	@RequestMapping(value = "/insere", method = RequestMethod.POST)
-	public ResponseEntity<Void> createEmpresa(@RequestBody EmpresaInsertDTO empresaInsertDTO) {
-		Empresa empresa = empresaService.createEmpresa(empresaInsertDTO);
+	public ResponseEntity<Void> createEmpresa(@RequestBody InsertEmpresaDTO insertEmpresaDTO) {
+		Empresa empresa = empresaService.createEmpresa(insertEmpresaDTO);
 		URI uri = URI.create("/empresa" + "/buscaempresa/" + empresa.getId());
 		return ResponseEntity.created(uri).build();
 	}
@@ -82,7 +82,7 @@ public class EmpresaResource {
 
 	@PreAuthorize("hasRole('ROLE_UPDATE_EMPRESA' or 'ROLE_ADMIN')")
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Empresa> updateEmpresa(@PathVariable Integer id, @RequestBody EmpresaInsertDTO empresaUpdate) {
+	public ResponseEntity<Empresa> updateEmpresa(@PathVariable Integer id, @RequestBody InsertEmpresaDTO empresaUpdate) {
 		Empresa empresa = empresaService.updateEmpresa(id, empresaUpdate);
 		return ResponseEntity.ok(empresa);
 	}

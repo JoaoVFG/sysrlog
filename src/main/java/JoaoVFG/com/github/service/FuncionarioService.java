@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.dto.request.FuncionarioInsertDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertFuncionarioDTO;
 import JoaoVFG.com.github.entity.Funcionario;
 import JoaoVFG.com.github.repositories.CargoRepository;
 import JoaoVFG.com.github.repositories.FuncionarioRepository;
@@ -61,7 +61,7 @@ public class FuncionarioService {
 						+ idEmpresa + ". Id Cargo: " + idCargo + ". Tipo: " + Funcionario.class.getName()));
 	}
 
-	public Funcionario insertFuncionario(FuncionarioInsertDTO dto) {
+	public Funcionario insertFuncionario(InsertFuncionarioDTO dto) {
 		Funcionario funcionario = funcionarioFromDto(dto);
 		List<Funcionario> funcionarios = funcionarioRepository.findByempresa(empresaService.findById(funcionario.getEmpresa().getId()));
 		//funcionarios.stream().map(Funcionario::getPessoa).filter(funcionario.getPessoa()::equals).findFirst().isPresent();
@@ -74,7 +74,7 @@ public class FuncionarioService {
 		}
 	}
 	
-	public Funcionario updateFuncionario(Integer id, FuncionarioInsertDTO updateFuncionario) {
+	public Funcionario updateFuncionario(Integer id, InsertFuncionarioDTO updateFuncionario) {
 		Funcionario funcionario = findById(id);
 		
 		funcionario.setPessoa(pessoaService.findById(updateFuncionario.getIdPessoa()));
@@ -93,7 +93,7 @@ public class FuncionarioService {
 		}
 	}
 
-	public Funcionario funcionarioFromDto(FuncionarioInsertDTO dto) {
+	public Funcionario funcionarioFromDto(InsertFuncionarioDTO dto) {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setCargo(cargoRepository.buscaPorId(dto.getIdCargo()));
 		return funcionario;

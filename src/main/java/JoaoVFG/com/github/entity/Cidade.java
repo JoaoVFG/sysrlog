@@ -36,6 +36,19 @@ public class Cidade implements Serializable{
 		this.estado = estado;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cidade [id=");
+		builder.append(id);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", estado=");
+		builder.append(estado);
+		builder.append("]");
+		return builder.toString();
+	}
+
 	
 	
 	

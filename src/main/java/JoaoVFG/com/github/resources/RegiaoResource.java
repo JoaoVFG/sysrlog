@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoaoVFG.com.github.dto.request.RegiaoInsertByBairroDTO;
-import JoaoVFG.com.github.dto.request.RegiaoInsertByCepsDTO;
-import JoaoVFG.com.github.dto.request.RegiaoInsertByCidadeDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByBairroDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCepsDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCidadeDTO;
 import JoaoVFG.com.github.entity.Regiao;
 import JoaoVFG.com.github.service.RegiaoService;
 
@@ -69,22 +69,22 @@ public class RegiaoResource {
 	
 	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/create/byceps", method = RequestMethod.POST)
-	public ResponseEntity<Regiao> createRegiaoFromCeps(@RequestBody RegiaoInsertByCepsDTO regiaoInsertByCepsDTO) {
-		Regiao regiao = regiaoService.createRegiaoByListaCeps(regiaoInsertByCepsDTO);
+	public ResponseEntity<Regiao> createRegiaoFromCeps(@RequestBody InsertRegiaoByCepsDTO insertRegiaoByCepsDTO) {
+		Regiao regiao = regiaoService.createRegiaoByListaCeps(insertRegiaoByCepsDTO);
 		return ResponseEntity.created(null).body(regiao);
 	}
 	
 	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/create/bycidade", method = RequestMethod.POST)
-	public ResponseEntity<Regiao> createRegiaoFromCidade(@RequestBody RegiaoInsertByCidadeDTO regiaoInsertByCidadeDTO) {
-		Regiao regiao = regiaoService.createRegiaoByCidade(regiaoInsertByCidadeDTO);
+	public ResponseEntity<Regiao> createRegiaoFromCidade(@RequestBody InsertRegiaoByCidadeDTO insertRegiaoByCidadeDTO) {
+		Regiao regiao = regiaoService.createRegiaoByCidade(insertRegiaoByCidadeDTO);
 		return ResponseEntity.created(null).body(regiao);
 	}
 	
 	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/create/bybairro", method = RequestMethod.POST)
-	public ResponseEntity<Regiao> createRegiaoFromBairo(@RequestBody RegiaoInsertByBairroDTO regiaoInsertByBairroDTO) {
-		Regiao regiao = regiaoService.createRegiaoByBairro(regiaoInsertByBairroDTO);
+	public ResponseEntity<Regiao> createRegiaoFromBairo(@RequestBody InsertRegiaoByBairroDTO insertRegiaoByBairroDTO) {
+		Regiao regiao = regiaoService.createRegiaoByBairro(insertRegiaoByBairroDTO);
 		return ResponseEntity.created(null).body(regiao);
 	}
 	

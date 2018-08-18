@@ -45,6 +45,24 @@ public class Endereco implements Serializable{
 		this.numeroLogradouro = numeroLogradouro;
 		this.complemento = complemento;
 	}
+
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Endereco [id=");
+		builder.append(id);
+		builder.append(", pessoa=");
+		builder.append(pessoa);
+		builder.append(", cep=");
+		builder.append(cep);
+		builder.append(", numeroLogradouro=");
+		builder.append(numeroLogradouro);
+		builder.append(", complemento=");
+		builder.append(complemento);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 	

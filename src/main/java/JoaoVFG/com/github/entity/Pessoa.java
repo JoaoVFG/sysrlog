@@ -57,6 +57,29 @@ public class Pessoa implements Serializable {
 		this.razaoSocial = razaoSocial;
 		this.cnpj = cnpj;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Pessoa [id=");
+		builder.append(id);
+		builder.append(", tipo=");
+		builder.append(tipo);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", razaoSocial=");
+		builder.append(razaoSocial);
+		builder.append(", cpf=");
+		builder.append(cpf);
+		builder.append(", cnpj=");
+		builder.append(cnpj);
+		builder.append(", dataNascimento=");
+		builder.append(dataNascimento);
+		builder.append(", sexo=");
+		builder.append(sexo);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 }

@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.dto.request.EnderecoInsertDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertEnderecoDTO;
 import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.repositories.EnderecoRepository;
@@ -53,7 +53,7 @@ public class EnderecoService {
 		return findById(endereco.getId());
 	}
 
-	public Endereco updateEndereco(Integer id, EnderecoInsertDTO enderecoUpdate) {
+	public Endereco updateEndereco(Integer id, InsertEnderecoDTO enderecoUpdate) {
 		
 		Endereco endereco = findById(id);
 
@@ -76,10 +76,10 @@ public class EnderecoService {
 		}
 	}
 
-	public Endereco createFromDTO(EnderecoInsertDTO enderecoInsertDTO) {
-		Endereco endereco = new Endereco(null, pessoaService.findById(enderecoInsertDTO.getIdPessoa()),
-				cepService.findByCep(enderecoInsertDTO.getCep()), enderecoInsertDTO.getNumeroLogradouro(),
-				enderecoInsertDTO.getComplemento());
+	public Endereco createFromDTO(InsertEnderecoDTO insertEnderecoDTO) {
+		Endereco endereco = new Endereco(null, pessoaService.findById(insertEnderecoDTO.getIdPessoa()),
+				cepService.findByCep(insertEnderecoDTO.getCep()), insertEnderecoDTO.getNumeroLogradouro(),
+				insertEnderecoDTO.getComplemento());
 		endereco = enderecoRepository.save(endereco);
 		return findById(endereco.getId());
 	}

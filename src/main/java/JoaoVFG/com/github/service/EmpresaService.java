@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.dto.request.EmpresaInsertDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertEmpresaDTO;
 import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.repositories.EmpresaRepository;
@@ -67,7 +67,7 @@ public class EmpresaService {
 						+ "Metodo: Busca Por Id Matriz: Id Matriz: " + id));
 	}
 	
-	public Empresa createEmpresa(EmpresaInsertDTO dto) {
+	public Empresa createEmpresa(InsertEmpresaDTO dto) {
 		Empresa empresa = empresaFromEmpresaDTO(dto);
 		if(empresaRepository.findBypessoa(pessoaService.findById(empresa.getPessoa().getId())) == null) {
 			empresa.setId(null);
@@ -80,7 +80,7 @@ public class EmpresaService {
 		return findById(empresa.getId());
 	}
 	
-	public Empresa updateEmpresa(Integer id, EmpresaInsertDTO empresaUpdate) {
+	public Empresa updateEmpresa(Integer id, InsertEmpresaDTO empresaUpdate) {
 		Empresa empresa = findById(id);
 		if(!(empresa == null)) {
 			empresa.setPessoa(pessoaService.findById(empresaUpdate.getPessoa()));
@@ -104,7 +104,7 @@ public class EmpresaService {
 		}
 	}
 	
-	public Empresa empresaFromEmpresaDTO(EmpresaInsertDTO dto) {
+	public Empresa empresaFromEmpresaDTO(InsertEmpresaDTO dto) {
 		Empresa empresa = new Empresa();
 		empresa.setId(null);
 		empresa.setPessoa(pessoaService.findById(dto.getPessoa()));

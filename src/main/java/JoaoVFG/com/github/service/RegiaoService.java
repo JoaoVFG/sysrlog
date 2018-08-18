@@ -8,9 +8,9 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.dto.request.RegiaoInsertByBairroDTO;
-import JoaoVFG.com.github.dto.request.RegiaoInsertByCepsDTO;
-import JoaoVFG.com.github.dto.request.RegiaoInsertByCidadeDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByBairroDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCepsDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCidadeDTO;
 import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Regiao;
 import JoaoVFG.com.github.repositories.RegiaoRepository;
@@ -69,7 +69,7 @@ public class RegiaoService {
 		return findById(regiao.getId());
 	}
 
-	public Regiao createRegiaoByCidade(RegiaoInsertByCidadeDTO dto) {
+	public Regiao createRegiaoByCidade(InsertRegiaoByCidadeDTO dto) {
 		Regiao regiao = new Regiao();
 
 		regiao.setDescricao(dto.getDescricao());
@@ -80,7 +80,7 @@ public class RegiaoService {
 		return createRegiao(regiao);
 	}
 
-	public Regiao createRegiaoByBairro(RegiaoInsertByBairroDTO dto) {
+	public Regiao createRegiaoByBairro(InsertRegiaoByBairroDTO dto) {
 		Regiao regiao = new Regiao();
 		regiao.setDescricao(dto.getDescricao());
 		regiao.setEmpresa(empresaService.findById(dto.getEmpresaId()));
@@ -90,7 +90,7 @@ public class RegiaoService {
 		return createRegiao(regiao);
 	}
 
-	public Regiao createRegiaoByListaCeps(RegiaoInsertByCepsDTO dto) {
+	public Regiao createRegiaoByListaCeps(InsertRegiaoByCepsDTO dto) {
 		Regiao regiao = new Regiao();
 
 		regiao.setDescricao(dto.getDescricao());

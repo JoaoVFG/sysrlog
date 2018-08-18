@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoaoVFG.com.github.dto.request.FuncionarioInsertDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertFuncionarioDTO;
 import JoaoVFG.com.github.entity.Funcionario;
 import JoaoVFG.com.github.service.FuncionarioService;
 
@@ -63,7 +63,7 @@ public class FuncionarioResource {
 	
 	@PreAuthorize("hasRole('ROLE_CREATE_FUNCIONARIO')  or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/insere", method = RequestMethod.POST)
-	public ResponseEntity<Void> insertFuncionario(@RequestBody FuncionarioInsertDTO dto){
+	public ResponseEntity<Void> insertFuncionario(@RequestBody InsertFuncionarioDTO dto){
 		Funcionario funcionario = funcionarioService.insertFuncionario(dto);
 		URI uri = URI.create("/funcionario" + "/buscafuncionario/" + funcionario.getId());
 		return ResponseEntity.created(uri).build();
@@ -78,8 +78,8 @@ public class FuncionarioResource {
 	
 	@PreAuthorize("hasRole('ROLE_UPDATE_FUNCIONARIO')  or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value= "/update/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Funcionario> updateFuncionario(@PathVariable Integer id, @RequestBody FuncionarioInsertDTO funcionarioInsertDTO){
-		Funcionario funcionario = funcionarioService.updateFuncionario(id,funcionarioInsertDTO);
+	public ResponseEntity<Funcionario> updateFuncionario(@PathVariable Integer id, @RequestBody InsertFuncionarioDTO insertFuncionarioDTO){
+		Funcionario funcionario = funcionarioService.updateFuncionario(id,insertFuncionarioDTO);
 		return ResponseEntity.ok(funcionario);
 	}
 }

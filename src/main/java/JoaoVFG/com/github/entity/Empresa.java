@@ -44,6 +44,23 @@ public class Empresa implements Serializable {
 		this.transportadora = transportadora;
 		this.empresaMatrizId = empresaMatrizId;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Empresa [id=");
+		builder.append(id);
+		builder.append(", pessoa=");
+		builder.append(pessoa);
+		builder.append(", tipoEmpresa=");
+		builder.append(tipoEmpresa);
+		builder.append(", transportadora=");
+		builder.append(transportadora);
+		builder.append(", empresaMatrizId=");
+		builder.append(empresaMatrizId);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 }

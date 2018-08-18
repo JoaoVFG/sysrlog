@@ -40,6 +40,21 @@ public class Telefone implements Serializable{
 		this.numero = numero;
 		this.pessoa = pessoa;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Telefone [id=");
+		builder.append(id);
+		builder.append(", tipoNumero=");
+		builder.append(tipoNumero);
+		builder.append(", numero=");
+		builder.append(numero);
+		builder.append(", pessoa=");
+		builder.append(pessoa);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 	

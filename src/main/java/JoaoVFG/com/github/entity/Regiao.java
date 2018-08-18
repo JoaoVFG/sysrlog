@@ -53,6 +53,8 @@ public class Regiao implements Serializable {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Regiao [id=");
 		builder.append(id);
+		builder.append(", descricao=");
+		builder.append(descricao);
 		builder.append(", empresa=");
 		builder.append(empresa);
 		builder.append(", ceps=");

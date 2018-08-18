@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.dto.request.TelefoneInsertDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertTelefoneDTO;
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
@@ -51,7 +51,7 @@ public class TelefoneService {
 		return findById(telefone.getId());
 	}
 
-	public Telefone createFromDto(TelefoneInsertDTO dto) {
+	public Telefone createFromDto(InsertTelefoneDTO dto) {
 		Telefone tel = new Telefone(null, dto.getTipoNumero(), dto.getNumero(), 
 				pessoaService.findById(dto.getIdPessoa()));
 		tel = telefoneRepository.save(tel);

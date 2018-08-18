@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoaoVFG.com.github.dto.request.PessoaFisicaInsertDTO;
-import JoaoVFG.com.github.dto.request.PessoaJuridicaInsertDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertPessoaFisicaDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertPessoaJuridicaDTO;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.service.PessoaService;
 
@@ -67,14 +67,14 @@ public class PessoaResource {
 	}
 	
 	@RequestMapping(value = "/inserepf",method = RequestMethod.POST)
-	public ResponseEntity<Void> createPessoaFisica(@RequestBody PessoaFisicaInsertDTO pessoaDto){
+	public ResponseEntity<Void> createPessoaFisica(@RequestBody InsertPessoaFisicaDTO pessoaDto){
 		Pessoa pessoa = pessoaService.createPF(pessoaDto);
 		URI uri = URI.create("/pessoa" + "/buscaPessoa/" + pessoa.getId());
 		return ResponseEntity.created(uri).build();
 	}
 	
 	@RequestMapping(value = "/inserepj",method = RequestMethod.POST)
-	public ResponseEntity<Void> createPessoaJuridica(@RequestBody PessoaJuridicaInsertDTO pessoaDto){
+	public ResponseEntity<Void> createPessoaJuridica(@RequestBody InsertPessoaJuridicaDTO pessoaDto){
 		Pessoa pessoa = pessoaService.createPJ(pessoaDto);
 		URI uri = URI.create("/pessoa" + "/buscaPessoa/" + pessoa.getId());
 				 
