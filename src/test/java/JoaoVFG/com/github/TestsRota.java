@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import JoaoVFG.com.github.entity.dto.EnderecoClienteDTO;
+import JoaoVFG.com.github.dto.request.EnderecoEntregaDTO;
 import JoaoVFG.com.github.service.route.CalculaDistancia;
 import JoaoVFG.com.github.service.route.Distancia;
 import JoaoVFG.com.github.service.route.GeraRota;
@@ -32,20 +32,20 @@ public class TestsRota {
 		System.out.println(dis.getDistanciaInMeters());
 		System.out.println(dis.toString());
 	}
-
+	/**
 	@Test
 	public void testAchouMenor() {
 		String filial = "12288560";
 
-		List<EnderecoClienteDTO> enderecoClienteDTOs = new ArrayList<EnderecoClienteDTO>();
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281350", "435"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12285020", "1225"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12295370", "132"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281460", "100"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12288460", "100"));
-		enderecoClienteDTOs.add(new EnderecoClienteDTO("12281420", "s/n"));
+		List<EnderecoEntregaDTO> enderecoClienteInsertDTOs = new ArrayList<EnderecoEntregaDTO>();
+		enderecoClienteInsertDTOs.add(new EnderecoEntregaDTO("12281350", "435"));
+		enderecoClienteInsertDTOs.add(new EnderecoEntregaDTO("12285020", "1225"));
+		enderecoClienteInsertDTOs.add(new EnderecoEntregaDTO("12295370", "132"));
+		enderecoClienteInsertDTOs.add(new EnderecoEntregaDTO("12281460", "100"));
+		enderecoClienteInsertDTOs.add(new EnderecoEntregaDTO("12288460", "100"));
+		enderecoClienteInsertDTOs.add(new EnderecoEntregaDTO("12281420", "s/n"));
 
-		geraRota.geraRota(filial, 0, enderecoClienteDTOs);
-	}
+		geraRota.geraRota(filial, 0, enderecoClienteInsertDTOs);
+	}**/
 
 }

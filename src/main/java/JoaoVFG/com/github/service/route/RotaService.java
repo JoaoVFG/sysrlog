@@ -1,29 +1,28 @@
 package JoaoVFG.com.github.service.route;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import JoaoVFG.com.github.entity.dto.ListaEnderecoRotaDTO;
+import JoaoVFG.com.github.dto.request.ListaEnderecoRotaDTO;
+import JoaoVFG.com.github.dto.response.RotaResponseDTO;
+import JoaoVFG.com.github.entity.Empresa;
+import JoaoVFG.com.github.service.EmpresaService;
+
+
 
 @Service
 public class RotaService {
 
 	@Autowired
 	GeraRota geraRota;
+	
+	@Autowired
+	EmpresaService empresaService;
 
-	public URL gerarUriRota(ListaEnderecoRotaDTO listaEnderecoRotaDTO) {
-		String filial = listaEnderecoRotaDTO.filial;
-		String urlRota = geraRota.geraRota(filial, 0, listaEnderecoRotaDTO.getWaypoints());
-		URL url;
+	public RotaResponseDTO geraRotaRespose(ListaEnderecoRotaDTO listaEnderecoRotaDTO) {
+		Empresa empresa = empresaService.findById(listaEnderecoRotaDTO.getIdEmpresa());
+		RotaResponseDTO rotaResponseDTO = geraRota.geraRota(empresa, listaEnderecoRotaDTO.getWaypoints());
 		
-		try {
-			url = new URL(urlRota);
-		} catch (MalformedURLException e) {
-			return null;
-		}
-		return url;	
+		return rotaResponseDTO;	
 	}
 }

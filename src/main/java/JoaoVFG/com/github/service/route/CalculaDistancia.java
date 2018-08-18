@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.service.MapConfigService;
+import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 /**
  * *
  * @author joao.garcia
@@ -31,29 +32,7 @@ public class CalculaDistancia {
 	@Autowired
 	MapConfigService mapConfigService;
 	
-	public Distancia calcDistancia(String cepOrigem, String cepDestino) {
-		
-		JsonObject objectResponse = null;
-		
-		try {
-			CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-			String url = "https://maps.googleapis.com/maps/api/distancematrix/json?"
-					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
-					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving"
-					+ mapConfigService.findGoogleApiKey().getValue();//"&key=AIzaSyBxdBRcPlju7HOIIDR8HUhWdHtjkXaUdD4";
-			System.out.println(url.toString());
-			HttpGet httpGet = new HttpGet(url);
-			HttpResponse httpResponse = httpClient.execute(httpGet);
-			
-			HttpEntity entity = httpResponse.getEntity();
-			objectResponse = Json.createReader(entity.getContent()).readObject();
-		}catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-		
-		return generateDistancia(objectResponse, cepOrigem, cepDestino);
-	}
-	
+
 	public String findMenorDistancia(String cepOrigem, List<String> enderecosCliente) {
 		
 		
@@ -70,6 +49,29 @@ public class CalculaDistancia {
 		
 		
 	}
+	
+	public Distancia calcDistancia(String cepOrigem, String cepDestino) {
+		
+		JsonObject objectResponse = null;
+		
+		try {
+			CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+			String url = "https://maps.googleapis.com/maps/api/distancematrix/json?"
+					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
+					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving"
+					+ mapConfigService.findGoogleApiKey().getValue();
+			HttpGet httpGet = new HttpGet(url);
+			HttpResponse httpResponse = httpClient.execute(httpGet);
+			
+			HttpEntity entity = httpResponse.getEntity();
+			objectResponse = Json.createReader(entity.getContent()).readObject();
+		}catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+		return generateDistancia(objectResponse, cepOrigem, cepDestino);
+	}
+	
 	
 	public Distancia generateDistancia(JsonObject object, String cepOrigem, String cepDestino) {
 		
@@ -94,7 +96,7 @@ public class CalculaDistancia {
 			return distancia;
 			
 		}else {
-			return null;
+			throw new ObjectNotFoundException("Não foi possivel realizar o calculo da distancia entre os pontos");
 		}
 		
 	}

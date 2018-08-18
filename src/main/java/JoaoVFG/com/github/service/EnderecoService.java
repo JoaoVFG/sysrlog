@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import JoaoVFG.com.github.dto.request.EnderecoInsertDTO;
 import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Pessoa;
-import JoaoVFG.com.github.entity.dto.EnderecoDTO;
 import JoaoVFG.com.github.repositories.EnderecoRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
@@ -35,9 +35,9 @@ public class EnderecoService {
 		return enderecoRepository.findAll();
 	}
 
-	public List<Endereco> findByPessoa(Integer id) {
-		Optional<List<Endereco>> enderecos = Optional.ofNullable(enderecoRepository.findBypessoa(pessoaService.findById(id)));
-		return enderecos.orElseThrow(() -> new ObjectNotFoundException(
+	public Endereco findByPessoa(Integer id) {
+		Optional<Endereco> endereco = Optional.ofNullable(enderecoRepository.findBypessoa(pessoaService.findById(id)));
+		return endereco.orElseThrow(() -> new ObjectNotFoundException(
 				"Essa pessoa não possui endereco Cadastrado. Id Pessoa: " + id + ". Tipo: " + Pessoa.class.getName()));
 	}
 
@@ -53,7 +53,7 @@ public class EnderecoService {
 		return findById(endereco.getId());
 	}
 
-	public Endereco updateEndereco(Integer id, EnderecoDTO enderecoUpdate) {
+	public Endereco updateEndereco(Integer id, EnderecoInsertDTO enderecoUpdate) {
 		
 		Endereco endereco = findById(id);
 
@@ -76,10 +76,10 @@ public class EnderecoService {
 		}
 	}
 
-	public Endereco createFromDTO(EnderecoDTO enderecoDTO) {
-		Endereco endereco = new Endereco(null, pessoaService.findById(enderecoDTO.getIdPessoa()),
-				cepService.findByCep(enderecoDTO.getCep()), enderecoDTO.getNumeroLogradouro(),
-				enderecoDTO.getComplemento());
+	public Endereco createFromDTO(EnderecoInsertDTO enderecoInsertDTO) {
+		Endereco endereco = new Endereco(null, pessoaService.findById(enderecoInsertDTO.getIdPessoa()),
+				cepService.findByCep(enderecoInsertDTO.getCep()), enderecoInsertDTO.getNumeroLogradouro(),
+				enderecoInsertDTO.getComplemento());
 		endereco = enderecoRepository.save(endereco);
 		return findById(endereco.getId());
 	}

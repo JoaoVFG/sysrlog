@@ -8,11 +8,11 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import JoaoVFG.com.github.dto.request.RegiaoInsertByBairroDTO;
+import JoaoVFG.com.github.dto.request.RegiaoInsertByCepsDTO;
+import JoaoVFG.com.github.dto.request.RegiaoInsertByCidadeDTO;
 import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Regiao;
-import JoaoVFG.com.github.entity.dto.RegiaoInsertByBairroDTO;
-import JoaoVFG.com.github.entity.dto.RegiaoInsertByCepsDTO;
-import JoaoVFG.com.github.entity.dto.RegiaoInsertByCidadeDTO;
 import JoaoVFG.com.github.repositories.RegiaoRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
@@ -39,10 +39,10 @@ public class RegiaoService {
 		return regiaoRepository.findAll();
 	}
 
-	public List<Regiao> findByEmpresa(Integer idEmpresa) {
-		Optional<List<Regiao>> regioes = Optional
+	public Regiao findByEmpresa(Integer idEmpresa) {
+		Optional<Regiao> regiao = Optional
 				.ofNullable(regiaoRepository.findByempresa(empresaService.findById(idEmpresa)));
-		return regioes.orElseThrow(
+		return regiao.orElseThrow(
 				() -> new ObjectNotFoundException("Não foram encontradas regiões para a empresa.  Id empresa: "
 						+ idEmpresa + ". Tipo: " + Regiao.class.getName()));
 	}
@@ -54,6 +54,14 @@ public class RegiaoService {
 				"Não foram encontradas regiões as restrições de pesquisa.  Id empresa: " + idEmpresa + ". Descrição  :"
 						+ descricao + ". Tipo: " + Regiao.class.getName()));
 	}
+
+	public List<Regiao> findByEmpresaMatriz(Integer empresaMatrizId) {
+		Optional<List<Regiao>> regioes = Optional.ofNullable(regiaoRepository.findByEmpresaMatriz(empresaMatrizId));
+		return regioes.orElseThrow(() -> new ObjectNotFoundException(
+				"Não foram encontradas regiões as restrições de pesquisa.  Id Empresa matriz: " + empresaMatrizId
+						+ ". Tipo: " + Regiao.class.getName()));
+	}
+	
 
 	public Regiao createRegiao(Regiao regiao) {
 		regiao.setId(null);

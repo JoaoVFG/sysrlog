@@ -9,6 +9,7 @@ import JoaoVFG.com.github.entity.Estado;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.CidadeService;
 import JoaoVFG.com.github.service.EstadoService;
+import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 
 /**
  * Entidade baseada nos dados do WS do viacep.com Criada a baseado no código de
@@ -33,7 +34,7 @@ public class CreateCep {
 		EnderecoConsulta enderecoConsulta = consultaViaCep.consultaCep(cepConsulta.replace("-", ""));
 
 		if (enderecoConsulta == null) {
-			return null;
+			throw new ObjectNotFoundException("CEP INVALIDO E NÃO ENCONTRADO: " + cepConsulta);
 		}
 
 		Estado estado = estadoService.findBySiglaAux(enderecoConsulta.getUf());

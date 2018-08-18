@@ -92,12 +92,12 @@ public class TestsPessoaRepository {
 				.findBypessoaAndtipoNumero(pessoaRepository.findBycpf("58963221474").getId(), "Celular");
 		assertNotNull(telefones);
 	}
-
+	/**
 	@Test
 	public void testFindEnderecoByPessoa() {
 		List<Endereco> endereco = endereceoRepository.findBypessoa(pessoaRepository.findBycpf("45567860889"));
 		assertNotNull(endereco);
-	}
+	}**/
 
 	@Test
 	public void testFindEnderecosCep() {

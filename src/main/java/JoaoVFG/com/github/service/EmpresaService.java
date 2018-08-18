@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import JoaoVFG.com.github.dto.request.EmpresaInsertDTO;
 import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Pessoa;
-import JoaoVFG.com.github.entity.dto.EmpresaDTO;
 import JoaoVFG.com.github.repositories.EmpresaRepository;
 import JoaoVFG.com.github.repositories.TipoEmpresaRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
@@ -67,7 +67,7 @@ public class EmpresaService {
 						+ "Metodo: Busca Por Id Matriz: Id Matriz: " + id));
 	}
 	
-	public Empresa createEmpresa(EmpresaDTO dto) {
+	public Empresa createEmpresa(EmpresaInsertDTO dto) {
 		Empresa empresa = empresaFromEmpresaDTO(dto);
 		if(empresaRepository.findBypessoa(pessoaService.findById(empresa.getPessoa().getId())) == null) {
 			empresa.setId(null);
@@ -80,7 +80,7 @@ public class EmpresaService {
 		return findById(empresa.getId());
 	}
 	
-	public Empresa updateEmpresa(Integer id, EmpresaDTO empresaUpdate) {
+	public Empresa updateEmpresa(Integer id, EmpresaInsertDTO empresaUpdate) {
 		Empresa empresa = findById(id);
 		if(!(empresa == null)) {
 			empresa.setPessoa(pessoaService.findById(empresaUpdate.getPessoa()));
@@ -104,7 +104,7 @@ public class EmpresaService {
 		}
 	}
 	
-	public Empresa empresaFromEmpresaDTO(EmpresaDTO dto) {
+	public Empresa empresaFromEmpresaDTO(EmpresaInsertDTO dto) {
 		Empresa empresa = new Empresa();
 		empresa.setId(null);
 		empresa.setPessoa(pessoaService.findById(dto.getPessoa()));

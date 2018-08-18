@@ -1,7 +1,5 @@
 package JoaoVFG.com.github.resources;
 
-import java.net.URL;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoaoVFG.com.github.entity.dto.ListaEnderecoRotaDTO;
+import JoaoVFG.com.github.dto.request.ListaEnderecoRotaDTO;
+import JoaoVFG.com.github.dto.response.RotaResponseDTO;
 import JoaoVFG.com.github.service.route.RotaService;
 
 @RestController
@@ -22,10 +21,8 @@ public class RotaResource {
 	
 	@PreAuthorize("isAuthenticated()")
 	@RequestMapping(method = RequestMethod.POST, value = "/criarotajson")
-	public ResponseEntity<URL> gerarRota(@RequestBody ListaEnderecoRotaDTO listaEnderecoRotaDTO){
-
-		URL rota = rotaService.gerarUriRota(listaEnderecoRotaDTO);
-		
-		return ResponseEntity.ok().body(rota);
+	public ResponseEntity<RotaResponseDTO> gerarRota(@RequestBody ListaEnderecoRotaDTO listaEnderecoRotaDTO){
+		RotaResponseDTO rotaResponseDTO = rotaService.geraRotaRespose(listaEnderecoRotaDTO);
+		return ResponseEntity.ok().body(rotaResponseDTO);
 	}
 }

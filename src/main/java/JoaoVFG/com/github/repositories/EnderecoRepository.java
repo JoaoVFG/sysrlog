@@ -20,7 +20,7 @@ public interface EnderecoRepository extends JpaRepository<Endereco, Integer> {
 	public Endereco buscaPorId(@Param("id") Integer id);
 
 	@Transactional(readOnly = true)
-	List<Endereco> findBypessoa(Pessoa pessoa);
+	Endereco findBypessoa(Pessoa pessoa);
 
 	@Transactional(readOnly = true)
 	List<Endereco> findBycep(Cep cep);

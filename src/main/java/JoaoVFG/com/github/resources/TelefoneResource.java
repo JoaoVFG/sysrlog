@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import JoaoVFG.com.github.dto.request.TelefoneInsertDTO;
 import JoaoVFG.com.github.entity.Telefone;
-import JoaoVFG.com.github.entity.dto.TelefoneDTO;
 import JoaoVFG.com.github.service.TelefoneService;
 
 @RestController
@@ -53,7 +53,7 @@ public class TelefoneResource {
 	
 	@PreAuthorize("hasRole('ROLE_CREATE_TELEFONE') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/insere", method = RequestMethod.POST)
-	public ResponseEntity<Void> createTelefone(@RequestBody TelefoneDTO dto){
+	public ResponseEntity<Void> createTelefone(@RequestBody TelefoneInsertDTO dto){
 		Telefone telefone = telefoneService.createFromDto(dto);
 		URI uri = URI.create(telefone.getPessoa().getId().toString());
 		return ResponseEntity.created(uri).build();

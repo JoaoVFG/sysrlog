@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.entity.dto;
+package JoaoVFG.com.github.dto.request;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class TelefoneDTO implements Serializable{
+public class TelefoneInsertDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String tipoNumero;
@@ -18,7 +18,7 @@ public class TelefoneDTO implements Serializable{
 	
 	private Integer idPessoa;
 
-	public TelefoneDTO(String tipoNumero, String numero, Integer idPessoa) {
+	public TelefoneInsertDTO(String tipoNumero, String numero, Integer idPessoa) {
 		super();
 		this.tipoNumero = tipoNumero;
 		this.numero = numero;

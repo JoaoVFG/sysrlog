@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.entity.dto;
+package JoaoVFG.com.github.dto.request;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,14 +14,16 @@ public class ListaEnderecoRotaDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	public String filial;
-	public ArrayList<EnderecoClienteDTO> waypoints;
+	public Integer idEmpresa;
+	public ArrayList<EnderecoEntregaDTO> waypoints;
 	
-	public ListaEnderecoRotaDTO(String filial, ArrayList<EnderecoClienteDTO> enderecosClienteDTO) {
+	public ListaEnderecoRotaDTO(Integer idEmpresa, ArrayList<EnderecoEntregaDTO> waypoints) {
 		super();
-		this.filial = filial;
-		this.waypoints = enderecosClienteDTO;
+		this.idEmpresa = idEmpresa;
+		this.waypoints = waypoints;
 	}
+	
+	
 	
 	
 }

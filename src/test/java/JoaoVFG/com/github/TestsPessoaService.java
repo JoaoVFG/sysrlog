@@ -141,12 +141,13 @@ public class TestsPessoaService {
 		List<Endereco> enderecos = enderecoService.findAll();
 		assertNotNull(enderecos);
 	}
-	
+	/**
 	@Test
 	public void testeBucscaEnderecoPorPessoa() {
 		List<Endereco> enderecos = enderecoService.findByPessoa(pessoaService.findByCnpj("4478969850008").getId());
 		assertEquals(cepService.findByCep("12289368").getId(), enderecos.get(0).getCep().getId());
 	}
+	**/
 	/**
 	@Test
 	public void testeBuscaEnderecoPorCep() {

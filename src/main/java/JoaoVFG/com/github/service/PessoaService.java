@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import JoaoVFG.com.github.dto.request.PessoaFisicaInsertDTO;
+import JoaoVFG.com.github.dto.request.PessoaJuridicaInsertDTO;
 import JoaoVFG.com.github.entity.Pessoa;
-import JoaoVFG.com.github.entity.dto.PessoaFisicaDTO;
-import JoaoVFG.com.github.entity.dto.PessoaJuridicaDTO;
 import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
@@ -65,7 +65,7 @@ public class PessoaService {
 		return findById(pessoa.getId());
 	}
 	
-	public Pessoa createPF(PessoaFisicaDTO dto) {
+	public Pessoa createPF(PessoaFisicaInsertDTO dto) {
 		Pessoa pessoa = PFFromDto(dto);
 		if(pessoaRepository.findBycpf(pessoa.getCpf())==null) {
 			pessoa.setId(null);
@@ -76,7 +76,7 @@ public class PessoaService {
 		}
 	}
 	
-	public Pessoa createPJ(PessoaJuridicaDTO dto) {
+	public Pessoa createPJ(PessoaJuridicaInsertDTO dto) {
 		Pessoa pessoa = PJFromDTO(dto);
 		if(pessoaRepository.findBycnpj(pessoa.getCnpj())==null) {
 			pessoa.setId(null);
@@ -111,7 +111,7 @@ public class PessoaService {
 	}
 	
 	
-	public Pessoa PJFromDTO(PessoaJuridicaDTO dto) {
+	public Pessoa PJFromDTO(PessoaJuridicaInsertDTO dto) {
 		Pessoa pessoa = new Pessoa();
 		pessoa.setCnpj(dto.getCnpj());
 		pessoa.setRazaoSocial(dto.getRazaoSocial());
@@ -119,7 +119,7 @@ public class PessoaService {
 		return pessoa;
 	}
 	
-	public Pessoa PFFromDto(PessoaFisicaDTO dto) {
+	public Pessoa PFFromDto(PessoaFisicaInsertDTO dto) {
 		Pessoa pessoa = new Pessoa();
 		pessoa.setCpf(dto.getCpf());
 		pessoa.setNome(dto.getNome());

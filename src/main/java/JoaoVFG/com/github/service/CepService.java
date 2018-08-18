@@ -45,7 +45,7 @@ public class CepService {
 		Cep cep = cepRepository.findBycep(cepBusca);
 
 		if (cep == null) {
-			cep = createCep.generateCep(cepBusca.toString());
+			cep = createCep.generateCep(cepBusca);
 		}
 
 		return cep;

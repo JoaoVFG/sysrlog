@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import JoaoVFG.com.github.dto.request.RegiaoInsertByBairroDTO;
+import JoaoVFG.com.github.dto.request.RegiaoInsertByCepsDTO;
+import JoaoVFG.com.github.dto.request.RegiaoInsertByCidadeDTO;
 import JoaoVFG.com.github.entity.Regiao;
-import JoaoVFG.com.github.entity.dto.RegiaoInsertByBairroDTO;
-import JoaoVFG.com.github.entity.dto.RegiaoInsertByCepsDTO;
-import JoaoVFG.com.github.entity.dto.RegiaoInsertByCidadeDTO;
 import JoaoVFG.com.github.service.RegiaoService;
 
 @RestController
@@ -40,9 +40,9 @@ public class RegiaoResource {
 
 	@PreAuthorize("hasRole('ROLE_BUSCA_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaregiao/empresa/{id}", method = RequestMethod.GET)
-	public ResponseEntity<List<Regiao>> findByEmpresa(@PathVariable("id") Integer idEmpresa) {
-		List<Regiao> regioes = regiaoService.findByEmpresa(idEmpresa);
-		return ResponseEntity.ok(regioes);
+	public ResponseEntity<Regiao> findByEmpresa(@PathVariable("id") Integer idEmpresa) {
+		Regiao regiao = regiaoService.findByEmpresa(idEmpresa);
+		return ResponseEntity.ok(regiao);
 	}
 
 	@PreAuthorize("hasRole('ROLE_BUSCA_REGIAO') or hasRole('ROLE_ADMIN')")
@@ -52,7 +52,14 @@ public class RegiaoResource {
 		List<Regiao> regioes = regiaoService.findByEmpresaAndDescricao(idEmpresa, descricaoRota);
 		return ResponseEntity.ok(regioes);
 	}
-
+	
+	@PreAuthorize("hasRole('ROLE_BUSCA_REGIAO') or hasRole('ROLE_ADMIN')")
+	@RequestMapping(value = "/buscaregiao/empresamatriz/{id}", method = RequestMethod.GET)
+	public ResponseEntity<List<Regiao>> findByEmpresaMatriz(@PathVariable("id") Integer idEmpresaMatriz) {
+		List<Regiao> regioes = regiaoService.findByEmpresaMatriz(idEmpresaMatriz);
+		return ResponseEntity.ok(regioes);
+	}
+	
 	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/createmanual", method = RequestMethod.POST)
 	public ResponseEntity<Regiao> createRegiaoManual(@RequestBody Regiao regiaoInsert) {

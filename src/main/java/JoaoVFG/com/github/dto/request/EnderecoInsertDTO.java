@@ -1,4 +1,4 @@
-package JoaoVFG.com.github.entity.dto;
+package JoaoVFG.com.github.dto.request;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class EnderecoDTO implements Serializable{
+public class EnderecoInsertDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -21,7 +21,7 @@ public class EnderecoDTO implements Serializable{
 	
 	private String complemento;
 
-	public EnderecoDTO(Integer idPessoa, String cep, Integer numeroLogradouro, String complemento) {
+	public EnderecoInsertDTO(Integer idPessoa, String cep, Integer numeroLogradouro, String complemento) {
 		super();
 		this.idPessoa = idPessoa;
 		this.cep = cep;

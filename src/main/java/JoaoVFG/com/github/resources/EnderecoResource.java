@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import JoaoVFG.com.github.dto.request.EnderecoInsertDTO;
 import JoaoVFG.com.github.entity.Endereco;
-import JoaoVFG.com.github.entity.dto.EnderecoDTO;
 import JoaoVFG.com.github.service.EnderecoService;
 
 @RestController
@@ -39,9 +39,9 @@ public class EnderecoResource {
 
 	@PreAuthorize("hasRole('ROLE_BUSCA_ENDERECO_PESSOA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaendereco/pessoa/{id}", method = RequestMethod.GET)
-	public ResponseEntity<List<Endereco>> findByPessoa(@PathVariable Integer id) {
-		List<Endereco> enderecos = enderecoService.findByPessoa(id);
-		return ResponseEntity.ok(enderecos);
+	public ResponseEntity<Endereco> findByPessoa(@PathVariable Integer id) {
+		Endereco endereco = enderecoService.findByPessoa(id);
+		return ResponseEntity.ok(endereco);
 	}
 
 	@PreAuthorize("hasRole('ROLE_BUSCAR_ENDERECOS_POR_CEP') or hasRole('ROLE_ADMIN')")
@@ -53,8 +53,8 @@ public class EnderecoResource {
 
 	
 	@RequestMapping(value = "/insere", method = RequestMethod.POST)
-	public ResponseEntity<Void> createEndereco(@RequestBody EnderecoDTO enderecoDTO) {
-		Endereco endereco = enderecoService.createFromDTO(enderecoDTO);
+	public ResponseEntity<Void> createEndereco(@RequestBody EnderecoInsertDTO enderecoInsertDTO) {
+		Endereco endereco = enderecoService.createFromDTO(enderecoInsertDTO);
 		URI uri = URI.create("/endereco" + "buscaendereco/" + endereco.getId());
 		return ResponseEntity.created(uri).build();
 	}
@@ -68,7 +68,7 @@ public class EnderecoResource {
 
 	@PreAuthorize("hasRole('ROLE_UPDATE_ENDERECO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Endereco> updateEndereco(@PathVariable Integer id, @RequestBody EnderecoDTO enderecoUpdate) {
+	public ResponseEntity<Endereco> updateEndereco(@PathVariable Integer id, @RequestBody EnderecoInsertDTO enderecoUpdate) {
 		Endereco endereco = enderecoService.updateEndereco(id, enderecoUpdate);
 		return ResponseEntity.ok().body(endereco);
 	}
