@@ -13,7 +13,6 @@ import JoaoVFG.com.github.dto.request.insert.InsertLoginDTO;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.security.Role;
 import JoaoVFG.com.github.entity.security.User;
-import JoaoVFG.com.github.repositories.security.RoleRepository;
 import JoaoVFG.com.github.repositories.security.UserRepository;
 import JoaoVFG.com.github.service.PessoaService;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
@@ -60,12 +59,12 @@ public class UserService {
 		Pessoa pessoa = pessoaService.findById(insertLoginDTO.getIdPessoa());
 		User user = new User();
 		if (userRepository.findByemail(insertLoginDTO.getEmail()) == null) {
-
+			
 			user.setEmail(insertLoginDTO.getEmail());
 			user.setSenha(encoder.encode(insertLoginDTO.getSenha()));
-
+			user.setPessoa(pessoa);
 			// Se for pessoa juridica da todas as permissões
-			if (pessoa.getTipo().getId() == 1) {
+			if (pessoa.getTipo().getId() == 2) {
 				Set<Role> roles = new HashSet<>(roleService.findAll());
 				roles.remove(roleService.findById(1));
 				user.setRoles(roles);

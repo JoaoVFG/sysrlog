@@ -14,13 +14,13 @@ import JoaoVFG.com.github.entity.security.User;
 public interface UserRepository extends JpaRepository<User, Integer>{
 	
 	@Transactional(readOnly = true)
-	@Query("SELECT user FROM UserService user WHERE user.id = :idBusca")
+	@Query("SELECT user FROM User user WHERE user.id = :idBusca")
 	public User buscaPorId(@Param("idBusca")Integer id);
 	
 	@Transactional(readOnly = true)
 	public User findByemail(String email);
 	
 	@Transactional(readOnly = true)
-	@Query("SELECT user FROM user,funcionario WHERE funcionario.empresa.id = :idEmpresa and funcionario.pessoa.id = user.pessoa.id")
+	@Query("SELECT user FROM User user,Funcionario funcionario WHERE funcionario.empresa.id = :idEmpresa and funcionario.pessoa.id = user.pessoa.id")
 	public List<User> findUsersByEmpresa(Integer idEmpresa);
 }

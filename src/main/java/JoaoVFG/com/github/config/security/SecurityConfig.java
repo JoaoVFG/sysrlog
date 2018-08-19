@@ -79,8 +79,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	                        .permitAll()
 	                    .antMatchers("/login/**","/h2-console/**")
 	                        .permitAll()
-	                    .antMatchers("/userCreate")
-	                        .permitAll()
 	                    .antMatchers(HttpMethod.GET, "/ceps/buscacep/**")
 	                        .permitAll()
 	                    .anyRequest()

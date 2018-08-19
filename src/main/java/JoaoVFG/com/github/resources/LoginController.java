@@ -9,10 +9,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import JoaoVFG.com.github.dto.request.LoginDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertLoginDTO;
+import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.security.JwtTokenProvider;
+import JoaoVFG.com.github.service.security.UserService;
 
 @RestController
 @RequestMapping(value="/login")
@@ -26,6 +30,9 @@ public class LoginController {
 
     @Autowired
     JwtTokenProvider tokenProvider;
+    
+    @Autowired
+    UserService userService;
 
     @RequestMapping
     public ResponseEntity<?> autenticarLogin(@RequestBody LoginDTO loginDTO){
@@ -41,6 +48,17 @@ public class LoginController {
     	return ResponseEntity.ok(jwt);
     
     }
+    
+    
+    
+    
+    
+    @RequestMapping(value = "/create",method = RequestMethod.POST)
+    public ResponseEntity<User> createUser(@RequestBody InsertLoginDTO insertLoginDTO){
+    	User user = userService.createUser(insertLoginDTO);
+    	return ResponseEntity.ok(user);
+    }
+    
     
     
 }
