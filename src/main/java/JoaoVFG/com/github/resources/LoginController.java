@@ -19,46 +19,38 @@ import JoaoVFG.com.github.security.JwtTokenProvider;
 import JoaoVFG.com.github.service.security.UserService;
 
 @RestController
-@RequestMapping(value="/login")
+@RequestMapping(value = "/login")
 public class LoginController {
-	
+
 	@Autowired
 	AuthenticationManager authenticationManager;
-	
+
 	@Autowired
-    PasswordEncoder passwordEncoder;
+	PasswordEncoder passwordEncoder;
 
-    @Autowired
-    JwtTokenProvider tokenProvider;
-    
-    @Autowired
-    UserService userService;
+	@Autowired
+	JwtTokenProvider tokenProvider;
 
-    @RequestMapping
-    public ResponseEntity<?> autenticarLogin(@RequestBody LoginDTO loginDTO){
-    	Authentication authentication = authenticationManager.authenticate(
-    			new UsernamePasswordAuthenticationToken(
-    					loginDTO.getEmail(),
-    					loginDTO.getSenha()));
-    
-    	SecurityContextHolder.getContext().setAuthentication(authentication);
-    	
-    	String jwt = "Bearer " + tokenProvider.generateToken(authentication);
-    	
-    	return ResponseEntity.ok(jwt);
-    
-    }
-    
-    
-    
-    
-    
-    @RequestMapping(value = "/create",method = RequestMethod.POST)
-    public ResponseEntity<User> createUser(@RequestBody InsertLoginDTO insertLoginDTO){
-    	User user = userService.createUser(insertLoginDTO);
-    	return ResponseEntity.ok(user);
-    }
-    
-    
-    
+	@Autowired
+	UserService userService;
+
+	@RequestMapping
+	public ResponseEntity<?> autenticarLogin(@RequestBody LoginDTO loginDTO) {
+		Authentication authentication = authenticationManager
+				.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getSenha()));
+
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+
+		String jwt = "Bearer " + tokenProvider.generateToken(authentication);
+
+		return ResponseEntity.ok(jwt);
+
+	}
+
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	public ResponseEntity<User> createUser(@RequestBody InsertLoginDTO insertLoginDTO) {
+		User user = userService.createUser(insertLoginDTO);
+		return ResponseEntity.ok(user);
+	}
+
 }

@@ -59,41 +59,41 @@ public class UserService {
 		Pessoa pessoa = pessoaService.findById(insertLoginDTO.getIdPessoa());
 		User user = new User();
 		if (userRepository.findByemail(insertLoginDTO.getEmail()) == null) {
-			
+
 			user.setEmail(insertLoginDTO.getEmail());
 			user.setSenha(encoder.encode(insertLoginDTO.getSenha()));
 			user.setPessoa(pessoa);
 			// Se for pessoa juridica da todas as permissões
 			if (pessoa.getTipo().getId() == 2) {
 				Set<Role> roles = new HashSet<>(roleService.findAll());
+				// remove Permissão de administrador
 				roles.remove(roleService.findById(1));
 				user.setRoles(roles);
 			}
 			userRepository.save(user);
-		}else {
+		} else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE LOGIN");
 		}
 
 		return user;
 	}
-	
+
 	public void deletaUser(Integer userId) {
 		findById(userId);
 		try {
 			userRepository.deleteById(userId);
-		}catch (DataIntegrityException e) {
+		} catch (DataIntegrityException e) {
 			throw new DataIntegrityException("NAO E POSSIVEL EXCLUIR ESSE USUÁRIO.");
 		}
 	}
-	
-	
+
 	public User updateUser(User updateUser) {
 		User user = userRepository.buscaPorId(updateUser.getId());
-		
+
 		user.setEmail(updateUser.getEmail());
 		user.setSenha(encoder.encode(updateUser.getSenha()));
 		user.setRoles(updateUser.getRoles());
-		
+
 		return user;
 	}
 }
