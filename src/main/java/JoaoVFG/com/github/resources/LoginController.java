@@ -1,5 +1,6 @@
 package JoaoVFG.com.github.resources;
 
+import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -43,7 +44,7 @@ public class LoginController {
 
 		String jwt = "Bearer " + tokenProvider.generateToken(authentication);
 
-		return ResponseEntity.ok(jwt);
+		return ResponseEntity.ok().header("authorization", jwt).build();
 
 	}
 
