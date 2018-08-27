@@ -115,4 +115,9 @@ public class EmpresaService {
 		return empresa;
 		
 	}
+
+	public Empresa findByIdOrNull(Integer idEmpresa) {
+		Empresa empresa =empresaRepository.buscaPorId(idEmpresa);
+		return empresa;
+	}
 }

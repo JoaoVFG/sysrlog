@@ -38,6 +38,8 @@
 		<include file="changelog/30-insert-cidades.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/31-insert-ceps.sql" relativeToChangelogFile="true"/>
 		<include file="changelog/32-insert-roles-user.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/33-insert-mapconfig.xml" relativeToChangelogFile="true"/>
+		
 		
 		
 		

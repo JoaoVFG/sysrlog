@@ -33,4 +33,10 @@ public class MapConfigResource {
 		MapConfig mapConfig =  mapConfigService.insereGoogleApiKey(value);
 		return ResponseEntity.ok(mapConfig);
 	}
+	
+	@RequestMapping(value = "/buscacrypto", method = RequestMethod.GET)
+	public ResponseEntity<String> findCryptoSecret(){
+		MapConfig mapsConfig = mapConfigService.findCryptoSecret();
+		return ResponseEntity.ok(mapsConfig.getValue());
+	}
 }

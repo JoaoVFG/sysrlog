@@ -14,12 +14,12 @@ public class ListaEnderecoRotaDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	public Integer idEmpresa;
+	public Integer idUser;
 	public ArrayList<EnderecoEntregaDTO> waypoints;
 	
-	public ListaEnderecoRotaDTO(Integer idEmpresa, ArrayList<EnderecoEntregaDTO> waypoints) {
+	public ListaEnderecoRotaDTO(Integer idUser, ArrayList<EnderecoEntregaDTO> waypoints) {
 		super();
-		this.idEmpresa = idEmpresa;
+		this.idUser = idUser;
 		this.waypoints = waypoints;
 	}
 	

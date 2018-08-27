@@ -1,6 +1,5 @@
 package JoaoVFG.com.github.resources;
 
-import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -43,9 +42,9 @@ public class LoginController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
 		String jwt = "Bearer " + tokenProvider.generateToken(authentication);
-
-		return ResponseEntity.ok().header("authorization", jwt).build();
-
+		
+		
+		return ResponseEntity.ok().body(jwt);
 	}
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)

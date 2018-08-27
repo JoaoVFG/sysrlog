@@ -13,8 +13,12 @@ import JoaoVFG.com.github.dto.response.ResponsavelRegiaoDTO;
 import JoaoVFG.com.github.dto.response.RotaResponseDTO;
 import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Endereco;
+import JoaoVFG.com.github.entity.Funcionario;
+import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Regiao;
+import JoaoVFG.com.github.repositories.FuncionarioRepository;
 import JoaoVFG.com.github.service.CepService;
+import JoaoVFG.com.github.service.EmpresaService;
 import JoaoVFG.com.github.service.EnderecoService;
 import JoaoVFG.com.github.service.RegiaoService;
 
@@ -32,56 +36,82 @@ public class GeraRota {
 
 	@Autowired
 	private RegiaoService regiaoService;
+	
+	@Autowired
+	private FuncionarioRepository funcionarioRepository;
+	
+	@Autowired
+	private EmpresaService empresaService;
 
-	public RotaResponseDTO geraRota(Empresa empresa, List<EnderecoEntregaDTO> enderecoEntregaDTOs) {
-		// objeto de retorno
+	public RotaResponseDTO geraRota(Pessoa pessoa, List<EnderecoEntregaDTO> enderecoEntregaDTOs) {
+		// objeto de retorno - INICIALZIAÇÃO
 		RotaResponseDTO rotaResponseDTO = new RotaResponseDTO();
-
-		// Lista para os Ceps que a empresa não atende
-		List<ResponsavelRegiaoDTO> listResponsavelRegiao = new ArrayList<>();
-
-		// Regiao de atuação de empresa
-		Regiao regiao = regiaoService.findByEmpresa(empresa.getId());
-
-		// Regiões das empresas parceiras
-		List<Regiao> regioesBusca = regiaoService.findByEmpresaMatriz(empresa.getEmpresaMatrizId());
-
 		
-		// verifica se a empresa tem região de atuação
-		if (!regiao.equals(null)) {
-			
-			
-			// Se tiver uma regiao de atuação, ira iterar pela lista dos endereços
-			// pra verficar se ela faz parte da sua area de atuação
-			for (int i = 0; i < enderecoEntregaDTOs.size(); i++){//(EnderecoEntregaDTO e : iterator) {
-				
-				// verifica se o endereço de entrega esta na lista de atuação
-				if (!regiao.getCeps().contains(cepService.findByCep(enderecoEntregaDTOs.get(i).getCep()))) {// caso não esteja
-
-					// busca se tem uma empresa da mesma cadeia que entregue nesse cep
-					
-					for (Regiao r : regioesBusca) {
-						
-						if (r.getCeps().contains(cepService.findByCep(enderecoEntregaDTOs.get(i).getCep()))) {
-							listResponsavelRegiao.add(
-									new ResponsavelRegiaoDTO(enderecoEntregaDTOs.get(i).getCep(), r.getEmpresa().getPessoa().getRazaoSocial()));
-							break;
-						}
-					}
-					
-					// remove endereço da lista a ser roteirizada
-					enderecoEntregaDTOs.remove(i);
-
-				}
-			}
+		// objeto de Funcionario - INICIALZIAÇÃO
+		Funcionario funcionario = funcionarioRepository.buscaPorId(pessoa.getId());
+		
+		// objeto de Empresa - INICIALZIAÇÃO
+		Empresa empresa = new Empresa();
+		
+		// objeto de Endereco - INICIALZIAÇÃO
+		Endereco endereco = new Endereco();
+		
+		if(!(funcionario == null)) {
+			empresa = empresaService.findById(funcionario.getEmpresa().getId());
 		}
 		
-		rotaResponseDTO.setResponsavel(listResponsavelRegiao);
+
+		if (!(empresa == null)) {
+
+			// Lista para os Ceps que a empresa não atende - INICIALZIAÇÃO
+			List<ResponsavelRegiaoDTO> listResponsavelRegiao = new ArrayList<>();
+
+			// Regiao de atuação de empresa
+			Regiao regiao = regiaoService.findByEmpresa(empresa.getId());
+
+			// Regiões das empresas parceiras
+			List<Regiao> regioesBusca = regiaoService.findByEmpresaMatriz(empresa.getEmpresaMatrizId());
+
+			// verifica se a empresa tem região de atuação
+			if (!regiao.equals(null)) {
+
+				// Se tiver uma regiao de atuação, ira iterar pela lista dos endereços
+				// pra verficar se ela faz parte da sua area de atuação
+				for (int i = 0; i < enderecoEntregaDTOs.size(); i++) {// (EnderecoEntregaDTO e : iterator) {
+
+					// verifica se o endereço de entrega esta na lista de atuação
+					if (!regiao.getCeps().contains(cepService.findByCep(enderecoEntregaDTOs.get(i).getCep()))) {// caso
+																												// não
+																												// esteja
+
+						// busca se tem uma empresa da mesma cadeia que entregue nesse cep
+
+						for (Regiao r : regioesBusca) {
+
+							if (r.getCeps().contains(cepService.findByCep(enderecoEntregaDTOs.get(i).getCep()))) {
+								listResponsavelRegiao.add(new ResponsavelRegiaoDTO(enderecoEntregaDTOs.get(i).getCep(),
+										r.getEmpresa().getPessoa().getRazaoSocial()));
+								break;
+							}
+						}
+
+						// remove endereço da lista a ser roteirizada
+						enderecoEntregaDTOs.remove(i);
+
+					}
+				}
+			}
+			
+			endereco = enderecoService.findByPessoa(empresa.getPessoa().getId());
+			rotaResponseDTO.setResponsavel(listResponsavelRegiao);
+		}else {
+			endereco = enderecoService.findByPessoa(pessoa.getId());
+		}
+		
 		
 		// Lista não roteirizada -> ja exclusos os endereços que a empresa não entrega
 		List<String> listaEnderecosStringNaoRoteirizado = enderecoClienteDtoToString(enderecoEntregaDTOs);
 
-		Endereco endereco = enderecoService.findByPessoa(empresa.getPessoa().getId());
 		String enderecoPartida = cepService.cepToStringEndereco(endereco.getCep().getCep(),
 				endereco.getNumeroLogradouro().toString());
 		String enderecoEmpresa = enderecoPartida;
@@ -95,10 +125,10 @@ public class GeraRota {
 			listaRoteirizada.add(enderecoPartida);
 			listaEnderecosStringNaoRoteirizado.remove(enderecoPartida);
 		}
-		
+
 		System.out.println(listaRoteirizada);
-		
-		//return geraUrlMaps(listaRoteirizada, enderecoEmpresa);
+
+		// return geraUrlMaps(listaRoteirizada, enderecoEmpresa);
 		rotaResponseDTO.setRota(geraUrlMaps(listaRoteirizada, enderecoEmpresa));
 		return rotaResponseDTO;
 	}

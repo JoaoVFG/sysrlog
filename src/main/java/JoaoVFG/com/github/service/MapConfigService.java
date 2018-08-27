@@ -33,5 +33,8 @@ public class MapConfigService {
 		return mapConfig;
 	}
 	
-	
+	public MapConfig findCryptoSecret() {
+		MapConfig mapConfig = configRepository.findBynameKey("CRYPTOSECRET");
+		return mapConfig;
+	}
 }

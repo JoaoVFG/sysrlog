@@ -14,7 +14,6 @@ import JoaoVFG.com.github.entity.Funcionario;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Regiao;
 import JoaoVFG.com.github.entity.Telefone;
-import JoaoVFG.com.github.entity.config.MapConfig;
 import JoaoVFG.com.github.repositories.CargoRepository;
 import JoaoVFG.com.github.repositories.EmpresaRepository;
 import JoaoVFG.com.github.repositories.EnderecoRepository;
@@ -29,7 +28,6 @@ import JoaoVFG.com.github.repositories.security.RoleRepository;
 import JoaoVFG.com.github.repositories.security.UserRepository;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.consultaCep.CreateCep;
-import JoaoVFG.com.github.service.utils.GenerateRandom;
 
 @Service
 public class DBServiceTest {
@@ -73,8 +71,6 @@ public class DBServiceTest {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 
-	@Autowired
-	MapConfigRepository mapConfigRepository;
 
 	@Autowired
 	RegiaoRepository regiaoRepository;
@@ -252,12 +248,6 @@ public class DBServiceTest {
 				funcionario12, funcionario13, funcionario14, funcionario15, funcionario16, funcionario17, funcionario18,
 				funcionario19, funcionario20, funcionario21, funcionario22, funcionario23, funcionario24));
 
-		GenerateRandom gr = new GenerateRandom();
-
-		MapConfig mapConfig = mapConfigRepository.findBynameKey("JWTSECRET");
-		mapConfig.setValue(passwordEncoder.encode(gr.newRandom(20)));
-
-		mapConfigRepository.save(mapConfig);
 
 	}
 
