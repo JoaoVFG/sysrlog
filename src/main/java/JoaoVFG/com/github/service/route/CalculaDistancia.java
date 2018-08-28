@@ -42,7 +42,6 @@ public class CalculaDistancia {
 			Distancia d = calcDistancia(cepOrigem, e);
 			distanciasDoInicio.add(d);
 		}
-		System.out.println(distanciasDoInicio);
 		distanciasDoInicio.sort(Comparator.comparing(Distancia::getDistanciaInMeters));
 		
 		return distanciasDoInicio.get(0).getCepDestino();

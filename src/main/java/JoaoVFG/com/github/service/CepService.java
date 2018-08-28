@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import com.mysql.fabric.Response;
-
 import JoaoVFG.com.github.dto.response.CepResponseDTO;
 import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Cidade;

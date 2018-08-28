@@ -42,26 +42,45 @@ public class GeraRota {
 	
 	@Autowired
 	private EmpresaService empresaService;
-
+	
+	
 	public RotaResponseDTO geraRota(Pessoa pessoa, List<EnderecoEntregaDTO> enderecoEntregaDTOs) {
-		// objeto de retorno - INICIALZIAÇÃO
+		// objeto de retorno da função - INICIALZIAÇÃO
 		RotaResponseDTO rotaResponseDTO = new RotaResponseDTO();
 		
-		// objeto de Funcionario - INICIALZIAÇÃO
-		Funcionario funcionario = funcionarioRepository.buscaPorId(pessoa.getId());
+		/**objeto de Funcionario - INICIALZIAÇÃO
+		 * Necessario para verificar se a pessoa é vinculada a alguma empresa
+		 */
+		Funcionario funcionario = funcionarioRepository.findBypessoa(pessoa);
 		
-		// objeto de Empresa - INICIALZIAÇÃO
+		
+		/** objeto de Empresa - INICIALZIAÇÃO
+		 * 	Caso a pessoa que foi passada seja funcionario de alguma empresa no ato de criar a rota
+		 * 	ela usará os parametros de regiões cadastrados pela empresa
+		 * 
+		 */
 		Empresa empresa = new Empresa();
 		
-		// objeto de Endereco - INICIALZIAÇÃO
+		/**
+		 * objeto de Endereco - INICIALZIAÇÃO
+		 * Referente ao endereço inicial
+		 * -> se for pessoa usara seu endereço proprio
+		 * -> se for funcionario usará endereço da empresa
+		 */
 		Endereco endereco = new Endereco();
-		
+		/**
+		 * Verifica se a pessoa é funcionario de alguma empresa
+		 * Se for, ira trazer de qual empresa a pessoa é funcionaria
+		*/
 		if(!(funcionario == null)) {
 			empresa = empresaService.findById(funcionario.getEmpresa().getId());
 		}
 		
-
-		if (!(empresa == null)) {
+		/**
+		 * Se a empresa permanecer for nulo, quer dizer que o usuário que solicitou a rota
+		 * não é o funcionario de nenhuma empresa então usará seu endereço como ponto de partida
+		*/
+		if (empresa.getId() != null) {
 
 			// Lista para os Ceps que a empresa não atende - INICIALZIAÇÃO
 			List<ResponsavelRegiaoDTO> listResponsavelRegiao = new ArrayList<>();
@@ -74,21 +93,24 @@ public class GeraRota {
 
 			// verifica se a empresa tem região de atuação
 			if (!regiao.equals(null)) {
-
-				// Se tiver uma regiao de atuação, ira iterar pela lista dos endereços
-				// pra verficar se ela faz parte da sua area de atuação
-				for (int i = 0; i < enderecoEntregaDTOs.size(); i++) {// (EnderecoEntregaDTO e : iterator) {
+				/**
+				 * Se tiver uma regiao de atuação, ira iterar pela lista dos endereços
+				 * pra verficar se ela faz parte da sua area de atuação
+				*/
+				for (int i = 0; i < enderecoEntregaDTOs.size(); i++) {
 
 					// verifica se o endereço de entrega esta na lista de atuação
-					if (!regiao.getCeps().contains(cepService.findByCep(enderecoEntregaDTOs.get(i).getCep()))) {// caso
-																												// não
-																												// esteja
-
+					if (!regiao.getCeps().contains(cepService.findByCep(enderecoEntregaDTOs.get(i).getCep()))) {
+						
+						// caso não esteja
 						// busca se tem uma empresa da mesma cadeia que entregue nesse cep
 
 						for (Regiao r : regioesBusca) {
-
+							
+							//Se dentro da região contiver um responsável pelo CEP
 							if (r.getCeps().contains(cepService.findByCep(enderecoEntregaDTOs.get(i).getCep()))) {
+								
+								//adicioa o CEP e a empresa responsavel a listaResponsavelRegiao
 								listResponsavelRegiao.add(new ResponsavelRegiaoDTO(enderecoEntregaDTOs.get(i).getCep(),
 										r.getEmpresa().getPessoa().getRazaoSocial()));
 								break;
@@ -104,7 +126,10 @@ public class GeraRota {
 			
 			endereco = enderecoService.findByPessoa(empresa.getPessoa().getId());
 			rotaResponseDTO.setResponsavel(listResponsavelRegiao);
-		}else {
+			
+		}
+		//Atribui o endereço da pessoa do usuário ao endereço de partida
+		else {
 			endereco = enderecoService.findByPessoa(pessoa.getId());
 		}
 		
@@ -114,12 +139,11 @@ public class GeraRota {
 
 		String enderecoPartida = cepService.cepToStringEndereco(endereco.getCep().getCep(),
 				endereco.getNumeroLogradouro().toString());
-		String enderecoEmpresa = enderecoPartida;
+		String enderecoSalvo = enderecoPartida;
 
 		List<String> listaRoteirizada = new ArrayList<String>();
 
 		while (!listaEnderecosStringNaoRoteirizado.isEmpty()) {
-			System.out.println(enderecoPartida);
 			// recebe o ponto mais proximo de enderecoString
 			enderecoPartida = calculaDistancia.findMenorDistancia(enderecoPartida, listaEnderecosStringNaoRoteirizado);
 			listaRoteirizada.add(enderecoPartida);
@@ -129,11 +153,12 @@ public class GeraRota {
 		System.out.println(listaRoteirizada);
 
 		// return geraUrlMaps(listaRoteirizada, enderecoEmpresa);
-		rotaResponseDTO.setRota(geraUrlMaps(listaRoteirizada, enderecoEmpresa));
+		rotaResponseDTO.setRota(geraUrlMaps(listaRoteirizada, enderecoSalvo));
 		return rotaResponseDTO;
 	}
-
-	public String geraUrlMaps(List<String> listaRota, String enderecoEmpresa) {
+	
+	//Método responsável por gerar a URL do google maps a partir de um endereco 
+	public String geraUrlMaps(List<String> listaRota, String enderecoSalvo) {
 
 		StringBuilder builder = new StringBuilder();
 
@@ -143,9 +168,9 @@ public class GeraRota {
 		try {
 
 			builder.append("&origin=");
-			builder.append(URLEncoder.encode(enderecoEmpresa, "UTF-8"));
+			builder.append(URLEncoder.encode(enderecoSalvo, "UTF-8"));
 			builder.append("&destination=");
-			builder.append(URLEncoder.encode(enderecoEmpresa, "UTF-8"));
+			builder.append(URLEncoder.encode(enderecoSalvo, "UTF-8"));
 			builder.append("&waypoints=");
 			for (String e : listaRota) {
 				builder.append(URLEncoder.encode(e, "UTF-8"));
