@@ -1,11 +1,15 @@
 package JoaoVFG.com.github.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import com.mysql.fabric.Response;
+
+import JoaoVFG.com.github.dto.response.CepResponseDTO;
 import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Cidade;
 import JoaoVFG.com.github.entity.Estado;
@@ -118,5 +122,18 @@ public class CepService {
 
 	public String formataCep(String cep) {
 		return cep.replace("-", "");
+	}
+	
+	public CepResponseDTO cepToCepDTO(Cep cep) {
+		return new CepResponseDTO(cep);
+	}
+	
+	public List<CepResponseDTO> listCepToListCepDTO(List<Cep> ceps){
+		List<CepResponseDTO> cepsResponseDTO = new ArrayList<>();
+		for (Cep cep : ceps) {
+			cepsResponseDTO.add(new CepResponseDTO(cep));
+		}
+		
+		return cepsResponseDTO;
 	}
 }
