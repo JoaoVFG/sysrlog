@@ -14,6 +14,8 @@ public class RotaResponseDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String rota;
+	private String enderecoOrigem;
+	private List<String> waypoints;
 	private List<ResponsavelRegiaoDTO> responsavel;
 	
 	public RotaResponseDTO(String rota, List<ResponsavelRegiaoDTO> responsavel) {
