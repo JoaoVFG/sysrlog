@@ -18,6 +18,10 @@ public class InsertPessoaJuridicaDTO implements Serializable{
 	private String razaoSocial;
 
 	private String cnpj;
+	
+	private InsertLoginDTO insertLoginDTO;
+	
+	private InsertEnderecoDTO insertEnderecoDTO;
 
 	public InsertPessoaJuridicaDTO(Integer tipo, String razaoSocial, String cnpj) {
 		super();

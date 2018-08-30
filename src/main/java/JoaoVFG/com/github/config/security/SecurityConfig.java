@@ -67,7 +67,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/", "/favicon.ico", "/**/*.png", "/**/*.gif", "/**/*.svg", "/**/*.jpg", "/**/*.html",
 						"/**/*.css", "/**/*.js")
 				.permitAll().antMatchers("/login/**", "/h2-console/**").permitAll()
-				.antMatchers(HttpMethod.GET, "/ceps/buscacep/**","/configs/buscacrypto").permitAll().anyRequest().authenticated();
+				.antMatchers(HttpMethod.GET, "/ceps/buscacep/**","/configs/buscacrypto").permitAll()
+				.antMatchers(HttpMethod.POST, "/pessoa/inserepf","/pessoa/inserepj").permitAll().anyRequest().authenticated();
 
 		// Add our custom JWT security filter
 		http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

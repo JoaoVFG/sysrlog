@@ -44,7 +44,6 @@ public class GeraRota {
 	private EmpresaService empresaService;
 
 	public RotaResponseDTO geraRota(Pessoa pessoa, List<EnderecoEntregaDTO> enderecoEntregaDTOs) {
-		StringBuilder builder = new StringBuilder();
 
 		// objeto de retorno da função - INICIALZIAÇÃO
 		RotaResponseDTO rotaResponseDTO = new RotaResponseDTO();

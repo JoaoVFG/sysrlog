@@ -22,6 +22,10 @@ public class InsertPessoaFisicaDTO implements Serializable{
 	private String dataNascimento;
 	
 	private String sexo;
+	
+	private InsertLoginDTO insertLoginDTO;
+	
+	private InsertEnderecoDTO insertEnderecoDTO;
 
 	public InsertPessoaFisicaDTO(String nome, Integer tipo, String cpf, String dataNascimento, String sexo) {
 		super();

@@ -5,12 +5,16 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import JoaoVFG.com.github.dto.request.insert.InsertPessoaFisicaDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertPessoaJuridicaDTO;
+import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Pessoa;
+import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
+import JoaoVFG.com.github.service.security.UserService;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 
@@ -22,6 +26,12 @@ public class PessoaService {
 
 	@Autowired
 	TipoPessoaRepository tipoPessoaRepository;
+	
+	@Autowired
+	EnderecoService enderecoService;
+	
+	@Autowired
+	UserService userService;
 
 	public Pessoa findById(Integer id) {
 		Optional<Pessoa> pessoa = Optional.ofNullable(pessoaRepository.buscaPorId(id));
@@ -65,22 +75,39 @@ public class PessoaService {
 		return findById(pessoa.getId());
 	}
 	
+	@Transactional()
 	public Pessoa createPF(InsertPessoaFisicaDTO dto) {
+
 		Pessoa pessoa = PFFromDto(dto);
 		if(pessoaRepository.findBycpf(pessoa.getCpf())==null) {
 			pessoa.setId(null);
 			pessoa = pessoaRepository.save(pessoa);
+			
+			dto.getInsertEnderecoDTO().setIdPessoa(pessoa.getId());
+			dto.getInsertLoginDTO().setIdPessoa(pessoa.getId());
+			
+			enderecoService.createFromDTO(dto.getInsertEnderecoDTO());
+			userService.createUser(dto.getInsertLoginDTO());
 			return findById(pessoa.getId());
 		}else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE CLIENTE");
 		}
 	}
 	
+	@Transactional()
 	public Pessoa createPJ(InsertPessoaJuridicaDTO dto) {
 		Pessoa pessoa = PJFromDTO(dto);
 		if(pessoaRepository.findBycnpj(pessoa.getCnpj())==null) {
 			pessoa.setId(null);
 			pessoa = pessoaRepository.save(pessoa);
+			
+
+			dto.getInsertEnderecoDTO().setIdPessoa(pessoa.getId());
+			dto.getInsertLoginDTO().setIdPessoa(pessoa.getId());
+			
+			enderecoService.createFromDTO(dto.getInsertEnderecoDTO());
+			userService.createUser(dto.getInsertLoginDTO());
+			
 			return findById(pessoa.getId());
 		}else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE CLIENTE");

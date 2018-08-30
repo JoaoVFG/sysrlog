@@ -23,7 +23,6 @@ import JoaoVFG.com.github.repositories.RegiaoRepository;
 import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.repositories.TipoEmpresaRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
-import JoaoVFG.com.github.repositories.config.MapConfigRepository;
 import JoaoVFG.com.github.repositories.security.RoleRepository;
 import JoaoVFG.com.github.repositories.security.UserRepository;
 import JoaoVFG.com.github.service.CepService;
