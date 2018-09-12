@@ -1,0 +1,2933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="JoaoVFG.com.github.TgSysrlogApplication" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/TgSysrlogApplication.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="144" x="689" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="JoaoVFG.com.github.config.DevConfig" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/config/DevConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="170" x="6961" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="JoaoVFG.com.github.config.ProdConfig" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/config/ProdConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="127" x="6565" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="JoaoVFG.com.github.config.TestConfig" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/config/TestConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="170" x="5081" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="JoaoVFG.com.github.config.WebMvcConfig" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/config/WebMvcConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="207" x="4266" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="JoaoVFG.com.github.config.security.SecurityConfig" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/config/security/SecurityConfig.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="282" x="8022" y="194"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="JoaoVFG.com.github.dto.request.LoginDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/LoginDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="148" x="3005" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="JoaoVFG.com.github.dto.request.EnderecoEntregaDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/EnderecoEntregaDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="197" x="1694" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="JoaoVFG.com.github.dto.request.ListaEnderecoRotaDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/ListaEnderecoRotaDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="342" x="1798" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertFuncionarioDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertFuncionarioDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="297" width="241" x="2640" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertPessoaJuridicaDTO" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertPessoaJuridicaDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="369" width="260" x="6185" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertLoginDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertLoginDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="202" x="6234" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertPessoaFisicaDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertPessoaFisicaDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="477" width="302" x="5480" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertEnderecoDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertEnderecoDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="257" x="5438" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertTelefoneDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertTelefoneDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="297" width="218" x="5812" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCidadeDTO" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertRegiaoByCidadeDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="286" x="707" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertEmpresaDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertEmpresaDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="262" x="3247" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertRegiaoByBairroDTO" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertRegiaoByBairroDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="282" x="1033" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCepsDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/request/insert/InsertRegiaoByCepsDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="297" width="276" x="1605" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="JoaoVFG.com.github.dto.response.ResponsavelRegiaoDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/response/ResponsavelRegiaoDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="210" x="1355" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="JoaoVFG.com.github.dto.response.CepResponseDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/response/CepResponseDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="387" width="160" x="1252" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="JoaoVFG.com.github.dto.response.RotaResponseDTO" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/dto/response/RotaResponseDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="315" width="303" x="1351" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="JoaoVFG.com.github.entity.Endereco" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Endereco.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="239" x="2960" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="JoaoVFG.com.github.entity.TipoEmpresa" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/TipoEmpresa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="149" x="4610" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="JoaoVFG.com.github.entity.Telefone" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Telefone.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="208" x="6506" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="JoaoVFG.com.github.entity.Estado" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Estado.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="161" x="1943" y="3520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="JoaoVFG.com.github.entity.Cargo" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Cargo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="149" x="4064" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="JoaoVFG.com.github.entity.Empresa" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Empresa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="283" x="4610" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="JoaoVFG.com.github.entity.Funcionario" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Funcionario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="238" x="4971" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="JoaoVFG.com.github.entity.Cidade" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Cidade.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="166" x="1494" y="3201"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="JoaoVFG.com.github.entity.Cep" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Cep.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="214" x="1647" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="JoaoVFG.com.github.entity.Pessoa" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Pessoa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="567" width="285" x="5909" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="JoaoVFG.com.github.entity.Regiao" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/Regiao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="194" x="2619" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="JoaoVFG.com.github.entity.TipoPessoa" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/TipoPessoa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="131" x="5398" y="3201"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="JoaoVFG.com.github.entity.config.MapConfig" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/config/MapConfig.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="297" width="179" x="6983" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="JoaoVFG.com.github.entity.security.User" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/security/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="242" x="7670" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="JoaoVFG.com.github.entity.security.Role" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/entity/security/Role.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="161" x="7839" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="38" language="java" name="JoaoVFG.com.github.repositories.TipoEmpresaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/TipoEmpresaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="222" x="4367" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="39" language="java" name="JoaoVFG.com.github.repositories.RegiaoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/RegiaoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="314" x="3332" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="40" language="java" name="JoaoVFG.com.github.repositories.CepRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/CepRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="262" x="1473" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="41" language="java" name="JoaoVFG.com.github.repositories.FuncionarioRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/FuncionarioRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="319" x="4827" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="42" language="java" name="JoaoVFG.com.github.repositories.PessoaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/PessoaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="260" x="5843" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="43" language="java" name="JoaoVFG.com.github.repositories.EstadoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/EstadoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="197" x="2357" y="3201"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="44" language="java" name="JoaoVFG.com.github.repositories.EmpresaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/EmpresaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="260" x="4650" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="45" language="java" name="JoaoVFG.com.github.repositories.TipoPessoaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/TipoPessoaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="200" x="5009" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="46" language="java" name="JoaoVFG.com.github.repositories.CargoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/CargoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="244" x="3612" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="47" language="java" name="JoaoVFG.com.github.repositories.CidadeRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/CidadeRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="357" x="1943" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="48" language="java" name="JoaoVFG.com.github.repositories.TelefoneRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/TelefoneRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="311" x="6175" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="49" language="java" name="JoaoVFG.com.github.repositories.EnderecoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/EnderecoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="186" x="3000" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="50" language="java" name="JoaoVFG.com.github.repositories.config.MapConfigRepository" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/config/MapConfigRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="192" x="7023" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="51" language="java" name="JoaoVFG.com.github.repositories.security.RoleRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/security/RoleRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="186" x="7381" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="52" language="java" name="JoaoVFG.com.github.repositories.security.UserRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/security/UserRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="224" x="7674" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="53" language="java" name="JoaoVFG.com.github.resources.EnderecoResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/EnderecoResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="378" x="4311" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="54" language="java" name="JoaoVFG.com.github.resources.UserController" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/UserController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="282" x="8461" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="55" language="java" name="JoaoVFG.com.github.resources.MapConfigResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/MapConfigResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="317" x="7001" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="56" language="java" name="JoaoVFG.com.github.resources.RegiaoResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/RegiaoResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="405" x="1311" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="57" language="java" name="JoaoVFG.com.github.resources.PessoaResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/PessoaResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="370" x="5936" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="58" language="java" name="JoaoVFG.com.github.resources.LoginController" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/LoginController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="275" x="7551" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="59" language="java" name="JoaoVFG.com.github.resources.CargoResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/CargoResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="332" x="3193" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="60" language="java" name="JoaoVFG.com.github.resources.CepResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/CepResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="344" x="646" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="61" language="java" name="JoaoVFG.com.github.resources.EmpresaResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/EmpresaResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="366" x="3980" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="JoaoVFG.com.github.resources.FuncionarioResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/FuncionarioResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="408" x="4386" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="63" language="java" name="JoaoVFG.com.github.resources.RotaResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/RotaResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="376" x="1798" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="64" language="java" name="JoaoVFG.com.github.resources.TelefoneResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/TelefoneResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="350" x="6590" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="65" language="java" name="JoaoVFG.com.github.resources.exceptions.StandartError" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/exceptions/StandartError.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="369" width="251" x="85" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="66" language="java" name="JoaoVFG.com.github.resources.exceptions.ValidatationError" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/exceptions/ValidatationError.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="265" x="297" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="67" language="java" name="JoaoVFG.com.github.resources.exceptions.FieldMessage" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/exceptions/FieldMessage.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="190" x="297" y="3201"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="68" language="java" name="JoaoVFG.com.github.resources.exceptions.ResourceExceptionHandler" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/exceptions/ResourceExceptionHandler.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="498" x="85" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="69" language="java" name="JoaoVFG.com.github.resources.utils.Uri" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/utils/Uri.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="191" x="1220" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <annotation id="70" language="java" name="JoaoVFG.com.github.security.CurrentUser" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/security/CurrentUser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="63" width="135" x="166" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <class id="71" language="java" name="JoaoVFG.com.github.security.JWTAuthenticationFilter" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/security/JWTAuthenticationFilter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="378" x="8022" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="72" language="java" name="JoaoVFG.com.github.security.CustomUserDetailService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/security/CustomUserDetailService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="225" x="8022" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="73" language="java" name="JoaoVFG.com.github.security.JwtTokenProvider" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/security/JwtTokenProvider.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="205" x="7591" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="74" language="java" name="JoaoVFG.com.github.security.JwtAuthenticationEntryPoint" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/security/JwtAuthenticationEntryPoint.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="426" x="3845" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="75" language="java" name="JoaoVFG.com.github.security.UserPrincipal" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/security/UserPrincipal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="549" width="366" x="8043" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="76" language="java" name="JoaoVFG.com.github.service.TelefoneService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/TelefoneService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="278" x="6346" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="77" language="java" name="JoaoVFG.com.github.service.PessoaService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/PessoaService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="250" x="5480" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="78" language="java" name="JoaoVFG.com.github.service.CepService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/CepService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="303" x="1963" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="79" language="java" name="JoaoVFG.com.github.service.MapConfigService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/MapConfigService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="215" x="6664" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="80" language="java" name="JoaoVFG.com.github.service.EnderecoService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/EnderecoService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="291" x="3607" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="81" language="java" name="JoaoVFG.com.github.service.CargoService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/CargoService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="203" x="3068" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="82" language="java" name="JoaoVFG.com.github.service.EmpresaService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/EmpresaService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="298" x="4264" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="83" language="java" name="JoaoVFG.com.github.service.FuncionarioService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/FuncionarioService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="321" x="4386" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="84" language="java" name="JoaoVFG.com.github.service.EstadoService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/EstadoService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="172" x="2403" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="85" language="java" name="JoaoVFG.com.github.service.CidadeService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/CidadeService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="336" x="2006" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="86" language="java" name="JoaoVFG.com.github.service.TipoPessoaService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/TipoPessoaService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="200" x="4043" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="87" language="java" name="JoaoVFG.com.github.service.RegiaoService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/RegiaoService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="314" x="1994" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="88" language="java" name="JoaoVFG.com.github.service.consultaCep.CreateCep" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/consultaCep/CreateCep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="259" x="2447" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="89" language="java" name="JoaoVFG.com.github.service.consultaCep.ConsultaViaCep" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/consultaCep/ConsultaViaCep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="310" x="2487" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="90" language="java" name="JoaoVFG.com.github.service.consultaCep.EnderecoConsulta" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/consultaCep/EnderecoConsulta.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="567" width="187" x="2863" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="91" language="java" name="JoaoVFG.com.github.service.consultaCep.ValidaCep" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/consultaCep/ValidaCep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="187" x="2636" y="2594"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="92" language="java" name="JoaoVFG.com.github.service.route.CalculaDistancia" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/route/CalculaDistancia.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="284" x="2597" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="93" language="java" name="JoaoVFG.com.github.service.route.RotaService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/route/RotaService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="328" x="5896" y="194"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="94" language="java" name="JoaoVFG.com.github.service.route.GeraRota" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/route/GeraRota.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="360" x="2923" y="423"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="95" language="java" name="JoaoVFG.com.github.service.route.Distancia" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/route/Distancia.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="333" width="168" x="2390" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="96" language="java" name="JoaoVFG.com.github.service.security.RoleService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/security/RoleService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="169" x="7444" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="97" language="java" name="JoaoVFG.com.github.service.security.UserService" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/security/UserService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="195" x="7591" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="98" language="java" name="JoaoVFG.com.github.service.test.DBServiceTestUsers" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/test/DBServiceTestUsers.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="212" x="7339" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="99" language="java" name="JoaoVFG.com.github.service.test.DBServiceInicializeKeys" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/test/DBServiceInicializeKeys.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="212" x="6982" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="100" language="java" name="JoaoVFG.com.github.service.test.DBServiceTestPopulateCEPS" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/test/DBServiceTestPopulateCEPS.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="188" x="2369" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="101" language="java" name="JoaoVFG.com.github.service.test.DBServiceTest" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/test/DBServiceTest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="212" x="5081" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="102" language="java" name="JoaoVFG.com.github.service.utils.GenerateRandom" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/service/utils/GenerateRandom.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="159" x="6719" y="1488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="103" language="java" name="JoaoVFG.com.github.services.exception.AuthorizationException" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/services/exception/AuthorizationException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="228" x="-183" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="104" language="java" name="JoaoVFG.com.github.services.exception.DataIntegrityException" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/services/exception/DataIntegrityException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="224" x="3204" y="3201"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="105" language="java" name="JoaoVFG.com.github.services.exception.ObjectNotFoundException" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/services/exception/ObjectNotFoundException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="241" x="2921" y="2077"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="106">    
+    <end type="SOURCE" refId="82" navigable="false">      
+      <attribute id="107" name="empresaRepository"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="86" navigable="false">      
+      <attribute id="110" name="tipoPessoaRepository"/>      
+      <multiplicity id="111" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="112">    
+    <bendpoint x="2372" y="2594"/>    
+    <end type="SOURCE" refId="85"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <dependency id="113">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="114">    
+    <end type="SOURCE" refId="87" navigable="false">      
+      <attribute id="115" name="regiaoRepository"/>      
+      <multiplicity id="116" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="117">    
+    <bendpoint x="7413" y="1488"/>    
+    <bendpoint x="7597" y="2077"/>    
+    <bendpoint x="7597" y="2594"/>    
+    <end type="SOURCE" refId="97"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <association id="118">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="119" name="dbServiceTeste"/>      
+      <multiplicity id="120" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="101" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="121">    
+    <bendpoint x="1975" y="2077"/>    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="122" name="ceps"/>      
+      <multiplicity id="123" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="124">    
+    <bendpoint x="6475" y="2077"/>    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="125">    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="126" name="mapConfigService"/>      
+      <multiplicity id="127" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="79" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="128">    
+    <bendpoint x="6516" y="1488"/>    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <association id="129">    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="130" name="enderecoService"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="80" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="132">    
+    <bendpoint x="366" y="2077"/>    
+    <end type="SOURCE" refId="68"/>    
+    <end type="TARGET" refId="66"/>  
+  </dependency>  
+  <dependency id="133">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="134">    
+    <end type="SOURCE" refId="72"/>    
+    <end type="TARGET" refId="75"/>  
+  </dependency>  
+  <dependency id="135">    
+    <bendpoint x="7970" y="1097"/>    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="75"/>  
+  </dependency>  
+  <association id="136">    
+    <bendpoint x="3037" y="1097"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="137" name="createCep"/>      
+      <multiplicity id="138" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="88" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="139">    
+    <bendpoint x="5260" y="2077"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="140" name="pessoa"/>      
+      <multiplicity id="141" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="142">    
+    <bendpoint x="3928" y="742"/>    
+    <bendpoint x="3928" y="1097"/>    
+    <bendpoint x="3970" y="1488"/>    
+    <bendpoint x="4294" y="2077"/>    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <association id="143">    
+    <bendpoint x="7949" y="1097"/>    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="144" name="roleService"/>      
+      <multiplicity id="145" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="96" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="146">    
+    <bendpoint x="1921" y="742"/>    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <association id="147">    
+    <end type="SOURCE" refId="56" navigable="false">      
+      <attribute id="148" name="regiaoService"/>      
+      <multiplicity id="149" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="150">    
+    <bendpoint x="4737" y="742"/>    
+    <bendpoint x="4712" y="1097"/>    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <association id="151">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="152" name="empresaService"/>      
+      <multiplicity id="153" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="154">    
+    <bendpoint x="1746" y="194"/>    
+    <bendpoint x="1746" y="423"/>    
+    <end type="SOURCE" refId="63"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <dependency id="155">    
+    <bendpoint x="7928" y="1488"/>    
+    <end type="SOURCE" refId="97"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <association id="156">    
+    <end type="SOURCE" refId="66" navigable="false">      
+      <attribute id="157" name="listaErros"/>      
+      <multiplicity id="158" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="67" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="159">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="160" name="funcionarioService"/>      
+      <multiplicity id="161" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="83" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="162">    
+    <bendpoint x="3991" y="2077"/>    
+    <bendpoint x="3991" y="2594"/>    
+    <end type="SOURCE" refId="86"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="163">    
+    <end type="SOURCE" refId="68"/>    
+    <end type="TARGET" refId="103"/>  
+  </dependency>  
+  <association id="164">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="165" name="cepService"/>      
+      <multiplicity id="166" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="167">    
+    <bendpoint x="7639" y="2077"/>    
+    <end type="SOURCE" refId="96"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <association id="168">    
+    <end type="SOURCE" refId="84" navigable="false">      
+      <attribute id="169" name="estadoRepository"/>      
+      <multiplicity id="170" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="171">    
+    <end type="SOURCE" refId="88" navigable="false">      
+      <attribute id="172" name="cidadeService"/>      
+      <multiplicity id="173" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="85" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="174">    
+    <bendpoint x="6930" y="1097"/>    
+    <bendpoint x="6625" y="1488"/>    
+    <end type="SOURCE" refId="64"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="175">    
+    <bendpoint x="4940" y="1488"/>    
+    <bendpoint x="5239" y="2077"/>    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="176">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="177" name="tipo"/>      
+      <multiplicity id="178" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="179">    
+    <end type="SOURCE" refId="76" navigable="false">      
+      <attribute id="180" name="telefoneRepository"/>      
+      <multiplicity id="181" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="182">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="183">    
+    <bendpoint x="7949" y="1488"/>    
+    <bendpoint x="7963" y="2077"/>    
+    <end type="SOURCE" refId="97"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <dependency id="184">    
+    <end type="SOURCE" refId="99"/>    
+    <end type="TARGET" refId="102"/>  
+  </dependency>  
+  <association id="185">    
+    <bendpoint x="5779" y="1097"/>    
+    <bendpoint x="5781" y="1488"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="186" name="pessoaRepository"/>      
+      <multiplicity id="187" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="188">    
+    <bendpoint x="2911" y="742"/>    
+    <bendpoint x="2609" y="1097"/>    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="189">    
+    <bendpoint x="2456" y="2077"/>    
+    <bendpoint x="2605" y="2594"/>    
+    <bendpoint x="2605" y="3201"/>    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <association id="190">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="191" name="pessoa"/>      
+      <multiplicity id="192" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="193">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="194" name="insertEnderecoDTO"/>      
+      <multiplicity id="195" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="196">    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="197">    
+    <bendpoint x="4336" y="1488"/>    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <association id="198">    
+    <end type="SOURCE" refId="63" navigable="false">      
+      <attribute id="199" name="rotaService"/>      
+      <multiplicity id="200" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="93" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="201">    
+    <bendpoint x="3949" y="1097"/>    
+    <bendpoint x="3949" y="1488"/>    
+    <bendpoint x="3949" y="2077"/>    
+    <bendpoint x="3949" y="2594"/>    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <dependency id="202">    
+    <bendpoint x="7371" y="1488"/>    
+    <bendpoint x="7350" y="2077"/>    
+    <bendpoint x="7350" y="2594"/>    
+    <end type="SOURCE" refId="97"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <association id="203">    
+    <bendpoint x="3697" y="1097"/>    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="204" name="enderecoRepository"/>      
+      <multiplicity id="205" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="49" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="206">    
+    <bendpoint x="4050" y="1097"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="207" name="enderecoRepository"/>      
+      <multiplicity id="208" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="49" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="209">    
+    <bendpoint x="3676" y="1097"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <association id="210">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="211" name="insertLoginDTO"/>      
+      <multiplicity id="212" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="213">    
+    <bendpoint x="5812" y="2077"/>    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="214">    
+    <bendpoint x="5821" y="1097"/>    
+    <end type="SOURCE" refId="64"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="215">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="216" name="userService"/>      
+      <multiplicity id="217" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="97" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="218">    
+    <bendpoint x="2317" y="1097"/>    
+    <bendpoint x="2567" y="1488"/>    
+    <bendpoint x="2890" y="2077"/>    
+    <bendpoint x="3101" y="2594"/>    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <dependency id="219">    
+    <bendpoint x="1952" y="3201"/>    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <association id="220">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="221" name="dbServiceTeste"/>      
+      <multiplicity id="222" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="101" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="223">    
+    <bendpoint x="7308" y="1488"/>    
+    <bendpoint x="7308" y="2077"/>    
+    <end type="SOURCE" refId="97"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="224">    
+    <bendpoint x="7991" y="423"/>    
+    <bendpoint x="7991" y="742"/>    
+    <bendpoint x="7991" y="1097"/>    
+    <bendpoint x="7991" y="1488"/>    
+    <end type="SOURCE" refId="93"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="225">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="226">    
+    <end type="SOURCE" refId="89"/>    
+    <end type="TARGET" refId="90"/>  
+  </dependency>  
+  <dependency id="227">    
+    <bendpoint x="4775" y="1097"/>    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="228">    
+    <bendpoint x="7643" y="1488"/>    
+    <end type="SOURCE" refId="98"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <association id="229">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="230" name="insertEnderecoDTO"/>      
+      <multiplicity id="231" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="232">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="233" name="pessoa"/>      
+      <multiplicity id="234" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="235">    
+    <bendpoint x="2869" y="2077"/>    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="236">    
+    <bendpoint x="634" y="1097"/>    
+    <bendpoint x="634" y="1488"/>    
+    <end type="SOURCE" refId="60"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="237">    
+    <bendpoint x="3301" y="1097"/>    
+    <bendpoint x="2969" y="1488"/>    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="238">    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="239">    
+    <bendpoint x="7942" y="2077"/>    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="240">    
+    <bendpoint x="1849" y="1488"/>    
+    <end type="SOURCE" refId="78" navigable="false">      
+      <attribute id="241" name="cepRepository"/>      
+      <multiplicity id="242" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="243">    
+    <bendpoint x="4012" y="2077"/>    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="244">    
+    <bendpoint x="3949" y="742"/>    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="245" name="empresaService"/>      
+      <multiplicity id="246" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="247">    
+    <end type="SOURCE" refId="93"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="248">    
+    <bendpoint x="7287" y="1097"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="249" name="userRepository"/>      
+      <multiplicity id="250" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="251">    
+    <bendpoint x="7266" y="1097"/>    
+    <end type="SOURCE" refId="73" navigable="false">      
+      <attribute id="252" name="mapConfigRepository"/>      
+      <multiplicity id="253" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="254">    
+    <bendpoint x="5239" y="1097"/>    
+    <bendpoint x="5386" y="1488"/>    
+    <bendpoint x="5344" y="2077"/>    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="255">    
+    <bendpoint x="5050" y="742"/>    
+    <bendpoint x="5176" y="1097"/>    
+    <end type="SOURCE" refId="62"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <association id="256">    
+    <end type="SOURCE" refId="57" navigable="false">      
+      <attribute id="257" name="pessoaService"/>      
+      <multiplicity id="258" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="77" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="259">    
+    <end type="SOURCE" refId="68"/>    
+    <end type="TARGET" refId="105"/>  
+  </dependency>  
+  <dependency id="260">    
+    <bendpoint x="6992" y="1488"/>    
+    <end type="SOURCE" refId="99"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <association id="261">    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="262" name="calculaDistancia"/>      
+      <multiplicity id="263" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="92" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="264">    
+    <bendpoint x="7308" y="1097"/>    
+    <bendpoint x="7266" y="1488"/>    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="265">    
+    <bendpoint x="1484" y="2594"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <association id="266">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="267" name="userRepository"/>      
+      <multiplicity id="268" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="269">    
+    <bendpoint x="5428" y="2077"/>    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <dependency id="270">    
+    <bendpoint x="3991" y="1097"/>    
+    <bendpoint x="4315" y="1488"/>    
+    <bendpoint x="4315" y="2077"/>    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="271">    
+    <bendpoint x="7984" y="2077"/>    
+    <bendpoint x="7984" y="2594"/>    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <association id="272">    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="273" name="cepService"/>      
+      <multiplicity id="274" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="275">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="276">    
+    <bendpoint x="7329" y="1488"/>    
+    <bendpoint x="7329" y="2077"/>    
+    <end type="SOURCE" refId="97"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="277">    
+    <bendpoint x="5884" y="1097"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="278" name="telefoneRepository"/>      
+      <multiplicity id="279" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="280">    
+    <end type="SOURCE" refId="58" navigable="false">      
+      <attribute id="281" name="tokenProvider"/>      
+      <multiplicity id="282" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="73" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="283">    
+    <bendpoint x="1891" y="1488"/>    
+    <bendpoint x="1891" y="2077"/>    
+    <bendpoint x="1891" y="2594"/>    
+    <bendpoint x="1891" y="3201"/>    
+    <end type="SOURCE" refId="78"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="284">    
+    <bendpoint x="1807" y="1488"/>    
+    <bendpoint x="1442" y="2077"/>    
+    <bendpoint x="1442" y="2594"/>    
+    <end type="SOURCE" refId="78"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <association id="285">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="286" name="cargo"/>      
+      <multiplicity id="287" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="288">    
+    <bendpoint x="8481" y="1097"/>    
+    <bendpoint x="8481" y="1488"/>    
+    <bendpoint x="8481" y="2077"/>    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <association id="289">    
+    <end type="SOURCE" refId="82" navigable="false">      
+      <attribute id="290" name="pessoaService"/>      
+      <multiplicity id="291" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="77" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="292">    
+    <bendpoint x="6646" y="1488"/>    
+    <bendpoint x="6765" y="2077"/>    
+    <end type="SOURCE" refId="57"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="293">    
+    <bendpoint x="4754" y="1097"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="294" name="tipoEmpresaRepository"/>      
+      <multiplicity id="295" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="296">    
+    <end type="SOURCE" refId="84"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <association id="297">    
+    <end type="SOURCE" refId="87" navigable="false">      
+      <attribute id="298" name="cepService"/>      
+      <multiplicity id="299" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="300">    
+    <bendpoint x="4733" y="1097"/>    
+    <bendpoint x="5760" y="1488"/>    
+    <end type="SOURCE" refId="92"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="301">    
+    <bendpoint x="5289" y="2077"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="302">    
+    <bendpoint x="6688" y="1488"/>    
+    <end type="SOURCE" refId="79"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="303">    
+    <bendpoint x="1463" y="2594"/>    
+    <bendpoint x="1463" y="3201"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="304">    
+    <bendpoint x="613" y="1097"/>    
+    <bendpoint x="613" y="1488"/>    
+    <bendpoint x="613" y="2077"/>    
+    <bendpoint x="613" y="2594"/>    
+    <end type="SOURCE" refId="60"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="305">    
+    <bendpoint x="5449" y="2077"/>    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="306">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="307">    
+    <bendpoint x="5213" y="2594"/>    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <association id="308">    
+    <end type="SOURCE" refId="81" navigable="false">      
+      <attribute id="309" name="cargoRepository"/>      
+      <multiplicity id="310" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="311">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="312" name="roleService"/>      
+      <multiplicity id="313" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="96" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="314">    
+    <end type="SOURCE" refId="99" navigable="false">      
+      <attribute id="315" name="mapConfigRepository"/>      
+      <multiplicity id="316" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="317">    
+    <bendpoint x="3760" y="1097"/>    
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="318">    
+    <bendpoint x="7245" y="1097"/>    
+    <bendpoint x="7245" y="1488"/>    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="319">    
+    <bendpoint x="5323" y="1488"/>    
+    <bendpoint x="5302" y="2077"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="320">    
+    <bendpoint x="6909" y="1097"/>    
+    <bendpoint x="6971" y="1488"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="321" name="roleRepository"/>      
+      <multiplicity id="322" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="51" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="323">    
+    <bendpoint x="2953" y="742"/>    
+    <end type="SOURCE" refId="62"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="324">    
+    <end type="SOURCE" refId="71" navigable="false">      
+      <attribute id="325" name="tokenProvider"/>      
+      <multiplicity id="326" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="73" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="327">    
+    <bendpoint x="5239" y="1488"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <association id="328">    
+    <bendpoint x="3970" y="1097"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="329" name="cargoRepository"/>      
+      <multiplicity id="330" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="331">    
+    <end type="SOURCE" refId="92"/>    
+    <end type="TARGET" refId="95"/>  
+  </dependency>  
+  <association id="332">    
+    <bendpoint x="5302" y="1097"/>    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="333" name="enderecoService"/>      
+      <multiplicity id="334" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="80" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="335">    
+    <end type="SOURCE" refId="59" navigable="false">      
+      <attribute id="336" name="cargoService"/>      
+      <multiplicity id="337" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="81" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="338">    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="339" name="cepService"/>      
+      <multiplicity id="340" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="341">    
+    <bendpoint x="5197" y="1097"/>    
+    <bendpoint x="5260" y="1488"/>    
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <association id="342">    
+    <bendpoint x="6970" y="742"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="343" name="keys"/>      
+      <multiplicity id="344" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="99" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="345">    
+    <bendpoint x="5428" y="1097"/>    
+    <bendpoint x="5428" y="1488"/>    
+    <bendpoint x="5365" y="2077"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="346">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="347" name="pessoa"/>      
+      <multiplicity id="348" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="349">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="350" name="funcionarioRepository"/>      
+      <multiplicity id="351" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="352">    
+    <bendpoint x="7287" y="1488"/>    
+    <bendpoint x="7287" y="2077"/>    
+    <end type="SOURCE" refId="98"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="353">    
+    <bendpoint x="6144" y="1488"/>    
+    <end type="SOURCE" refId="57"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="354">    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="355">    
+    <bendpoint x="6951" y="1097"/>    
+    <bendpoint x="6929" y="1488"/>    
+    <bendpoint x="6929" y="2077"/>    
+    <end type="SOURCE" refId="64"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="356">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="357" name="cidade"/>      
+      <multiplicity id="358" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="359">    
+    <bendpoint x="2372" y="2077"/>    
+    <bendpoint x="2330" y="2594"/>    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="360">    
+    <bendpoint x="8460" y="1097"/>    
+    <bendpoint x="8460" y="1488"/>    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <association id="361">    
+    <end type="SOURCE" refId="100" navigable="false">      
+      <attribute id="362" name="cepService"/>      
+      <multiplicity id="363" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="364">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="365" name="empresa"/>      
+      <multiplicity id="366" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="367">    
+    <bendpoint x="2584" y="3201"/>    
+    <end type="SOURCE" refId="84"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="368">    
+    <bendpoint x="3718" y="1097"/>    
+    <bendpoint x="2906" y="1488"/>    
+    <bendpoint x="2414" y="2077"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="369">    
+    <bendpoint x="1320" y="742"/>    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <association id="370">    
+    <bendpoint x="1954" y="1488"/>    
+    <bendpoint x="1954" y="2077"/>    
+    <end type="SOURCE" refId="78" navigable="false">      
+      <attribute id="371" name="cidadeRepository"/>      
+      <multiplicity id="372" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="373">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="374">    
+    <bendpoint x="2927" y="1488"/>    
+    <bendpoint x="3213" y="2077"/>    
+    <bendpoint x="3213" y="2594"/>    
+    <end type="SOURCE" refId="81"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <dependency id="375">    
+    <bendpoint x="3539" y="1488"/>    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="105"/>  
+  </dependency>  
+  <dependency id="376">    
+    <bendpoint x="1382" y="2594"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="377">    
+    <bendpoint x="3016" y="1097"/>    
+    <bendpoint x="2948" y="1488"/>    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="378">    
+    <bendpoint x="2588" y="1097"/>    
+    <bendpoint x="2588" y="1488"/>    
+    <end type="SOURCE" refId="92"/>    
+    <end type="TARGET" refId="105"/>  
+  </dependency>  
+  <association id="379">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="380" name="tipoEmpresa"/>      
+      <multiplicity id="381" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="382">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="383" name="enderecoService"/>      
+      <multiplicity id="384" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="80" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="385">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="386" name="pessoaRepository"/>      
+      <multiplicity id="387" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="388">    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="389">    
+    <bendpoint x="2995" y="1097"/>    
+    <bendpoint x="2864" y="1488"/>    
+    <bendpoint x="3192" y="2077"/>    
+    <bendpoint x="3192" y="2594"/>    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <dependency id="390">    
+    <bendpoint x="1020" y="742"/>    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <association id="391">    
+    <end type="SOURCE" refId="82" navigable="false">      
+      <attribute id="392" name="tipoEmpresaRepository"/>      
+      <multiplicity id="393" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="394">    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="395">    
+    <bendpoint x="4619" y="1097"/>    
+    <bendpoint x="4619" y="1488"/>    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="396">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="397">    
+    <bendpoint x="4008" y="1097"/>    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="398" name="cargoRepository"/>      
+      <multiplicity id="399" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="400">    
+    <bendpoint x="7369" y="423"/>    
+    <bendpoint x="7369" y="742"/>    
+    <end type="SOURCE" refId="93" navigable="false">      
+      <attribute id="401" name="userService"/>      
+      <multiplicity id="402" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="97" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="403">    
+    <bendpoint x="1807" y="194"/>    
+    <end type="SOURCE" refId="63"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="404">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="405" name="cep"/>      
+      <multiplicity id="406" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="407">    
+    <end type="SOURCE" refId="72" navigable="false">      
+      <attribute id="408" name="userRepository"/>      
+      <multiplicity id="409" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="410">    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="105"/>  
+  </dependency>  
+  <association id="411">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="412" name="tipoPessoaRepository"/>      
+      <multiplicity id="413" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="414">    
+    <end type="SOURCE" refId="66"/>    
+    <end type="TARGET" refId="65"/>  
+  </generalization>  
+  <dependency id="415">    
+    <end type="SOURCE" refId="68"/>    
+    <end type="TARGET" refId="65"/>  
+  </dependency>  
+  <dependency id="416">    
+    <bendpoint x="2932" y="742"/>    
+    <bendpoint x="2932" y="1097"/>    
+    <bendpoint x="2843" y="1488"/>    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="417">    
+    <bendpoint x="4294" y="1488"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="418">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="419">    
+    <bendpoint x="2351" y="2594"/>    
+    <bendpoint x="2326" y="3201"/>    
+    <end type="SOURCE" refId="85"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="420">    
+    <bendpoint x="5260" y="1097"/>    
+    <bendpoint x="5281" y="1488"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="421">    
+    <bendpoint x="5779" y="742"/>    
+    <bendpoint x="5863" y="1097"/>    
+    <bendpoint x="6060" y="1488"/>    
+    <bendpoint x="6133" y="2077"/>    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="422">    
+    <bendpoint x="8409" y="742"/>    
+    <bendpoint x="8424" y="1097"/>    
+    <bendpoint x="8439" y="1488"/>    
+    <end type="SOURCE" refId="58"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <association id="423">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="424" name="unauthorizedHandler"/>      
+      <multiplicity id="425" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="426">    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <dependency id="427">    
+    <bendpoint x="2953" y="1097"/>    
+    <bendpoint x="3560" y="1488"/>    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <association id="428">    
+    <end type="SOURCE" refId="85" navigable="false">      
+      <attribute id="429" name="cidadeRepository"/>      
+      <multiplicity id="430" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="431">    
+    <bendpoint x="6604" y="1488"/>    
+    <bendpoint x="6744" y="2077"/>    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="432">    
+    <bendpoint x="1933" y="2077"/>    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="433">    
+    <bendpoint x="3928" y="1488"/>    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="434">    
+    <bendpoint x="6081" y="1488"/>    
+    <end type="SOURCE" refId="57"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="435">    
+    <bendpoint x="7350" y="1488"/>    
+    <end type="SOURCE" refId="98" navigable="false">      
+      <attribute id="436" name="roleRepository"/>      
+      <multiplicity id="437" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="51" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="438">    
+    <end type="SOURCE" refId="92" navigable="false">      
+      <attribute id="439" name="mapConfigService"/>      
+      <multiplicity id="440" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="79" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="441">    
+    <bendpoint x="6667" y="1488"/>    
+    <bendpoint x="6786" y="2077"/>    
+    <bendpoint x="6786" y="2594"/>    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <association id="442">    
+    <end type="SOURCE" refId="88" navigable="false">      
+      <attribute id="443" name="cepService"/>      
+      <multiplicity id="444" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="445">    
+    <bendpoint x="6908" y="1488"/>    
+    <end type="SOURCE" refId="98" navigable="false">      
+      <attribute id="446" name="pessoaRepository"/>      
+      <multiplicity id="447" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="448">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="449">    
+    <bendpoint x="1616" y="1488"/>    
+    <end type="SOURCE" refId="78"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="450">    
+    <bendpoint x="5407" y="2077"/>    
+    <bendpoint x="5407" y="2594"/>    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="451">    
+    <bendpoint x="5725" y="2594"/>    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <association id="452">    
+    <end type="SOURCE" refId="96" navigable="false">      
+      <attribute id="453" name="roleRepository"/>      
+      <multiplicity id="454" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="51" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="455">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="71"/>  
+  </dependency>  
+  <dependency id="456">    
+    <bendpoint x="2827" y="2077"/>    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="90"/>  
+  </dependency>  
+  <dependency id="457">    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="458">    
+    <bendpoint x="4273" y="1488"/>    
+    <bendpoint x="4273" y="2077"/>    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <association id="459">    
+    <bendpoint x="2338" y="742"/>    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="460" name="cepService"/>      
+      <multiplicity id="461" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="462">    
+    <end type="SOURCE" refId="85" navigable="false">      
+      <attribute id="463" name="estadoService"/>      
+      <multiplicity id="464" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="465">    
+    <bendpoint x="2338" y="1097"/>    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <association id="466">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="467" name="pessoa"/>      
+      <multiplicity id="468" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="469">    
+    <bendpoint x="5386" y="1097"/>    
+    <bendpoint x="5407" y="1488"/>    
+    <bendpoint x="5281" y="2077"/>    
+    <bendpoint x="5281" y="2594"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="470">    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="89"/>  
+  </dependency>  
+  <dependency id="471">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="472">    
+    <bendpoint x="5323" y="742"/>    
+    <bendpoint x="5323" y="1097"/>    
+    <bendpoint x="5302" y="1488"/>    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="473">    
+    <bendpoint x="4498" y="2077"/>    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="474">    
+    <bendpoint x="5800" y="742"/>    
+    <bendpoint x="5800" y="1097"/>    
+    <bendpoint x="5449" y="1488"/>    
+    <bendpoint x="5386" y="2077"/>    
+    <end type="SOURCE" refId="58"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="475">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="476">    
+    <bendpoint x="1912" y="2594"/>    
+    <end type="SOURCE" refId="85"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="477">    
+    <bendpoint x="1911" y="1097"/>    
+    <bendpoint x="1786" y="1488"/>    
+    <bendpoint x="1786" y="2077"/>    
+    <end type="SOURCE" refId="87"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="478">    
+    <bendpoint x="4758" y="742"/>    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="479" name="funcionarioRepository"/>      
+      <multiplicity id="480" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="481">    
+    <bendpoint x="2435" y="2077"/>    
+    <end type="SOURCE" refId="88" navigable="false">      
+      <attribute id="482" name="estadoService"/>      
+      <multiplicity id="483" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="484">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="485" name="empresa"/>      
+      <multiplicity id="486" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="487">    
+    <bendpoint x="2911" y="1097"/>    
+    <bendpoint x="2414" y="1488"/>    
+    <bendpoint x="1912" y="2077"/>    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="488">    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="489" name="regiaoRepository"/>      
+      <multiplicity id="490" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="491">    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="492" name="userService"/>      
+      <multiplicity id="493" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="97" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="494">    
+    <bendpoint x="8012" y="1488"/>    
+    <end type="SOURCE" refId="72"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <association id="495">    
+    <bendpoint x="4796" y="1097"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="496" name="empresaRepository"/>      
+      <multiplicity id="497" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="498">    
+    <end type="SOURCE" refId="87" navigable="false">      
+      <attribute id="499" name="empresaService"/>      
+      <multiplicity id="500" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="501">    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="502">    
+    <bendpoint x="5842" y="1097"/>    
+    <bendpoint x="6102" y="1488"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <association id="503">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="504" name="estado"/>      
+      <multiplicity id="505" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="506">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="507" name="responsavel"/>      
+      <multiplicity id="508" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="509">    
+    <bendpoint x="7348" y="742"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="510" name="users"/>      
+      <multiplicity id="511" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="98" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="512">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="513">    
+    <bendpoint x="1942" y="742"/>    
+    <bendpoint x="2296" y="1097"/>    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="514">    
+    <bendpoint x="4033" y="1097"/>    
+    <bendpoint x="3991" y="1488"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="515">    
+    <bendpoint x="655" y="1097"/>    
+    <bendpoint x="1210" y="1488"/>    
+    <bendpoint x="1765" y="2077"/>    
+    <end type="SOURCE" refId="60"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="516">    
+    <bendpoint x="1963" y="742"/>    
+    <bendpoint x="1932" y="1097"/>    
+    <bendpoint x="1828" y="1488"/>    
+    <bendpoint x="1828" y="2077"/>    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="517">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="518" name="insertLoginDTO"/>      
+      <multiplicity id="519" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="520">    
+    <bendpoint x="3216" y="1488"/>    
+    <end type="SOURCE" refId="81"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="521">    
+    <bendpoint x="7392" y="1488"/>    
+    <bendpoint x="7618" y="2077"/>    
+    <end type="SOURCE" refId="98"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <association id="522">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="523" name="empresaService"/>      
+      <multiplicity id="524" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="525">    
+    <bendpoint x="5344" y="1097"/>    
+    <bendpoint x="5344" y="1488"/>    
+    <bendpoint x="4978" y="2077"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="526">    
+    <bendpoint x="1181" y="742"/>    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="527">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <dependency id="528">    
+    <bendpoint x="1767" y="423"/>    
+    <end type="SOURCE" refId="93"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <association id="529">    
+    <end type="SOURCE" refId="98" navigable="false">      
+      <attribute id="530" name="userRepository"/>      
+      <multiplicity id="531" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="532">    
+    <bendpoint x="1221" y="2077"/>    
+    <bendpoint x="1505" y="2594"/>    
+    <end type="SOURCE" refId="68"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <dependency id="533">    
+    <bendpoint x="3886" y="1097"/>    
+    <bendpoint x="3886" y="1488"/>    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <association id="534">    
+    <bendpoint x="5407" y="1097"/>    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="535" name="pessoaService"/>      
+      <multiplicity id="536" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="77" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="537">    
+    <bendpoint x="2974" y="742"/>    
+    <bendpoint x="2974" y="1097"/>    
+    <bendpoint x="2885" y="1488"/>    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <association id="538">    
+    <bendpoint x="5281" y="1097"/>    
+    <end type="SOURCE" refId="80" navigable="false">      
+      <attribute id="539" name="pessoaService"/>      
+      <multiplicity id="540" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="77" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="541">    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="542" name="funcionarioRepository"/>      
+      <multiplicity id="543" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="544">    
+    <bendpoint x="8031" y="742"/>    
+    <end type="SOURCE" refId="71" navigable="false">      
+      <attribute id="545" name="customUserDetailsService"/>      
+      <multiplicity id="546" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="72" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="547">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="548">    
+    <bendpoint x="7928" y="1097"/>    
+    <bendpoint x="7970" y="1488"/>    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <association id="549">    
+    <end type="SOURCE" refId="93" navigable="false">      
+      <attribute id="550" name="geraRota"/>      
+      <multiplicity id="551" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="94" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="552">    
+    <bendpoint x="7224" y="1097"/>    
+    <bendpoint x="6950" y="1488"/>    
+    <bendpoint x="6950" y="2077"/>    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="553">    
+    <bendpoint x="2359" y="1097"/>    
+    <end type="SOURCE" refId="100" navigable="false">      
+      <attribute id="554" name="createCep"/>      
+      <multiplicity id="555" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="88" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="556">    
+    <end type="SOURCE" refId="78" navigable="false">      
+      <attribute id="557" name="createCep"/>      
+      <multiplicity id="558" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="88" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="559">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="560" name="waypoints"/>      
+      <multiplicity id="561" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="562">    
+    <bendpoint x="8430" y="423"/>    
+    <bendpoint x="8430" y="742"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="563" name="CustomUserDetailService"/>      
+      <multiplicity id="564" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="72" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="565">    
+    <bendpoint x="4012" y="1488"/>    
+    <bendpoint x="3970" y="2077"/>    
+    <bendpoint x="3970" y="2594"/>    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <dependency id="566">    
+    <bendpoint x="2546" y="1488"/>    
+    <bendpoint x="2848" y="2077"/>    
+    <bendpoint x="3080" y="2594"/>    
+    <end type="SOURCE" refId="78"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <association id="567">    
+    <end type="SOURCE" refId="64" navigable="false">      
+      <attribute id="568" name="telefoneService"/>      
+      <multiplicity id="569" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="76" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="570">    
+    <bendpoint x="4012" y="1097"/>    
+    <bendpoint x="3907" y="1488"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <association id="571">    
+    <bendpoint x="2393" y="1488"/>    
+    <bendpoint x="2393" y="2077"/>    
+    <end type="SOURCE" refId="78" navigable="false">      
+      <attribute id="572" name="estadoService"/>      
+      <multiplicity id="573" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="574">    
+    <end type="SOURCE" refId="89"/>    
+    <end type="TARGET" refId="91"/>  
+  </dependency>  
+  <dependency id="575">    
+    <end type="SOURCE" refId="58"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="576">    
+    <bendpoint x="676" y="1097"/>    
+    <bendpoint x="1912" y="1488"/>    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="577" name="cidadeService"/>      
+      <multiplicity id="578" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="85" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="579">    
+    <bendpoint x="3739" y="1097"/>    
+    <bendpoint x="3581" y="1488"/>    
+    <bendpoint x="4033" y="2077"/>    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <association id="580">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="581" name="roles"/>      
+      <multiplicity id="582" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="583">    
+    <end type="SOURCE" refId="76" navigable="false">      
+      <attribute id="584" name="pessoaService"/>      
+      <multiplicity id="585" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="77" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="586">    
+    <bendpoint x="1870" y="1488"/>    
+    <bendpoint x="1870" y="2077"/>    
+    <end type="SOURCE" refId="78"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="587">    
+    <end type="SOURCE" refId="73" navigable="false">      
+      <attribute id="588" name="userService"/>      
+      <multiplicity id="589" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="97" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="590">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="591" name="pessoaService"/>      
+      <multiplicity id="592" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="77" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="593">    
+    <end type="SOURCE" refId="79" navigable="false">      
+      <attribute id="594" name="configRepository"/>      
+      <multiplicity id="595" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="596">    
+    <bendpoint x="5905" y="423"/>    
+    <bendpoint x="5905" y="742"/>    
+    <bendpoint x="5905" y="1097"/>    
+    <bendpoint x="6123" y="1488"/>    
+    <bendpoint x="6154" y="2077"/>    
+    <end type="SOURCE" refId="93"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="597">    
+    <bendpoint x="4923" y="2077"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <association id="598">    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="599" name="regiaoService"/>      
+      <multiplicity id="600" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="601">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="602">    
+    <bendpoint x="592" y="2594"/>    
+    <bendpoint x="592" y="3201"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="603">    
+    <end type="SOURCE" refId="94"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="604">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="605">    
+    <bendpoint x="5323" y="2077"/>    
+    <bendpoint x="5260" y="2594"/>    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="104"/>  
+  </dependency>  
+  <association id="606">    
+    <bendpoint x="7560" y="742"/>    
+    <end type="SOURCE" refId="58" navigable="false">      
+      <attribute id="607" name="userService"/>      
+      <multiplicity id="608" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="97" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="609">    
+    <bendpoint x="5218" y="1097"/>    
+    <end type="SOURCE" refId="101"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <association id="610">    
+    <bendpoint x="5365" y="1097"/>    
+    <bendpoint x="5365" y="1488"/>    
+    <end type="SOURCE" refId="101" navigable="false">      
+      <attribute id="611" name="tipo"/>      
+      <multiplicity id="612" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="613">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="614" name="populateCeps"/>      
+      <multiplicity id="615" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="100" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="616">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="617">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

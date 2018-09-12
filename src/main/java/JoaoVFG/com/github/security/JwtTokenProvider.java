@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import JoaoVFG.com.github.entity.config.MapConfig;
 import JoaoVFG.com.github.repositories.config.MapConfigRepository;
+import JoaoVFG.com.github.service.security.UserService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -27,6 +28,9 @@ public class JwtTokenProvider {
 	@Autowired
 	private MapConfigRepository mapConfigRepository;
 
+	@Autowired
+	private UserService userService;
+
 	@Value("${app.jwtExpirationInMs}")
 	private int jwtExpirationInMs;
 
@@ -36,9 +40,13 @@ public class JwtTokenProvider {
 		Date now = new Date();
 		Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
 
-		return Jwts.builder().setSubject(Integer.toString(userPrincipal.getId())).setIssuedAt(new Date())
-				.setExpiration(expiryDate).signWith(SignatureAlgorithm.HS512, getMapConfigJWT().getValue())
-				.claim("email", userPrincipal.getEmail()).compact();
+		return Jwts.builder()
+				.setSubject(Integer.toString(userPrincipal.getId()))
+				.setIssuedAt(new Date()).setExpiration(expiryDate)
+				.signWith(SignatureAlgorithm.HS512, getMapConfigJWT().getValue())
+				.claim("email", userPrincipal.getEmail())
+				.claim("idUser", userService.findByEmail(userPrincipal.getEmail()).getId())
+				.compact();
 	}
 
 	public Integer getUsetIdFromJWT(String token) {

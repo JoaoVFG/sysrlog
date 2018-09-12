@@ -31,8 +31,7 @@ public class PessoaResource {
 		return ResponseEntity.ok().body(pessoas);
 	}
 	
-	@PreAuthorize("hasRole('ROLE_BUSCA_PESSOA')  or hasRole('ROLE_ADMIN')")
-	@RequestMapping(value="/buscapessoa/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/buscapessoa/id/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Pessoa> findById(@PathVariable String id){
 		Pessoa pessoa = pessoaService.findById(Integer.parseInt(id));
 		return ResponseEntity.ok().body(pessoa);
@@ -69,14 +68,14 @@ public class PessoaResource {
 	@RequestMapping(value = "/inserepf",method = RequestMethod.POST)
 	public ResponseEntity<Void> createPessoaFisica(@RequestBody InsertPessoaFisicaDTO pessoaDto){
 		Pessoa pessoa = pessoaService.createPF(pessoaDto);
-		URI uri = URI.create("/pessoa" + "/buscaPessoa/" + pessoa.getId());
+		URI uri = URI.create("/pessoa" + "/buscapessoa/" + pessoa.getId());
 		return ResponseEntity.created(uri).build();
 	}
 	
 	@RequestMapping(value = "/inserepj",method = RequestMethod.POST)
 	public ResponseEntity<Void> createPessoaJuridica(@RequestBody InsertPessoaJuridicaDTO pessoaDto){
 		Pessoa pessoa = pessoaService.createPJ(pessoaDto);
-		URI uri = URI.create("/pessoa" + "/buscaPessoa/" + pessoa.getId());
+		URI uri = URI.create("/pessoa" + "/buscapessoa/" + pessoa.getId());
 				 
 		return ResponseEntity.created(uri).build();
 	}

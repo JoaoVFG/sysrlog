@@ -59,16 +59,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.cors().and().csrf().disable()
-				.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().headers()
-				.frameOptions().sameOrigin()
-				.and().authorizeRequests()
+				.frameOptions().sameOrigin().and().authorizeRequests()
 				.antMatchers("/", "/favicon.ico", "/**/*.png", "/**/*.gif", "/**/*.svg", "/**/*.jpg", "/**/*.html",
 						"/**/*.css", "/**/*.js")
 				.permitAll().antMatchers("/login/**", "/h2-console/**").permitAll()
-				.antMatchers(HttpMethod.GET, "/ceps/buscacep/**","/configs/buscacrypto").permitAll()
-				.antMatchers(HttpMethod.POST, "/pessoa/inserepf","/pessoa/inserepj").permitAll().anyRequest().authenticated();
+				.antMatchers(HttpMethod.GET, "/ceps/buscacep/**", "/configs/buscacrypto", "user/buscauser/**",
+						"pessoa/buscapessoa/id/**")
+				.permitAll().antMatchers(HttpMethod.POST, "/pessoa/inserepf", "/pessoa/inserepj").permitAll()
+				.anyRequest().authenticated();
 
 		// Add our custom JWT security filter
 		http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

@@ -9,9 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import JoaoVFG.com.github.dto.request.insert.InsertPessoaFisicaDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertPessoaJuridicaDTO;
-import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Pessoa;
-import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
 import JoaoVFG.com.github.service.security.UserService;
@@ -21,8 +19,7 @@ import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 @Service
 public class PessoaService {
 
-	@Autowired
-	PessoaRepository pessoaRepository;
+	
 
 	@Autowired
 	TipoPessoaRepository tipoPessoaRepository;
@@ -32,6 +29,9 @@ public class PessoaService {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	PessoaRepository pessoaRepository;
 
 	public Pessoa findById(Integer id) {
 		Optional<Pessoa> pessoa = Optional.ofNullable(pessoaRepository.buscaPorId(id));

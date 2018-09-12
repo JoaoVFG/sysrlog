@@ -25,7 +25,8 @@ public class UserController {
 	
 	@Autowired
 	RoleService roleService;
-
+	
+	@PreAuthorize("hasRole('ROLE_BUSCA_USERS')  or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscauser/{id}", method = RequestMethod.GET)
 	public ResponseEntity<User> findById(@PathVariable("id") Integer idUser) {
 		User user = userService.findById(idUser);
