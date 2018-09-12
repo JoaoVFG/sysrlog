@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+    <changeSet id="34" author="JoaoVFG">
+    	<createTable tableName="ROTA" remarks="Tabela para armazenar as rotas geradas">
+    		<column name="ID" type="int">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="DATA_CRIACAO" type="varchar(10)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="USER_ID" type="int">
+				<constraints nullable="false"/>
+			</column>
+			<column name="EMPRESA_ID" type="int"></column>
+    	</createTable>
+    </changeSet>
+    
+    <changeSet id="34.1" author="JoaoVFG">
+    	<addAutoIncrement tableName="ROTA" columnName="ID"
+    		columnDataType="int" startWith="1" incrementBy="1"
+    		catalogName="tg_sysglog" schemaName="public"/>
+    </changeSet>
+         
+</databaseChangeLog>

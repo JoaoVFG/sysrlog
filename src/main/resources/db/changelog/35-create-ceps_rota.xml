@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="35" author="JoaoVFG">
+		<createTable tableName="CEPS_ROTA"
+			remarks="TABELA N..N PARA ARMAZENAR AS OS CEPS DE UMA ROTA GERADA">
+			<column name="ID" type="int">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="ROTA_ID" type="int"></column>
+			<column name="CEP_ID" type="int"></column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet id="35.1" author="JoaoVFG">
+		<addAutoIncrement tableName="CEPS_ROTA" columnName="ID"
+			columnDataType="int" startWith="1" incrementBy="1"
+			catalogName="tg_sysglog" schemaName="public"/>
+	</changeSet>
+
+</databaseChangeLog>

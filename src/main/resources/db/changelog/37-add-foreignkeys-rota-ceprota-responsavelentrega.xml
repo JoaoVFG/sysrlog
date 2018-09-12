@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+    <changeSet id="29" author="JoaoVFG">
+    	<addForeignKeyConstraint baseTableName="ROTA" baseColumnNames="EMPRESA_ID"
+  				constraintName="ROTA_EMPRESA_FK"
+  				referencedTableName="EMPRESA" referencedColumnNames="ID"/>
+  				
+  		<addForeignKeyConstraint baseTableName="ROTA" baseColumnNames="USER_ID"
+  				constraintName="ROTA_USER_FK"
+  				referencedTableName="USER" referencedColumnNames="ID"/>
+  				
+  		<addForeignKeyConstraint baseTableName="CEPS_ROTA" baseColumnNames="ROTA_ID"
+  				constraintName="CEPS_ROTA_ROTA_FK"
+  				referencedTableName="ROTA" referencedColumnNames="ID"/>
+  				
+  		<addForeignKeyConstraint baseTableName="CEPS_ROTA" baseColumnNames="CEP_ID"
+  				constraintName="CEPS_ROTA_CEP_FK"
+  				referencedTableName="CEP" referencedColumnNames="ID"/>
+  				
+  		<addForeignKeyConstraint baseTableName="RESPONSAVEL_ENTREGA_CEP_ROTA" baseColumnNames="CEP_ID"
+  				constraintName="RESPONSAVEL_ENTREGA_CEP_ROTA_CEP"
+  				referencedTableName="CEP" referencedColumnNames="ID"/>
+  		
+  		<addForeignKeyConstraint baseTableName="RESPONSAVEL_ENTREGA_CEP_ROTA" baseColumnNames="EMPRESA_ID"
+  				constraintName="RESPONSAVEL_ENTREGA_CEP_ROTA_EMPRESA"
+  				referencedTableName="EMPRESA" referencedColumnNames="ID"/>
+  	</changeSet>
+  	
+</databaseChangeLog>

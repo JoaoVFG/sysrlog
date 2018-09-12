@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="36" author="JoaoVFG">
+		<createTable tableName="RESPONSAVEL_ENTREGA_CEP_ROTA"
+			remarks="TABELA PARA ARMAZENAR OS RESPONSÁVEIS POR ENTREGAS EM PONTOS DE UMA ROTA QUE DETERMINADA EMPRESA NÃO ATENDE">
+			<column name="ID" type="int">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="CEP_ID" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="EMPRESA_ID" type="int">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet id="36.1" author="JoaoVFG">
+		<addAutoIncrement tableName="RESPONSAVEL_ENTREGA_CEP_ROTA" columnName="id"
+			columnDataType="int" startWith="1" incrementBy="1"
+			catalogName="tg_sysglog" schemaName="public"/>
+	</changeSet>
+</databaseChangeLog>

@@ -39,6 +39,11 @@
 		<include file="changelog/31-insert-ceps.sql" relativeToChangelogFile="true"/>
 		<include file="changelog/32-insert-roles-user.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/33-insert-mapconfig.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/34-create-rota.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/35-create-ceps_rota.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/36-create-responsavel-entrega-rota.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/37-add-foreignkeys-rota-ceprota-responsavelentrega.xml" relativeToChangelogFile="true"/>
+		
 		
 		
 		
