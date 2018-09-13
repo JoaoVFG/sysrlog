@@ -19,5 +19,5 @@ public interface ResponsavelEntregaRepository extends JpaRepository<ResponsavelE
 	
 	@Transactional(readOnly = true)
 	@Query("SELECT responsavelEntrega FROM ResponsavelEntrega responsavelEntrega WHERE responsavelEntrega.rota.id = :idRota ")
-	public List<ResponsavelEntrega> findByIdRota();
+	public List<ResponsavelEntrega> findByIdRota(@Param("idRota") Integer idRota);
 }
