@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import JoaoVFG.com.github.entity.security.User;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,32 +21,27 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 @Entity
-public class Rota implements Serializable {
+public class RotaEndereco implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
-	private String dataCriacao;
-
-	private String urlRota;
-
+	
 	@ManyToOne
-	@JoinColumn(name = "EMPRESA_ID")
-	private Empresa empresa;
-
+	@JoinColumn(name = "ENDERECO_ID")
+	private Endereco endereco;
+	
 	@ManyToOne
-	@JoinColumn(name = "USER_ID")
-	private User user;
+	@JoinColumn(name = "ROTA_ID")
+	private Rota rota;
 
-
-	public Rota(Integer id, String dataCriacao, String urlRota, User user) {
+	public RotaEndereco(Integer id, Endereco endereco, Rota rota) {
 		super();
 		this.id = id;
-		this.dataCriacao = dataCriacao;
-		this.urlRota = urlRota;
-		this.user = user;
+		this.endereco = endereco;
+		this.rota = rota;
 	}
-
+	
+	
 }
