@@ -1,5 +1,5 @@
 package JoaoVFG.com.github.service.route;
 
-public class ResponsavelRota {
+public class ResponsavelRotaService {
 
 }
