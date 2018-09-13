@@ -43,7 +43,8 @@
 		<include file="changelog/35-create-ceps_rota.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/36-create-responsavel-entrega-rota.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/37-add-foreignkeys-rota-ceprota-responsavelentrega.xml" relativeToChangelogFile="true"/>
-		
+		<include file="changelog/38-add-column-responsavel_entrega_rota.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/39-add-column-url_rota.xml" relativeToChangelogFile="true"/>
 		
 		
 		
