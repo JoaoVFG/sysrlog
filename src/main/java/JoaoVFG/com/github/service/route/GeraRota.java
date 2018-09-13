@@ -2,11 +2,15 @@ package JoaoVFG.com.github.service.route;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import JoaoVFG.com.github.dto.request.EnderecoEntregaDTO;
 import JoaoVFG.com.github.dto.response.ResponsavelRegiaoDTO;
@@ -14,9 +18,15 @@ import JoaoVFG.com.github.dto.response.RotaResponseDTO;
 import JoaoVFG.com.github.entity.Empresa;
 import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Funcionario;
-import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.Regiao;
+import JoaoVFG.com.github.entity.ResponsavelEntregaCepRota;
+import JoaoVFG.com.github.entity.Rota;
+import JoaoVFG.com.github.entity.RotaEndereco;
+import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.repositories.FuncionarioRepository;
+import JoaoVFG.com.github.repositories.ResponsavelEntregaRepository;
+import JoaoVFG.com.github.repositories.RotaEnderecoRepository;
+import JoaoVFG.com.github.repositories.RotaRepository;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.EmpresaService;
 import JoaoVFG.com.github.service.EnderecoService;
@@ -27,7 +37,19 @@ public class GeraRota {
 
 	@Autowired
 	private CalculaDistancia calculaDistancia;
+	
+	@Autowired
+	private FuncionarioRepository funcionarioRepository;
 
+	@Autowired
+	private RotaRepository rotaRepository;
+	
+	@Autowired
+	private RotaEnderecoRepository rotaEnderecoRepository;
+
+	@Autowired
+	private ResponsavelEntregaRepository responsavelEntregaRepository;
+	
 	@Autowired
 	private CepService cepService;
 
@@ -38,21 +60,25 @@ public class GeraRota {
 	private RegiaoService regiaoService;
 
 	@Autowired
-	private FuncionarioRepository funcionarioRepository;
-
-	@Autowired
 	private EmpresaService empresaService;
 
-	public RotaResponseDTO geraRota(Pessoa pessoa, List<EnderecoEntregaDTO> enderecoEntregaDTOs) {
+
+	@Transactional()
+	public RotaResponseDTO geraRota(User user, List<EnderecoEntregaDTO> enderecoEntregaDTOs) {
 
 		// objeto de retorno da função - INICIALZIAÇÃO
 		RotaResponseDTO rotaResponseDTO = new RotaResponseDTO();
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+		Date date = new Date(); 
+		// Objeto para armazenar rota
+		Rota rota = new Rota(null, dateFormat.format(date), "", user);
+		rota = rotaRepository.save(rota);
 
 		/**
 		 * objeto de Funcionario - INICIALZIAÇÃO Necessario para verificar se a pessoa é
 		 * vinculada a alguma empresa
 		 */
-		Funcionario funcionario = funcionarioRepository.findBypessoa(pessoa);
+		Funcionario funcionario = funcionarioRepository.findBypessoa(user.getPessoa());
 
 		/**
 		 * objeto de Empresa - INICIALZIAÇÃO Caso a pessoa que foi passada seja
@@ -74,12 +100,18 @@ public class GeraRota {
 		 */
 		if (!(funcionario == null)) {
 			empresa = empresaService.findById(funcionario.getEmpresa().getId());
+			rota.setEmpresa(empresa);
 		}
 
 		/**
+		 * Se a pessoa do usuário que solicitou a rota for funcionário de alguma empresa
+		 * caira no irá verificar se a empresa possui região de atuação, caso possua irá
+		 * verificar se ela atende todos os ceps passados e caso não atende irá
+		 * identificar as filias que atender(IF)
+		 * 
 		 * Se a empresa permanecer for nulo, quer dizer que o usuário que solicitou a
 		 * rota não é o funcionario de nenhuma empresa então usará seu endereço como
-		 * ponto de partida
+		 * ponto de partida(ELSE)
 		 */
 		if (!(empresa.getId() == null)) {
 
@@ -110,7 +142,8 @@ public class GeraRota {
 
 							// Se dentro da região contiver um responsável pelo CEP
 							if (r.getCeps().contains(cepService.findByCep(enderecoEntregaDTOs.get(i).getCep()))) {
-
+								// Salva o Responsável pela Entrega no Banco De Dados
+								armazenaResponsavelEntrega(enderecoEntregaDTOs.get(i).getCep(), r.getEmpresa(), rota);
 								// adicioa o CEP e a empresa responsavel a listaResponsavelRegiao
 								listResponsavelRegiao.add(new ResponsavelRegiaoDTO(enderecoEntregaDTOs.get(i).getCep(),
 										r.getEmpresa().getPessoa().getRazaoSocial()));
@@ -131,11 +164,11 @@ public class GeraRota {
 		}
 		// Atribui o endereço da pessoa do usuário ao endereço de partida
 		else {
-			endereco = enderecoService.findByPessoa(pessoa.getId());
+			endereco = enderecoService.findByPessoa(user.getPessoa().getId());
 		}
 
 		// Lista não roteirizada -> ja exclusos os endereços que a empresa não entrega
-		List<String> listaEnderecosStringNaoRoteirizado = enderecoClienteDtoToString(enderecoEntregaDTOs);
+		List<String> listaEnderecosStringNaoRoteirizado = enderecoClienteDtoToString(enderecoEntregaDTOs,rota);
 
 		String enderecoPartida = cepService.cepToStringEndereco(endereco.getCep().getCep(),
 				endereco.getNumeroLogradouro().toString());
@@ -155,7 +188,11 @@ public class GeraRota {
 		rotaResponseDTO.setWaypoints(listaRoteirizada);
 
 		// return geraUrlMaps(listaRoteirizada, enderecoEmpresa);
-		rotaResponseDTO.setRota(geraUrlMaps(listaRoteirizada, enderecoSalvo));
+		String url = geraUrlMaps(listaRoteirizada, enderecoSalvo);
+		
+		rotaResponseDTO.setRota(url);
+		rota.setUrlRota(url);
+		rotaRepository.save(rota);
 		return rotaResponseDTO;
 	}
 
@@ -184,15 +221,34 @@ public class GeraRota {
 			return null;
 		}
 
-		System.out.println(builder.toString());
 		return builder.toString();
 
 	}
 
-	public List<String> enderecoClienteDtoToString(List<EnderecoEntregaDTO> enderecos) {
+	public void armazenaResponsavelEntrega(String cep, Empresa empresa, Rota rota) {
+		ResponsavelEntregaCepRota responsavelEntregaCepRota = new ResponsavelEntregaCepRota(null, cepService.findByCep(cep), empresa, rota);
+		responsavelEntregaRepository.save(responsavelEntregaCepRota);
+	}
+
+	public void armazenaEnderecoRota(EnderecoEntregaDTO enderecoEntregaDTO, Rota rota) {
+		
+		Integer num = null;
+		
+		if(!(enderecoEntregaDTO.getNumeroLogradouro() == "")) {
+			num = Integer.parseInt(enderecoEntregaDTO.getNumeroLogradouro());
+		}
+		Endereco endereco = enderecoService
+				.create(new Endereco(null, null, cepService.findByCep(enderecoEntregaDTO.getCep()),
+						num, null));
+		
+		rotaEnderecoRepository.save(new RotaEndereco(null, endereco, rota));
+	}
+
+	public List<String> enderecoClienteDtoToString(List<EnderecoEntregaDTO> enderecos, Rota rota) {
 		List<String> enderecosString = new ArrayList<String>();
 
 		for (EnderecoEntregaDTO e : enderecos) {
+			armazenaEnderecoRota(e, rota);
 			enderecosString.add(cepService.cepToStringEndereco(e.getCep(), e.getNumeroLogradouro()));
 		}
 

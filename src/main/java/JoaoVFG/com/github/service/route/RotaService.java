@@ -31,7 +31,7 @@ public class RotaService {
 	public RotaResponseDTO geraRotaRespose(ListaEnderecoRotaDTO listaEnderecoRotaDTO) {
 		User user = userService.findById(listaEnderecoRotaDTO.getIdUser());
 
-		RotaResponseDTO rotaResponseDTO = geraRota.geraRota(user.getPessoa(), listaEnderecoRotaDTO.getWaypoints());
+		RotaResponseDTO rotaResponseDTO = geraRota.geraRota(user, listaEnderecoRotaDTO.getWaypoints());
 		
 		return rotaResponseDTO;	
 	}

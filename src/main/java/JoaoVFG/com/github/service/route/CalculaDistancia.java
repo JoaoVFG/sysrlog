@@ -58,7 +58,7 @@ public class CalculaDistancia {
 			String url = "https://maps.googleapis.com/maps/api/distancematrix/json?"
 					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
 					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving"
-					+ mapConfigService.findGoogleApiKey().getValue();
+					+ "&key=" + mapConfigService.findGoogleApiKey().getValue();
 			HttpGet httpGet = new HttpGet(url);
 			HttpResponse httpResponse = httpClient.execute(httpGet);
 			

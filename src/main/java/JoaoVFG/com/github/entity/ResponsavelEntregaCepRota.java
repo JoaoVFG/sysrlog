@@ -23,7 +23,7 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 @Entity
-public class ResponsavelEntrega implements Serializable {
+public class ResponsavelEntregaCepRota implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -43,7 +43,7 @@ public class ResponsavelEntrega implements Serializable {
 	@JsonIgnore
 	private Rota rota;
 
-	public ResponsavelEntrega(Integer id, Cep cep, Empresa empresa, Rota rota) {
+	public ResponsavelEntregaCepRota(Integer id, Cep cep, Empresa empresa, Rota rota) {
 		super();
 		this.id = id;
 		this.cep = cep;

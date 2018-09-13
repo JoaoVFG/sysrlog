@@ -24,7 +24,7 @@ public class MapConfigService {
 	
 	public MapConfig insereGoogleApiKey(String googleApiKey) {
 		MapConfig mapConfig = configRepository.findBynameKey("GOOGLEAPIKEY");
-		mapConfig.setValue(encoder.encode(googleApiKey));
+		mapConfig.setValue(googleApiKey);
 		return configRepository.save(mapConfig);
 	}
 	
