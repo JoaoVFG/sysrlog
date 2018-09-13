@@ -45,10 +45,6 @@ public class Rota implements Serializable {
 	@JoinColumn(name = "USER_ID")
 	private User user;
 
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "CEPS_ROTA", joinColumns = { @JoinColumn(name = "ROTA_ID") }, inverseJoinColumns = {
-			@JoinColumn(name = "CEP_ID") })
-	private Set<Cep> ceps;
 
 	public Rota(Integer id, String dataCriacao, String urlRota, User user) {
 		super();

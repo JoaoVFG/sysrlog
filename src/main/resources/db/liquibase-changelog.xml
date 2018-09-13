@@ -45,6 +45,10 @@
 		<include file="changelog/37-add-foreignkeys-rota-ceprota-responsavelentrega.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/38-add-column-responsavel_entrega_rota.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/39-add-column-url_rota.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/40-drop-constraint-pessoa.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/41-drop-table-rotacep.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/42-create-rotaendereco.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/43-add-foreignkey-rotaendereco.xml" relativeToChangelogFile="true"/>
 		
 		
 		
