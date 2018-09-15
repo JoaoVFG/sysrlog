@@ -28,18 +28,20 @@ public class RotaBuscaResponseDTO implements Serializable {
 
 	private String usuarioCriador;
 
-	private String Empresa;
+	private String empresa;
 
 	private List<String> listaEnderecoEntrega;
 
 	private List<String> responsavelEntregaCepRotas;
 
-	public RotaBuscaResponseDTO(Rota rota, Empresa empresa, List<RotaEndereco> listaEnderecoEntrega,
+	public RotaBuscaResponseDTO(Rota rota, List<RotaEndereco> listaEnderecoEntrega,
 			List<ResponsavelEntregaCepRota> responsavelEntregaCepRotas) {
 		this.idRota = rota.getId();
 		this.urlRota = rota.getUrlRota();
 		this.dataCriacao = rota.getDataCriacao();
 		this.usuarioCriador = rota.getUser().getEmail();
+		
+		this.empresa = rota.getEmpresa().getPessoa().getNome();
 
 		this.listaEnderecoEntrega = geraListaEnderecoEntrega(listaEnderecoEntrega);
 		
