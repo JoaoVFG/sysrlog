@@ -41,8 +41,9 @@ public class RotaBuscaResponseDTO implements Serializable {
 		this.dataCriacao = rota.getDataCriacao();
 		this.usuarioCriador = rota.getUser().getEmail();
 		
-		this.empresa = rota.getEmpresa().getPessoa().getNome();
-
+		if(!(rota.getEmpresa() == null)) {
+			this.empresa = rota.getEmpresa().getPessoa().getNome();
+		}
 		this.listaEnderecoEntrega = geraListaEnderecoEntrega(listaEnderecoEntrega);
 		
 		this.responsavelEntregaCepRotas = geraListaResponsavelEntrega(responsavelEntregaCepRotas);
