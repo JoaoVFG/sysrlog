@@ -12,16 +12,20 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class ListaEnderecoRotaDTO implements Serializable{
+public class ListaEnderecoRotaDTOwithUser implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	public Integer idUser;
 	public ArrayList<EnderecoEntregaDTO> waypoints;
-
-	public ListaEnderecoRotaDTO(ArrayList<EnderecoEntregaDTO> waypoints) {
+	
+	public ListaEnderecoRotaDTOwithUser(Integer idUser, ArrayList<EnderecoEntregaDTO> waypoints) {
 		super();
+		this.idUser = idUser;
 		this.waypoints = waypoints;
 	}
+	
+	
 	
 	
 }

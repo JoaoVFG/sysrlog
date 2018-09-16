@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.dto.request.ListaEnderecoRotaDTO;
+import JoaoVFG.com.github.dto.request.ListaEnderecoRotaDTOwithUser;
 import JoaoVFG.com.github.dto.response.RotaBuscaResponseDTO;
 import JoaoVFG.com.github.dto.response.RotaResponseDTO;
 import JoaoVFG.com.github.entity.Funcionario;
@@ -44,11 +45,17 @@ public class RotaService {
 	@Autowired
 	private RotaEnderecoRepository rotaEnderecoRepository;
 
-	public RotaResponseDTO geraRotaRespose(ListaEnderecoRotaDTO listaEnderecoRotaDTO) {
-		User user = userService.findById(listaEnderecoRotaDTO.getIdUser());
+	public RotaResponseDTO geraRotaRespose(ListaEnderecoRotaDTOwithUser listaEnderecoRotaDTOwithUser) {
+		User user = userService.findById(listaEnderecoRotaDTOwithUser.getIdUser());
 
+		RotaResponseDTO rotaResponseDTO = geraRota.geraRota(user, listaEnderecoRotaDTOwithUser.getWaypoints());
+
+		return rotaResponseDTO;
+	}
+	
+	public RotaResponseDTO geraRotaReponseByApiKey(ListaEnderecoRotaDTO listaEnderecoRotaDTO, String apiKey) {
+		User user = userService.findByApiKey(apiKey);
 		RotaResponseDTO rotaResponseDTO = geraRota.geraRota(user, listaEnderecoRotaDTO.getWaypoints());
-
 		return rotaResponseDTO;
 	}
 

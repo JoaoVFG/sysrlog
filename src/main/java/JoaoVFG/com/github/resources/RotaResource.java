@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import JoaoVFG.com.github.dto.request.ListaEnderecoRotaDTO;
+import JoaoVFG.com.github.dto.request.ListaEnderecoRotaDTOwithUser;
 import JoaoVFG.com.github.dto.response.RotaBuscaResponseDTO;
 import JoaoVFG.com.github.dto.response.RotaResponseDTO;
 import JoaoVFG.com.github.service.route.RotaService;
@@ -26,8 +26,8 @@ public class RotaResource {
 	
 	@PreAuthorize("isAuthenticated()")
 	@RequestMapping(method = RequestMethod.POST, value = "/criarotajson")
-	public ResponseEntity<RotaResponseDTO> gerarRota(@RequestBody ListaEnderecoRotaDTO listaEnderecoRotaDTO){
-		RotaResponseDTO rotaResponseDTO = rotaService.geraRotaRespose(listaEnderecoRotaDTO);
+	public ResponseEntity<RotaResponseDTO> gerarRota(@RequestBody ListaEnderecoRotaDTOwithUser listaEnderecoRotaDTOwithUser){
+		RotaResponseDTO rotaResponseDTO = rotaService.geraRotaRespose(listaEnderecoRotaDTOwithUser);
 		return ResponseEntity.ok().body(rotaResponseDTO);
 	}
 	
