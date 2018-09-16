@@ -67,7 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll().antMatchers("/login/**", "/h2-console/**").permitAll()
 				.antMatchers(HttpMethod.GET, "/ceps/buscacep/**", "/configs/buscacrypto", "user/buscauser/**",
 						"pessoa/buscapessoa/id/**")
-				.permitAll().antMatchers(HttpMethod.POST, "/pessoa/inserepf", "/pessoa/inserepj").permitAll()
+				.permitAll().antMatchers(HttpMethod.POST, "/pessoa/inserepf", "/pessoa/inserepj","/API/gerarota/**").permitAll()
 				.anyRequest().authenticated();
 
 		// Add our custom JWT security filter
