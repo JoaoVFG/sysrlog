@@ -23,7 +23,7 @@ public class EnderecoResource {
 	@Autowired
 	EnderecoService enderecoService;
 	
-	@PreAuthorize("isAuthenticated()")
+	@PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_BUSCA_PROPRIO_ENDERECO')")
 	@RequestMapping(value = "/buscaendereco/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Endereco> findById(@PathVariable Integer id) {
 		Endereco endereco = enderecoService.findById(id);

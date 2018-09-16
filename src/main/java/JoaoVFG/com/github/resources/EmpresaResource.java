@@ -23,7 +23,7 @@ public class EmpresaResource {
 	@Autowired
 	private EmpresaService empresaService;
 
-	@PreAuthorize("isAuthenticated()")
+	@PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_BUSCA_PROPRIA_EMPRESA')")
 	@RequestMapping(value = "/buscaempresa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Empresa> findById(@PathVariable Integer id) {
 		Empresa empresa = empresaService.findById(id);

@@ -31,7 +31,7 @@ public class FuncionarioResource {
 		return ResponseEntity.ok(funcionarios);
 	}
 	
-	@PreAuthorize("hasRole('ROLE_BUSCAS_AVANCADAS_FUNCIONARIO')  or hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_PROPRIO_FUNCIONARIO')  or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscafuncionario/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Funcionario> findById(@PathVariable Integer id) {
 		Funcionario funcionario = funcionarioService.findById(id);

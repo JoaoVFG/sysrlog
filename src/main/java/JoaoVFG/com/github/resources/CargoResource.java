@@ -21,7 +21,7 @@ public class CargoResource {
 	@Autowired
 	private CargoService cargoService;
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_CARGO' ) or hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_PROPRIA_CARGO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscacargo/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Cargo> findById(@PathVariable Integer id) {
 		Cargo cargo = cargoService.findById(id);
