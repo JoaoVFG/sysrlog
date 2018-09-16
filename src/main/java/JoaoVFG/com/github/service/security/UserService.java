@@ -76,6 +76,8 @@ public class UserService {
 				// remove Permissão de administrador
 				roles.remove(roleService.findById(1));
 				user.setRoles(roles);
+			}else {
+				user.setRoles(returnDefaultsRoles());
 			}
 			
 			user.setApiKey(generateRandomApiKey());
@@ -107,6 +109,19 @@ public class UserService {
 		user.setRoles(updateUser.getRoles());
 
 		return user;
+	}
+	
+	public Set<Role> returnDefaultsRoles(){
+		Set<Role> roles = new HashSet<Role>();
+		roles.add(roleService.findById(33));
+		roles.add(roleService.findById(34));
+		roles.add(roleService.findById(35));
+		roles.add(roleService.findById(36));
+		roles.add(roleService.findById(37));
+		roles.add(roleService.findById(38));
+		roles.add(roleService.findById(27));
+		roles.add(roleService.findById(25));
+		return roles;
 	}
 	
 	public String generateRandomApiKey() {
