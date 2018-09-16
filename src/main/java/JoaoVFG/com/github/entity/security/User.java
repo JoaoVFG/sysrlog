@@ -18,11 +18,13 @@ import JoaoVFG.com.github.entity.Pessoa;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
+@ToString
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -33,6 +35,8 @@ public class User implements Serializable {
 	private String email;
 
 	private String senha;
+	
+	private String api_key;
 
 	@ManyToOne
 	@JoinColumn(name = "PESSOA_ID")
@@ -52,21 +56,6 @@ public class User implements Serializable {
 		this.roles = roles;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("User [id=");
-		builder.append(id);
-		builder.append(", email=");
-		builder.append(email);
-		builder.append(", senha=");
-		builder.append(senha);
-		builder.append(", pessoa=");
-		builder.append(pessoa);
-		builder.append(", roles=");
-		builder.append(roles);
-		builder.append("]");
-		return builder.toString();
-	}
+	
 
 }
