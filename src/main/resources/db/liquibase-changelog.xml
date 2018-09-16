@@ -49,7 +49,7 @@
 		<include file="changelog/41-drop-table-rotacep.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/42-create-rotaendereco.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/43-add-foreignkey-rotaendereco.xml" relativeToChangelogFile="true"/>
-		
+		<include file="changelog/44-add-column-user.xml" relativeToChangelogFile="true"/>
 		
 		
 		

@@ -39,6 +39,7 @@ public class RotaService {
 
 	@Autowired
 	private ResponsavelEntregaService responsavelEntregaService;
+	
 
 	@Autowired
 	private RotaEnderecoRepository rotaEnderecoRepository;
@@ -51,12 +52,6 @@ public class RotaService {
 		return rotaResponseDTO;
 	}
 
-	/**
-	 * public Rota findById(Integer id){ Optional<Rota> rota =
-	 * rotaRepository.findById(id); return rota.orElseThrow(() -> new
-	 * ObjectNotFoundException("ROTA NÃO ENCONTRADA. ID: " + id + "Tipo: " +
-	 * Rota.class.getName())); }
-	 **/
 
 	public RotaBuscaResponseDTO findByid(Integer id) {
 		Optional<Rota> rota = rotaRepository.findById(id);
