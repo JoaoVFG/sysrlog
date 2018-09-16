@@ -54,6 +54,12 @@ public class UserService {
 		return users.orElseThrow(() -> new ObjectNotFoundException(
 				"Usuários não encontrados! Empresa: " + idEmpresa + ". Tipo: " + User.class.getName()));
 	}
+	
+	public User findByApiKey(String apiKey){
+		Optional<User> user = Optional.ofNullable(userRepository.findByapiKey(apiKey));
+		return user.orElseThrow(() -> new ObjectNotFoundException(
+				"User não encontrado com essa chave de acesso. Chave: " + apiKey + ". Tipo: " + User.class.getName()));
+	}
 
 	public User createUser(InsertLoginDTO insertLoginDTO) {
 		Pessoa pessoa = pessoaService.findById(insertLoginDTO.getIdPessoa());
