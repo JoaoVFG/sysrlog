@@ -50,6 +50,8 @@
 		<include file="changelog/42-create-rotaendereco.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/43-add-foreignkey-rotaendereco.xml" relativeToChangelogFile="true"/>
 		<include file="changelog/44-add-column-user.xml" relativeToChangelogFile="true"/>
+		<include file="changelog/45-insert-new-roles.xml" relativeToChangelogFile="true"/>
+		
 		
 		
 		

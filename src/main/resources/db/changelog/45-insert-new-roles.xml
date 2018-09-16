@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="45" author="JoaoVFG">
+	
+		<insert tableName="ROLE">
+			<column name="ID" valueNumeric="33"></column>
+			<column name="NOME" value="ROLE_BUSCA_PROPRIA_PESSOA"></column>
+			<column name="DESCRICAO"
+				value="FUNÇÃO PARA BUSCAR PROPRIA PESSOA"></column>
+		</insert>
+		
+		<insert tableName="ROLE">
+			<column name="ID" valueNumeric="34"></column>
+			<column name="NOME" value="ROLE_BUSCA_PROPRIA_CARGO"></column>
+			<column name="DESCRICAO"
+				value="FUNÇÃO PARA BUSCAR PROPRIO CARGO"></column>
+		</insert>
+		
+		<insert tableName="ROLE">
+			<column name="ID" valueNumeric="35"></column>
+			<column name="NOME" value="ROLE_BUSCA_PROPRIA_EMPRESA"></column>
+			<column name="DESCRICAO"
+				value="FUNÇÃO PARA BUSCAR PROPRIA EMPRESA"></column>
+		</insert>
+		
+		<insert tableName="ROLE">
+			<column name="ID" valueNumeric="36"></column>
+			<column name="NOME" value="ROLE_BUSCA_PROPRIO_ENDERECO"></column>
+			<column name="DESCRICAO"
+				value="FUNÇÃO PARA BUSCAR PROPRIO ENDERECO"></column>
+		</insert>
+		
+		<insert tableName="ROLE">
+			<column name="ID" valueNumeric="37"></column>
+			<column name="NOME" value="ROLE_BUSCA_PROPRIO_FUNCIONARIO"></column>
+			<column name="DESCRICAO"
+				value="FUNÇÃO PARA BUSCAR PROPRIO FUNCIONARIO"></column>
+		</insert>
+		
+		<insert tableName="ROLE">
+			<column name="ID" valueNumeric="38"></column>
+			<column name="NOME" value="ROLE_BUSCA_PROPRIO_ENDERECO"></column>
+			<column name="DESCRICAO"
+				value="FUNÇÃO PARA BUSCAR PROPRIO ENDERECO"></column>
+		</insert>
+		
+	</changeSet>
+
+</databaseChangeLog>
