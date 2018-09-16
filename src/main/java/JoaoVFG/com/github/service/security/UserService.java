@@ -126,6 +126,6 @@ public class UserService {
 	
 	public String generateRandomApiKey() {
 		GenerateRandom gr = new GenerateRandom();
-		return gr.newRandom(30);
+		return gr.newRandom(20);
 	}
 }

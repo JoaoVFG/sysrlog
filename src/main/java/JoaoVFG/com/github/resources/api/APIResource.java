@@ -13,14 +13,15 @@ import JoaoVFG.com.github.dto.response.RotaResponseDTO;
 import JoaoVFG.com.github.service.route.RotaService;
 
 @RestController
-@RequestMapping(value = "/API")
+@RequestMapping(value = "/api")
 public class APIResource {
 
 	@Autowired
 	private RotaService rotaService;
-	
+
 	@RequestMapping(method = RequestMethod.POST, value = "/gerarota/{apiKey}")
-	public ResponseEntity<RotaResponseDTO> gerarRota(@PathVariable("apiKey") String apiKey, @RequestBody ListaEnderecoRotaDTO listaEnderecoRotaDTO){
+	public ResponseEntity<RotaResponseDTO> gerarRota(@PathVariable("apiKey") String apiKey,
+			@RequestBody ListaEnderecoRotaDTO listaEnderecoRotaDTO) {
 		RotaResponseDTO rotaResponseDTO = rotaService.geraRotaReponseByApiKey(listaEnderecoRotaDTO, apiKey);
 		return ResponseEntity.ok().body(rotaResponseDTO);
 	}
