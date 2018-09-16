@@ -15,6 +15,7 @@ import JoaoVFG.com.github.entity.security.Role;
 import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.repositories.security.UserRepository;
 import JoaoVFG.com.github.service.PessoaService;
+import JoaoVFG.com.github.service.utils.GenerateRandom;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 
@@ -76,7 +77,12 @@ public class UserService {
 				roles.remove(roleService.findById(1));
 				user.setRoles(roles);
 			}
+			
+			user.setApiKey(generateRandomApiKey());
+			
 			userRepository.save(user);
+			
+			
 		} else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE LOGIN");
 		}
@@ -101,5 +107,10 @@ public class UserService {
 		user.setRoles(updateUser.getRoles());
 
 		return user;
+	}
+	
+	public String generateRandomApiKey() {
+		GenerateRandom gr = new GenerateRandom();
+		return gr.newRandom(30);
 	}
 }
