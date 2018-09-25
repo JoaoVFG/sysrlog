@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import JoaoVFG.com.github.dto.request.LoginDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertLoginDTO;
+import JoaoVFG.com.github.dto.response.LoginResponse;
 import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.security.JwtTokenProvider;
 import JoaoVFG.com.github.service.security.UserService;
@@ -35,16 +36,17 @@ public class LoginController {
 	UserService userService;
 
 	@RequestMapping
-	public ResponseEntity<?> autenticarLogin(@RequestBody LoginDTO loginDTO) {
+	public ResponseEntity<LoginResponse> autenticarLogin(@RequestBody LoginDTO loginDTO) {
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getSenha()));
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
 		String jwt = "Bearer " + tokenProvider.generateToken(authentication);
+		User user = userService.findByEmail(loginDTO.getEmail());
 		
 		
-		return ResponseEntity.ok().body(jwt);
+		return ResponseEntity.ok().body(new LoginResponse(jwt, user));
 	}
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)

@@ -31,7 +31,7 @@ public class PessoaResource {
 		return ResponseEntity.ok().body(pessoas);
 	}
 	
-	@PreAuthorize("hasRole('ROLE_BUSCA_PROPRIA_PESSOA')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_PROPRIA_PESSOA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value="/buscapessoa/id/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Pessoa> findById(@PathVariable String id){
 		Pessoa pessoa = pessoaService.findById(Integer.parseInt(id));

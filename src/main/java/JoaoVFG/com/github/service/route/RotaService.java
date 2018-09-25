@@ -16,6 +16,7 @@ import JoaoVFG.com.github.entity.ResponsavelEntregaCepRota;
 import JoaoVFG.com.github.entity.Rota;
 import JoaoVFG.com.github.entity.RotaEndereco;
 import JoaoVFG.com.github.entity.security.User;
+import JoaoVFG.com.github.repositories.FuncionarioRepository;
 import JoaoVFG.com.github.repositories.RotaEnderecoRepository;
 import JoaoVFG.com.github.repositories.RotaRepository;
 import JoaoVFG.com.github.service.FuncionarioService;
@@ -35,7 +36,7 @@ public class RotaService {
 	private UserService userService;
 
 	@Autowired
-	private FuncionarioService funcionarioService;
+	private FuncionarioRepository funcionarioRepository;
 
 
 	@Autowired
@@ -77,7 +78,7 @@ public class RotaService {
 	public List<RotaBuscaResponseDTO> findAllByEmpresaOrPessoa(Integer idUser) {
 		List<Rota> rotas;
 		User user = userService.findById(idUser);
-		Funcionario funcionario = funcionarioService.findByPessoa(user.getPessoa().getId());
+		Funcionario funcionario = funcionarioRepository.findBypessoa(user.getPessoa());
 
 		if (funcionario == null) {
 			rotas = rotaRepository.findByIdUser(idUser);

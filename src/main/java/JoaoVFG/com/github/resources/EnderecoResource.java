@@ -37,7 +37,7 @@ public class EnderecoResource {
 		return ResponseEntity.ok(enderecos);
 	}
 
-	@PreAuthorize("hasRole('ROLE_BUSCA_ENDERECO_PESSOA') or hasRole('ROLE_ADMIN')  or hasRole('ROLE_BUSCA_PROPRIO_ENDERECO')")
+	@PreAuthorize("hasRole('ROLE_BUSCA_PROPRIO_ENDERECO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/buscaendereco/pessoa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Endereco> findByPessoa(@PathVariable Integer id) {
 		Endereco endereco = enderecoService.findByPessoa(id);
