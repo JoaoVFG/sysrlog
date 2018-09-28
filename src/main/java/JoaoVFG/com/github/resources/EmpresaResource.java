@@ -65,7 +65,7 @@ public class EmpresaResource {
 		return ResponseEntity.ok(empresas);
 	}
 
-	@PreAuthorize("hasRole('ROLE_CREATE_EMPRESA' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_CREATE_EMPRESA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/insere", method = RequestMethod.POST)
 	public ResponseEntity<Void> createEmpresa(@RequestBody InsertEmpresaDTO insertEmpresaDTO) {
 		Empresa empresa = empresaService.createEmpresa(insertEmpresaDTO);
@@ -73,14 +73,14 @@ public class EmpresaResource {
 		return ResponseEntity.created(uri).build();
 	}
 
-	@PreAuthorize("hasRole('ROLE_DELETE_EMPRESA' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_DELETE_EMPRESA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/deleta/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletaEmpresa(@PathVariable Integer id) {
 		empresaService.deletarEmpresa(empresaService.findById(id));
 		return ResponseEntity.noContent().build();
 	}
 
-	@PreAuthorize("hasRole('ROLE_UPDATE_EMPRESA' or 'ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_UPDATE_EMPRESA') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Empresa> updateEmpresa(@PathVariable Integer id, @RequestBody InsertEmpresaDTO empresaUpdate) {
 		Empresa empresa = empresaService.updateEmpresa(id, empresaUpdate);

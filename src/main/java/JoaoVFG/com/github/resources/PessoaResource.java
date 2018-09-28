@@ -74,11 +74,11 @@ public class PessoaResource {
 	}
 	
 	@RequestMapping(value = "/inserepj",method = RequestMethod.POST)
-	public ResponseEntity<Void> createPessoaJuridica(@RequestBody InsertPessoaJuridicaDTO pessoaDto){
+	public ResponseEntity<Pessoa> createPessoaJuridica(@RequestBody InsertPessoaJuridicaDTO pessoaDto){
 		Pessoa pessoa = pessoaService.createPJ(pessoaDto);
 		URI uri = URI.create("/pessoa" + "/buscapessoa/" + pessoa.getId());
-				 
-		return ResponseEntity.created(uri).build();
+		
+		return ResponseEntity.created(uri).body(pessoa);
 	}
 	
 	@PreAuthorize("hasRole('ROLE_DELETE_PESSOA')  or hasRole('ROLE_ADMIN')")
