@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.dto.request.insert.InsertFuncionarioDTO;
 import JoaoVFG.com.github.entity.Funcionario;
-import JoaoVFG.com.github.repositories.CargoRepository;
+import JoaoVFG.com.github.repositories.CargoRepository;import JoaoVFG.com.github.repositories.EmpresaRepository;
 import JoaoVFG.com.github.repositories.FuncionarioRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
@@ -62,16 +62,17 @@ public class FuncionarioService {
 	}
 
 	public Funcionario insertFuncionario(InsertFuncionarioDTO dto) {
+		System.out.println(dto.toString());
 		Funcionario funcionario = funcionarioFromDto(dto);
-		List<Funcionario> funcionarios = funcionarioRepository.findByempresa(empresaService.findById(funcionario.getEmpresa().getId()));
+		//List<Funcionario> funcionarios = funcionarioRepository.findByempresa(empresaService.findById(funcionario.getEmpresa().getId()));
 		//funcionarios.stream().map(Funcionario::getPessoa).filter(funcionario.getPessoa()::equals).findFirst().isPresent();
-		if (!funcionarios.stream().map(Funcionario::getPessoa).filter(funcionario.getPessoa()::equals).findFirst().isPresent()){
+		//if (!funcionarios.stream().map(Funcionario::getPessoa).filter(funcionario.getPessoa()::equals).findFirst().isPresent()){
 			funcionario.setId(null);
 			funcionario = funcionarioRepository.save(funcionario);
 			return findById(funcionario.getId());
-		} else {
-			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE FUNCIONARIO");
-		}
+		//} else {
+			//throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE FUNCIONARIO");
+		//}
 	}
 	
 	public Funcionario updateFuncionario(Integer id, InsertFuncionarioDTO updateFuncionario) {
@@ -95,6 +96,8 @@ public class FuncionarioService {
 
 	public Funcionario funcionarioFromDto(InsertFuncionarioDTO dto) {
 		Funcionario funcionario = new Funcionario();
+		funcionario.setEmpresa(empresaService.findById(dto.getIdEmpresa()));
+		funcionario.setPessoa(pessoaService.findById(dto.getIdPessoa()));
 		funcionario.setCargo(cargoRepository.buscaPorId(dto.getIdCargo()));
 		return funcionario;
 	}

@@ -67,10 +67,10 @@ public class PessoaResource {
 	}
 	
 	@RequestMapping(value = "/inserepf",method = RequestMethod.POST)
-	public ResponseEntity<Void> createPessoaFisica(@RequestBody InsertPessoaFisicaDTO pessoaDto){
+	public ResponseEntity<Pessoa> createPessoaFisica(@RequestBody InsertPessoaFisicaDTO pessoaDto){
 		Pessoa pessoa = pessoaService.createPF(pessoaDto);
 		URI uri = URI.create("/pessoa" + "/buscapessoa/" + pessoa.getId());
-		return ResponseEntity.created(uri).build();
+		return ResponseEntity.created(uri).body(pessoa);
 	}
 	
 	@RequestMapping(value = "/inserepj",method = RequestMethod.POST)
