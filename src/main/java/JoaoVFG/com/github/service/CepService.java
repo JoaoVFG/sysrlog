@@ -57,9 +57,9 @@ public class CepService {
 		return cepRepository.findBynomeRua(nomeRua);
 	}
 
-	public List<Cep> findByCidade(String cidade, String estado) {
+	public List<Cep> findByCidade(String cidade, String siglaEstado) {
 		Cidade cidadeBusca = cidadeRepository.findBynome(cidade);
-		Estado estadoBusca = estadoService.findByNome(estado);
+		Estado estadoBusca = estadoService.findBySigla(siglaEstado);
 		return cepRepository.findByCidade(cidadeBusca, estadoBusca);
 	}
 

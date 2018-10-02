@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import JoaoVFG.com.github.dto.response.CepResponseDTO;
 import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Cidade;
+import JoaoVFG.com.github.entity.Estado;
 import JoaoVFG.com.github.service.CepService;
 import JoaoVFG.com.github.service.CidadeService;
+import JoaoVFG.com.github.service.EstadoService;
 
 @RestController
 @RequestMapping(value = "/ceps")
@@ -24,6 +26,9 @@ public class CepResource {
 
 	@Autowired
 	CidadeService cidadeService;
+	
+	@Autowired
+	EstadoService estadoService;
 
 	@RequestMapping(value = "/buscacep/{cepBusca}", method = RequestMethod.GET)
 	public ResponseEntity<CepResponseDTO> findByCep(@PathVariable String cepBusca) {
@@ -59,6 +64,12 @@ public class CepResource {
 	public ResponseEntity<List<Cidade>> findByEstado(@PathVariable String estadoSigla) {
 		List<Cidade> cidades = cidadeService.findByEstado(estadoSigla);
 		return ResponseEntity.ok().body(cidades);
+	}
+	
+	@RequestMapping(value = "/buscacep/estados", method = RequestMethod.GET)
+	public ResponseEntity<List<Estado>> findAllEstador(){
+		List<Estado> estados = estadoService.findAllEstados();
+		return ResponseEntity.ok().body(estados);	
 	}
 
 }

@@ -107,7 +107,7 @@ public class UserService {
 		user.setEmail(updateUser.getEmail());
 		user.setSenha(encoder.encode(updateUser.getSenha()));
 		user.setRoles(updateUser.getRoles());
-
+		userRepository.save(user);
 		return user;
 	}
 	
