@@ -16,8 +16,8 @@ public class ListaEnderecoRotaDTOwithUser implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	public Integer idUser;
-	public ArrayList<EnderecoEntregaDTO> waypoints;
+	private Integer idUser;
+	private ArrayList<EnderecoEntregaDTO> waypoints;
 	
 	public ListaEnderecoRotaDTOwithUser(Integer idUser, ArrayList<EnderecoEntregaDTO> waypoints) {
 		super();

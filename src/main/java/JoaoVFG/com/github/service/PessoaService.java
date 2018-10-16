@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import JoaoVFG.com.github.dto.request.insert.InsertPessoaFisicaDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertPessoaJuridicaDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertUpdatePessoaDTO;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.repositories.PessoaRepository;
 import JoaoVFG.com.github.repositories.TipoPessoaRepository;
@@ -114,7 +115,7 @@ public class PessoaService {
 		}
 	}
 
-	public Pessoa updatePessoa(Pessoa updatePessoa) {
+	public Pessoa updatePessoa(InsertUpdatePessoaDTO updatePessoa) {
 		Pessoa pessoa = findById(updatePessoa.getId());
 
 		pessoa.setCnpj(updatePessoa.getCnpj());

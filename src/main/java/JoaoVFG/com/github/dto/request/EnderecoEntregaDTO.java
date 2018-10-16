@@ -13,8 +13,8 @@ public class EnderecoEntregaDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	public String cep;
-	public String numeroLogradouro;
+	private String cep;
+	private String numeroLogradouro;
 	
 	
 	public EnderecoEntregaDTO(String cep, String numeroLogradouro) {

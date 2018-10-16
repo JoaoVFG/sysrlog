@@ -19,9 +19,9 @@ import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.repositories.FuncionarioRepository;
 import JoaoVFG.com.github.repositories.RotaEnderecoRepository;
 import JoaoVFG.com.github.repositories.RotaRepository;
-import JoaoVFG.com.github.service.FuncionarioService;
 import JoaoVFG.com.github.service.security.UserService;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
+import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 
 @Service
 public class RotaService {
@@ -49,30 +49,31 @@ public class RotaService {
 	public RotaResponseDTO geraRotaRespose(ListaEnderecoRotaDTOwithUser listaEnderecoRotaDTOwithUser) {
 		User user = userService.findById(listaEnderecoRotaDTOwithUser.getIdUser());
 
-		RotaResponseDTO rotaResponseDTO = geraRota.geraRota(user, listaEnderecoRotaDTOwithUser.getWaypoints());
 
-		return rotaResponseDTO;
+		return geraRota.geraRota(user, listaEnderecoRotaDTOwithUser.getWaypoints());
 	}
 	
 	public RotaResponseDTO geraRotaReponseByApiKey(ListaEnderecoRotaDTO listaEnderecoRotaDTO, String apiKey) {
 		User user = userService.findByApiKey(apiKey);
-		RotaResponseDTO rotaResponseDTO = geraRota.geraRota(user, listaEnderecoRotaDTO.getWaypoints());
-		return rotaResponseDTO;
+		return geraRota.geraRota(user, listaEnderecoRotaDTO.getWaypoints());
 	}
 
 
 	public RotaBuscaResponseDTO findByid(Integer id) {
 		Optional<Rota> rota = rotaRepository.findById(id);
+		if(rota.isPresent()) {
+			List<RotaEndereco> rotaEnderecos = rotaEnderecoRepository.findByRotaId(rota.get().getId());
 
-		List<RotaEndereco> rotaEnderecos = rotaEnderecoRepository.findByRotaId(rota.get().getId());
+			List<ResponsavelEntregaCepRota> responsavelEntregaCepRotas = responsavelEntregaService
+					.findByIdRota(rota.get().getId());
 
-		List<ResponsavelEntregaCepRota> responsavelEntregaCepRotas = responsavelEntregaService
-				.findByIdRota(rota.get().getId());
 
-		RotaBuscaResponseDTO rotaBuscaResponseDTO = new RotaBuscaResponseDTO(rota.get(), rotaEnderecos,
-				responsavelEntregaCepRotas);
-
-		return rotaBuscaResponseDTO;
+			return new RotaBuscaResponseDTO(rota.get(), rotaEnderecos,
+					responsavelEntregaCepRotas);
+		}else {
+			throw new ObjectNotFoundException("Não foi possível encontrar essa rota");
+		}
+		
 	}
 
 	public List<RotaBuscaResponseDTO> findAllByEmpresaOrPessoa(Integer idUser) {
@@ -86,7 +87,7 @@ public class RotaService {
 			rotas = rotaRepository.findByIdEmpresa(funcionario.getEmpresa().getId());
 		}
 
-		List<RotaBuscaResponseDTO> rotaBuscaResponseDTOs = new ArrayList<RotaBuscaResponseDTO>();
+		List<RotaBuscaResponseDTO> rotaBuscaResponseDTOs = new ArrayList<>();
 
 		for (Rota r : rotas) {
 			rotaBuscaResponseDTOs.add(new RotaBuscaResponseDTO(r, rotaEnderecoRepository.findByRotaId(r.getId()),

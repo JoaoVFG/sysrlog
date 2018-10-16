@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByBairroDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCepsDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCidadeDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertUpdateRegiaoDTO;
 import JoaoVFG.com.github.entity.Regiao;
 import JoaoVFG.com.github.service.RegiaoService;
 
@@ -60,12 +61,13 @@ public class RegiaoResource {
 		return ResponseEntity.ok(regioes);
 	}
 	
+	/**
 	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/createmanual", method = RequestMethod.POST)
 	public ResponseEntity<Regiao> createRegiaoManual(@RequestBody Regiao regiaoInsert) {
 		Regiao regiao = regiaoService.createRegiao(regiaoInsert);
 		return ResponseEntity.created(null).body(regiao);
-	}
+	}**/
 	
 	@PreAuthorize("hasRole('ROLE_INSERE_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/create/byceps", method = RequestMethod.POST)
@@ -90,7 +92,7 @@ public class RegiaoResource {
 	
 	@PreAuthorize("hasRole('ROLE_ALTERA_REGIAO') or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/updateregiao", method = RequestMethod.PUT)
-	public ResponseEntity<Regiao> updateRegiao(@RequestBody Regiao updateRegiao) {
+	public ResponseEntity<Regiao> updateRegiao(@RequestBody InsertUpdateRegiaoDTO updateRegiao) {
 		Regiao regiao = regiaoService.updateRegiao(updateRegiao);
 		return ResponseEntity.ok(regiao);
 	}

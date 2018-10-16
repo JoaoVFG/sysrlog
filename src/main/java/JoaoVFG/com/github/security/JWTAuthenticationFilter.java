@@ -25,7 +25,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 	@Autowired
 	private CustomUserDetailService customUserDetailsService;
 
-	private static final Logger logger = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
+	private static final Logger showingLog = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -44,7 +44,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 				SecurityContextHolder.getContext().setAuthentication(authentication);
 			}
 		} catch (Exception e) {
-			logger.error("Could not set user authentication in security context", e);
+			showingLog.error("Could not set user authentication in security context", e);
 		}
 
 		filterChain.doFilter(request, response);

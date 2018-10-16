@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.dto.request.insert.InsertFuncionarioDTO;
 import JoaoVFG.com.github.entity.Funcionario;
-import JoaoVFG.com.github.repositories.CargoRepository;import JoaoVFG.com.github.repositories.EmpresaRepository;
+import JoaoVFG.com.github.repositories.CargoRepository;
 import JoaoVFG.com.github.repositories.FuncionarioRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;

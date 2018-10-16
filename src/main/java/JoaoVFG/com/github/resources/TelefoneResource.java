@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import JoaoVFG.com.github.dto.request.insert.InsertTelefoneDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertUpdateTelefoneDTO;
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.service.TelefoneService;
 
@@ -68,7 +69,7 @@ public class TelefoneResource {
 	
 	@PreAuthorize("hasRole('ROLE_UPDATE_TELEFONE')  or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-	public ResponseEntity<Telefone> updateTelefone(@RequestBody Telefone updateTelefone){
+	public ResponseEntity<Telefone> updateTelefone(@RequestBody InsertUpdateTelefoneDTO updateTelefone){
 		Telefone telefone = telefoneService.updateTelefone(updateTelefone);
 		return ResponseEntity.ok(telefone);
 	}

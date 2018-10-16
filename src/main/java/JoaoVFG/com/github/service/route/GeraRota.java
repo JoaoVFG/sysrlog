@@ -125,7 +125,7 @@ public class GeraRota {
 			List<Regiao> regioesBusca = regiaoService.findByEmpresaMatriz(empresa.getEmpresaMatrizId());
 
 			// verifica se a empresa tem região de atuação
-			if (!regiao.equals(null)) {
+			if (!(regiao == null)) {
 				/**
 				 * Se tiver uma regiao de atuação, ira iterar pela lista dos endereços pra
 				 * verficar se ela faz parte da sua area de atuação

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import JoaoVFG.com.github.dto.request.insert.InsertUpdateUserDTO;
 import JoaoVFG.com.github.entity.security.Role;
 import JoaoVFG.com.github.entity.security.User;
 import JoaoVFG.com.github.service.security.RoleService;
@@ -67,7 +68,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/updateuser", method = RequestMethod.PUT)
-	public ResponseEntity<User> updateUser(@RequestBody User updateUser) {
+	public ResponseEntity<User> updateUser(@RequestBody InsertUpdateUserDTO updateUser) {
 		User user = userService.updateUser(updateUser);
 		return ResponseEntity.ok(user);
 	}

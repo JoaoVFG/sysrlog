@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import JoaoVFG.com.github.dto.request.insert.InsertPessoaFisicaDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertPessoaJuridicaDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertUpdatePessoaDTO;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.service.PessoaService;
 
@@ -90,7 +91,7 @@ public class PessoaResource {
 	
 	@PreAuthorize("hasRole('ROLE_UPDATE_PESSOA' )  or hasRole('ROLE_ADMIN')")
 	@RequestMapping(value="/update", method = RequestMethod.PUT)
-	public ResponseEntity<Pessoa> updatePessoa(@RequestBody Pessoa updatePessoa){
+	public ResponseEntity<Pessoa> updatePessoa(@RequestBody InsertUpdatePessoaDTO updatePessoa){
 		Pessoa pessoa = pessoaService.updatePessoa(updatePessoa);
 		return ResponseEntity.ok(pessoa);
 	}

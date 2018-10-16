@@ -4,10 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import JoaoVFG.com.github.entity.ResponsavelEntregaCepRota;
 import JoaoVFG.com.github.entity.Rota;
 import JoaoVFG.com.github.entity.RotaEndereco;
-import JoaoVFG.com.github.entity.Empresa;
-import JoaoVFG.com.github.entity.ResponsavelEntregaCepRota;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

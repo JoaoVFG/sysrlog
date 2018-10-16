@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.dto.request.insert.InsertTelefoneDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertUpdateTelefoneDTO;
 import JoaoVFG.com.github.entity.Telefone;
 import JoaoVFG.com.github.repositories.TelefoneRepository;
 import JoaoVFG.com.github.services.exception.DataIntegrityException;
@@ -58,7 +59,7 @@ public class TelefoneService {
 		return findById(tel.getId());
 	}
 
-	public Telefone updateTelefone(Telefone updateTelefone) {
+	public Telefone updateTelefone(InsertUpdateTelefoneDTO updateTelefone) {
 		Telefone telefone = findById(updateTelefone.getId());
 
 		telefone.setNumero(updateTelefone.getNumero());

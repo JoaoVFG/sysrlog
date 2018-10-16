@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Endereco;
 import JoaoVFG.com.github.entity.Pessoa;
 
@@ -23,6 +22,7 @@ public interface EnderecoRepository extends JpaRepository<Endereco, Integer> {
 	Endereco findBypessoa(Pessoa pessoa);
 
 	@Transactional(readOnly = true)
-	List<Endereco> findBycep(Cep cep);
+	@Query("SELECT endereco FROM Endereco endereco WHERE endereco.cep.cep = :cep")
+	List<Endereco> findCep(@Param("cep") String cep);
 
 }

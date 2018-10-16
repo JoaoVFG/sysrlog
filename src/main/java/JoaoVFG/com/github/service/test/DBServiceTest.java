@@ -2,6 +2,7 @@ package JoaoVFG.com.github.service.test;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -169,12 +170,16 @@ public class DBServiceTest {
 		 createCep.generateCep("12280-242"), createCep.generateCep("12280-233"),
 		 createCep.generateCep("12280-235"), createCep.generateCep("12280-241"))));
 		 **/
-
-		Regiao regiao1 = new Regiao(null, empresaRepository.findById(1).get(),
+		
+		Optional<Empresa> empresa = empresaRepository.findById(1);
+		
+		if(empresa.isPresent()) {
+		Regiao regiao1 = new Regiao(null, empresa.get() ,
 				new HashSet<>(cepService.findByBairroAndCidade("Jardim Rafael", "Caçapava")));
 
-		regiaoRepository.save(regiao1);
-
+			regiaoRepository.save(regiao1);
+		}
+		
 		Cargo cargo1 = new Cargo(null, "CARGO 1");
 		Cargo cargo2 = new Cargo(null, "CARGO 2");
 		Cargo cargo3 = new Cargo(null, "CARGO 3");

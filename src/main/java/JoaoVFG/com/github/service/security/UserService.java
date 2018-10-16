@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import JoaoVFG.com.github.dto.request.insert.InsertLoginDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertUpdateUserDTO;
 import JoaoVFG.com.github.entity.Pessoa;
 import JoaoVFG.com.github.entity.security.Role;
 import JoaoVFG.com.github.entity.security.User;
@@ -101,7 +102,7 @@ public class UserService {
 		}
 	}
 
-	public User updateUser(User updateUser) {
+	public User updateUser(InsertUpdateUserDTO updateUser) {
 		User user = userRepository.buscaPorId(updateUser.getId());
 
 		user.setEmail(updateUser.getEmail());

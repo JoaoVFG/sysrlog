@@ -42,7 +42,7 @@ public class EnderecoService {
 	}
 
 	public List<Endereco> findByCep(String cep) {
-		Optional<List<Endereco>> enderecos = Optional.ofNullable(enderecoRepository.findBycep(cepService.findByCep(cep)));
+		Optional<List<Endereco>> enderecos = Optional.ofNullable(enderecoRepository.findCep(cep));
 		return enderecos.orElseThrow(() -> new ObjectNotFoundException(
 				"Não existem Enderecos cadastrados para este cep" + cep + ". Tipo: " + Pessoa.class.getName()));
 	}

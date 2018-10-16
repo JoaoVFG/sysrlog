@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByBairroDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCepsDTO;
 import JoaoVFG.com.github.dto.request.insert.InsertRegiaoByCidadeDTO;
+import JoaoVFG.com.github.dto.request.insert.InsertUpdateRegiaoDTO;
 import JoaoVFG.com.github.entity.Cep;
 import JoaoVFG.com.github.entity.Regiao;
 import JoaoVFG.com.github.repositories.RegiaoRepository;
@@ -117,7 +118,7 @@ public class RegiaoService {
 		}
 	}
 
-	public Regiao updateRegiao(Regiao updateRegiao) {
+	public Regiao updateRegiao(InsertUpdateRegiaoDTO updateRegiao) {
 		Regiao regiao = findById(updateRegiao.getId());
 		regiao.setDescricao(updateRegiao.getDescricao());
 		regiao.setCeps(updateRegiao.getCeps());
