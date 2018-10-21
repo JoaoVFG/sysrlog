@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import JoaoVFG.com.github.entity.Endereco;
@@ -22,6 +23,7 @@ import JoaoVFG.com.github.service.TelefoneService;
 import JoaoVFG.com.github.service.TipoPessoaService;
 
 @RunWith(SpringRunner.class)
+@Rollback
 @SpringBootTest
 public class TestsPessoaService {
 	
@@ -141,18 +143,12 @@ public class TestsPessoaService {
 		List<Endereco> enderecos = enderecoService.findAll();
 		assertNotNull(enderecos);
 	}
-	/**
-	@Test
-	public void testeBucscaEnderecoPorPessoa() {
-		List<Endereco> enderecos = enderecoService.findByPessoa(pessoaService.findByCnpj("4478969850008").getId());
-		assertEquals(cepService.findByCep("12289368").getId(), enderecos.get(0).getCep().getId());
-	}
-	**/
-	/**
+	
+	
 	@Test
 	public void testeBuscaEnderecoPorCep() {
 		List<Endereco> enderecos = enderecoService.findByCep("12288560");
 		assertNotNull(enderecos);
 	}
-	**/
+	
 }

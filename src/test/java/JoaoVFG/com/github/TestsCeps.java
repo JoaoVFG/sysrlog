@@ -27,13 +27,19 @@ public class TestsCeps {
 	@Test
 	public void testeFindOrCreateCep() {
 		System.out.println("geracep");
-		createCep.generateCep("12288560");
+		//createCep.generateCep("12288560");
 	}
 
 	@Test
 	public void testFindCep() {
 		System.out.println("busca por cep");
-		cepService.findByCep("12295370");
+		cepService.findByCep("12020220");
+		cepService.findByCep("12061001");
+		cepService.findByCep("12061600");
+		cepService.findByCep("12062490");
+		cepService.findByCep("12071110");
+		cepService.findByCep("12423060");
+		cepService.findByCep("12050410");
 	}
 
 
