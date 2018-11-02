@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="JoaoVFG.com.github.repositories.CargoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/CargoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="628" y="413"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="2" language="java" name="JoaoVFG.com.github.repositories.CidadeRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/CidadeRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="357" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="3" language="java" name="JoaoVFG.com.github.repositories.CepRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/CepRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="579" y="255"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="4" language="java" name="JoaoVFG.com.github.repositories.ResponsavelEntregaRepository" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/ResponsavelEntregaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="209" y="549"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="5" language="java" name="JoaoVFG.com.github.repositories.TipoEmpresaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/TipoEmpresaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="854" y="232"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="6" language="java" name="JoaoVFG.com.github.repositories.RegiaoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/RegiaoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="861" y="552"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="7" language="java" name="JoaoVFG.com.github.repositories.FuncionarioRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/FuncionarioRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="213" y="286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="8" language="java" name="JoaoVFG.com.github.repositories.PessoaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/PessoaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="888" y="379"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="9" language="java" name="JoaoVFG.com.github.repositories.EstadoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/EstadoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="923" y="708"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="10" language="java" name="JoaoVFG.com.github.repositories.EmpresaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/EmpresaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="429" y="695"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="11" language="java" name="JoaoVFG.com.github.repositories.TipoPessoaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/TipoPessoaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="883" y="102"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="12" language="java" name="JoaoVFG.com.github.repositories.RotaRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/RotaRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="164" y="669"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="13" language="java" name="JoaoVFG.com.github.repositories.TelefoneRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/TelefoneRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="311" x="438" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="14" language="java" name="JoaoVFG.com.github.repositories.RotaEnderecoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/RotaEnderecoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="170" y="416"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="15" language="java" name="JoaoVFG.com.github.repositories.EnderecoRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/EnderecoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="404" y="429"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="16" language="java" name="JoaoVFG.com.github.repositories.config.MapConfigRepository" 
+    project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/config/MapConfigRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="491" y="549"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="17" language="java" name="JoaoVFG.com.github.repositories.security.RoleRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/security/RoleRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="688" y="680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="18" language="java" name="JoaoVFG.com.github.repositories.security.UserRepository" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/repositories/security/UserRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="152" y="811"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

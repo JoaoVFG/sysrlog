@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="JoaoVFG.com.github.resources.CargoResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/CargoResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="332" x="-60" y="-23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="JoaoVFG.com.github.resources.CepResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/CepResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="468" y="94"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="JoaoVFG.com.github.resources.EmpresaResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/EmpresaResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="850" y="95"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="JoaoVFG.com.github.resources.EnderecoResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/EnderecoResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="133" y="346"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="JoaoVFG.com.github.resources.FuncionarioResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/FuncionarioResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="536" y="363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="JoaoVFG.com.github.resources.LoginController" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/LoginController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="918" y="338"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="JoaoVFG.com.github.resources.MapConfigResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/MapConfigResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="111" y="554"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="JoaoVFG.com.github.resources.PessoaResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/PessoaResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="480" y="643"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="JoaoVFG.com.github.resources.RegiaoResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/RegiaoResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="911" y="628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="JoaoVFG.com.github.resources.RotaResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/RotaResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="915" y="871"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="JoaoVFG.com.github.resources.UserController" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/UserController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="115" y="778"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="JoaoVFG.com.github.resources.api.APIResource" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/resources/api/APIResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="483" y="859"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="JoaoVFG.com.github.security.JWTAuthenticationFilter" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/security/JWTAuthenticationFilter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="157" y="1006"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="JoaoVFG.com.github.security.JwtAuthenticationEntryPoint" project="tg_sysrlog" 
+    file="/tg_sysrlog/src/main/java/JoaoVFG/com/github/security/JwtAuthenticationEntryPoint.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="607" y="1025"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

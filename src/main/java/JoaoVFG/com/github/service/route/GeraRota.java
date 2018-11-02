@@ -216,7 +216,7 @@ public class GeraRota {
 				builder.append("|");
 			}
 
-			builder.append("&travelmode=driving");
+			builder.append("&travelmode=driving&key=AIzaSyBxdBRcPlju7HOIIDR8HUhWdHtjkXaUdD4");
 		} catch (UnsupportedEncodingException e1) {
 			return null;
 		}
