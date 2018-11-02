@@ -1,5 +1,6 @@
 package JoaoVFG.com.github.service.route;
 
+import JoaoVFG.com.github.dto.request.EnderecoEntregaDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,15 +10,15 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Distancia {
 	private String cepOrigem;
-	private String cepDestino;
+	private EnderecoEntregaDTO enderecoEntregaDTO;
 	private int distanciaInMeters;
 	private int timeInSeconds;
 	
 	
-	public Distancia(String cepOrigem, String cepDestino, int distancia, int timeInSeconds) {
+	public Distancia(String cepOrigem, EnderecoEntregaDTO enderecoEntregaDTO, int distancia, int timeInSeconds) {
 		super();
 		this.cepOrigem = cepOrigem;
-		this.cepDestino = cepDestino;
+		this.enderecoEntregaDTO = enderecoEntregaDTO;
 		this.distanciaInMeters = distancia;
 		this.timeInSeconds = timeInSeconds;
 	}
@@ -30,7 +31,7 @@ public class Distancia {
 		builder.append("Distancia [cepOrigem=");
 		builder.append(cepOrigem);
 		builder.append(", cepDestino=");
-		builder.append(cepDestino);
+		builder.append(enderecoEntregaDTO.getEnderecoString());
 		builder.append(", distanciaInMeters=");
 		builder.append(distanciaInMeters);
 		builder.append(", timeInSeconds=");

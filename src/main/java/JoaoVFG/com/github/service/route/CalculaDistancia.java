@@ -17,6 +17,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import JoaoVFG.com.github.dto.request.EnderecoEntregaDTO;
 import JoaoVFG.com.github.service.MapConfigService;
 import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 /**
@@ -33,23 +34,23 @@ public class CalculaDistancia {
 	MapConfigService mapConfigService;
 	
 
-	public String findMenorDistancia(String cepOrigem, List<String> enderecosCliente) {
+	public EnderecoEntregaDTO findMenorDistancia(String cepOrigem, List<EnderecoEntregaDTO> enderecosCliente) {
 		
 		
 		List<Distancia> distanciasDoInicio = new ArrayList<Distancia>();
 		
-		for (String e: enderecosCliente) {
+		for (EnderecoEntregaDTO e: enderecosCliente) {
 			Distancia d = calcDistancia(cepOrigem, e);
 			distanciasDoInicio.add(d);
 		}
 		distanciasDoInicio.sort(Comparator.comparing(Distancia::getDistanciaInMeters));
 		
-		return distanciasDoInicio.get(0).getCepDestino();
+		return distanciasDoInicio.get(0).getEnderecoEntregaDTO();
 		
 		
 	}
 	
-	public Distancia calcDistancia(String cepOrigem, String cepDestino) {
+	public Distancia calcDistancia(String cepOrigem, EnderecoEntregaDTO enderecoEntregaDTO) {
 		
 		JsonObject objectResponse = null;
 		
@@ -57,7 +58,7 @@ public class CalculaDistancia {
 			CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 			String url = "https://maps.googleapis.com/maps/api/distancematrix/json?"
 					+ "origins=" + URLEncoder.encode(cepOrigem,"UTF-8") 
-					+ "&destinations=" + URLEncoder.encode(cepDestino,"UTF-8") + "&travelmode=driving"
+					+ "&destinations=" + URLEncoder.encode(enderecoEntregaDTO.getEnderecoString(),"UTF-8") + "&travelmode=driving"
 					+ "&key=" + mapConfigService.findGoogleApiKey().getValue();
 			HttpGet httpGet = new HttpGet(url);
 			HttpResponse httpResponse = httpClient.execute(httpGet);
@@ -68,15 +69,15 @@ public class CalculaDistancia {
 			throw new RuntimeException(e);
 		}
 		
-		return generateDistancia(objectResponse, cepOrigem, cepDestino);
+		return generateDistancia(objectResponse, cepOrigem, enderecoEntregaDTO);
 	}
 	
 	
-	public Distancia generateDistancia(JsonObject object, String cepOrigem, String cepDestino) {
+	public Distancia generateDistancia(JsonObject object, String cepOrigem,EnderecoEntregaDTO enderecoEntregaDTO) {
 		
 		Distancia distancia = new Distancia();
 		distancia.setCepOrigem(cepOrigem);
-		distancia.setCepDestino(cepDestino);
+		distancia.setEnderecoEntregaDTO(enderecoEntregaDTO);
 		
 		String status = object.getString("status");
 		

@@ -15,6 +15,7 @@ public class EnderecoEntregaDTO implements Serializable{
 	
 	private String cep;
 	private String numeroLogradouro;
+	private String enderecoString;
 	
 	
 	public EnderecoEntregaDTO(String cep, String numeroLogradouro) {

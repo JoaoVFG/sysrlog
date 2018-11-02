@@ -101,7 +101,8 @@ public class CepService {
 		StringBuilder builder = new StringBuilder();
 
 		cep = findByCep(cepBusca);
-
+		builder.append(cep.getCep());
+		builder.append(" - ");
 		builder.append(cep.getNomeRua());
 		builder.append(" ");
 		builder.append(numLogradouro);
@@ -111,8 +112,8 @@ public class CepService {
 		builder.append(cep.getCidade().getNome());
 		builder.append(", ");
 		builder.append(cep.getCidade().getEstado().getNome());
-		builder.append(", ");
-		builder.append(cep.getCep());
+		
+		
 
 		return builder.toString();
 

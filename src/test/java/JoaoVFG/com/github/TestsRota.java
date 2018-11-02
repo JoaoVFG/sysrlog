@@ -32,11 +32,7 @@ public class TestsRota {
 	@Autowired
 	UserService userService;
 
-	@Test
-	public void testCalcDistance() {
-		Distancia dis = calculaDistancia.calcDistancia("12288560", "12285020");
-		assertNotNull(dis);
-	}
+
 	
 	@Test
 	public void testeGeracaoRota() {
