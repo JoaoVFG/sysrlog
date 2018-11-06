@@ -20,17 +20,15 @@ import JoaoVFG.com.github.services.exception.ObjectNotFoundException;
 @Service
 public class PessoaService {
 
-	
-
 	@Autowired
 	TipoPessoaRepository tipoPessoaRepository;
-	
+
 	@Autowired
 	EnderecoService enderecoService;
-	
+
 	@Autowired
 	UserService userService;
-	
+
 	@Autowired
 	PessoaRepository pessoaRepository;
 
@@ -46,7 +44,8 @@ public class PessoaService {
 	}
 
 	public List<Pessoa> findByTipo(Integer tipo) {
-		Optional<List<Pessoa>> pessoas = Optional.ofNullable(pessoaRepository.findBytipo(tipoPessoaRepository.findByid(tipo)));
+		Optional<List<Pessoa>> pessoas = Optional
+				.ofNullable(pessoaRepository.findBytipo(tipoPessoaRepository.findByid(tipo)));
 		return pessoas.orElseThrow(() -> new ObjectNotFoundException(
 				"Não existem pessoas para o tipo procurado! Id: " + tipo + ". Tipo: " + Pessoa.class.getName()));
 	}
@@ -75,46 +74,46 @@ public class PessoaService {
 		pessoa = pessoaRepository.save(pessoa);
 		return findById(pessoa.getId());
 	}
-	
+
 	@Transactional()
 	public Pessoa createPF(InsertPessoaFisicaDTO dto) {
 
 		Pessoa pessoa = PFFromDto(dto);
-		if(pessoaRepository.findBycpf(pessoa.getCpf())==null) {
+		if (pessoaRepository.findBycpf(pessoa.getCpf()) == null) {
 			pessoa.setId(null);
 			pessoa = pessoaRepository.save(pessoa);
-			
+
 			dto.getInsertEnderecoDTO().setIdPessoa(pessoa.getId());
 			dto.getInsertLoginDTO().setIdPessoa(pessoa.getId());
-			
+
 			enderecoService.createFromDTO(dto.getInsertEnderecoDTO());
 			userService.createUser(dto.getInsertLoginDTO());
 			return findById(pessoa.getId());
-		}else {
+		} else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE CLIENTE");
 		}
 	}
-	
+
 	@Transactional()
 	public Pessoa createPJ(InsertPessoaJuridicaDTO dto) {
 		Pessoa pessoa = PJFromDTO(dto);
-		if(pessoaRepository.findBycnpj(pessoa.getCnpj())==null) {
+		if (pessoaRepository.findBycnpj(pessoa.getCnpj()) == null) {
 			pessoa.setId(null);
 			pessoa = pessoaRepository.save(pessoa);
-			
 
 			dto.getInsertEnderecoDTO().setIdPessoa(pessoa.getId());
 			dto.getInsertLoginDTO().setIdPessoa(pessoa.getId());
-			
+
 			enderecoService.createFromDTO(dto.getInsertEnderecoDTO());
 			userService.createUser(dto.getInsertLoginDTO());
-			
+
 			return findById(pessoa.getId());
-		}else {
+		} else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE CLIENTE");
 		}
 	}
 
+	@Transactional()
 	public Pessoa updatePessoa(InsertUpdatePessoaDTO updatePessoa) {
 		Pessoa pessoa = findById(updatePessoa.getId());
 
@@ -137,8 +136,7 @@ public class PessoaService {
 			throw new DataIntegrityException("NAO E POSSIVEL EXCLUIR ESSA PESSOA.");
 		}
 	}
-	
-	
+
 	public Pessoa PJFromDTO(InsertPessoaJuridicaDTO dto) {
 		Pessoa pessoa = new Pessoa();
 		pessoa.setCnpj(dto.getCnpj());
@@ -146,7 +144,7 @@ public class PessoaService {
 		pessoa.setTipo(tipoPessoaRepository.findByid(dto.getTipo()));
 		return pessoa;
 	}
-	
+
 	public Pessoa PFFromDto(InsertPessoaFisicaDTO dto) {
 		Pessoa pessoa = new Pessoa();
 		pessoa.setCpf(dto.getCpf());

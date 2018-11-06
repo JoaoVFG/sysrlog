@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import JoaoVFG.com.github.dto.request.insert.InsertEmpresaDTO;
 import JoaoVFG.com.github.entity.Empresa;
@@ -39,9 +40,8 @@ public class EmpresaService {
 	public Empresa findByIdPessoa(Integer id) {
 		Pessoa pessoa = pessoaService.findById(id);
 		Optional<Empresa> empresa = Optional.ofNullable(empresaRepository.findBypessoa(pessoa));
-		return empresa
-				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa."
-						+ "Metodo: Busca Por Id. Id:" + id));
+		return empresa.orElseThrow(() -> new ObjectNotFoundException(
+				"Não houverem resultados para a restrição de pesquisa." + "Metodo: Busca Por Id. Id:" + id));
 	}
 
 	public List<Empresa> findByTipoEmpresa(Integer id) {
@@ -51,49 +51,48 @@ public class EmpresaService {
 				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa"
 						+ "Metodo: Busca por tipo empresa. Tipo Empresa" + id));
 	}
-	
-	public List<Empresa> findTransportadoras(){
-		Optional<List<Empresa>> empresas = Optional
-				.ofNullable(empresaRepository.findByTransportadora(1));
+
+	public List<Empresa> findTransportadoras() {
+		Optional<List<Empresa>> empresas = Optional.ofNullable(empresaRepository.findByTransportadora(1));
 		return empresas
 				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa"));
 	}
-	
-	public List<Empresa> findByMatriz(Integer id){
-		Optional<List<Empresa>> empresas = Optional
-				.ofNullable(empresaRepository.findByempresaMatrizId(id));
+
+	public List<Empresa> findByMatriz(Integer id) {
+		Optional<List<Empresa>> empresas = Optional.ofNullable(empresaRepository.findByempresaMatrizId(id));
 		return empresas
 				.orElseThrow(() -> new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa"
 						+ "Metodo: Busca Por Id Matriz: Id Matriz: " + id));
 	}
-	
+
+	@Transactional()
 	public Empresa createEmpresa(InsertEmpresaDTO dto) {
 		Empresa empresa = empresaFromEmpresaDTO(dto);
-		if(empresaRepository.findBypessoa(pessoaService.findById(empresa.getPessoa().getId())) == null) {
+		if (empresaRepository.findBypessoa(pessoaService.findById(empresa.getPessoa().getId())) == null) {
 			empresa.setId(null);
 			empresa = empresaRepository.save(empresa);
-		}else {
+		} else {
 			throw new DataIntegrityException("NÃO É POSSIVEL CADASTRAR ESSE EMPRESA, POIS ELA JA ESTA CADASTRADA");
 		}
-		
-		
+
 		return findById(empresa.getId());
 	}
-	
+
+	@Transactional()
 	public Empresa updateEmpresa(Integer id, InsertEmpresaDTO empresaUpdate) {
 		Empresa empresa = findById(id);
-		if(!(empresa == null)) {
+		if (!(empresa == null)) {
 			empresa.setPessoa(pessoaService.findById(empresaUpdate.getPessoa()));
 			empresa.setTipoEmpresa(tipoEmpresaRepository.buscaPorId(empresaUpdate.getTipoEmpresa()));
 			empresa.setTransportadora(empresaUpdate.getTransportadora());
 			empresa.setEmpresaMatrizId(empresaUpdate.getEmpresaMatriz());
-			
+
 			return empresaRepository.save(empresa);
-		}else {
+		} else {
 			throw new ObjectNotFoundException("Não houverem resultados para a restrição de pesquisa");
 		}
 	}
-	
+
 	public void deletarEmpresa(Empresa empresa) {
 		findById(empresa.getId());
 
@@ -103,7 +102,7 @@ public class EmpresaService {
 			throw new DataIntegrityException("NAO E POSSIVEL EXCLUIR ESSA PESSOA.");
 		}
 	}
-	
+
 	public Empresa empresaFromEmpresaDTO(InsertEmpresaDTO dto) {
 		Empresa empresa = new Empresa();
 		empresa.setId(null);
@@ -111,13 +110,13 @@ public class EmpresaService {
 		empresa.setTipoEmpresa(tipoEmpresaRepository.buscaPorId(dto.getTipoEmpresa()));
 		empresa.setTransportadora(dto.getTransportadora());
 		empresa.setEmpresaMatrizId(dto.getEmpresaMatriz());
-		
+
 		return empresa;
-		
+
 	}
 
 	public Empresa findByIdOrNull(Integer idEmpresa) {
-		Empresa empresa =empresaRepository.buscaPorId(idEmpresa);
+		Empresa empresa = empresaRepository.buscaPorId(idEmpresa);
 		return empresa;
 	}
 }
